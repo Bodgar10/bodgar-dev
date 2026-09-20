@@ -524,12 +524,13 @@ section { border-bottom: 1px solid var(--rule); }
 .about-grid { display: grid; gap: 32px; margin-top: 36px; align-items: start; }
 
 @media (min-width: 800px) {
-  .about-grid { grid-template-columns: 260px minmax(0, 1fr); gap: 48px; }
+  .about-grid { grid-template-columns: 280px minmax(0, 1fr); gap: 52px; }
 }
 
 .portrait {
   width: 100%;
-  max-width: 260px;
+  height: auto;
+  max-width: 280px;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 4px;
@@ -537,17 +538,6 @@ section { border-bottom: 1px solid var(--rule); }
   display: block;
 }
 
-.portrait-slot {
-  display: grid;
-  place-items: center;
-  border: 1px dashed var(--rule);
-  color: var(--ink-mute);
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-align: center;
-  padding: 16px;
-}
 
 .about-body p { max-width: var(--prose); color: var(--ink-soft); }
 .about-body p strong { color: var(--ink); font-weight: 600; }
