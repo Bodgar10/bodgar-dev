@@ -234,14 +234,14 @@ section { border-bottom: 1px solid var(--rule); }
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 4px 24px;
-  padding: 20px 4px;
+  padding: 20px 0;
   border-bottom: 1px solid var(--rule);
   text-decoration: none;
   color: inherit;
   transition: background 110ms ease, padding-inline 110ms ease;
 }
 
-.row:hover { background: var(--paper-2); padding-inline: 12px 4px; }
+.row:hover { background: var(--paper-2); padding-inline: 12px 0; }
 
 .row .name {
   font-size: clamp(1.5rem, 4.2vw, 2.1rem);
