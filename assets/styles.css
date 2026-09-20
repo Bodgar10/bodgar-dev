@@ -490,7 +490,9 @@ section { border-bottom: 1px solid var(--rule); }
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   gap: 11px;
   font-size: 0.94rem;
   line-height: 1.45;
@@ -511,12 +513,38 @@ section { border-bottom: 1px solid var(--rule); }
 
 .plan-list .carry { color: var(--ink-mute); font-style: italic; }
 
-.plans-foot {
-  margin-top: 20px;
+.plan-list .promise {
+  margin-top: auto;
+  padding-left: 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+.plan-list .promise::before { content: none; }
+
+.plan.lead .plan-list .promise {
+  color: var(--panel-ink);
+  border-top-color: color-mix(in srgb, var(--panel-ink) 26%, transparent);
+}
+
+.plans-foot { margin-top: 22px; }
+
+.plans-foot p { margin: 0; }
+
+.foot-terms {
   font-family: var(--font-mono);
   font-size: 0.76rem;
   letter-spacing: 0.05em;
   color: var(--ink-mute);
+}
+
+.foot-quote {
+  margin-top: 12px !important;
+  max-width: 58ch;
+  font-size: 0.97rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
 }
 
 /* ---------- about ---------- */
