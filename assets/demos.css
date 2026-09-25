@@ -338,3 +338,110 @@
   .px-pista { animation: none; }
   .cs-slot.libre.recien { animation: none; }
 }
+
+/* ================ selector de giro de la tabla de traducción ============= */
+
+.giros {
+  margin-top: 34px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+}
+
+.giros-lbl { color: var(--ink-mute); }
+
+.giros-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.giro {
+  border: 1px solid var(--rule);
+  background: none;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 8px 15px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
+}
+
+.giro:hover { border-color: var(--ink-mute); color: var(--ink); }
+
+.giro.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 500;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .giro.on { color: #0d1a15; }
+}
+:root[data-theme="dark"] .giro.on { color: #0d1a15; }
+
+/* La columna elegida manda; las otras se quedan de contexto. */
+
+.xtable[data-foco] th,
+.xtable[data-foco] td { transition: opacity 260ms ease, background 260ms ease; }
+
+.xtable[data-foco="1"] :is(th, td):not(:nth-child(1)),
+.xtable[data-foco="2"] :is(th, td):not(:nth-child(2)),
+.xtable[data-foco="3"] :is(th, td):not(:nth-child(3)),
+.xtable[data-foco="4"] :is(th, td):not(:nth-child(4)),
+.xtable[data-foco="5"] :is(th, td):not(:nth-child(5)) { opacity: 0.4; }
+
+.xtable[data-foco="1"] tbody td:nth-child(1),
+.xtable[data-foco="2"] tbody td:nth-child(2),
+.xtable[data-foco="3"] tbody td:nth-child(3),
+.xtable[data-foco="4"] tbody td:nth-child(4),
+.xtable[data-foco="5"] tbody td:nth-child(5) {
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Una sola columna, sólo en pantalla angosta. */
+
+.xsingle { display: none; }
+
+.xsingle-intro {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+
+.xsingle-intro b { color: var(--ink); font-weight: 600; }
+
+.xrow {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--rule);
+  animation: xrow-in 380ms cubic-bezier(.22,.9,.24,1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+.xrow:first-of-type { border-top: 1px solid var(--rule); }
+
+.xrow-lbl { display: block; margin-bottom: 5px; }
+
+.xrow-val {
+  display: block;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+@keyframes xrow-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 979px) {
+  .xtable-wrap { display: none; }
+  .xsingle { display: block; margin-top: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xrow { animation: none; }
+}

@@ -293,3 +293,71 @@
     alEntrar(raiz, function () { return fn(raiz); });
   });
 })();
+
+/* Selector de giro de la tabla de traducción.
+ *
+ * La tabla comparaba cinco industrias a la vez. En escritorio eso es el
+ * argumento —"lo mismo, con otro nombre"— pero en un teléfono eran cinco
+ * columnas que había que arrastrar de lado, justo en el momento en que el
+ * visitante tiene que verse a sí mismo. Le pedía trabajo donde había que
+ * dárselo hecho.
+ *
+ * Ahora elige su giro: en escritorio la tabla sigue entera y su columna se
+ * destaca, así que la comparación no se pierde; en pantalla angosta la tabla
+ * desaparece y queda una sola columna hablándole a él.
+ */
+(function () {
+  'use strict';
+
+  var chips = document.querySelector('[data-giros]');
+  var destino = document.querySelector('[data-xsingle]');
+  var tabla = document.querySelector('.xtable');
+  if (!chips || !destino || !tabla) return;
+
+  /* Qué es cada fila. En la tabla el encabezado de columna da el contexto;
+     en una sola columna no hay con qué comparar, así que la fila se nombra. */
+  var FILAS = [
+    ['Lo que se agenda',              ['Canchas y horarios', 'Sillones y gabinetes', 'Consultorios y terapeutas', 'Aulas y profesores', 'Abogados y audiencias']],
+    ['Cómo entra el dinero',     ['Inscripción con cobro', 'Cita con anticipo', 'Paquete de sesiones', 'Inscripción y colegiatura', 'Iguala mensual']],
+    ['Lo que tu cliente necesita saber', ['«Tu cancha va 40 min tarde»', '«El doctor va retrasado»', 'Recordatorio de sesión', 'Aviso de cambio de salón', 'Aviso de término']],
+    ['Lo que se anota después',  ['Resultado en cancha', 'Nota clínica en el sillón', 'Nota de sesión', 'Calificación y asistencia', 'Avance del expediente']],
+    ['Lo que queda guardado',         ['Ranking entre organizadores', 'Historial entre sedes', 'Expediente del paciente', 'Expediente del alumno', 'Historial del caso']],
+    ['A dónde va el dinero',     ['Comisión al club', 'Cobro directo al consultorio', 'Cobro directo a la clínica', 'Cobro directo a la escuela', 'Cobro directo al despacho']]
+  ];
+
+  var NOMBRE = ['un torneo', 'un consultorio', 'una clínica', 'una escuela', 'un despacho'];
+
+  function elegir(i) {
+    // Estado de los botones.
+    var botones = chips.querySelectorAll('.giro');
+    for (var k = 0; k < botones.length; k++) {
+      var activo = Number(botones[k].getAttribute('data-giro')) === i;
+      botones[k].classList.toggle('on', activo);
+      botones[k].setAttribute('aria-pressed', activo ? 'true' : 'false');
+    }
+
+    // La columna elegida se destaca; las otras se atenúan pero siguen ahí.
+    tabla.setAttribute('data-foco', String(i + 1));
+
+    // Una sola columna, para pantalla angosta.
+    var html = '<p class="xsingle-intro">En <b>' + NOMBRE[i] + '</b>, lo mismo se llama así:</p>';
+    for (var f = 0; f < FILAS.length; f++) {
+      html += '<div class="xrow"><span class="mono xrow-lbl"></span><span class="xrow-val"></span></div>';
+    }
+    destino.innerHTML = html;
+    var filas = destino.querySelectorAll('.xrow');
+    for (var j = 0; j < FILAS.length; j++) {
+      filas[j].querySelector('.xrow-lbl').textContent = FILAS[j][0];
+      filas[j].querySelector('.xrow-val').textContent = FILAS[j][1][i];
+      filas[j].style.setProperty('--d', (j * 45) + 'ms');
+    }
+  }
+
+  chips.addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('.giro') : null;
+    if (b) elegir(Number(b.getAttribute('data-giro')));
+  });
+
+  // Arranca en consultorio: es el giro más cercano a quien llega a esta página.
+  elegir(1);
+})();
