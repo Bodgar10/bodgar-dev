@@ -1,0 +1,340 @@
+/* Demos en vivo de /plataformas.
+   Cada bloque usa la paleta real de su producto: la idea es que se vea
+   el producto, no nuestra página con el contenido del producto dentro. */
+
+.demo {
+  margin: 0 0 14px;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.demo-frame { padding: clamp(18px, 3.4vw, 30px); }
+
+.demo-cap {
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-mute);
+  margin: 0 0 30px;
+}
+
+.demo-cap b { color: var(--ink); font-weight: 500; }
+
+/* ====================== 1. Padel Crown — la tabla viva ==================== */
+
+.demo-pc {
+  background: #0b0b0d;
+  color: #f4f1e9;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.pc-card {
+  background: #17171c;
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.pc-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.pc-grupo {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  color: #e9ddb6;
+}
+
+.pc-prog { font-size: 0.76rem; color: #928e84; }
+
+.pc-cols {
+  display: grid;
+  grid-template-columns: 26px 1fr 34px 54px;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.16);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: #928e84;
+}
+
+.pc-cols span:nth-child(3),
+.pc-cols span:nth-child(4),
+.pc-fila .pj,
+.pc-fila .saldo { text-align: right; }
+
+.pc-pista { position: relative; margin-top: 6px; }
+
+.pc-fila {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 44px;
+  display: grid;
+  grid-template-columns: 26px 1fr 34px 54px;
+  gap: 8px;
+  align-items: center;
+  transition: transform 620ms cubic-bezier(.22,.9,.24,1);
+  will-change: transform;
+}
+
+.pc-fila .pos {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: #928e84;
+}
+
+.pc-fila.dentro .pos { color: #e9ddb6; }
+
+.pc-fila .nom {
+  font-size: 0.87rem;
+  color: #f4f1e9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pc-fila .pj { font-size: 0.82rem; color: #928e84; }
+
+.pc-fila .saldo {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: #928e84;
+  transition: color 300ms ease;
+}
+
+.pc-fila .saldo.pos { color: #42d6a4; }
+.pc-fila .saldo.neg { color: #e0705e; }
+
+.pc-corte {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  display: flex;
+  justify-content: center;
+}
+
+.pc-corte span {
+  transform: translateY(-50%);
+  background: #17171c;
+  padding: 0 10px;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  color: #e9ddb6;
+}
+
+.pc-nota {
+  margin: 14px 0 0;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: #928e84;
+}
+
+/* ====================== 2. Pasas.mx — la pista jugable =================== */
+
+.demo-pasas {
+  background: #0f0a1e;
+  color: #e2d9f3;
+  border: 1px solid #2d2048;
+}
+
+.px-eyebrow {
+  margin: 0 0 12px;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ec4899;
+}
+
+.px-card {
+  background: #1a1035;
+  border: 1px solid #2d2048;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.px-enunciado {
+  margin: 0 0 18px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #e2d9f3;
+  max-width: 46ch;
+}
+
+.px-fila { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.px-fila input {
+  flex: 1 1 130px;
+  min-width: 0;
+  background: #1c1033;
+  border: 1px solid #2d2048;
+  border-radius: 9px;
+  padding: 11px 14px;
+  color: #e2d9f3;
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+.px-fila input::placeholder { color: #6d5f96; }
+.px-fila input:focus { outline: 2px solid #7c3aed; outline-offset: 1px; }
+
+.px-btn {
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 20px;
+  background: #7c3aed;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.px-btn:hover { background: #8b4ef0; }
+.px-btn:disabled { opacity: .45; cursor: default; }
+
+.px-hint {
+  margin-top: 14px;
+  background: none;
+  border: 1px solid #2d2048;
+  border-radius: 9px;
+  padding: 9px 15px;
+  color: #fbbf24;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 150ms ease;
+}
+
+.px-hint:hover { border-color: #fbbf24; }
+
+.px-pistas { margin-top: 14px; display: grid; gap: 9px; }
+
+.px-pista {
+  border-left: 2px solid #fbbf24;
+  padding: 2px 0 2px 13px;
+  font-size: 0.89rem;
+  line-height: 1.5;
+  color: #c4b5fd;
+  animation: px-in 340ms cubic-bezier(.22,.9,.24,1) both;
+}
+
+.px-sol { border-left-color: #10b981; color: #d7f5e9; }
+
+@keyframes px-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.px-fb {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  min-height: 1.4em;
+  color: #c4b5fd;
+}
+
+.px-fb.ok { color: #10b981; font-weight: 600; }
+.px-fb.no { color: #fbbf24; }
+
+/* ====================== 3. Consulta — el hueco fantasma ================== */
+
+.demo-consulta {
+  background: #f4f1ea;
+  color: #1f332e;
+  border: 1px solid #e4ddcf;
+}
+
+.cs-card {
+  background: #fbfaf7;
+  border: 1px solid #e4ddcf;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.cs-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 0.92rem;
+  color: #7a7161;
+}
+
+.cs-head b { color: #1f332e; font-weight: 600; }
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+  gap: 10px;
+}
+
+.cs-slot {
+  border: 1px solid #e4ddcf;
+  border-radius: 10px;
+  background: #fff;
+  padding: 12px 13px;
+  transition: background 320ms ease, border-color 320ms ease;
+}
+
+.cs-slot .h {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1f332e;
+}
+
+.cs-slot .e {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3c6e63;
+}
+
+.cs-slot.ocupado { background: #e8f0ed; border-color: #b8cfc8; }
+.cs-slot.ocupado .h { color: #2e4a44; }
+.cs-slot.ocupado .e { color: #3c6e63; }
+
+.cs-slot.apartado { background: #f5eddc; border-color: #e6cf9f; }
+.cs-slot.apartado .e { color: #b8863c; }
+
+.cs-slot.libre.recien { animation: cs-flash 1500ms ease-out both; }
+
+@keyframes cs-flash {
+  0%   { background: #e8f0ed; border-color: #3c6e63; }
+  100% { background: #fff;    border-color: #e4ddcf; }
+}
+
+.cs-log {
+  margin: 16px 0 0;
+  min-height: 2.8em;
+  font-size: 0.87rem;
+  line-height: 1.5;
+  color: #7a7161;
+}
+
+.cs-log b { color: #1f332e; font-weight: 600; }
+
+/* ---------- accesibilidad ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-fila { transition: none; }
+  .px-pista { animation: none; }
+  .cs-slot.libre.recien { animation: none; }
+}

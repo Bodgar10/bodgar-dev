@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/demos.css">
 <script>document.documentElement.className += " js";</script>
 </head>
 <body>
@@ -91,13 +92,20 @@
           <span class="mono case-tag">01 &middot; Deporte</span>
           <h3 class="case-title">Padel Crown</h3>
         </div>
-        <figure class="case-shot reveal">
-          <picture>
-            <source media="(max-width: 700px)" srcset="/assets/casos/padelcrown-movil.webp" width="860" height="1200">
-            <img src="/assets/casos/padelcrown.webp" width="2000" height="1240" loading="lazy" decoding="async" alt="Tabla de grupo de Padel Crown, con parejas ordenadas por saldo de juegos">
-          </picture>
-          <figcaption>Tu cancha, en vivo: qu&eacute; se juega ahora y c&oacute;mo va tu grupo.</figcaption>
-        </figure>
+        <div class="demo demo-pc reveal" data-demo="tabla">
+          <div class="demo-frame">
+            <div class="pc-card">
+              <div class="pc-head">
+                <span class="pc-grupo">GRUPO A</span>
+                <span class="pc-prog" data-prog>Por empezar</span>
+              </div>
+              <div class="pc-cols"><span>#</span><span>PAREJA</span><span>PJ</span><span>SALDO</span></div>
+              <div class="pc-pista" data-pista><div class="pc-corte"><span>PASAN A CUARTOS</span></div></div>
+              <p class="pc-nota">Los partidos no se ganan: se suman tus games y se restan los del rival. Todas juegan los mismos cinco, as&iacute; que los saldos se comparan directo. Pasan cuatro.</p>
+            </div>
+          </div>
+        </div>
+        <p class="demo-cap"><b>Esto no es una captura.</b> Los puestos no est&aacute;n escritos: salen de sumar los marcadores conforme entran. Mira a alguien cruzar la l&iacute;nea de corte.</p>
         <div class="case-body">
           <div class="case-part reveal">
             <span class="mono part-label">El problema</span>
@@ -122,13 +130,22 @@
           <span class="mono case-tag">02 &middot; Educaci&oacute;n</span>
           <h3 class="case-title">Pasas.mx</h3>
         </div>
-        <figure class="case-shot reveal">
-          <picture>
-            <source media="(max-width: 700px)" srcset="/assets/casos/pasas-movil.webp" width="860" height="1200">
-            <img src="/assets/casos/pasas.webp" width="2000" height="1240" loading="lazy" decoding="async" alt="Pantalla de Pasas.mx con los tipos de minijuego y el n&uacute;mero de ejercicios de cada uno">
-          </picture>
-          <figcaption>El mismo tema explicado con lo que al alumno ya le interesa.</figcaption>
-        </figure>
+        <div class="demo demo-pasas reveal" data-demo="pistas">
+          <div class="demo-frame">
+            <p class="px-eyebrow">Pru&eacute;balo aqu&iacute;</p>
+            <div class="px-card">
+              <p class="px-enunciado">En tu inventario tienes 3 ranuras llenas y cada una guarda 27 bloques. Si sacas 15 bloques, &iquest;cu&aacute;ntos quedan?</p>
+              <div class="px-fila">
+                <input data-resp type="text" inputmode="numeric" autocomplete="off" placeholder="Tu respuesta" aria-label="Tu respuesta">
+                <button class="px-btn" data-revisar type="button">Revisar</button>
+              </div>
+              <button class="px-hint" data-pedir type="button">&#128161; Pedir una pista</button>
+              <div class="px-pistas" data-pistas></div>
+              <p class="px-fb" data-fb></p>
+            </div>
+          </div>
+        </div>
+        <p class="demo-cap"><b>Pru&eacute;balo t&uacute; mismo.</b> Es la mec&aacute;nica real: pedir pista y fallar gastan la misma lista, y al agotarla aparece la soluci&oacute;n completa.</p>
         <div class="case-body">
           <div class="case-part reveal">
             <span class="mono part-label">El problema</span>
@@ -153,13 +170,16 @@
           <span class="mono case-tag">03 &middot; Salud</span>
           <h3 class="case-title">Plataforma de consulta</h3>
         </div>
-        <figure class="case-shot reveal">
-          <picture>
-            <source media="(max-width: 700px)" srcset="/assets/casos/consulta-movil.webp" width="860" height="1200">
-            <img src="/assets/casos/consulta.webp" width="2000" height="1240" loading="lazy" decoding="async" alt="Paquetes de sesiones y formas de pago en la plataforma de consulta">
-          </picture>
-          <figcaption>Paquetes de sesiones que se descuentan solos, con cobro en l&iacute;nea.</figcaption>
-        </figure>
+        <div class="demo demo-consulta reveal" data-demo="huecos">
+          <div class="demo-frame">
+            <div class="cs-card">
+              <div class="cs-head"><span><b>Jueves 8</b> &middot; horarios</span><span>50 min por sesi&oacute;n</span></div>
+              <div class="cs-grid" data-slots></div>
+              <p class="cs-log" data-log>&nbsp;</p>
+            </div>
+          </div>
+        </div>
+        <p class="demo-cap"><b>M&iacute;ralo pasar.</b> El hueco fantasma: alguien lo aparta, no paga, y el proceso nocturno lo libera solo.</p>
         <div class="case-body">
           <div class="case-part reveal">
             <span class="mono part-label">El problema</span>
@@ -388,6 +408,8 @@
   for (var j = 0; j < items.length; j++) io.observe(items[j]);
 })();
 </script>
+
+<script src="/assets/demos.js" defer></script>
 
 </body>
 </html>
