@@ -196,8 +196,9 @@ section { border-bottom: 1px solid var(--rule); }
   letter-spacing: -0.01em;
   padding: 15px 26px;
   border: 1px solid var(--accent);
-  border-radius: 4px;
-  transition: background 120ms ease;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .16), 0 8px 18px -12px rgba(0, 0, 0, .65);
+  transition: background 140ms ease, transform 140ms ease, box-shadow 140ms ease;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -205,7 +206,14 @@ section { border-bottom: 1px solid var(--rule); }
 }
 :root[data-theme="dark"] .btn { color: #0d1a15; }
 
-.btn:hover { background: var(--accent-ink); border-color: var(--accent-ink); }
+.btn:hover {
+  background: var(--accent-ink);
+  border-color: var(--accent-ink);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .18), 0 14px 26px -14px rgba(0, 0, 0, .7);
+}
+
+.btn:active { transform: translateY(0); }
 
 .btn-quiet {
   font-family: var(--font-mono);
