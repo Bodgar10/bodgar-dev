@@ -361,3 +361,42 @@
   // Arranca en consultorio: es el giro más cercano a quien llega a esta página.
   elegir(1);
 })();
+
+/* El botón flotante de WhatsApp.
+ *
+ * No aparece de entrada: en el hero ya hay un botón a treinta píxeles, y dos
+ * botones iguales a la vez no dan más opciones, dan ruido. Sale cuando el
+ * visitante ya se fue del hero, y se esconde al llegar al cierre —que es otro
+ * botón diciendo lo mismo— para no encimarse con él.
+ *
+ * Va con la posición del scroll y no con IntersectionObserver a propósito: el
+ * observer sin root se mide contra el viewport de la ventana de arriba, así que
+ * dentro de un iframe (una previsualización, un embed) deja de dispararse y el
+ * botón se queda pegado en un estado. Esto se comporta igual en los dos sitios.
+ */
+(function () {
+  'use strict';
+
+  var flota = document.getElementById('waFlota');
+  var hero = document.querySelector('.hero');
+  var cierre = document.querySelector('.final');
+  if (!flota || !hero || !cierre) return;
+
+  function medir() {
+    var alto = window.innerHeight || document.documentElement.clientHeight;
+    var fueraDelHero = hero.getBoundingClientRect().bottom < alto * 0.25;
+    var enElCierre = cierre.getBoundingClientRect().top < alto * 0.85;
+    var mostrar = fueraDelHero && !enElCierre;
+
+    if (mostrar === !flota.hidden) return;
+    flota.hidden = !mostrar;
+    if (mostrar) requestAnimationFrame(function () { flota.classList.add('visible'); });
+    else flota.classList.remove('visible');
+  }
+
+  // Dos getBoundingClientRect por evento: medir directo sale más barato que
+  // la maquinaria de diferirlo, y así el estado nunca va un cuadro por detrás.
+  window.addEventListener('scroll', medir, { passive: true });
+  window.addEventListener('resize', medir, { passive: true });
+  medir();
+})();
