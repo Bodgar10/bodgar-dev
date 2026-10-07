@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Visitas — bodgar.dev</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<style>
+  [hidden] { display: none !important; }
+  body { background: var(--paper); color: var(--ink); }
+  .st { max-width: var(--wide); margin: 0 auto; padding: 32px var(--gutter) 80px; }
+  .st h1 { font-size: 28px; margin: 0 0 4px; }
+  .st h2 { font-size: 18px; margin: 40px 0 6px; }
+  .st .sub { color: var(--ink-mute); font-size: 14px; margin: 0 0 14px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 18px 0 8px; font-size: 14px; }
+  .bar select, .bar input, .bar button {
+    font: inherit; color: var(--ink); background: var(--paper-2);
+    border: 1px solid var(--rule); border-radius: 8px; padding: 7px 10px;
+  }
+  .bar button { cursor: pointer; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .tile { border: 1px solid var(--rule); border-radius: 12px; padding: 16px; background: var(--paper-2); }
+  .tile h3 { margin: 0 0 10px; font-family: var(--font-mono); font-size: 13px; font-weight: 500; color: var(--ink-soft); }
+  .nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 8px; }
+  .num b { display: block; font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .num span { font-size: 12px; color: var(--ink-mute); }
+  .tw { overflow-x: auto; border: 1px solid var(--rule); border-radius: 12px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); white-space: nowrap; vertical-align: top; }
+  th { font-family: var(--font-mono); font-weight: 500; color: var(--ink-mute); font-size: 12px; background: var(--paper-2); }
+  tr:last-child td { border-bottom: 0; }
+  td.n { font-variant-numeric: tabular-nums; text-align: right; }
+  td.wrap { white-space: normal; min-width: 180px; }
+  .si { color: var(--accent); font-weight: 600; }
+  .no { color: var(--ink-mute); }
+  .pill { display: inline-block; font-family: var(--font-mono); font-size: 11px; padding: 1px 6px; border-radius: 6px; background: var(--paper); border: 1px solid var(--rule); margin: 0 4px 3px 0; }
+  .days { display: flex; align-items: flex-end; gap: 3px; height: 120px; padding: 10px; border: 1px solid var(--rule); border-radius: 12px; background: var(--paper-2); overflow-x: auto; }
+  .day { flex: 1 0 14px; display: flex; flex-direction: column-reverse; height: 100%; position: relative; }
+  .day i { display: block; background: var(--accent); opacity: .35; border-radius: 3px 3px 0 0; }
+  .day i.l { opacity: 1; }
+  .legend { font-size: 12px; color: var(--ink-mute); margin-top: 6px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; background: var(--accent); border-radius: 2px; vertical-align: -1px; margin: 0 4px 0 10px; }
+  .legend i.f { opacity: .35; }
+  .err { color: var(--warn); }
+  .vacio { color: var(--ink-mute); font-size: 14px; padding: 12px 0; }
+  #login { max-width: 360px; margin-top: 30px; }
+  #login input { width: 100%; box-sizing: border-box; margin: 8px 0; }
+</style>
+</head>
+<body>
+<div class="st">
+  <h1>Visitas</h1>
+  <p class="sub">bodgar.dev &middot; /, /es/ y /plataformas/. Una sesi&oacute;n &laquo;ley&oacute;&raquo; si pas&oacute; del 25&nbsp;% de la p&aacute;gina o estuvo 10&nbsp;s o m&aacute;s; lo dem&aacute;s suelen ser esc&aacute;neres de correo.</p>
+
+  <form id="login" class="bar" hidden>
+    <label for="clave" style="width:100%">Clave</label>
+    <input id="clave" type="password" autocomplete="current-password">
+    <button type="submit">Entrar</button>
+    <p id="loginErr" class="err" hidden>Clave incorrecta.</p>
+  </form>
+
+  <div id="panel" hidden>
+    <div class="bar">
+      <select id="dias">
+        <option value="1">Hoy y ayer</option>
+        <option value="7">7 d&iacute;as</option>
+        <option value="30" selected>30 d&iacute;as</option>
+        <option value="90">90 d&iacute;as</option>
+        <option value="365">1 a&ntilde;o</option>
+      </select>
+      <label><input type="checkbox" id="internos"> incluir mis visitas</label>
+      <button id="recargar" type="button">Recargar</button>
+      <button id="salir" type="button">Salir</button>
+      <span id="estado" class="sub" style="margin:0"></span>
+    </div>
+
+    <div class="tiles" id="paginas"></div>
+
+    <h2>Por d&iacute;a</h2>
+    <div class="days" id="porDia"></div>
+    <div class="legend"><i class="l"></i>leyeron<i class="f"></i>solo abrieron</div>
+
+    <h2>Correos fr&iacute;os (?r=)</h2>
+    <p class="sub">Un rengl&oacute;n por c&oacute;digo de enlace. Si el c&oacute;digo aparece, alguien abri&oacute; ese correo y toc&oacute; el enlace.</p>
+    <div id="refs"></div>
+
+    <h2>Clics</h2>
+    <div id="clics"></div>
+
+    <h2>Hasta d&oacute;nde llegan</h2>
+    <p class="sub">Sesiones en las que cada secci&oacute;n cruz&oacute; el centro de la pantalla.</p>
+    <div id="secciones"></div>
+
+    <h2>De d&oacute;nde llegan</h2>
+    <div id="fuentes"></div>
+
+    <h2>&Uacute;ltimas 100 sesiones</h2>
+    <div id="sesiones"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var URL = "https://uxtmdhbqiphvmixtxlox.supabase.co/rest/v1/rpc/bodgardev_resumen";
+  var KEY = "sb_publishable_oSpCqCP0M-6OgyLH8jjBuA_ii9UJVOL";
+  var ORDEN = ["/", "/es/", "/plataformas/"];
+  var $ = function (id) { return document.getElementById(id); };
+
+  function leer(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function escribir(k, v) { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+  var fmt = new Intl.DateTimeFormat("es-MX", { timeZone: "America/Mexico_City", day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" });
+  function fecha(s) { return s ? fmt.format(new Date(s)) : ""; }
+  function seg(n) { n = Math.round(n || 0); return n < 60 ? n + " s" : Math.floor(n / 60) + " min " + (n % 60) + " s"; }
+  function siNo(b) { return b ? '<span class="si">s&iacute;</span>' : '<span class="no">no</span>'; }
+  function pills(a) { return (a || []).map(function (x) { return '<span class="pill">' + esc(x) + "</span>"; }).join(""); }
+
+  function tabla(cols, filas) {
+    if (!filas.length) return '<p class="vacio">Sin datos todav&iacute;a.</p>';
+    var h = "<div class=tw><table><thead><tr>" + cols.map(function (c) { return "<th>" + c[0] + "</th>"; }).join("") + "</tr></thead><tbody>";
+    filas.forEach(function (f) {
+      h += "<tr>" + cols.map(function (c) { return "<td" + (c[2] ? ' class="' + c[2] + '"' : "") + ">" + c[1](f) + "</td>"; }).join("") + "</tr>";
+    });
+    return h + "</tbody></table></div>";
+  }
+
+  function pintar(d) {
+    $("paginas").innerHTML = ORDEN.map(function (p) {
+      var x = (d.paginas || []).filter(function (r) { return r.pagina === p; })[0] || {};
+      function n(k, l) { return '<div class="num"><b>' + (x[k] || 0) + "</b><span>" + l + "</span></div>"; }
+      return '<div class="tile"><h3>bodgar.dev' + p + '</h3><div class="nums">' +
+        n("visitantes", "visitantes") + n("sesiones", "sesiones") + n("leyeron", "leyeron") +
+        n("con_clic", "con clic") + n("scroll_100", "llegaron al final") +
+        '<div class="num"><b>' + seg(x.segundos_mediana) + "</b><span>mediana (leyeron)</span></div>" +
+        "</div></div>";
+    }).join("");
+
+    // Por día: barras apiladas de todas las páginas.
+    var dias = {};
+    (d.por_dia || []).forEach(function (r) {
+      var o = dias[r.dia] || (dias[r.dia] = { s: 0, l: 0 });
+      o.s += r.sesiones; o.l += r.leyeron;
+    });
+    var claves = Object.keys(dias).sort();
+    var max = Math.max.apply(null, [1].concat(claves.map(function (k) { return dias[k].s; })));
+    $("porDia").innerHTML = claves.length ? claves.map(function (k) {
+      var o = dias[k];
+      return '<div class="day" title="' + k + ": " + o.s + " sesiones, " + o.l + ' leyeron">' +
+        '<i class="l" style="height:' + (o.l / max * 100) + '%"></i>' +
+        '<i style="height:' + ((o.s - o.l) / max * 100) + '%"></i></div>';
+    }).join("") : '<p class="vacio">Sin datos todav&iacute;a.</p>';
+
+    $("refs").innerHTML = tabla([
+      ["c&oacute;digo", function (r) { return "<b>" + esc(r.ref) + "</b>"; }],
+      ["primera vez", function (r) { return fecha(r.primera); }],
+      ["&uacute;ltima", function (r) { return fecha(r.ultima); }],
+      ["sesiones", function (r) { return r.sesiones; }, "n"],
+      ["ley&oacute;", function (r) { return siNo(r.leyo); }],
+      ["scroll", function (r) { return r.scroll_max + " %"; }, "n"],
+      ["tiempo", function (r) { return seg(r.segundos); }, "n"],
+      ["p&aacute;ginas", function (r) { return pills(r.paginas); }],
+      ["clics", function (r) { return pills(r.clics); }, "wrap"]
+    ], d.refs || []);
+
+    $("clics").innerHTML = tabla([
+      ["p&aacute;gina", function (r) { return esc(r.pagina); }],
+      ["bot&oacute;n", function (r) { return esc(r.clic); }],
+      ["sesiones", function (r) { return r.sesiones; }, "n"]
+    ], d.clics || []);
+
+    var secs = (d.secciones || []).slice().sort(function (a, b) {
+      return ORDEN.indexOf(a.pagina) - ORDEN.indexOf(b.pagina) || b.sesiones - a.sesiones;
+    });
+    $("secciones").innerHTML = tabla([
+      ["p&aacute;gina", function (r) { return esc(r.pagina); }],
+      ["secci&oacute;n", function (r) { return esc(r.seccion); }],
+      ["sesiones", function (r) { return r.sesiones; }, "n"]
+    ], secs);
+
+    $("fuentes").innerHTML = tabla([
+      ["fuente", function (r) { return esc(r.fuente); }],
+      ["sesiones", function (r) { return r.sesiones; }, "n"],
+      ["leyeron", function (r) { return r.leyeron; }, "n"]
+    ], d.fuentes || []);
+
+    $("sesiones").innerHTML = tabla([
+      ["cu&aacute;ndo", function (r) { return fecha(r.inicio); }],
+      ["p&aacute;gina", function (r) { return esc(r.pagina); }],
+      ["c&oacute;digo", function (r) { return esc(r.ref || ""); }],
+      ["fuente", function (r) { return esc(r.fuente || ""); }],
+      ["zona", function (r) { return esc((r.zona || "").replace(/_/g, " ")); }],
+      ["equipo", function (r) { return r.movil ? "m&oacute;vil" : "escritorio"; }],
+      ["nuevo", function (r) { return siNo(r.nuevo); }],
+      ["ley&oacute;", function (r) { return siNo(r.leyo); }],
+      ["scroll", function (r) { return r.scroll + " %"; }, "n"],
+      ["tiempo", function (r) { return seg(r.segundos); }, "n"],
+      ["clics", function (r) { return pills(r.clics); }, "wrap"]
+    ], d.sesiones || []);
+  }
+
+  function cargar() {
+    var clave = leer("bd_stats_clave");
+    if (!clave) { $("panel").hidden = true; $("login").hidden = false; return; }
+    $("estado").textContent = "Cargando…";
+    fetch(URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", apikey: KEY },
+      body: JSON.stringify({ p_clave: clave, p_dias: +$("dias").value, p_interno: $("internos").checked })
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      if (d == null) { escribir("bd_stats_clave", null); $("loginErr").hidden = false; return cargar(); }
+      if (d.code || d.message) throw new Error(d.message || d.code);
+      $("login").hidden = true; $("panel").hidden = false;
+      pintar(d);
+      $("estado").textContent = "Actualizado " + fecha(new Date().toISOString());
+    }).catch(function (e) {
+      $("panel").hidden = false;
+      $("estado").innerHTML = '<span class="err">' + esc(e.message) + "</span>";
+    });
+  }
+
+  $("login").addEventListener("submit", function (e) {
+    e.preventDefault();
+    escribir("bd_stats_clave", $("clave").value.trim());
+    $("loginErr").hidden = true;
+    cargar();
+  });
+  $("dias").addEventListener("change", cargar);
+  $("internos").addEventListener("change", cargar);
+  $("recargar").addEventListener("click", cargar);
+  $("salir").addEventListener("click", function () { escribir("bd_stats_clave", null); cargar(); });
+
+  // Abrir /stats/ también marca este navegador como mío.
+  escribir("bd_interno", "1");
+  cargar();
+})();
+</script>
+</body>
+</html>
