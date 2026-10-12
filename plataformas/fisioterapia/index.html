@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bodgar Espinosa — Plataformas para cl&iacute;nicas de fisioterapia</title>
-<meta name="description" content="Sesiones y paquetes, autorizaciones de aseguradora, evoluci&oacute;n del paciente, ejercicios en casa y de qu&eacute; anuncio lleg&oacute; cada paciente. Una plataforma hecha para tu cl&iacute;nica de fisioterapia.">
+<title>Software a medida para cl&iacute;nicas de fisioterapia | Bodgar Espinosa</title>
+<meta name="description" content="Sistemas a medida para cl&iacute;nicas de fisioterapia y rehabilitaci&oacute;n: sesiones, aseguradoras, agenda, seguimiento de pacientes, pagos, ejercicios y m&eacute;tricas de captaci&oacute;n.">
 <link rel="canonical" href="https://bodgar.dev/plataformas/fisioterapia/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bodgar.dev/plataformas/fisioterapia/">
-<meta property="og:title" content="&iquest;Cu&aacute;ntas sesiones le quedan a cada paciente?">
-<meta property="og:description" content="Una plataforma hecha para tu cl&iacute;nica de fisioterapia: sesiones, aseguradoras, evoluci&oacute;n, agenda, ejercicios y pagos en un solo lugar.">
+<meta property="og:title" content="Software a medida para cl&iacute;nicas de fisioterapia">
+<meta property="og:description" content="Tu cl&iacute;nica ya tiene un proceso. Yo hago que el software lo siga: sesiones, aseguradoras, cancelaciones, evoluci&oacute;n, ejercicios y captaci&oacute;n.">
 <meta property="og:image" content="https://bodgar.dev/assets/og-plataformas.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -18,6 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
 <link rel="stylesheet" href="/assets/demos.css">
+<link rel="stylesheet" href="/assets/vertical.css">
 <script>document.documentElement.className += " js";</script>
 </head>
 <body>
@@ -25,144 +26,397 @@
 <header class="topbar">
   <div class="wrap">
     <a class="wordmark" href="/plataformas/">Bodgar Espinosa <span>— plataformas a la medida</span></a>
-    <nav class="lang" aria-label="Otras p&aacute;ginas">
-      <a href="/plataformas/">Todos los casos</a>
+    <nav class="vnav" aria-label="Secciones">
+      <a href="#problemas">Problemas</a>
+      <a href="#construir">Qu&eacute; puedo automatizar</a>
+      <a href="#caso">Caso real</a>
+      <a href="#empezar">C&oacute;mo empezamos</a>
+      <a href="#precios">Precios</a>
     </nav>
   </div>
 </header>
 
 <main>
 
-  <!-- HERO -->
+  <!-- 1 · HERO -->
   <section class="hero">
-    <div class="wrap">
-      <span class="mono eyebrow reveal">Para cl&iacute;nicas de fisioterapia y rehabilitaci&oacute;n</span>
-      <h1 class="reveal">&iquest;Cu&aacute;ntas sesiones le quedan a cada paciente?</h1>
-      <div class="lede prose reveal">
-        <p>Si la respuesta est&aacute; en un Excel, en una libreta o en la memoria de recepci&oacute;n, ah&iacute; se te va dinero todos los d&iacute;as: sesiones que no se cobran, paquetes que vencen, pacientes que no regresan.</p>
-        <p><strong>Construyo la plataforma que tu cl&iacute;nica necesita, con las reglas de tu cl&iacute;nica.</strong></p>
+    <div class="wrap vhero-grid">
+      <div>
+        <span class="mono eyebrow reveal">Para cl&iacute;nicas de fisioterapia y rehabilitaci&oacute;n</span>
+        <h1 class="reveal">Tu cl&iacute;nica ya tiene un proceso. Yo hago que el software lo siga.</h1>
+        <div class="lede prose reveal">
+          <p>Una cl&iacute;nica de fisioterapia tiene reglas que una agenda gen&eacute;rica no entiende: cu&aacute;ntas sesiones le quedan a cada paciente, qu&eacute; autoriz&oacute; la aseguradora, qu&eacute; terapeuta lo vio, c&oacute;mo va evolucionando, qu&eacute; ejercicios tiene en casa y qu&eacute; pasa cuando cancela.</p>
+          <p><strong>Construyo software a la medida para que ese seguimiento deje de vivir entre Excel, WhatsApp y la memoria del equipo.</strong></p>
+        </div>
+        <div class="actions reveal">
+          <a class="btn btn-wa" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20fisioterapia.%20Nosotros%20llevamos%20________%20manualmente%20y%20me%20gustar%C3%ADa%20saber%20c%C3%B3mo%20lo%20plantear%C3%ADas." target="_blank" rel="noopener noreferrer"><svg class="wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Cu&eacute;ntame qu&eacute; llevan hoy a mano</a>
+          <a class="btn-quiet" href="#construir">Ver qu&eacute; se puede automatizar &darr;</a>
+        </div>
+        <p class="vnote reveal">Reviso su proceso sin costo. Empezamos por un solo flujo, no por construir una plataforma completa.</p>
       </div>
-      <div class="actions reveal">
-        <a class="btn btn-wa" href="https://wa.me/525527149106?text=Hola%20Bodgar%2C%20vi%20tu%20p%C3%A1gina%20de%20fisioterapia.%20Hoy%20llevamos%20las%20sesiones%20as%C3%AD%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Cu&eacute;ntame c&oacute;mo lo llevan hoy</a>
-        <a class="btn-quiet" href="mailto:bodgar@bodgar.dev?subject=Cl%C3%ADnica%20de%20fisioterapia">o escr&iacute;beme a bodgar@bodgar.dev</a>
+
+      <div class="ui reveal" aria-label="Ejemplo de tablero del d&iacute;a">
+        <span class="ui-tag">Ejemplo</span>
+        <div class="ui-k">Hoy &middot; martes</div>
+        <div class="ui-t">Cl&iacute;nica Centro</div>
+        <div class="ui-dash">
+          <div><b>12</b><span>citas</span></div>
+          <div class="alert"><b>3</b><span>autorizaciones por vencer</span></div>
+          <div><b>2</b><span>huecos disponibles</span></div>
+          <div class="alert"><b>1</b><span>paciente por renovar</span></div>
+        </div>
+        <div class="ui-ok">$3,200 recuperados en citas canceladas esta semana</div>
       </div>
-      <p class="meta-line reveal">Ciudad de M&eacute;xico &middot; Una plataforma de salud ya en producci&oacute;n &middot; Diez a&ntilde;os construyendo software</p>
     </div>
   </section>
 
-  <!-- PREGUNTAS -->
-  <section class="pad">
+  <!-- 2 · PROBLEMAS -->
+  <section class="pad" id="problemas">
     <div class="wrap">
-      <span class="mono eyebrow reveal">Las preguntas de todos los d&iacute;as</span>
-      <h2 class="reveal">&iquest;Cu&aacute;ntas de estas contestas sin abrir tres herramientas?</h2>
+      <span class="mono eyebrow reveal">Problemas</span>
+      <h2 class="reveal">&iquest;Alguno de estos les pasa?</h2>
 
-      <ul class="quotes">
-        <li class="reveal">&iquest;Cu&aacute;ntas sesiones le quedan a este paciente, y ya las pag&oacute;?</li>
-        <li class="reveal">&iquest;Cu&aacute;ndo vence la autorizaci&oacute;n de su aseguradora, y cu&aacute;ntas sesiones cubre?</li>
-        <li class="reveal">&iquest;Qu&eacute; ejercicios tiene que hacer en casa esta semana?</li>
-        <li class="reveal">&iquest;Qu&eacute; terapeuta registr&oacute; el &uacute;ltimo avance, y qu&eacute; anot&oacute;?</li>
-        <li class="reveal">&iquest;De qu&eacute; anuncio lleg&oacute; el paciente que termin&oacute; comprando tratamiento?</li>
-        <li class="reveal">&iquest;Qui&eacute;n vino a valoraci&oacute;n y nunca regres&oacute;?</li>
+      <ul class="pcards">
+        <li class="reveal" data-card="sesiones"><a href="#m-sesiones" data-t="problema-sesiones"><span class="mono">Sesiones</span><strong>&laquo;&iquest;Cu&aacute;ntas sesiones le quedan?&raquo;</strong>Y alguien tiene que abrir Excel, buscar el nombre y hacer cuentas.<span class="go">Ver c&oacute;mo se resuelve &rarr;</span></a></li>
+        <li class="reveal" data-card="seguros"><a href="#m-seguros" data-t="problema-seguros"><span class="mono">Aseguradoras</span><strong>La carta pase autoriz&oacute; 10 sesiones. Ya lleva 8.</strong>&iquest;Qui&eacute;n se da cuenta de que toca pedir la siguiente autorizaci&oacute;n?<span class="go">Ver c&oacute;mo se resuelve &rarr;</span></a></li>
+        <li class="reveal" data-card="cancelaciones"><a href="#m-cancelaciones" data-t="problema-cancelaciones"><span class="mono">Cancelaciones</span><strong>Un paciente cancela ma&ntilde;ana a las 5:00.</strong>El horario queda vac&iacute;o aunque hab&iacute;a otros pacientes esperando.<span class="go">Ver c&oacute;mo se resuelve &rarr;</span></a></li>
+        <li class="reveal" data-card="evolucion"><a href="#m-evolucion" data-t="problema-evolucion"><span class="mono">Evoluci&oacute;n</span><strong>El paciente siente que no mejora.</strong>La informaci&oacute;n est&aacute; repartida entre notas, mediciones y terapeutas distintos.<span class="go">Ver c&oacute;mo se resuelve &rarr;</span></a></li>
+        <li class="reveal" data-card="ejercicios"><a href="#m-ejercicios" data-t="problema-ejercicios"><span class="mono">Ejercicio en casa</span><strong>&laquo;Haz estos ejercicios tres veces al d&iacute;a.&raquo;</strong>Pero despu&eacute;s nadie sabe si realmente los hizo.<span class="go">Ver c&oacute;mo se resuelve &rarr;</span></a></li>
+        <li class="reveal" data-card="leads"><a href="#m-leads" data-t="problema-leads"><span class="mono">Captaci&oacute;n</span><strong>Entraron 80 personas por Instagram este mes.</strong>&iquest;Cu&aacute;ntas terminaron en una valoraci&oacute;n? &iquest;Cu&aacute;ntas compraron tratamiento?<span class="go">Ver c&oacute;mo se resuelve &rarr;</span></a></li>
+        <li class="reveal" data-card="sucursales"><a href="#m-sucursales" data-t="problema-sucursales"><span class="mono">Sucursales</span><strong>Empez&oacute; en una sede y hoy se atiende en otra.</strong>&iquest;La segunda sede sabe exactamente qu&eacute; lleva?<span class="go">Ver c&oacute;mo se resuelve &rarr;</span></a></li>
       </ul>
 
-      <p class="closer reveal">Cada una de esas preguntas tiene respuesta. Solo que hoy est&aacute; repartida entre la agenda, el Excel, el WhatsApp y la cabeza de alguien.</p>
-    </div>
-  </section>
-
-  <!-- MÓDULOS -->
-  <section class="pad">
-    <div class="wrap">
-      <span class="mono eyebrow reveal">Lo que se puede construir</span>
-      <h2 class="reveal">Un sistema que sabe c&oacute;mo funciona una cl&iacute;nica.</h2>
-      <p class="prose reveal" style="margin-top:18px;color:var(--ink-soft)">No necesitas todo. Empezamos por la pieza que m&aacute;s te duele y crecemos desde ah&iacute;.</p>
-
-      <ol class="mods">
-        <li class="mod reveal"><span class="mono mod-n">01</span><h3>Sesiones y paquetes</h3><p>Cada sesi&oacute;n se descuenta sola del paquete. Recepci&oacute;n ve cu&aacute;ntas quedan y el paciente recibe aviso cuando le faltan dos.</p></li>
-        <li class="mod reveal"><span class="mono mod-n">02</span><h3>Aseguradoras</h3><p>Sesiones autorizadas, folio y fecha de vencimiento por paciente. Aviso antes de que se acabe la cobertura, no despu&eacute;s.</p></li>
-        <li class="mod reveal"><span class="mono mod-n">03</span><h3>Evoluci&oacute;n</h3><p>Nota por sesi&oacute;n con qui&eacute;n la escribi&oacute;, dolor, rango de movimiento y lo que tu cl&iacute;nica mida. El historial completo en una pantalla.</p></li>
-        <li class="mod reveal"><span class="mono mod-n">04</span><h3>Agenda</h3><p>Por terapeuta, cub&iacute;culo y equipo. El horario que alguien aparta y no confirma se libera solo.</p></li>
-        <li class="mod reveal"><span class="mono mod-n">05</span><h3>Ejercicios en casa</h3><p>El terapeuta asigna la rutina y el paciente la tiene en su celular, con lo que le toca cada d&iacute;a.</p></li>
-        <li class="mod reveal"><span class="mono mod-n">06</span><h3>De lead a tratamiento</h3><p>De qu&eacute; anuncio o red lleg&oacute; cada paciente, qui&eacute;n agend&oacute; valoraci&oacute;n y qui&eacute;n compr&oacute; tratamiento.</p></li>
-        <li class="mod reveal"><span class="mono mod-n">07</span><h3>Pagos</h3><p>Tarjeta, transferencia conciliada y anticipos. Sin revisar capturas una por una para saber qui&eacute;n pag&oacute;.</p></li>
-        <li class="mod reveal"><span class="mono mod-n">08</span><h3>Varias sucursales</h3><p>Un solo expediente aunque el paciente cambie de sede, y cada sucursal con sus n&uacute;meros.</p></li>
-      </ol>
-
       <div class="cta-inline reveal">
-        <a class="btn btn-wa" href="https://wa.me/525527149106?text=Hola%20Bodgar%2C%20en%20mi%20cl%C3%ADnica%20lo%20que%20m%C3%A1s%20nos%20duele%20es%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> &iquest;Cu&aacute;l te duele m&aacute;s?</a>
-        <span class="cta-nota">Me lo dices en una l&iacute;nea y te contesto yo, no un bot.</span>
+        <a class="btn btn-wa" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20fisioterapia.%20Ese%20problema%20s%C3%AD%20lo%20tenemos%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Ese problema s&iacute; lo tenemos &rarr;</a>
+        <span class="cta-nota">No necesitan resolver todo esto. Basta con encontrar el proceso que hoy les quita m&aacute;s tiempo o dinero.</span>
       </div>
     </div>
   </section>
 
-  <!-- PRUEBA -->
+  <!-- 3 · EMPEZAR CON UNA SOLA COSA -->
   <section class="pad">
     <div class="wrap">
-      <span class="mono eyebrow reveal">Ya lo hice en salud</span>
-      <h2 class="reveal">La base ya est&aacute; construida y funcionando.</h2>
-      <div class="prose reveal" style="margin-top:22px;color:var(--ink-soft)">
-        <p>Constru&iacute; la plataforma de una psic&oacute;loga que agendaba por WhatsApp a las 11 de la noche, cobraba por transferencia y llevaba los paquetes en una libreta. Hoy tiene reserva en l&iacute;nea, cobro con tarjeta o transferencia conciliada, paquetes de sesiones que se descuentan solos, citas recurrentes, recordatorios autom&aacute;ticos y constancia de qu&eacute; versi&oacute;n del aviso de privacidad acept&oacute; cada paciente.</p>
-        <p>Lo de fisioterapia &mdash; aseguradoras, evoluci&oacute;n, ejercicios, varios terapeutas y sucursales &mdash; se escribe encima de esa base. <strong style="color:var(--ink)">No empiezas desde cero.</strong></p>
+      <span class="mono eyebrow reveal">Por d&oacute;nde empezar</span>
+      <h2 class="reveal">Puede empezar con una sola cosa.</h2>
+      <ul class="paths">
+        <li class="reveal"><a href="#m-sesiones" data-t="camino-sesiones"><span class="mono">Opci&oacute;n 1</span><b>Controlar sesiones</b><span>Dejar de contar paquetes y autorizaciones a mano.</span></a></li>
+        <li class="reveal"><a href="#m-cancelaciones" data-t="camino-citas"><span class="mono">Opci&oacute;n 2</span><b>Recuperar citas</b><span>Cancelaciones, lista de espera y recordatorios autom&aacute;ticos.</span></a></li>
+        <li class="reveal"><a href="#m-leads" data-t="camino-captacion"><span class="mono">Opci&oacute;n 3</span><b>Medir captaci&oacute;n</b><span>Saber qu&eacute; prospectos terminan siendo pacientes.</span></a></li>
+        <li class="reveal"><a href="#m-multidisciplinario" data-t="camino-coordinar"><span class="mono">Opci&oacute;n 4</span><b>Coordinar tratamientos</b><span>Un solo seguimiento entre terapeutas y sucursales.</span></a></li>
+      </ul>
+      <p class="closer reveal">No hace falta comprar todo. Primero resolvemos un proceso real y vemos si funciona en la cl&iacute;nica.</p>
+    </div>
+  </section>
+
+  <!-- 4 · QUÉ PUEDO CONSTRUIR -->
+  <section class="pad" id="construir" style="padding-bottom:clamp(24px,4vw,40px)">
+    <div class="wrap">
+      <span class="mono eyebrow reveal">Qu&eacute; puedo construir</span>
+      <h2 class="reveal">No vendo &laquo;un sistema para cl&iacute;nicas&raquo;. Construyo el flujo que su cl&iacute;nica necesita.</h2>
+      <p class="prose reveal" style="margin-top:18px;color:var(--ink-soft)">Cada bloque es una pieza que se puede construir sola. Los n&uacute;meros de los ejemplos son ilustrativos.</p>
+    </div>
+  </section>
+
+  <section class="vmod" id="m-sesiones" data-mod="sesiones">
+    <div class="wrap vmod-grid">
+      <div>
+        <span class="mono eyebrow reveal">Sesiones y paquetes</span>
+        <h2 class="reveal">Que nadie tenga que contar sesiones a mano.</h2>
+        <p class="prose reveal">El sistema registra cada sesi&oacute;n contra el plan del paciente y avisa antes de que se terminen, para que la renovaci&oacute;n no dependa de que alguien se acuerde.</p>
+        <ul class="tags reveal"><li>contratadas</li><li>tomadas</li><li>canceladas</li><li>repuestas</li><li>pendientes</li><li>terapeuta</li><li>pr&oacute;xima cita</li><li>renovaci&oacute;n</li></ul>
       </div>
-      <p class="case-link reveal" style="margin-top:22px"><a href="https://yolandamiranda.mx" target="_blank" rel="noopener noreferrer">yolandamiranda.mx <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9.5 9.5"/><path d="M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg></a></p>
-      <p class="disclosure reveal">Es trabajo hecho para una clienta real, en psicolog&iacute;a. Todav&iacute;a no tengo una cl&iacute;nica de fisioterapia en producci&oacute;n: por eso empiezo escuchando c&oacute;mo trabajas t&uacute;. Otros casos, en deporte y educaci&oacute;n, en <a href="/plataformas/">la p&aacute;gina principal</a>.</p>
+      <div class="ui reveal">
+        <span class="ui-tag">Ejemplo</span>
+        <div class="ui-k">Paciente</div>
+        <div class="ui-t">Mariana L&oacute;pez</div>
+        <div class="ui-row"><span>Plan</span><b>10 sesiones</b></div>
+        <div style="padding:8px 0;border-top:1px solid var(--rule)">
+          <div style="display:flex;justify-content:space-between"><span>Utilizadas</span><b>8 / 10</b></div>
+          <div class="ui-bar"><i style="--w:80%"></i></div>
+        </div>
+        <div class="ui-row"><span>Pr&oacute;xima sesi&oacute;n</span><b>Martes &middot; 5:00 PM</b></div>
+        <div class="ui-warn">Quedan 2 sesiones &middot; ofrecer renovaci&oacute;n</div>
+      </div>
     </div>
   </section>
 
-  <!-- CÓMO EMPEZAMOS + PRECIOS -->
-  <section class="pad">
-    <div class="wrap">
-      <span class="mono eyebrow reveal">C&oacute;mo empezamos</span>
-      <h2 class="reveal">Primero una pl&aacute;tica, no un compromiso.</h2>
-
-      <ol class="steps reveal">
-        <li class="step">
-          <span class="mono step-k">Primer contacto &middot; gratis</span>
-          <h3>Cu&eacute;ntame c&oacute;mo llevan hoy las sesiones.</h3>
-          <p>Por WhatsApp o en una llamada corta. Te digo con honestidad si veo algo que valga la pena automatizar, o si no.</p>
-        </li>
-        <li class="step">
-          <span class="mono step-k">Si encontramos algo &middot; diagn&oacute;stico</span>
-          <h3>Ah&iacute; s&iacute; reviso c&oacute;mo trabaja tu cl&iacute;nica.</h3>
-          <p>Tu agenda, tus hojas de c&aacute;lculo, c&oacute;mo cobra recepci&oacute;n. De ah&iacute; sale una propuesta por escrito con la primera pieza a construir. Tambi&eacute;n sin costo.</p>
-        </li>
-      </ol>
-
-      <dl class="pricing reveal">
-        <div class="pr"><dt>Primer contacto, diagn&oacute;stico y propuesta</dt><dd class="free">Sin costo</dd></div>
-        <div class="pr"><dt>Primer flujo en producci&oacute;n</dt><dd>Desde $18,000 MXN</dd></div>
-        <div class="pr"><dt>Plataforma inicial</dt><dd>Normalmente $35,000 &ndash; $60,000 MXN</dd></div>
-        <div class="pr"><dt>Proyectos m&aacute;s amplios</dt><dd>Cotizaci&oacute;n seg&uacute;n alcance</dd></div>
-        <div class="pr"><dt>Soporte y evoluci&oacute;n</dt><dd>Desde $4,000 MXN/mes</dd></div>
-      </dl>
-      <p class="pricing-note reveal">El soporte incluye hosting, monitoreo, cambios menores y que alguien siga mirando. Las funciones nuevas se cotizan aparte, siempre con estimado antes de empezar.</p>
+  <section class="vmod" id="m-seguros" data-mod="seguros">
+    <div class="wrap vmod-grid">
+      <div>
+        <span class="mono eyebrow reveal">Aseguradoras y carta pase</span>
+        <h2 class="reveal">Sesiones autorizadas por aseguradora, sin contarlas a mano.</h2>
+        <p class="prose reveal">Si trabajan con cartas pase, autorizaciones o reembolsos, cada tratamiento puede quedar ligado a su autorizaci&oacute;n: cu&aacute;ntas sesiones cubre, cu&aacute;ntas van, cu&aacute;ndo vence y qu&eacute; documentos faltan.</p>
+        <ul class="tags reveal"><li>aseguradora</li><li>autorizaci&oacute;n</li><li>sesiones</li><li>vigencia</li><li>utilizadas</li><li>documentos</li><li>renovaci&oacute;n</li><li>alta</li></ul>
+        <p class="big-line reveal">La idea no es cambiar c&oacute;mo trabajan con la aseguradora. Es que su equipo no tenga que recordar todo lo que pasa alrededor.</p>
+      </div>
+      <div class="ui reveal">
+        <span class="ui-tag">Ejemplo</span>
+        <div class="ui-k">Aseguradora &middot; carta pase #48291</div>
+        <div class="ui-t">Rehabilitaci&oacute;n de hombro</div>
+        <div class="ui-row"><span>Autorizadas</span><b>10</b></div>
+        <div class="ui-row"><span>Tomadas</span><b>8</b></div>
+        <div class="ui-row"><span>Pendientes</span><b>2</b></div>
+        <div class="ui-row"><span>Vigencia</span><b>hasta 30 oct</b></div>
+        <div class="ui-warn">Solicitar renovaci&oacute;n de la autorizaci&oacute;n</div>
+      </div>
     </div>
   </section>
 
-  <!-- QUIÉN SOY -->
-  <section class="pad">
-    <div class="wrap">
-      <span class="mono eyebrow reveal">Qui&eacute;n soy</span>
-      <h2 class="reveal">Diez a&ntilde;os construyendo software. Hoy uso IA para hacerlo m&aacute;s r&aacute;pido, no para reemplazar criterio.</h2>
-      <div class="about-grid reveal">
-        <img class="portrait" src="/assets/bodgar.jpg" width="576" height="720" alt="Bodgar Espinosa">
-        <div class="about-body">
-          <p>He construido productos usados por millones de personas para Google, Walmart, Venmo, Domino's y PetSmart. Hoy construyo plataformas para negocios de servicios en M&eacute;xico.</p>
-          <p><strong>Hablas directo con quien escribe el c&oacute;digo.</strong> Sin ejecutivos de cuenta ni equipos que rotan.</p>
-          <p class="about-fine">Trabaj&eacute; en esas apps como parte de los equipos de ingenier&iacute;a de Grid Dynamics, HCLTech, Globant, Evolutyz y Banco Azteca. No son mis clientes.</p>
+  <section class="vmod" id="m-leads" data-mod="leads">
+    <div class="wrap vmod-grid">
+      <div>
+        <span class="mono eyebrow reveal">De lead a paciente</span>
+        <h2 class="reveal">&iquest;De d&oacute;nde vienen los pacientes que s&iacute; terminan pagando tratamiento?</h2>
+        <p class="prose reveal">Una p&aacute;gina web te dice cu&aacute;ntas personas entraron. Yo conecto el resto: anuncio &rarr; WhatsApp &rarr; valoraci&oacute;n &rarr; tratamiento &rarr; renovaci&oacute;n. As&iacute; sabes qu&eacute; canal trae pacientes que de verdad compran, cu&aacute;nto cuesta conseguir uno y en qu&eacute; paso se pierden.</p>
+        <ul class="tags reveal"><li>canal que m&aacute;s trae</li><li>costo por paciente</li><li>preguntaron y no agendaron</li><li>valoraciones que no llegaron</li><li>tratamientos sin renovar</li><li>por qu&eacute; se perdi&oacute;</li></ul>
+        <p class="big-line reveal">No cu&aacute;ntos likes hubo. Cu&aacute;ntos pacientes llegaron.</p>
+      </div>
+      <div class="ui reveal">
+        <span class="ui-tag">Ejemplo</span>
+        <div class="ui-split">
+          <div>
+            <div class="ui-k">Instagram &middot; este mes</div>
+            <div class="ui-funnel" style="margin-top:10px">
+              <div class="ui-fs"><span>Preguntaron por WhatsApp</span><b>18</b><div class="track"><i style="--w:100%"></i></div></div>
+              <div class="ui-fs"><span>Agendaron valoraci&oacute;n</span><b>11</b><div class="track"><i style="--w:61%"></i></div></div>
+              <div class="ui-fs"><span>Asistieron</span><b>9</b><div class="track"><i style="--w:50%"></i></div></div>
+              <div class="ui-fs"><span>Iniciaron tratamiento</span><b>6</b><div class="track"><i style="--w:33%"></i></div></div>
+              <div class="ui-fs"><span>Renovaron</span><b>4</b><div class="track"><i style="--w:22%"></i></div></div>
+            </div>
+          </div>
+          <div class="ui-side">
+            <div class="ui-k">Google</div>
+            <div class="ui-row" style="border-top:0"><span>Leads</span><b>23</b></div>
+            <div class="ui-row"><span>Valoraciones</span><b>14</b></div>
+            <div class="ui-row"><span>Pacientes</span><b>11</b></div>
+            <div class="ui-big" style="margin-top:6px">47.8%</div>
+            <span style="font-size:.8rem;color:var(--ink-mute)">de lead a paciente</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
+  <section class="vmod" id="m-cancelaciones" data-mod="cancelaciones">
+    <div class="wrap vmod-grid">
+      <div>
+        <span class="mono eyebrow reveal">Cancelaciones</span>
+        <h2 class="reveal">Una cancelaci&oacute;n no tiene que convertirse en una hora perdida.</h2>
+        <p class="prose reveal">Cuando alguien cancela, el horario se libera y el sistema avisa a los pacientes que estaban esperando lugar. El primero que lo toma, se queda con &eacute;l. Ya construyo esta clase de automatizaci&oacute;n: en la plataforma de consulta, un horario apartado y no pagado se libera solo cada noche.</p>
+        <p class="big-line reveal">No es una funci&oacute;n m&aacute;s. Es dinero que la cl&iacute;nica estaba dejando ir.</p>
+      </div>
+      <div class="ui reveal">
+        <span class="ui-tag">Ejemplo</span>
+        <ol class="ui-flow">
+          <li class="x">Mariana cancela &middot; martes 5:00 PM</li>
+          <li>El horario se libera</li>
+          <li>Se avisa a 3 pacientes en lista de espera</li>
+          <li>Carlos toma el horario</li>
+          <li class="ok">Cita recuperada</li>
+        </ol>
+        <div class="ui-ok">$6,400 recuperados este mes &middot; 8 horarios que habr&iacute;an quedado vac&iacute;os</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vmod" id="m-evolucion" data-mod="evolucion">
+    <div class="wrap vmod-grid">
+      <div>
+        <span class="mono eyebrow reveal">Evoluci&oacute;n del paciente</span>
+        <h2 class="reveal">Que el avance no quede escondido dentro de notas.</h2>
+        <p class="prose reveal">El terapeuta registra las mediciones que la propia cl&iacute;nica ya usa, y el sistema las ordena en una l&iacute;nea de tiempo que se entiende de un vistazo, tambi&eacute;n para el paciente que siente que no avanza. Las m&eacute;tricas las decide la cl&iacute;nica; yo construyo d&oacute;nde registrarlas.</p>
+        <ul class="tags reveal"><li>dolor reportado</li><li>movilidad</li><li>pruebas funcionales</li><li>fotograf&iacute;as</li><li>notas</li><li>objetivos</li><li>archivos</li></ul>
+      </div>
+      <div class="ui reveal">
+        <span class="ui-tag">Ejemplo</span>
+        <div class="ui-k">Rodilla derecha</div>
+        <div class="ui-t">Sof&iacute;a Mart&iacute;nez</div>
+        <table class="ui-evo">
+          <thead><tr><th></th><th>D&iacute;a 1</th><th>Semana 4</th><th>Semana 8</th></tr></thead>
+          <tbody>
+            <tr><td>Dolor</td><td>8/10</td><td>4/10</td><td class="up">2/10</td></tr>
+            <tr><td>Flexi&oacute;n</td><td>72&deg;</td><td>105&deg;</td><td class="up">124&deg;</td></tr>
+            <tr><td>Sesiones</td><td>0</td><td>7</td><td>13</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="vmod" id="m-ejercicios" data-mod="ejercicios">
+    <div class="wrap vmod-grid">
+      <div>
+        <span class="mono eyebrow reveal">Ejercicio en casa</span>
+        <h2 class="reveal">El tratamiento no termina cuando el paciente sale de la cl&iacute;nica.</h2>
+        <p class="prose reveal">El terapeuta asigna los ejercicios; el paciente los tiene en su celular con instrucciones, video, series, repeticiones y frecuencia, y marca cu&aacute;les hizo. En la siguiente sesi&oacute;n el terapeuta ve el seguimiento. Sin diagn&oacute;sticos ni recomendaciones autom&aacute;ticas: solo el plan que el terapeuta prescribi&oacute;.</p>
+      </div>
+      <div class="ui reveal">
+        <span class="ui-tag">Ejemplo</span>
+        <div class="ui-k">Hoy</div>
+        <ul class="ui-ex" style="margin-top:8px">
+          <li class="done"><span class="c"></span>Puente de gl&uacute;teos<small>3 &times; 12</small></li>
+          <li class="done"><span class="c"></span>Movilidad de cadera<small>2 &times; 10</small></li>
+          <li><span class="c"></span>Sentadilla asistida<small>3 &times; 8</small></li>
+        </ul>
+        <div class="ui-row" style="margin-top:8px"><span>Adherencia esta semana</span><b>82%</b></div>
+        <div class="ui-bar"><i style="--w:82%"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vmod" id="m-multidisciplinario" data-mod="multidisciplinario">
+    <div class="wrap vmod-grid">
+      <div>
+        <span class="mono eyebrow reveal">Equipo multidisciplinario</span>
+        <h2 class="reveal">Con varios terapeutas, debe seguir siendo un solo paciente.</h2>
+        <p class="prose reveal">Cada especialista registra su parte y el equipo consulta lo que le corresponde seg&uacute;n sus permisos. Objetivos compartidos, sin cinco versiones distintas del mismo paciente.</p>
+      </div>
+      <div class="ui reveal">
+        <span class="ui-tag">Ejemplo</span>
+        <div class="ui-k">Paciente</div>
+        <div class="ui-t">Sof&iacute;a Mart&iacute;nez</div>
+        <div class="ui-team">
+          <div><b>Fisioterapia</b><em>&check; objetivo actualizado</em><span>&Uacute;ltima sesi&oacute;n: lunes</span></div>
+          <div><b>Terapia ocupacional</b><em>&check; nota disponible</em><span>&Uacute;ltima sesi&oacute;n: mi&eacute;rcoles</span></div>
+          <div><b>Psicolog&iacute;a</b><em>viernes</em><span>Pr&oacute;xima sesi&oacute;n</span></div>
+        </div>
+        <div class="ui-row" style="margin-top:10px"><span>Objetivos compartidos</span><b>3 activos</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vmod" id="m-sucursales" data-mod="sucursales">
+    <div class="wrap">
+      <span class="mono eyebrow reveal">Varias sucursales</span>
+      <h2 class="reveal">El paciente cambia de sede. Su tratamiento no empieza de cero.</h2>
+      <p class="prose reveal" style="margin-top:16px;color:var(--ink-soft)">Expediente &uacute;nico sin importar d&oacute;nde se atienda, y cada persona ve solo la informaci&oacute;n que necesita.</p>
+      <ul class="tags reveal" style="margin-top:18px"><li>expediente &uacute;nico</li><li>sesiones utilizadas</li><li>citas</li><li>pagos</li><li>terapeuta</li><li>autorizaci&oacute;n</li><li>evoluci&oacute;n</li></ul>
+    </div>
+  </section>
+
+  <section class="vmod" id="m-portal" data-mod="portal">
+    <div class="wrap">
+      <span class="mono eyebrow reveal">Portal del paciente y su familia</span>
+      <h2 class="reveal">Menos &laquo;&iquest;cu&aacute;ndo es mi cita?&raquo; por WhatsApp.</h2>
+      <p class="prose reveal" style="margin-top:16px;color:var(--ink-soft)">El paciente o su familia consulta lo que la cl&iacute;nica decida mostrar, sin escribirle a recepci&oacute;n.</p>
+      <ul class="tags reveal" style="margin-top:18px"><li>pr&oacute;xima cita</li><li>indicaciones</li><li>ejercicios</li><li>sesiones restantes</li><li>pagos</li><li>documentos compartidos</li><li>progreso</li></ul>
+    </div>
+  </section>
+
+  <!-- 13 · CASO REAL -->
+  <section class="pad" id="caso">
+    <div class="wrap">
+      <span class="mono eyebrow reveal">Caso real</span>
+      <h2 class="reveal">Ya constru&iacute; esto para un negocio de salud.</h2>
+      <div class="prose reveal" style="margin-top:22px;color:var(--ink-soft)">
+        <p>Una profesional de la salud administraba citas por WhatsApp, pagos por transferencia, paquetes de sesiones en una libreta y talleres con Google Forms. Hoy su plataforma incluye:</p>
+      </div>
+      <ul class="tags reveal" style="margin-top:18px"><li>reserva en l&iacute;nea</li><li>pagos</li><li>conciliaci&oacute;n de transferencias</li><li>paquetes que se descuentan solos</li><li>citas recurrentes</li><li>videollamadas</li><li>recordatorios</li><li>liberaci&oacute;n autom&aacute;tica de horarios sin pagar</li><li>constancia del aviso de privacidad aceptado</li></ul>
+      <p class="reveal" style="margin-top:26px"><a class="btn" href="https://yolandamiranda.mx" target="_blank" rel="noopener noreferrer">Ver plataforma real</a></p>
+      <p class="disclosure reveal">Es trabajo hecho para una clienta real, en psicolog&iacute;a. Todav&iacute;a no tengo una cl&iacute;nica de fisioterapia en producci&oacute;n: lo espec&iacute;fico de fisioterapia se construye encima de esa base. Otros casos, en deporte y educaci&oacute;n, en <a href="/plataformas/">la p&aacute;gina principal</a>.</p>
+    </div>
+  </section>
+
+  <!-- 14 · CÓMO TRABAJO -->
+  <section class="pad" id="empezar">
+    <div class="wrap">
+      <span class="mono eyebrow reveal">C&oacute;mo empezamos</span>
+      <h2 class="reveal">Primero entiendo c&oacute;mo funciona su cl&iacute;nica.</h2>
+      <ol class="rules">
+        <li class="rule reveal"><span class="rule-n mono">01</span><div><h3>Me cuentan el proceso.</h3><p>No necesito que me expliquen tecnolog&iacute;a. Necesito cosas como &laquo;esto lo apuntamos aqu&iacute;&raquo;, &laquo;esto se lo manda recepci&oacute;n al terapeuta&raquo;, &laquo;esto lo revisamos cada viernes&raquo;, &laquo;si alguien cancela, hacemos esto&raquo;.</p></div></li>
+        <li class="rule reveal"><span class="rule-n mono">02</span><div><h3>Encontramos d&oacute;nde se pierde tiempo o dinero.</h3><p>No empiezo proponiendo una app. Primero identificamos uno o dos procesos que valga la pena cambiar.</p></div></li>
+        <li class="rule reveal"><span class="rule-n mono">03</span><div><h3>Construimos uno.</h3><p>No una plataforma enorme: un flujo, usado por personas reales de su cl&iacute;nica.</p></div></li>
+        <li class="rule reveal"><span class="rule-n mono">04</span><div><h3>Si funciona, seguimos.</h3><p>Lo siguiente puede ser sesiones, pagos, aseguradoras, seguimiento, captaci&oacute;n, ejercicios o sucursales. Solo si de verdad hace falta.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 15 · PRECIOS -->
+  <section class="pad" id="precios">
+    <div class="wrap">
+      <span class="mono eyebrow reveal">Precios</span>
+      <h2 class="reveal">No hace falta empezar con todo.</h2>
+      <dl class="pricing reveal">
+        <div class="pr"><dt>Diagn&oacute;stico<br><small style="color:var(--ink-mute);font-weight:400">Reviso c&oacute;mo llevan hoy el proceso y les digo d&oacute;nde veo oportunidad.</small></dt><dd class="free">Sin costo</dd></div>
+        <div class="pr"><dt>Primer flujo en producci&oacute;n<br><small style="color:var(--ink-mute);font-weight:400">Por ejemplo: paquetes y sesiones, citas y anticipos, o seguimiento de prospectos.</small></dt><dd>Desde $18,000 MXN</dd></div>
+        <div class="pr"><dt>Plataforma inicial<br><small style="color:var(--ink-mute);font-weight:400">Seg&uacute;n usuarios, procesos e integraciones.</small></dt><dd>Normalmente $35,000 &ndash; $60,000 MXN</dd></div>
+        <div class="pr"><dt>Proyectos m&aacute;s amplios</dt><dd>Cotizaci&oacute;n seg&uacute;n alcance</dd></div>
+        <div class="pr"><dt>Soporte y evoluci&oacute;n<br><small style="color:var(--ink-mute);font-weight:400">Hosting, monitoreo, cambios menores y alguien responsable de que siga funcionando.</small></dt><dd>Desde $4,000 MXN/mes</dd></div>
+      </dl>
+      <p class="pricing-note reveal">Las funciones nuevas se cotizan aparte, siempre con estimado antes de empezar.</p>
+    </div>
+  </section>
+
+  <!-- 16 · BAJO RIESGO -->
+  <section class="pad">
+    <div class="wrap riesgo">
+      <span class="mono eyebrow reveal">Bajo riesgo</span>
+      <h2 class="reveal">No tienen que apostar por una plataforma completa.</h2>
+      <div class="reveal" style="margin-top:22px">
+        <p>Primero reviso el proceso sin costo. Si encontramos algo que vale la pena resolver, empezamos por un flujo peque&ntilde;o, lo ponemos frente a gente real, y solo despu&eacute;s decidimos si tiene sentido construir lo dem&aacute;s.</p>
+        <p class="remate">La primera pregunta no es &laquo;qu&eacute; sistema quieren&raquo;. Es &laquo;qu&eacute; problema vale la pena resolver&raquo;.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 17 · QUIÉN SOY -->
+  <section class="pad">
+    <div class="wrap">
+      <span class="mono eyebrow reveal">Qui&eacute;n soy</span>
+      <h2 class="reveal">La persona que entiende el proceso es la misma que construye el software.</h2>
+      <div class="about-grid reveal">
+        <img class="portrait" src="/assets/bodgar.jpg" width="576" height="720" alt="Bodgar Espinosa">
+        <div class="about-body">
+          <p>Soy Bodgar Espinosa, ingeniero de software con m&aacute;s de diez a&ntilde;os de experiencia. He trabajado en productos para Google, PetSmart, Venmo, Walmart, Domino's y banca.</p>
+          <p>Hoy uso esa experiencia para construir sistemas a medida para negocios que normalmente no tendr&iacute;an un equipo de ingenier&iacute;a propio.</p>
+          <p><strong>No tienen que explicarme tecnolog&iacute;a. Ustedes me explican c&oacute;mo trabajan.</strong></p>
+          <p class="about-fine">Trabaj&eacute; en esas apps como parte de los equipos de ingenier&iacute;a de Grid Dynamics, HCLTech, Globant, Evolutyz y Banco Azteca. No son mis clientes.</p>
+          <p style="margin-top:22px"><a class="btn-quiet" href="/assets/Bodgar-Espinosa-CV.pdf" target="_blank" rel="noopener noreferrer">Conoce mi experiencia (CV)</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 18 · PRIVACIDAD -->
+  <section class="pad">
+    <div class="wrap">
+      <span class="mono eyebrow reveal">Privacidad y datos</span>
+      <h2 class="reveal">La informaci&oacute;n de pacientes no puede tratarse como cualquier dato.</h2>
+      <p class="prose reveal" style="margin-top:18px;color:var(--ink-soft)">La plataforma se dise&ntilde;a desde el principio con:</p>
+      <ul class="tags reveal" style="margin-top:14px"><li>accesos por usuario y rol</li><li>separaci&oacute;n de informaci&oacute;n</li><li>historial de cambios</li><li>respaldos</li><li>registro de consentimientos</li><li>control de qu&eacute; consulta cada persona</li></ul>
+    </div>
+  </section>
+
+  <!-- 20 · FORMULARIO -->
+  <section class="pad" id="escribir">
+    <div class="wrap">
+      <span class="mono eyebrow reveal">&iquest;Prefieres escribirlo aqu&iacute;?</span>
+      <h2 class="reveal">Cu&eacute;ntame qu&eacute; quieren dejar de hacer a mano.</h2>
+      <form class="vform reveal" id="vform" data-giro="fisioterapia" novalidate>
+        <div><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" autocomplete="name"></div>
+        <div><label for="f-clinica">Cl&iacute;nica</label><input id="f-clinica" name="clinica" autocomplete="organization"></div>
+        <div class="full"><label for="f-sitio">Sitio web</label><input id="f-sitio" name="sitio" inputmode="url" autocomplete="url" placeholder="opcional"></div>
+        <div class="full"><label for="f-proceso">&iquest;Qu&eacute; proceso quieren dejar de hacer manualmente?</label><textarea id="f-proceso" name="proceso" placeholder="Por ejemplo: las sesiones autorizadas por aseguradora las contamos en Excel cada viernes."></textarea><p class="aviso" hidden>Cu&eacute;ntame aunque sea en una l&iacute;nea qu&eacute; proceso es.</p></div>
+        <div class="full acciones">
+          <button class="btn btn-wa" type="submit"><svg class="wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Revisar mi proceso</button>
+          <a class="btn-quiet" href="mailto:bodgar@bodgar.dev" id="vformCorreo">o mandarlo por correo</a>
+        </div>
+        <p class="full vnote" style="margin-top:0">No incluyas informaci&oacute;n de pacientes: solo necesito entender el proceso. El mensaje se abre en tu WhatsApp para que lo revises antes de enviarlo.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- 19 · CTA FINAL -->
   <section class="pad final">
     <div class="wrap">
       <span class="mono eyebrow reveal" style="color:inherit;opacity:.6">Empieza aqu&iacute;</span>
-      <h2 class="reveal">&iquest;C&oacute;mo sabes hoy cu&aacute;ntas sesiones le quedan a cada paciente?</h2>
-      <p class="reveal">Cu&eacute;ntamelo en un mensaje. Te digo c&oacute;mo lo resolver&iacute;a para tu cl&iacute;nica, sin costo.</p>
+      <h2 class="reveal">&iquest;Qu&eacute; siguen llevando hoy en Excel o WhatsApp?</h2>
+      <p class="reveal">Puede ser algo tan simple como:</p>
+      <ul class="tags reveal"><li>las sesiones autorizadas</li><li>las cancelaciones</li><li>los ejercicios</li><li>los prospectos</li><li>los paquetes</li></ul>
+      <p class="reveal">Me lo cuentan y les digo c&oacute;mo lo plantear&iacute;a. Sin costo.</p>
       <div class="actions reveal">
-        <a class="btn btn-wa" href="https://wa.me/525527149106?text=Hola%20Bodgar%2C%20llegu%C3%A9%20al%20final%20de%20tu%20p%C3%A1gina%20de%20fisioterapia.%20En%20mi%20cl%C3%ADnica%20hoy%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Cu&eacute;ntamelo por WhatsApp</a>
-        <a class="btn-quiet" href="mailto:bodgar@bodgar.dev?subject=Cl%C3%ADnica%20de%20fisioterapia">o bodgar@bodgar.dev</a>
+        <a class="btn btn-wa" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Llegu%C3%A9%20al%20final%20de%20la%20p%C3%A1gina%20de%20fisioterapia.%20Nosotros%20llevamos%20________%20manualmente%20y%20me%20gustar%C3%ADa%20saber%20c%C3%B3mo%20lo%20plantear%C3%ADas." target="_blank" rel="noopener noreferrer"><svg class="wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Cu&eacute;ntame el proceso por WhatsApp</a>
+        <a class="btn-quiet" href="mailto:bodgar@bodgar.dev?subject=Cl%C3%ADnica%20de%20fisioterapia">bodgar@bodgar.dev</a>
       </div>
     </div>
   </section>
@@ -176,9 +430,12 @@
       <a href="mailto:bodgar@bodgar.dev">bodgar@bodgar.dev</a>
       <a href="https://www.linkedin.com/in/bodgarespinosa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="/plataformas/">Todos los casos</a>
+      <a href="/plataformas/#tecnica">Para tu equipo t&eacute;cnico &rarr;</a>
     </nav>
   </div>
 </footer>
+
+<a class="wa-float" id="waFlota" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20fisioterapia.%20Quiero%20contarte%20un%20proceso%3A%20" target="_blank" rel="noopener noreferrer" hidden><svg class="wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>Cu&eacute;ntame tu proceso</span></a>
 
 <script>
 (function () {
@@ -197,5 +454,6 @@
 </script>
 
 <script src="/assets/t.js" defer></script>
+<script src="/assets/vertical.js" defer></script>
 </body>
 </html>

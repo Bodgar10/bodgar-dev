@@ -9,6 +9,7 @@
  *
  * ?r=<código>   el enlace del correo frío; se recuerda en este navegador
  * ?interno=1    marca este navegador como mío (no cuenta); ?interno=0 lo quita
+ * window.bdTrack(evento, detalle)  para eventos que no son enlaces (formularios)
  */
 (function () {
   var URL = "https://uxtmdhbqiphvmixtxlox.supabase.co/rest/v1/rpc/bodgardev_registrar";
@@ -49,7 +50,12 @@
   var sesion = guardado(sessionStorage, "bd_ses") || guardado(sessionStorage, "bd_ses", nuevoId());
   var ref = guardado(localStorage, "bd_ref");
   var interno = guardado(localStorage, "bd_interno") === "1";
-  var fuente = q.get("utm_source");
+  // utm_source/utm_campaign/utm_content y ?problema= en un solo texto:
+  // "email/rehab_insurance/athlos · p:seguros".
+  var fuente = [q.get("utm_source"), q.get("utm_campaign"), q.get("utm_content")]
+    .filter(Boolean).join("/");
+  if (q.get("problema")) fuente = (fuente ? fuente + " · " : "") + "p:" + q.get("problema");
+  fuente = fuente.slice(0, 60) || null;
   var referer = null;
   try {
     var h = document.referrer ? new window.URL(document.referrer).hostname : "";
@@ -75,6 +81,7 @@
     } catch (e) {}
   }
 
+  window.bdTrack = enviar;
   enviar("vista");
 
   // Nombre de la sección: su eyebrow ("The problem" → "the-problem").
