@@ -55,7 +55,7 @@
 <body>
 <div class="st">
   <h1>Visitas</h1>
-  <p class="sub">bodgar.dev &middot; /, /es/ y /plataformas/. Una sesi&oacute;n &laquo;ley&oacute;&raquo; si pas&oacute; del 25&nbsp;% de la p&aacute;gina o estuvo 10&nbsp;s o m&aacute;s; lo dem&aacute;s suelen ser esc&aacute;neres de correo.</p>
+  <p class="sub">bodgar.dev &middot; /, /es/, /plataformas/ y sus verticales. Una sesi&oacute;n &laquo;ley&oacute;&raquo; si pas&oacute; del 25&nbsp;% de la p&aacute;gina o estuvo 10&nbsp;s o m&aacute;s; lo dem&aacute;s suelen ser esc&aacute;neres de correo.</p>
 
   <form id="login" class="bar" hidden>
     <label for="clave" style="width:100%">Clave</label>
@@ -135,6 +135,7 @@
   }
 
   function pintar(d) {
+    (d.paginas || []).forEach(function (r) { if (ORDEN.indexOf(r.pagina) < 0) ORDEN.push(r.pagina); });
     $("paginas").innerHTML = ORDEN.map(function (p) {
       var x = (d.paginas || []).filter(function (r) { return r.pagina === p; })[0] || {};
       function n(k, l) { return '<div class="num"><b>' + (x[k] || 0) + "</b><span>" + l + "</span></div>"; }

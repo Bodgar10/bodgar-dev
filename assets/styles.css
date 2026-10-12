@@ -1020,3 +1020,69 @@ footer { padding-block: 34px 46px; }
 }
 
 .foot-cross a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* ---------- problemas concretos (/plataformas y verticales) ---------- */
+
+.quotes {
+  list-style: none;
+  margin: 36px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 720px) { .quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
+
+.quotes li {
+  margin: 0;
+  padding: 18px 20px;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  background: var(--paper-2);
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.tags-lbl { margin: 34px 0 12px; color: var(--ink-mute); font-size: 0.92rem; }
+
+.tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tags li {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  padding: 6px 11px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--ink-soft);
+}
+
+/* ---------- cómo empezamos, en dos pasos ---------- */
+
+.steps { list-style: none; margin: 34px 0 0; padding: 0; display: grid; gap: 14px; max-width: 860px; }
+
+@media (min-width: 760px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.step { padding: 22px; border: 1px solid var(--rule); border-radius: 12px; }
+
+.step-k { display: block; color: var(--accent); margin-bottom: 8px; }
+
+.step h3 { margin: 0 0 8px; font-size: 1.12rem; letter-spacing: -0.02em; }
+
+.step p { margin: 0; color: var(--ink-soft); font-size: 0.97rem; line-height: 1.55; }
+
+/* ---------- módulos de una vertical ---------- */
+
+.mods { list-style: none; margin: 38px 0 0; padding: 0; display: grid; gap: 14px; }
+
+@media (min-width: 640px) { .mods { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 980px) { .mods { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+.mod { padding: 20px; border: 1px solid var(--rule); border-radius: 12px; background: var(--paper-2); }
+
+.mod-n { display: block; color: var(--accent); margin-bottom: 10px; }
+
+.mod h3 { margin: 0 0 8px; font-size: 1.05rem; letter-spacing: -0.02em; }
+
+.mod p { margin: 0; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.5; }

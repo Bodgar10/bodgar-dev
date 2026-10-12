@@ -19,7 +19,8 @@
 
   var path = location.pathname.replace(/index\.html$/, "");
   if (path.charAt(path.length - 1) !== "/") path += "/";
-  if (path !== "/" && path !== "/es/" && path !== "/plataformas/") return;
+  // /, /es/, /plataformas/ y sus verticales (/plataformas/fisioterapia/).
+  if (!/^\/(es\/|plataformas\/([a-z-]+\/)?)?$/.test(path)) return;
 
   function guardado(store, k, v) {
     try {
