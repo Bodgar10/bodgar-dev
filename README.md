@@ -24,3 +24,10 @@ Output directory: `/` (repo root). Custom domain: `bodgar.dev`.
 ## Editing
 
 Copy changes must be made in **both** `index.html` and `es/index.html`.
+
+## /aom/x7k2/ — Torneo de los Dioses (Age of Mythology)
+
+Página privada (sin enlaces desde el sitio, `noindex`) para un torneo amateur
+entre amigos. HTML/CSS/JS sueltos en `aom/x7k2/`, sin el rastreador `t.js`.
+Datos en el proyecto de Supabase de Rally, esquema privado `aom`:
+ver `supabase/aom/001_torneo.sql` (incluye cómo armar la liga y capturar resultados).
