@@ -318,7 +318,7 @@
 
   function tabla(jug, partidas) {
     var por = {};
-    jug.forEach(function (j) { por[j.id] = { id: j.id, nombre: j.gamertag, pj: 0, g: 0, p: 0, hist: [] }; });
+    jug.forEach(function (j, i) { por[j.id] = { id: j.id, nombre: j.gamertag, pj: 0, g: 0, p: 0, hist: [], llegada: i }; });
     var liga = partidas.filter(function (p) { return p.fase === "liga"; });
     var jugadas = liga.filter(function (p) { return p.estado === "jugada"; });
     var h2h = {};
@@ -334,7 +334,7 @@
       if (h2h[a.id + "|" + b.id]) return -1;
       if (h2h[b.id + "|" + a.id]) return 1;
       if (a.p !== b.p) return a.p - b.p;
-      return a.nombre.localeCompare(b.nombre, "es");
+      return a.llegada - b.llegada;
     });
     return { orden: orden, liga: liga, jugadas: jugadas };
   }
@@ -346,11 +346,6 @@
     var yo = (leer() || {}).tag;
     if (!jug.length) {
       cuerpo.innerHTML = '<div class="vacio-caja"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">' + laurel("#E8B64C") + '</svg><p>Nadie se ha inscrito todavía. El primer nombre en el mármol puede ser el tuyo.</p><a class="boton boton--oro" href="#inscripcion">Inscribirme</a></div>';
-      return;
-    }
-    if (!t.liga.length) {
-      cuerpo.innerHTML = '<div class="vacio-caja" style="align-items:stretch;text-align:left"><p><b style="color:var(--oro-claro)">' + jug.length + (jug.length === 1 ? " guerrero inscrito" : " guerreros inscritos") + ".</b> La tabla se llena cuando arranque la liga.</p><div class=\"chips\">" +
-        jug.map(function (j) { return '<span class="chip-jugador">' + esc(j.gamertag) + "</span>"; }).join("") + "</div></div>";
       return;
     }
     var k = clasifican(t.orden.length), hay = t.jugadas.length > 0;
@@ -366,7 +361,7 @@
       return fila;
     }).join("");
     cuerpo.innerHTML = '<div class="tabla-caja"><table class="tabla"><caption class="sr">Tabla general de la liga</caption><thead><tr><th scope="col">Lugar</th><th scope="col" class="izq">Jugador</th><th scope="col"><abbr title="Partidas jugadas">PJ</abbr></th><th scope="col"><abbr title="Ganadas">G</abbr></th><th scope="col"><abbr title="Perdidas">P</abbr></th><th scope="col">Puntos</th><th scope="col" class="izq">Últimas</th></tr></thead><tbody>' + filas + "</tbody></table></div>" +
-      '<div class="leyenda-tabla nota"><span>' + t.jugadas.length + " de " + t.liga.length + " duelos de liga jugados.</span><span>Empate en puntos: desempata el duelo directo.</span></div>";
+      '<div class="leyenda-tabla nota"><span>' + (t.liga.length ? t.jugadas.length + " de " + t.liga.length + " duelos de liga jugados." : jug.length + (jug.length === 1 ? " guerrero inscrito" : " guerreros inscritos") + ". La liga arranca cuando cierre la inscripción.") + "</span><span>Empate en puntos: desempata el duelo directo.</span></div>";
   }
 
   function tarjetaDuelo(p, nombres) {
@@ -547,4 +542,7 @@
   }
 
   cargar();
+  // Las inscripciones nuevas aparecen solas, sin recargar.
+  setInterval(function () { if (!document.hidden) cargar(); }, 30000);
+  document.addEventListener("visibilitychange", function () { if (!document.hidden) cargar(); });
 })();
