@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<title>Software a medida para bodegas, 3PL y fulfillment | Bodgar Espinosa</title>
+<meta name="description" content="Recepción, inventario, picking, empaque, paqueterías y cobros en un solo flujo. Menos producto perdido, menos errores y más operaciones cobradas.">
+<link rel="canonical" href="https://bodgar.dev/plataformas/bodegas/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bodgar.dev/plataformas/bodegas/">
+<meta property="og:title" content="Tu bodega mueve producto todo el día. ¿Sabes dónde quedó?">
+<meta property="og:description" content="Menos pérdidas, menos errores, más cobros. Software a medida para bodegas, 3PL y fulfillment.">
+<meta property="og:image" content="https://bodgar.dev/assets/og-plataformas.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;600&family=Saira+Stencil+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="bodegas.css">
+<script>document.documentElement.className += " js";</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="g-cono" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF3CF" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#FFF3CF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="g-piso" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#23272C"/>
+      <stop offset="1" stop-color="#121417"/>
+    </linearGradient>
+    <pattern id="p-franjas" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="14" height="28" fill="#F6C324"/><rect x="14" width="14" height="28" fill="#16181B"/>
+    </pattern>
+    <filter id="f-brillo" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+    <symbol id="i-caja" viewBox="0 0 32 32"><path d="M16 3 L28 9 V23 L16 29 L4 23 V9 Z M4 9 L16 15 L28 9 M16 15 V29" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="marca" href="/plataformas/"><svg aria-hidden="true"><use href="#i-caja"/></svg><span>Bodgar Espinosa <em>· bodegas</em></span></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#problemas">Problemas</a>
+      <a href="#solucion">Tu solución</a>
+      <a href="#costo">Cuánto te cuesta</a>
+      <a href="#crecer">Cómo crece</a>
+      <a href="#hablemos">Hablemos</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HÉROE: la nave -->
+<section class="hero" id="inicio">
+  <svg class="nave" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <rect width="1440" height="760" fill="#111316"/>
+    <g id="racks"></g>
+    <g id="lamparas"></g>
+    <path d="M0 640 H1440 V760 H0 Z" fill="url(#g-piso)"/>
+    <path d="M0 668 H1440" stroke="#F6C324" stroke-width="5" stroke-dasharray="46 30" opacity="0.55"/>
+    <path d="M0 728 H1440" stroke="#F6C324" stroke-width="5" opacity="0.25"/>
+  </svg>
+  <div class="hero__velo" aria-hidden="true"></div>
+
+  <div class="hero__txt">
+    <span class="eyebrow">Para bodegas, 3PL y fulfillment</span>
+    <h1>Tu bodega mueve producto todo el día. <span>El problema es cuando nadie sabe dónde quedó.</span></h1>
+    <p class="hero__sub">Recepción, inventario, picking, empaque, paqueterías y cobros en un solo flujo. Si una caja entra, se mueve o sale, el sistema lo sabe.</p>
+    <ul class="promesas" aria-label="Tres promesas">
+      <li>Menos pérdidas</li><li>Menos errores</li><li>Más cobros</li>
+    </ul>
+    <div class="hero__ctas">
+      <a class="boton boton--amarillo" href="#problemas" data-t="ver-problemas">Ver dónde se me va el dinero ↓</a>
+      <a class="boton boton--linea" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20bodegas.%20Te%20cuento%20c%C3%B3mo%20trabajamos%20hoy%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Cuéntame cómo trabajan hoy</a>
+    </div>
+  </div>
+
+  <div class="banda" aria-hidden="true">
+    <div class="lector" id="lector">
+      <span class="lector__sim">Simulación</span>
+      <span class="lector__estado" id="lector-estado">✓ Escaneado</span>
+      <b id="lector-codigo">B-03-14</b>
+      <span id="lector-det">Recibido · 24 pzas · 08:42 · Juan</span>
+    </div>
+    <svg class="banda__svg" viewBox="0 0 1440 250" preserveAspectRatio="xMidYMax meet" overflow="visible">
+      <g id="cajas"></g>
+      <g class="arco" id="arco">
+        <rect x="642" y="20" width="16" height="190" rx="3" class="arco__poste"/>
+        <rect x="782" y="20" width="16" height="190" rx="3" class="arco__poste"/>
+        <rect x="634" y="8" width="172" height="26" rx="4" fill="url(#p-franjas)"/>
+        <rect x="634" y="8" width="172" height="26" rx="4" fill="none" stroke="#0E0F11" stroke-width="2"/>
+        <circle cx="720" cy="44" r="5" class="arco__led"/>
+        <line class="laser" x1="658" y1="120" x2="782" y2="120" filter="url(#f-brillo)"/>
+      </g>
+      <rect x="-1400" y="174" width="4240" height="18" fill="#2A2F36"/>
+      <path class="banda__rodillos" d="M-1400 183 H2840" stroke="#4B535E" stroke-width="10" stroke-dasharray="6 22"/>
+      <path d="M-1400 174 H2840" stroke="#5B6470" stroke-width="2"/>
+      <g fill="#20242A">
+        <rect x="-1050" y="192" width="14" height="58"/><rect x="-710" y="192" width="14" height="58"/><rect x="-370" y="192" width="14" height="58"/>
+        <rect x="90" y="192" width="14" height="58"/><rect x="430" y="192" width="14" height="58"/>
+        <rect x="1000" y="192" width="14" height="58"/><rect x="1340" y="192" width="14" height="58"/>
+        <rect x="1680" y="192" width="14" height="58"/><rect x="2020" y="192" width="14" height="58"/><rect x="2360" y="192" width="14" height="58"/>
+      </g>
+    </svg>
+  </div>
+</section>
+<div class="franjas" aria-hidden="true"></div>
+
+<!-- A · PROBLEMAS -->
+<section class="seccion" id="problemas">
+  <div class="cab">
+    <span class="eyebrow" data-zona="A">Problemas</span>
+    <h2>¿Alguno de estos te pasa?</h2>
+    <p class="intro">Toca el que más se parezca a tu operación. Puedes marcar varios: con lo que marques te armo tu plan.</p>
+  </div>
+
+  <ul class="etiquetas" id="etiquetas">
+    <li class="etq" data-card="ubicacion">
+      <div class="etq__top"><span>A-01</span><span>Ubicación</span></div>
+      <p class="etq__frase">«El producto está en la bodega… pero nadie sabe exactamente dónde.»</p>
+      <div class="etq__pie"><svg class="codigo" data-c="ubicacion" aria-hidden="true"></svg><button type="button" class="etq__btn" data-abrir="ubicacion">Esto me pasa →</button></div>
+      <span class="sello" aria-hidden="true">Me pasa</span>
+      <div class="sol">
+        <h3>Cada movimiento deja rastro.</h3>
+        <p>Cuando algo entra, cambia de rack, se separa para un pedido o sale de la bodega, se escanea y queda registrado: qué producto, cuántas piezas, en qué ubicación, quién lo movió y a qué hora.</p>
+        <ol class="flujo">
+          <li><b>Recibido</b><small>08:42 · Juan</small></li>
+          <li><b>Rack B-03-14</b><small>08:51</small></li>
+          <li><b>Picking</b><small>Pedido #8391</small></li>
+          <li class="ok"><b>Validado</b><small>4 / 4</small></li>
+          <li><b>DHL</b><small>#381920</small></li>
+        </ol>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Menos tiempo buscando mercancía y menos producto que «desaparece» entre movimientos. Si algo falta, sabes cuándo se escaneó por última vez y quién lo tuvo.</p></div>
+        <a class="boton boton--wa" data-t="wa-ubicacion" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20bodegas.%20Nos%20pasa%20que%20no%20sabemos%20d%C3%B3nde%20est%C3%A1%20el%20producto.%20Hoy%20lo%20controlamos%20as%C3%AD%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero controlar esto</a>
+      </div>
+    </li>
+
+    <li class="etq" data-card="inventario">
+      <div class="etq__top"><span>A-02</span><span>Inventario</span></div>
+      <p class="etq__frase">«Excel dice que hay 120 piezas. En físico aparecen 113.»</p>
+      <div class="etq__pie"><svg class="codigo" data-c="inventario" aria-hidden="true"></svg><button type="button" class="etq__btn" data-abrir="inventario">Esto me pasa →</button></div>
+      <span class="sello" aria-hidden="true">Me pasa</span>
+      <div class="sol">
+        <h3>El inventario cambia cuando la mercancía cambia.</h3>
+        <p>En lugar de actualizar una hoja al final del día, cada entrada, salida o movimiento actualiza el inventario en el momento, con código de barras o QR. Nadie «captura después».</p>
+        <div class="cuadre">
+          <div><span>Excel</span><b>120</b></div>
+          <div><span>Físico</span><b>113</b></div>
+          <div class="cuadre__dif"><span>Diferencia</span><b>−7</b><small>sin explicación</small></div>
+        </div>
+        <p class="nota-viz">Con registro por movimiento: <b class="verde">113 = 113 ✓</b> y la última vez que se escaneó cada pieza.</p>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Menos diferencias, menos conteos manuales y confianza en lo que de verdad tienes disponible para vender o surtir.</p></div>
+        <a class="boton boton--wa" data-t="wa-inventario" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20bodegas.%20Nuestro%20inventario%20no%20cuadra%20con%20lo%20f%C3%ADsico.%20Hoy%20lo%20llevamos%20en%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero ver cómo funcionaría</a>
+      </div>
+    </li>
+
+    <li class="etq" data-card="errores">
+      <div class="etq__top"><span>A-03</span><span>Pedidos</span></div>
+      <p class="etq__frase">«El paquete salió… pero llevaba el producto equivocado.»</p>
+      <div class="etq__pie"><svg class="codigo" data-c="errores" aria-hidden="true"></svg><button type="button" class="etq__btn" data-abrir="errores">Esto me pasa →</button></div>
+      <span class="sello" aria-hidden="true">Me pasa</span>
+      <div class="sol">
+        <h3>El sistema valida antes de cerrar la caja.</h3>
+        <p>Durante picking y empaque, el operador escanea lo que va metiendo. Si no corresponde al pedido, lo detiene. Y antes de imprimir la guía, la báscula compara el peso esperado contra el real.</p>
+        <div class="bascula">
+          <div class="bascula__pantalla">
+            <div><span>Peso esperado</span><b>1.85 kg</b></div>
+            <div><span>Peso detectado</span><b class="mal">1.42 kg</b></div>
+          </div>
+          <div class="bascula__alerta">⚠ Revisa este paquete antes de cerrarlo</div>
+        </div>
+        <p class="nota-viz">Error detectado dentro de la bodega = minutos. Error detectado por el cliente = envío + devolución + soporte + reenvío.</p>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Menos devoluciones, menos reenvíos y menos horas arreglando errores después de que el paquete ya salió.</p></div>
+        <a class="boton boton--wa" data-t="wa-errores" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20bodegas.%20Se%20nos%20van%20pedidos%20con%20errores.%20Mandamos%20unos%20____%20pedidos%20al%20mes." target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero reducir errores</a>
+      </div>
+    </li>
+
+    <li class="etq" data-card="evidencia">
+      <div class="etq__top"><span>A-04</span><span>Reclamaciones</span></div>
+      <p class="etq__frase">«El cliente dice que faltó producto… y no tenemos cómo comprobar qué salió.»</p>
+      <div class="etq__pie"><svg class="codigo" data-c="evidencia" aria-hidden="true"></svg><button type="button" class="etq__btn" data-abrir="evidencia">Esto me pasa →</button></div>
+      <span class="sello" aria-hidden="true">Me pasa</span>
+      <div class="sol">
+        <h3>Evidencia desde que entra hasta que sale.</h3>
+        <p>Cada paso deja su huella ligada al mismo pedido: fotos, peso, quién lo hizo y a qué hora. Cuando llega una reclamación, ya no es «según yo sí estaba».</p>
+        <ul class="bitacora">
+          <li><time>08:42</time>Recibida por Juan · 24 unidades verificadas</li>
+          <li><time>08:45</time>Fotografía de recepción</li>
+          <li><time>08:51</time>Ubicada en B-03-14</li>
+          <li><time>13:05</time>4 unidades retiradas para pedido #8391</li>
+          <li><time>13:12</time>Empacado por Ana · peso final 2.34 kg · foto</li>
+          <li><time>17:21</time>Entregado a operador DHL · manifiesto firmado</li>
+        </ul>
+        <p class="nota-viz"><b>Nada se borra:</b> si alguien corrige algo, queda como otro movimiento. No necesitas blockchain; necesitas un historial que nadie pueda cambiar en silencio.</p>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Menos discusiones, pruebas concretas cuando hay una reclamación, y un servicio nuevo que puedes cobrar: <b>empaque con evidencia fotográfica</b>.</p></div>
+        <a class="boton boton--wa" data-t="wa-evidencia" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20bodegas.%20Tenemos%20reclamaciones%20y%20no%20podemos%20comprobar%20qu%C3%A9%20sali%C3%B3.%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero trazabilidad</a>
+      </div>
+    </li>
+
+    <li class="etq etq--dinero" data-card="cobros">
+      <div class="etq__top"><span>A-05</span><span>Cobros</span></div>
+      <p class="etq__frase">«Hicimos el trabajo. Pero nadie se acordó de cobrarlo.»</p>
+      <div class="etq__pie"><svg class="codigo" data-c="cobros" aria-hidden="true"></svg><button type="button" class="etq__btn" data-abrir="cobros">Sí pasa →</button></div>
+      <span class="sello" aria-hidden="true">Me pasa</span>
+      <div class="sol">
+        <h3>Cada operación puede convertirse en un cobro.</h3>
+        <p>Recepción especial, reempaque, etiquetado, fotografías, devoluciones, armado de kits, almacenaje extra. Si ocurrió en la operación, queda registrado como concepto cobrable, y cada semana te llega el reporte de lo pendiente.</p>
+        <div class="fuga">
+          <div class="fuga__cab"><span>Detector de fugas · esta semana</span><span class="ejemplo">Ejemplo</span></div>
+          <div class="fuga__fila"><span>Devoluciones procesadas</span><b>6</b></div>
+          <div class="fuga__fila"><span>Reempaques</span><b>3</b></div>
+          <div class="fuga__fila"><span>Almacenajes extraordinarios</span><b>4</b></div>
+          <div class="fuga__fila"><span>Maniobra especial</span><b>1</b></div>
+          <div class="fuga__total"><span>Pendiente de facturar</span><b>$8,430</b></div>
+        </div>
+        <p class="nota-viz">Si el sistema encuentra cada mes más dinero del que cuesta, deja de ser un gasto.</p>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Recuperar dinero de servicios que ya haces pero que hoy se quedan fuera de la factura.</p></div>
+        <a class="boton boton--wa" data-t="wa-cobros" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20bodegas.%20Creo%20que%20estamos%20dejando%20servicios%20sin%20cobrar.%20Cobramos%20cosas%20como%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero encontrar fugas de ingreso</a>
+      </div>
+    </li>
+
+    <li class="etq" data-card="paqueteria">
+      <div class="etq__top"><span>A-06</span><span>Paqueterías</span></div>
+      <p class="etq__frase">«Ya salió de la bodega… ahora toca buscar el tracking en otro sistema.»</p>
+      <div class="etq__pie"><svg class="codigo" data-c="paqueteria" aria-hidden="true"></svg><button type="button" class="etq__btn" data-abrir="paqueteria">Esto me pasa →</button></div>
+      <span class="sello" aria-hidden="true">Me pasa</span>
+      <div class="sol">
+        <h3>Del pedido a la paquetería sin volver a capturar.</h3>
+        <p>Cuando el pedido está listo, el sistema genera la guía, imprime la etiqueta, guarda el tracking y avisa al cliente. Al entregar los paquetes al transportista, se escanean y queda un manifiesto con todo lo que salió.</p>
+        <ol class="flujo">
+          <li><b>Pedido</b><small>listo</small></li>
+          <li><b>Guía</b><small>automática</small></li>
+          <li><b>Etiqueta</b><small>impresa</small></li>
+          <li><b>Tracking</b><small>al cliente</small></li>
+          <li class="ok"><b>Despachado</b><small>17:21</small></li>
+        </ol>
+        <div class="manifiesto">
+          <div><span>Manifiesto DHL · 17:21</span><b>48 / 48 escaneados</b></div>
+          <span class="verde">✓ Firmado por el operador</span>
+        </div>
+        <p class="nota-viz">Si trabajas con varias paqueterías, puedes elegir cuál usar según precio, zona, peso y tiempo de entrega.</p>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Menos captura manual, menos errores y una prueba clara de qué paquetes entregaste y a quién.</p></div>
+        <a class="boton boton--wa" data-t="wa-paqueteria" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20bodegas.%20Las%20gu%C3%ADas%20y%20el%20tracking%20los%20hacemos%20a%20mano.%20Trabajamos%20con%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero automatizar despachos</a>
+      </div>
+    </li>
+
+    <li class="etq etq--crecer" data-card="portal">
+      <div class="etq__top"><span>A-07</span><span>Para 3PL</span></div>
+      <p class="etq__frase">«Mis clientes me escriben todo el día: ¿cuánto inventario tengo?, ¿ya salió mi pedido?»</p>
+      <div class="etq__pie"><svg class="codigo" data-c="portal" aria-hidden="true"></svg><button type="button" class="etq__btn" data-abrir="portal">Esto me pasa →</button></div>
+      <span class="sello" aria-hidden="true">Me pasa</span>
+      <div class="sol">
+        <h3>Dales su propio portal.</h3>
+        <p>Cada cliente entra y ve su inventario, entradas, pedidos, devoluciones, tracking y evidencias, con tu marca. Sin pedirte una captura de Excel por WhatsApp.</p>
+        <div class="portal">
+          <div class="portal__cab"><span>Portal · tu cliente</span><span class="ejemplo">Ejemplo</span></div>
+          <div class="portal__kpis">
+            <div><b>1,240</b><span>piezas en inventario</span></div>
+            <div><b>37</b><span>pedidos hoy</span></div>
+            <div><b>12</b><span>en tránsito</span></div>
+          </div>
+        </div>
+        <p class="nota-viz">Empresa A: «mándame WhatsApp para saber cuántas piezas tienes». Empresa B: «entra a tu portal». <b>La segunda puede cobrar más.</b></p>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Menos trabajo administrativo y un servicio que puedes vender como plan premium. El software te ayuda a ganar clientes, no solo a atender a los que ya tienes.</p></div>
+        <a class="boton boton--wa" data-t="wa-portal" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20bodegas.%20Me%20interesa%20el%20portal%20para%20clientes.%20Hoy%20atendemos%20a%20unos%20____%20clientes." target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero dar un portal</a>
+      </div>
+    </li>
+  </ul>
+
+  <div class="conteo" id="conteo">
+    <p>Marcaste <b id="conteo-n">0</b> de 7.</p>
+    <a class="boton boton--amarillo" href="#solucion" id="conteo-ir" data-t="ver-solucion" hidden>Ver mi solución ↓</a>
+  </div>
+
+  <dialog class="ficha" id="ficha" aria-labelledby="ficha-frase">
+    <div class="ficha__cab">
+      <span class="ficha__tag" id="ficha-tag"></span>
+      <button type="button" class="ficha__x" id="ficha-x" aria-label="Cerrar">×</button>
+    </div>
+    <p class="ficha__frase" id="ficha-frase"></p>
+    <div class="ficha__cuerpo" id="ficha-cuerpo"></div>
+    <div class="ficha__pie">
+      <button type="button" class="boton boton--linea" id="ficha-otro">Ver otro problema</button>
+      <button type="button" class="boton boton--amarillo" id="ficha-plan">Ver mi solución ↓</button>
+      <button type="button" class="ficha__quitar" id="ficha-quitar">No me pasa, quitarlo</button>
+    </div>
+  </dialog>
+</section>
+
+<!-- B · TU SOLUCIÓN -->
+<section class="seccion" id="solucion">
+  <div class="cab">
+    <span class="eyebrow" data-zona="B">Tu solución</span>
+    <h2 id="sol-titulo">Marca arriba lo que te pasa y aquí aparece tu plan.</h2>
+    <p class="intro" id="sol-intro">Un solo sistema, construido alrededor de tu operación. Empezamos por la fuga que más dinero te cuesta.</p>
+  </div>
+
+  <div class="orden" id="orden">
+    <div class="orden__cab">
+      <span>Orden de trabajo</span>
+      <span id="orden-folio">#BOD-000</span>
+    </div>
+    <div class="orden__vacia" id="orden-vacia">
+      <p>Todavía no marcas ningún problema.</p>
+      <a class="boton boton--negro" href="#problemas" data-t="volver-problemas">Ver los problemas ↑</a>
+    </div>
+    <ol class="orden__lista" id="orden-lista"></ol>
+    <div class="orden__inicio" id="orden-inicio" hidden>
+      <span>Por dónde empezaría yo</span>
+      <b id="orden-primero"></b>
+      <p id="orden-porque"></p>
+    </div>
+  </div>
+
+  <h3 class="sub">¿Qué gano yo? El software tiene que pagarse solo.</h3>
+  <ul class="ganas" id="ganas">
+    <li data-tipo="pierdes"><i>↓</i><b>Pierdes menos</b><span>Mercancía extraviada, errores de surtido, devoluciones y reclamaciones.</span></li>
+    <li data-tipo="procesas"><i>↑</i><b>Procesas más</b><span>Menos tiempo buscando producto, capturando datos y cuadrando inventario.</span></li>
+    <li data-tipo="cobras"><i>$</i><b>Cobras más</b><span>Servicios que ya haces pasan solos a revisión para facturar.</span></li>
+    <li data-tipo="vendes"><i>★</i><b>Vendes mejor</b><span>Tracking, evidencias y portal como parte de lo que ofreces.</span></li>
+  </ul>
+  <p class="remate">Si no podemos identificar dónde está el ahorro o el ingreso, probablemente todavía no vale la pena construirlo.</p>
+
+  <h3 class="sub">Si tu meta es escalar, así crecería.</h3>
+  <ol class="ruta" id="ruta">
+    <li><span class="ruta__n">01</span><b id="ruta-1">La fuga más cara</b><p id="ruta-1p">Un solo flujo en producción, con tu gente real. Medimos antes y después.</p></li>
+    <li><span class="ruta__n">02</span><b id="ruta-2">El siguiente flujo</b><p id="ruta-2p">Solo si el primero funcionó. Mismo sistema, otra parte de la operación.</p></li>
+    <li><span class="ruta__n">03</span><b>Portal para tus clientes</b><p>Inventario, pedidos y evidencias en tiempo real. Lo vendes como plan premium.</p></li>
+    <li class="ruta__meta"><span class="ruta__n">04</span><b>Más clientes, mismo equipo</b><p>Cada cliente nuevo entra al mismo flujo. No contratas a alguien para contestar WhatsApp ni cuadrar Excel.</p></li>
+  </ol>
+
+  <div class="cta-plan">
+    <a class="boton boton--wa" id="plan-wa" data-t="wa-plan" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20bodegas%20y%20quiero%20revisar%20mi%20operaci%C3%B3n." target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg><span id="plan-wa-txt">Revisemos mi operación</span></a>
+    <span>El mensaje se abre en tu WhatsApp con lo que marcaste, para que lo revises antes de enviarlo.</span>
+  </div>
+</section>
+
+<!-- C · CUÁNTO TE CUESTA -->
+<section class="seccion" id="costo">
+  <div class="cab">
+    <span class="eyebrow" data-zona="C">Cuánto te cuesta</span>
+    <h2>Pon tu operación en la báscula.</h2>
+    <p class="intro">Una estimación en 30 segundos, con tus números. Así la conversación empieza por dinero, no por funciones.</p>
+  </div>
+
+  <div class="bascula-calc" id="calc">
+    <div class="calc__display">
+      <span class="calc__etq" id="calc-etq">Te cuesta al mes</span>
+      <b class="calc__num" id="calc-num">$ — — —</b>
+      <span class="calc__det" id="calc-det">Pesa tu operación para ver el número.</span>
+    </div>
+    <button type="button" class="boton boton--amarillo" id="calc-abrir">Calcularlo →</button>
+    <div class="calc__cuerpo" id="calc-cuerpo" hidden>
+      <div class="calc__tabs" role="tablist">
+        <button type="button" role="tab" aria-selected="true" data-tab="errores">Pedidos con error</button>
+        <button type="button" role="tab" aria-selected="false" data-tab="cobros">Servicios sin cobrar</button>
+      </div>
+      <div class="calc__panel" data-panel="errores">
+        <label class="rango"><span>Pedidos al mes <output data-for="c-pedidos"></output></span><input type="range" id="c-pedidos" min="200" max="50000" step="100" value="5000"></label>
+        <label class="rango"><span>¿Qué porcentaje sale con algún error? <output data-for="c-error"></output></span><input type="range" id="c-error" min="0.2" max="6" step="0.1" value="1.5"></label>
+        <label class="rango"><span>Costo de resolver cada error <small>(reenvío, devolución, soporte)</small> <output data-for="c-costo"></output></span><input type="range" id="c-costo" min="50" max="1500" step="10" value="250"></label>
+      </div>
+      <div class="calc__panel" data-panel="cobros" hidden>
+        <label class="rango"><span>Servicios extra al mes <small>(reempaques, devoluciones, etiquetado, kits…)</small> <output data-for="c-servicios"></output></span><input type="range" id="c-servicios" min="10" max="2000" step="10" value="300"></label>
+        <label class="rango"><span>Precio promedio de cada uno <output data-for="c-precio"></output></span><input type="range" id="c-precio" min="20" max="1500" step="10" value="150"></label>
+        <label class="rango"><span>¿Qué porcentaje nunca llega a la factura? <output data-for="c-fuga"></output></span><input type="range" id="c-fuga" min="1" max="40" step="1" value="10"></label>
+      </div>
+      <p class="calc__mitad" id="calc-mitad"></p>
+      <p class="calc__nota">Es una estimación con los números que tú pones. En la revisión los medimos con tu operación real.</p>
+    </div>
+  </div>
+</section>
+
+<!-- D · CÓMO CRECE -->
+<section class="seccion" id="crecer">
+  <div class="cab">
+    <span class="eyebrow" data-zona="D">Cómo crece</span>
+    <h2>El software no tiene que ser otro gasto fijo.</h2>
+    <p class="intro">Empieza con un flujo. Ponlo en producción. Mide cuánto ahorra o genera. Y escala conforme entren más clientes.</p>
+  </div>
+
+  <div class="modelos">
+    <div class="modelo">
+      <span class="modelo__k">Opción 1</span>
+      <b>Implementación + mensualidad</b>
+      <p>Construimos el primer flujo y una mensualidad cubre hosting, soporte y cambios menores.</p>
+    </div>
+    <div class="modelo modelo--destacado">
+      <span class="modelo__k">Opción 2 · para 3PL</span>
+      <b>Base pequeña + por cliente activo</b>
+      <p>Poco o nada por adelantado. Parte del costo crece conforme aumentan los clientes que administras. Si tu operación crece, la plataforma crece; si no, no pagas de más.</p>
+    </div>
+  </div>
+
+  <div class="tarimas">
+    <div class="tarimas__txt">
+      <h3>Y si además lo vendes como servicio premium:</h3>
+      <label class="rango"><span>Clientes con «Plan Control» <small>(portal + evidencias + tracking)</small> <output data-for="t-clientes"></output></span><input type="range" id="t-clientes" min="1" max="60" step="1" value="20"></label>
+      <dl class="tarimas__cuentas">
+        <div><dt>Le cobras de más a cada cliente</dt><dd>+$1,500/mes</dd></div>
+        <div><dt>La plataforma te cuesta por cliente</dt><dd>$500/mes</dd></div>
+        <div class="tarimas__total"><dt>Te quedas cada mes</dt><dd id="t-total">$20,000</dd></div>
+      </dl>
+      <p class="calc__nota">Cifras de ejemplo. El modelo y los montos se definen después de revisar tu operación.</p>
+    </div>
+    <div class="tarimas__viz" id="tarimas" aria-hidden="true"></div>
+  </div>
+  <p class="remate">Tú creces → la plataforma crece. No quiero venderte software: quiero construir una parte de tu operación que se pague sola.</p>
+</section>
+
+<!-- CIERRE -->
+<section class="seccion final" id="hablemos">
+  <div class="cab">
+    <span class="eyebrow" data-zona="E">Hablemos</span>
+    <h2>Si una caja entra, se mueve o sale, debería dejar rastro.</h2>
+    <p class="intro">Y si ese movimiento genera un cobro, también debería facturarse. Cuéntame cómo llevan hoy la recepción, el inventario, el picking, el empaque y los despachos. No necesitas saber qué software necesitas: yo empiezo por entender dónde se pierde tiempo o dinero.</p>
+  </div>
+
+  <form class="form" id="form" novalidate>
+    <div><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" autocomplete="name"></div>
+    <div><label for="f-empresa">Bodega o empresa</label><input id="f-empresa" name="empresa" autocomplete="organization"></div>
+    <fieldset class="full">
+      <legend>Hoy lo llevamos en</legend>
+      <div class="chips">
+        <label><input type="radio" name="hoy" value="papel"><span>Papel</span></label>
+        <label><input type="radio" name="hoy" value="Excel"><span>Excel</span></label>
+        <label><input type="radio" name="hoy" value="un sistema que no nos convence"><span>Un sistema que no nos convence</span></label>
+        <label><input type="radio" name="hoy" value="una mezcla de todo"><span>Una mezcla de todo</span></label>
+      </div>
+    </fieldset>
+    <div class="full"><label for="f-proceso">¿Qué es lo que más te duele hoy?</label><textarea id="f-proceso" name="proceso" placeholder="Por ejemplo: las devoluciones llegan y nadie las registra; nos enteramos cuando el cliente reclama."></textarea><p class="aviso" id="f-aviso" hidden>Cuéntame aunque sea en una línea qué pasa.</p></div>
+    <div class="full form__acciones">
+      <button class="boton boton--wa" type="submit"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Revisar mi operación</button>
+      <a class="enlace" href="mailto:bodgar@bodgar.dev?subject=Mi%20bodega" id="f-correo">o mandarlo por correo</a>
+    </div>
+    <p class="full form__nota">Se abre en tu WhatsApp con lo que marcaste arriba, para que lo revises antes de enviarlo. La revisión es sin costo.</p>
+  </form>
+
+  <div class="quien">
+    <img src="/assets/bodgar.jpg" width="576" height="720" alt="Bodgar Espinosa" loading="lazy">
+    <div>
+      <p><b>Soy Bodgar Espinosa</b>, ingeniero de software con más de diez años de experiencia. La persona que entiende tu proceso es la misma que construye el software.</p>
+      <p class="quien__honesto">Para que quede claro: todavía no tengo una bodega en producción. Lo que sí tengo son plataformas reales funcionando con pagos, portales para clientes, permisos por rol y registro de cada evento. Lo específico de bodega se construye encima de esa base. <a href="/plataformas/">Ver esos casos</a>.</p>
+      <p><a class="enlace" href="/assets/Bodgar-Espinosa-CV.pdf" target="_blank" rel="noopener noreferrer">Conoce mi experiencia (CV)</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="franjas" aria-hidden="true"></div>
+<footer class="pie">
+  <span>© 2026 Bodgar Espinosa · Ciudad de México</span>
+  <nav>
+    <a href="mailto:bodgar@bodgar.dev">bodgar@bodgar.dev</a>
+    <a href="https://www.linkedin.com/in/bodgarespinosa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="/plataformas/">Todos los casos</a>
+  </nav>
+</footer>
+
+<a class="manif" id="manif" href="#solucion" data-t="manifiesto" hidden>
+  <span class="manif__k">Manifiesto</span>
+  <span class="manif__n"><b id="manif-n">0</b> <span id="manif-txt">problemas marcados</span></span>
+  <span class="manif__ir">Ver mi solución ↓</span>
+</a>
+
+<script src="/assets/t.js" defer></script>
+<script src="bodegas.js" defer></script>
+</body>
+</html>
