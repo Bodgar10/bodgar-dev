@@ -195,3 +195,34 @@ html { scroll-behavior: smooth; }
 /* precios con descripción: el monto se queda a la derecha */
 .pricing .pr dt { flex: 1 1 300px; }
 .pricing .pr dt small { display: block; margin-top: 4px; font-size: 0.86rem; line-height: 1.45; }
+
+/* ---------- celular: que el botón llegue antes ----------
+   Medición del 15-oct: en celular nadie bajaba de las 7 tarjetas (una visita
+   de 98 s se quedó ahí). Se ven 4, el resto detrás de un botón, y todo más
+   compacto para que el WhatsApp quede a una pantalla. */
+
+.pcards-mas { display: none; }
+
+@media (max-width: 639px) {
+  .pcards { gap: 10px; margin-top: 26px; }
+  .pcards a { padding: 14px 16px; font-size: 0.92rem; }
+  .pcards strong { font-size: 1rem; margin-bottom: 4px; }
+  .pcards .mono { margin-bottom: 6px; }
+  .pcards .go { display: none; }
+  .pcards.compacta li:nth-child(n+5) { display: none; }
+  .pcards.compacta + .pcards-mas {
+    display: block; width: 100%; margin-top: 10px; padding: 12px;
+    font: inherit; font-size: 0.92rem; font-weight: 500; color: var(--accent);
+    background: transparent; border: 1px dashed var(--rule); border-radius: 12px; cursor: pointer;
+  }
+  #problemas .cta-inline { margin-top: 22px; padding: 18px; }
+
+  .paths { grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; }
+  .paths a { padding: 14px; }
+  .paths .mono { margin-bottom: 6px; }
+  .paths b { font-size: 0.98rem; }
+  .paths span { display: block; font-size: 0.82rem; line-height: 1.4; }
+
+  .vhero-grid { gap: 32px; }
+  .ui-dash b { font-size: 1.35rem; }
+}

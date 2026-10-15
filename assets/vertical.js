@@ -34,6 +34,14 @@
     if (card && card.parentNode.firstElementChild !== card) card.parentNode.insertBefore(card, card.parentNode.firstElementChild);
   }
 
+  // ---------- celular: tarjetas restantes detrás de un botón ----------
+  var mas = document.getElementById("pcardsMas");
+  if (mas) mas.addEventListener("click", function () {
+    document.getElementById("pcards").classList.remove("compacta");
+    mas.remove();
+    track("clic", "problemas:ver-mas");
+  });
+
   // ---------- formulario → WhatsApp o correo ----------
   var form = document.getElementById("vform");
   if (form) {
