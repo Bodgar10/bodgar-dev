@@ -17,6 +17,8 @@
 
   // Escáneres de correo y navegadores automatizados: no son personas.
   if (navigator.webdriver) return;
+  // Solo el sitio publicado: las pruebas en localhost no cuentan.
+  if (!/(^|\.)bodgar\.dev$/.test(location.hostname)) return;
 
   var path = location.pathname.replace(/index\.html$/, "");
   if (path.charAt(path.length - 1) !== "/") path += "/";
