@@ -56,6 +56,20 @@
       empezar: "De lead a paciente, medido",
       porque: "Si ya invierten en anuncios, saber cuál trae pacientes que pagan cambia en qué gastan desde el primer mes."
     },
+    ampliar: {
+      nombre: "Pacientes activos que no conocen otros servicios", tipo: "crece",
+      construye: "Servicios que el equipo define como pertinentes, visibles en el momento clínico adecuado y registrados en el expediente.",
+      gana: "Más ingreso por paciente sin depender siempre de nuevos leads.",
+      empezar: "Servicios complementarios para pacientes activos",
+      porque: "Ya confían en la clínica: una segunda atención pertinente cuesta mucho menos que conseguir un paciente nuevo desde cero."
+    },
+    reactivar: {
+      nombre: "Pacientes dados de alta que no vuelven", tipo: "crece",
+      construye: "Seguimiento después del alta: revisiones a 3 o 6 meses, prevención de recaídas y campañas, con los criterios que define la clínica.",
+      gana: "Reactivar relaciones que ya costó tiempo y dinero construir.",
+      empezar: "Seguimiento después del alta",
+      porque: "La base histórica ya existe: es de lo más barato de activar y se mide desde la primera campaña."
+    },
     ejercicios: {
       nombre: "Ejercicios en casa sin seguimiento", tipo: "retiene",
       construye: "El plan que el terapeuta prescribe, en el celular del paciente, con registro de lo que hizo.",
@@ -94,7 +108,9 @@
     ejercicios: "ejercicios", casa: "ejercicios",
     evolucion: "evolucion", progreso: "evolucion",
     portal: "portal", familia: "portal", recepcion: "portal",
-    sucursales: "sucursales", sedes: "sucursales", multidisciplinario: "sucursales", equipo: "sucursales"
+    sucursales: "sucursales", sedes: "sucursales", multidisciplinario: "sucursales", equipo: "sucursales",
+    ampliar: "ampliar", servicios: "ampliar", adicionales: "ampliar", complementarios: "ampliar", activos: "ampliar",
+    reactivar: "reactivar", alta: "reactivar", postalta: "reactivar", seguimiento: "reactivar", base: "reactivar", altas: "reactivar"
   };
 
   var marcas = {};
@@ -363,10 +379,12 @@
 
   function plan() {
     var l = lista(), n = l.length;
+    var crece = l.some(function (k) { return PROB[k].tipo === "crece"; });
+    var cosa = crece ? (n === 1 ? "punto" : "puntos") : (n === 1 ? "problema" : "problemas");
     $("plan-titulo").textContent = n === 0
       ? "Marquen arriba lo que les pasa y aquí aparece su plan."
-      : n === 1 ? "Marcaron 1 problema. Tiene tratamiento."
-      : "Marcaron " + n + " problemas. Los " + n + " se resuelven con el mismo sistema.";
+      : n === 1 ? "Marcaron 1 " + cosa + ". Tiene tratamiento."
+      : "Marcaron " + n + " " + cosa + ". Los " + n + " se resuelven con el mismo sistema.";
     $("plan-intro").textContent = n
       ? "Esto es lo que construiría, lo que ganaría la clínica y por dónde empezaría yo."
       : "Un solo sistema, construido alrededor de su clínica. Empezamos por lo que más dinero o tiempo les cuesta.";
@@ -453,6 +471,15 @@
       campos: [["Autorizaciones que vencen al mes sin renovarse", 3, 0, 60, 1], ["Sesiones pendientes en cada una", 4, 1, 20, 1]],
       f: function (v, tk) { return v[0] * v[1] * tk; },
       det: function (v) { return v[0] * v[1] + " sesiones que no se cobran"; } }
+    ,
+    ampliar: { t: "Pacientes que no conocen otros servicios",
+      campos: [["Pacientes activos", 200, 10, 3000, 10], ["Porcentaje al que un servicio adicional le sería útil", 10, 1, 50, 1, "%"], ["Valor del servicio", 1200, 200, 15000, 100, "$"]],
+      f: function (v) { return Math.round(v[0] * v[1] / 100) * v[2]; },
+      det: function (v) { return "si cada mes " + Math.round(v[0] * v[1] / 100) + " pacientes activos toman un servicio pertinente"; } },
+    reactivar: { t: "Pacientes dados de alta que no vuelven",
+      campos: [["Pacientes dados de alta en el último año", 300, 10, 5000, 10], ["Porcentaje que volvería a una revisión", 10, 1, 50, 1, "%"], ["Valor de la revisión", 700, 200, 5000, 50, "$"]],
+      f: function (v) { return Math.round(v[0] * v[1] / 100) * v[2] / 12; },
+      det: function (v) { var n = Math.round(v[0] * v[1] / 100); return n + " revisiones al año (" + dinero(n * v[2]) + " anuales)"; } }
   };
   var dlgDiag = $("diag"), diagSel = [], diagRes = {};
   function fmt(v, tipo) { return tipo === "$" ? dinero(v) : tipo === "%" ? v + "%" : (+v).toLocaleString("es-MX"); }
