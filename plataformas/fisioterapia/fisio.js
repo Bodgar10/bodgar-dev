@@ -43,11 +43,11 @@
       porque: "Una autorización vencida es una sesión que no se cobra o un paciente que se va. Es de lo más fácil de medir."
     },
     sesiones: {
-      nombre: "Sesiones y paquetes en Excel", tipo: "recupera",
-      construye: "Cada sesión se descuenta del plan del paciente y el sistema avisa cuando toca renovar.",
-      gana: "Renovaciones que no dependen de la memoria de nadie.",
+      nombre: "Paquetes que terminan sin seguimiento", tipo: "recupera",
+      construye: "Cada sesión se descuenta del plan del paciente y el sistema avisa antes de que termine, para que el terapeuta revise la continuidad.",
+      gana: "Ningún paquete termina sin que alguien revise cómo sigue el paciente.",
       empezar: "Paquetes y sesiones que se descuentan solos",
-      porque: "Es la base de casi todo lo demás, y cada renovación ofrecida a tiempo es un paquete vendido."
+      porque: "Es la base de casi todo lo demás, y cada paquete que termina sin revisión es un paciente que puede perderse sin que nadie lo decida."
     },
     leads: {
       nombre: "No saben qué canal trae pacientes", tipo: "capta",
@@ -173,7 +173,7 @@
     { h: "11:00", n: "Ana P.", e: "carta pase 8 de 10", ev: ["alerta", "⚠ Carta pase por terminar", "Ana P. · quedan 2 · pedir renovación"] },
     { h: "12:00", n: "Luis G.", e: "sesión 3 de 10" },
     { h: "13:00", n: "Libre", e: "comida", libre: true },
-    { h: "14:00", n: "Marta S.", e: "sesión 9 de 10", ev: ["alerta", "⚠ Paquete por terminar", "Marta S. · ofrecer renovación"] },
+    { h: "14:00", n: "Marta S.", e: "sesión 9 de 10", ev: ["alerta", "⚠ Paquete por terminar", "Marta S. · revisar continuidad"] },
     { h: "15:00", n: "Pedro V.", e: "ejercicios 3 de 3", ev: ["", "✓ Hizo sus ejercicios en casa", "Pedro V. · 3 de 3 esta semana"] },
     { h: "16:00", n: "Elena T.", e: "sesión 5 de 8" },
     { h: "17:00", n: "Mariana L.", e: "sesión 4 de 10" },
@@ -357,7 +357,7 @@
       l.forEach(function (k) { partes.push("- " + PROB[k].nombre); });
       partes.push("Me interesaría empezar por: " + PROB[l[0]].empezar + ".");
     } else partes[0] += " y quiero revisar nuestro proceso.";
-    if (estimado) partes.push("Mi estimado: " + dinero(estimado.mes) + "/mes en " + estimado.tipo + ".");
+    if (estimado) partes.push("Mi estimado: ~" + dinero(estimado.mes) + "/mes en " + estimado.tipo + ".");
     return partes.join("\n");
   }
 
@@ -426,78 +426,86 @@
     ["inicio", "plan", "escribir"].forEach(function (id) { io.observe($(id)); });
   }
 
-  /* ---------- 3 · Monitor de costos ---------- */
-  var tab = "cancel", abierta = false;
-  var FORMATO = {
-    "c-sesiones": function (v) { return (+v).toLocaleString("es-MX"); },
-    "c-cancela": function (v) { return v + "%"; },
-    "c-precio": dinero,
-    "c-terminan": function (v) { return v; },
-    "c-norenuevan": function (v) { return v + "%"; },
-    "c-paquete": dinero
+  /* ---------- 2 · Diagnóstico económico ---------- */
+  // [etiqueta, inicial, mín, máx, paso, formato]; "ticket" es compartido.
+  var FUGAS = {
+    cancel: { t: "Cancelaciones que no se rellenan", usa: true,
+      campos: [["Cancelaciones al mes", 18, 0, 300, 1], ["¿Cuántas quedan vacías?", 10, 0, 300, 1]],
+      f: function (v, tk) { return Math.min(v[0], v[1]) * tk; },
+      det: function (v) { return Math.min(v[0], v[1]) + " horas vacías al mes"; } },
+    abandono: { t: "Pacientes que abandonan el tratamiento", usa: true,
+      campos: [["Pacientes que abandonan al mes", 4, 0, 80, 1], ["Sesiones que les faltaban, en promedio", 5, 1, 30, 1]],
+      f: function (v, tk) { return v[0] * v[1] * tk; },
+      det: function (v) { return v[0] * v[1] + " sesiones que no se dieron"; } },
+    leads: { t: "Prospectos que preguntan y no agendan",
+      campos: [["Personas que preguntan al mes", 80, 5, 800, 5], ["¿Cuántas iniciaron tratamiento?", 6, 0, 200, 1], ["Valor de un tratamiento", 4000, 500, 40000, 500, "$"]],
+      f: function (v) { return Math.round(v[1] * 0.5) * v[2]; },
+      det: function (v) { var e = Math.round(v[1] * 0.5); return "si de " + v[1] + " pasaran a " + (v[1] + e) + " pacientes nuevos"; } },
+    paquetes: { t: "Paquetes que terminan sin seguimiento",
+      campos: [["Paquetes que terminan al mes", 12, 0, 300, 1], ["¿Cuántos debían continuar?", 3, 0, 300, 1], ["Valor de un paquete", 5000, 500, 30000, 500, "$"]],
+      f: function (v) { return Math.min(v[0], v[1]) * v[2]; },
+      det: function (v) { return Math.min(v[0], v[1]) + " pacientes sin revisión de continuidad"; } },
+    ocupacion: { t: "Horarios con baja ocupación", usa: true,
+      campos: [["Horas de terapia disponibles a la semana", 120, 10, 1000, 10], ["Porcentaje que se ocupa", 70, 10, 100, 5, "%"]],
+      f: function (v, tk) { return v[0] * (1 - v[1] / 100) * 4.3 * tk; },
+      det: function (v) { return Math.round(v[0] * (1 - v[1] / 100) * 4.3) + " horas libres al mes"; } },
+    autoriza: { t: "Autorizaciones que vencen", usa: true,
+      campos: [["Autorizaciones que vencen al mes sin renovarse", 3, 0, 60, 1], ["Sesiones pendientes en cada una", 4, 1, 20, 1]],
+      f: function (v, tk) { return v[0] * v[1] * tk; },
+      det: function (v) { return v[0] * v[1] + " sesiones que no se cobran"; } }
   };
-  function salidas() {
-    document.querySelectorAll("output[data-for]").forEach(function (o) {
-      var id = o.getAttribute("data-for");
-      o.textContent = FORMATO[id]($(id).value);
+  var dlgDiag = $("diag"), diagSel = [], diagRes = {};
+  function fmt(v, tipo) { return tipo === "$" ? dinero(v) : tipo === "%" ? v + "%" : (+v).toLocaleString("es-MX"); }
+  function rango(id, c) {
+    return '<label class="rango"><span>' + c[0] + ' <output data-o="' + id + '">' + fmt(c[1], c[5]) + "</output></span>" +
+      '<input type="range" id="' + id + '" data-fmt="' + (c[5] || "") + '" min="' + c[2] + '" max="' + c[3] + '" step="' + c[4] + '" value="' + c[1] + '"></label>';
+  }
+  function armarDiag() {
+    var html = [], ticket = diagSel.some(function (k) { return FUGAS[k].usa; });
+    if (ticket) html.push('<div class="diag__fila diag__fila--ticket">' + rango("d-ticket", ["Precio promedio por sesión", 650, 200, 3000, 50, "$"]) + "</div>");
+    diagSel.forEach(function (k) {
+      html.push('<fieldset class="diag__fila"><legend>' + FUGAS[k].t + "</legend>" +
+        FUGAS[k].campos.map(function (c, i) { return rango("d-" + k + "-" + i, c); }).join("") +
+        '<p class="diag__res" id="r-' + k + '"></p></fieldset>');
     });
+    $("diag-filas").innerHTML = html.join("");
   }
-  var anim = null;
-  function numero(v) {
-    var n = $("calc-num");
-    cancelAnimationFrame(anim);
-    if (CALMA) { n.textContent = dinero(v); return; }
-    var desde = parseInt((n.textContent || "").replace(/\D/g, ""), 10) || 0, t0 = 0;
-    function paso(t) {
-      if (!t0) t0 = t;
-      var p = Math.min(1, (t - t0) / 450), e = 1 - Math.pow(1 - p, 3);
-      n.textContent = dinero(desde + (v - desde) * e);
-      if (p < 1) anim = requestAnimationFrame(paso);
-    }
-    anim = requestAnimationFrame(paso);
-  }
-  function calcular() {
-    salidas();
-    if (!abierta) return;
-    var v = function (id) { return parseFloat($(id).value); };
-    var mes, det, mitad;
-    if (tab === "cancel") {
-      var perdidas = v("c-sesiones") * 4.3 * v("c-cancela") / 100;
-      mes = perdidas * v("c-precio");
-      $("calc-etq").textContent = "Se les va al mes en citas vacías";
-      det = Math.round(perdidas).toLocaleString("es-MX") + " citas que no se dan al mes · " + dinero(mes * 12) + " al año";
-      mitad = "Si la lista de espera recuperara solo la mitad: <b>" + dinero(mes / 2) + "/mes</b>.";
-      estimado = { tipo: "citas canceladas", mes: mes };
-    } else {
-      var sin = v("c-terminan") * v("c-norenuevan") / 100;
-      mes = sin * v("c-paquete");
-      $("calc-etq").textContent = "Paquetes que no se renuevan al mes";
-      det = Math.round(sin).toLocaleString("es-MX") + " pacientes sin renovar al mes · " + dinero(mes * 12) + " al año";
-      mitad = "Si un aviso a tiempo recuperara solo la mitad: <b>" + dinero(mes / 2) + "/mes</b>.";
-      estimado = { tipo: "paquetes sin renovar", mes: mes };
-    }
-    numero(mes);
-    $("calc-det").textContent = det;
-    $("calc-mitad").innerHTML = mitad;
+  function calcDiag() {
+    var tk = $("d-ticket") ? +$("d-ticket").value : 0, total = 0;
+    diagSel.forEach(function (k) {
+      var v = FUGAS[k].campos.map(function (c, i) { return +$("d-" + k + "-" + i).value; });
+      var m = FUGAS[k].f(v, tk);
+      diagRes[k] = m; total += m;
+      $("r-" + k).innerHTML = "≈ <b>" + dinero(m) + "/mes</b> · " + FUGAS[k].det(v);
+    });
+    $("diag-num").textContent = "~" + dinero(total);
+    estimado = { mes: total, tipo: "capacidad no aprovechada (" + diagSel.map(function (k) { return FUGAS[k].t.toLowerCase(); }).join(", ") + ")" };
+    var partes = ["Hola Bodgar. Hice el diagnóstico económico en la página de fisioterapia:"];
+    diagSel.forEach(function (k) { partes.push("- " + FUGAS[k].t + ": ≈ " + dinero(diagRes[k]) + "/mes"); });
+    partes.push("Total aproximado: " + dinero(total) + "/mes.");
+    partes.push("Quiero solicitar el diagnóstico sin costo para ver cuánto sí se podría atacar.");
+    $("diag-wa").href = WA + encodeURIComponent(partes.join("\n"));
     $("plan-wa").href = WA + encodeURIComponent(mensajePlan());
   }
-  $("calc-abrir").addEventListener("click", function () {
-    abierta = true;
-    $("calc-cuerpo").hidden = false;
-    this.hidden = true;
-    track("clic", "cuanto-cuesta:abrir");
-    calcular();
+  $("diag-abrir").addEventListener("click", function () {
+    diagSel = Array.prototype.map.call(document.querySelectorAll("#checks input:checked"), function (i) { return i.value; });
+    $("checks-aviso").hidden = diagSel.length > 0;
+    if (!diagSel.length) return;
+    track("clic", ("cuanto-cuesta:calcular-" + diagSel.join("-")).slice(0, 80));
+    armarDiag(); calcDiag();
+    if (typeof dlgDiag.showModal === "function") dlgDiag.showModal(); else dlgDiag.setAttribute("open", "");
+    dlgDiag.scrollTop = 0;
   });
-  document.querySelectorAll(".tabs [data-tab]").forEach(function (b) {
-    b.addEventListener("click", function () {
-      tab = b.getAttribute("data-tab");
-      document.querySelectorAll(".tabs [data-tab]").forEach(function (o) { o.setAttribute("aria-selected", o === b ? "true" : "false"); });
-      document.querySelectorAll(".panel").forEach(function (p) { p.hidden = p.getAttribute("data-panel") !== tab; });
-      track("clic", "cuanto-cuesta:tab-" + tab);
-      calcular();
-    });
+  $("diag-filas").addEventListener("input", function (e) {
+    var o = document.querySelector('output[data-o="' + e.target.id + '"]');
+    if (o) o.textContent = fmt(e.target.value, e.target.getAttribute("data-fmt"));
+    calcDiag();
   });
-  Object.keys(FORMATO).forEach(function (id) { $(id).addEventListener("input", calcular); });
+  function cerrarDiag() { if (typeof dlgDiag.close === "function") dlgDiag.close(); else dlgDiag.removeAttribute("open"); }
+  $("diag-x").addEventListener("click", cerrarDiag);
+  $("diag-cerrar").addEventListener("click", cerrarDiag);
+  dlgDiag.addEventListener("click", function (e) { if (e.target === dlgDiag) cerrarDiag(); });
+  $("checks").addEventListener("change", function () { $("checks-aviso").hidden = true; });
 
   /* ---------- Formulario → WhatsApp ---------- */
   var form = $("form");
@@ -551,5 +559,4 @@
     if (c) { c.classList.add("marcada"); c.querySelector(".tj__btn").textContent = textoBoton(true); }
   });
   refrescar(false);
-  salidas();
 })();

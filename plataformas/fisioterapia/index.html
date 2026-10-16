@@ -46,9 +46,9 @@
     <a class="marca" href="/plataformas/"><svg aria-hidden="true"><use href="#i-cruz"/></svg><span>Bodgar Espinosa <em>· fisioterapia</em></span></a>
     <nav class="nav" aria-label="Secciones">
       <a href="#problemas">Problemas</a>
-      <a href="#plan">Su plan</a>
       <a href="#costo">Cuánto cuesta</a>
-      <a href="#caso">Caso real</a>
+      <a href="#plan">Su plan</a>
+      <a href="#diagnostico">Diagnóstico</a>
       <a href="#precios">Precios</a>
     </nav>
   </div>
@@ -62,15 +62,15 @@
     <div class="hero__txt">
       <span class="eyebrow">Para clínicas de fisioterapia y rehabilitación</span>
       <h1>Tu clínica ya tiene un proceso. <span>Yo hago que el software lo siga.</span></h1>
-      <p class="hero__sub">Sesiones, cartas pase, cancelaciones, evolución y ejercicios en casa: lo que hoy vive entre Excel, WhatsApp y la memoria del equipo, en un solo sistema hecho para su clínica.</p>
+      <p class="hero__sub"><b>Encuentro dónde tu clínica está perdiendo pacientes, horas o ingresos y construyo software para atacar primero ese punto.</b> No tienes que cambiar toda tu operación: empezamos por una fuga concreta, medimos si mejora y solo después seguimos.</p>
       <ul class="promesas" aria-label="Tres promesas">
         <li>Menos citas perdidas</li><li>Sesiones bien cobradas</li><li>Pacientes que terminan</li>
       </ul>
       <div class="hero__ctas">
-        <a class="boton boton--terra" href="#problemas" data-t="ver-problemas">Ver qué les pasa ↓</a>
-        <a class="boton boton--wa" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20fisioterapia.%20Nosotros%20llevamos%20________%20manualmente%20y%20me%20gustar%C3%ADa%20saber%20c%C3%B3mo%20lo%20plantear%C3%ADas." target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Cuéntame qué llevan a mano</a>
+        <a class="boton boton--wa" data-t="wa-diagnostico-hero" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20fisioterapia%20y%20quiero%20solicitar%20el%20diagn%C3%B3stico%20sin%20costo.%20Somos%20una%20cl%C3%ADnica%20de%20____%20terapeutas." target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar diagnóstico sin costo</a>
+        <a class="boton boton--linea" href="#problemas" data-t="ver-problemas">Ver qué les pasa ↓</a>
       </div>
-      <p class="nota">Reviso su proceso sin costo. Empezamos por un solo flujo, no por una plataforma completa.</p>
+      <p class="nota hero__diag">45 minutos para revisar cómo funciona la clínica. Después te entrego un documento con oportunidades, prioridades y una propuesta. <b>Aunque decidas no construirlo conmigo, el diagnóstico es tuyo.</b></p>
     </div>
 
     <div class="sala" aria-hidden="true">
@@ -161,17 +161,19 @@
     <span class="eyebrow" data-n="1">Problemas</span>
     <h2>¿Alguno de estos les pasa?</h2>
     <p class="intro">Toquen el que más se parezca a su clínica. Pueden marcar varios: con lo que marquen les armo su plan de tratamiento.</p>
+    <p class="nota">Las cifras son ejemplos para pensar el negocio, no una promesa de resultado.</p>
   </div>
 
   <ul class="tarjetas compacta" id="tarjetas">
     <li class="tj tj--dinero" data-card="cancelaciones">
       <div class="tj__top"><span>Nº 01</span><span>Cancelaciones</span></div>
-      <p class="tj__frase">Un paciente cancela mañana a las 5:00.</p>
-      <p class="tj__sub">El horario queda vacío aunque había otros pacientes esperando.</p>
+      <p class="tj__frase">Esta semana quedaron 6 horas vacías por cancelaciones.</p>
+      <p class="tj__sub">A $700 la sesión: <b>$4,200 de capacidad</b> que ya pagaron (terapeuta, renta, cabina) y no usaron.</p>
       <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="cancelaciones">Nos pasa →</button></div>
       <span class="sello" aria-hidden="true">Nos pasa</span>
       <div class="sol">
         <h3>Una cancelación no tiene que convertirse en una hora perdida.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>6 horas vacías × $700 = <b>$4,200 a la semana</b> · cerca de <b>$18,000 al mes</b> de capacidad sin usar.</p></div>
         <p>Cuando alguien cancela, el horario se libera y el sistema avisa a los pacientes que estaban esperando lugar. El primero que lo toma, se queda con él. Ya construyo esta clase de automatización: en la plataforma de consulta, un horario apartado y no pagado se libera solo cada noche.</p>
         <ol class="flujo">
           <li class="x"><b>Mariana cancela</b><small>martes 5:00 PM</small></li>
@@ -188,11 +190,12 @@
     <li class="tj tj--dinero" data-card="seguros">
       <div class="tj__top"><span>Nº 02</span><span>Aseguradoras</span></div>
       <p class="tj__frase">La carta pase autorizó 10 sesiones. Ya lleva 8.</p>
-      <p class="tj__sub">¿Quién se da cuenta de que toca pedir la siguiente autorización?</p>
+      <p class="tj__sub">Si nadie pide la siguiente a tiempo, son <b>sesiones que se dan y no se cobran</b>, o un paciente que se va.</p>
       <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="seguros">Nos pasa →</button></div>
       <span class="sello" aria-hidden="true">Nos pasa</span>
       <div class="sol">
         <h3>Sesiones autorizadas por aseguradora, sin contarlas a mano.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>3 autorizaciones al mes que vencen con 4 sesiones pendientes × $700 = <b>$8,400 al mes</b> que no se cobran o se pierden.</p></div>
         <p>Si trabajan con cartas pase, autorizaciones o reembolsos, cada tratamiento puede quedar ligado a su autorización: cuántas sesiones cubre, cuántas van, cuándo vence y qué documentos faltan.</p>
         <div class="carta">
           <div class="carta__cab"><span>Aseguradora · carta pase #48291</span><span class="ejemplo">Ejemplo</span></div>
@@ -208,32 +211,34 @@
 
     <li class="tj tj--dinero" data-card="sesiones">
       <div class="tj__top"><span>Nº 03</span><span>Sesiones</span></div>
-      <p class="tj__frase">«¿Cuántas sesiones le quedan?»</p>
-      <p class="tj__sub">Y alguien tiene que abrir Excel, buscar el nombre y hacer cuentas.</p>
+      <p class="tj__frase">Este mes 12 paquetes terminaron sin que nadie revisara cómo sigue el paciente.</p>
+      <p class="tj__sub">Si 3 de ellos necesitaban continuar: <b>3 paquetes de $5,000 = $15,000</b> que se quedaron en el aire.</p>
       <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="sesiones">Nos pasa →</button></div>
       <span class="sello" aria-hidden="true">Nos pasa</span>
       <div class="sol">
         <h3>Que nadie tenga que contar sesiones a mano.</h3>
-        <p>El sistema registra cada sesión contra el plan del paciente y avisa antes de que se terminen, para que la renovación no dependa de que alguien se acuerde.</p>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>12 paquetes terminados · 3 que debían continuar × $5,000 = <b>$15,000 al mes</b>. Si continúa o se da de alta lo decide el terapeuta; el sistema solo avisa a tiempo.</p></div>
+        <p>El sistema registra cada sesión contra el plan del paciente y avisa antes de que se terminen, para que el terapeuta revise la continuidad a tiempo: alta, seguimiento o un nuevo plan. El software detecta la situación; la decisión clínica es del terapeuta.</p>
         <div class="paquete">
           <div class="paquete__cab"><span>Paciente · Mariana López</span><span class="ejemplo">Ejemplo</span></div>
           <div class="paquete__hoyos" aria-hidden="true"><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i></i><i></i></div>
           <div class="carta__datos"><span>Plan <b>10 sesiones</b></span><span>Utilizadas <b>8</b></span><span>Próxima <b>mar 5:00 PM</b></span></div>
-          <div class="alerta">Quedan 2 sesiones · ofrecer renovación</div>
+          <div class="alerta">Quedan 2 sesiones · revisar continuidad</div>
         </div>
-        <div class="gana"><span class="gana__k">¿Qué ganan?</span><p>Renovaciones que no dependen de la memoria de nadie, y cero discusiones de «yo pagué diez».</p></div>
+        <div class="gana"><span class="gana__k">¿Qué ganan?</span><p>Ningún paciente termina su paquete sin que alguien revise cómo sigue, y cero discusiones de «yo pagué diez».</p></div>
         <a class="boton boton--wa" data-t="wa-sesiones" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20fisioterapia.%20Los%20paquetes%20de%20sesiones%20los%20llevamos%20en%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero dejar de contar a mano</a>
       </div>
     </li>
 
     <li class="tj" data-card="evolucion">
       <div class="tj__top"><span>Nº 04</span><span>Evolución</span></div>
-      <p class="tj__frase">El paciente siente que no mejora.</p>
-      <p class="tj__sub">La información está repartida entre notas, mediciones y terapeutas distintos.</p>
+      <p class="tj__frase">El paciente siente que no mejora y deja el tratamiento a la mitad.</p>
+      <p class="tj__sub">Un plan de 10 sesiones abandonado en la 4: <b>6 sesiones × $700 = $4,200</b> por paciente.</p>
       <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="evolucion">Nos pasa →</button></div>
       <span class="sello" aria-hidden="true">Nos pasa</span>
       <div class="sol">
         <h3>Que el avance no quede escondido dentro de notas.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>4 abandonos al mes × 6 sesiones que faltaban × $700 = <b>$16,800 al mes</b>. Y cada abandono es un paciente que dice «no me funcionó».</p></div>
         <p>El terapeuta registra las mediciones que la propia clínica ya usa, y el sistema las ordena en una línea de tiempo que se entiende de un vistazo, también para el paciente que siente que no avanza. Las métricas las decide la clínica; yo construyo dónde registrarlas.</p>
         <div class="evo">
           <div class="evo__cab"><span>Sofía Martínez · rodilla derecha</span><span class="ejemplo">Ejemplo</span></div>
@@ -248,12 +253,13 @@
 
     <li class="tj" data-card="ejercicios">
       <div class="tj__top"><span>Nº 05</span><span>Ejercicio en casa</span></div>
-      <p class="tj__frase">«Haz estos ejercicios tres veces al día.»</p>
-      <p class="tj__sub">Pero después nadie sabe si realmente los hizo.</p>
+      <p class="tj__frase">«Haz estos ejercicios tres veces al día.» Nadie sabe si los hizo.</p>
+      <p class="tj__sub">Si no los hace, el avance se frena, el paciente se desespera y <b>el abandono lo paga la clínica</b>.</p>
       <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="ejercicios">Nos pasa →</button></div>
       <span class="sello" aria-hidden="true">Nos pasa</span>
       <div class="sol">
         <h3>El tratamiento no termina cuando el paciente sale de la clínica.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>Un paciente que avanza entre sesiones termina su plan. Uno que no, suele irse antes: son las mismas sesiones perdidas de un abandono.</p></div>
         <p>El terapeuta asigna los ejercicios; el paciente los tiene en su celular con instrucciones, video, series, repeticiones y frecuencia, y marca cuáles hizo. En la siguiente sesión el terapeuta ve el seguimiento. Sin diagnósticos ni recomendaciones automáticas: solo el plan que el terapeuta prescribió.</p>
         <div class="cel">
           <div class="cel__cab"><span>Hoy</span><span class="ejemplo">Ejemplo</span></div>
@@ -272,12 +278,13 @@
 
     <li class="tj" data-card="leads">
       <div class="tj__top"><span>Nº 06</span><span>Captación</span></div>
-      <p class="tj__frase">Entraron 80 personas por Instagram este mes.</p>
-      <p class="tj__sub">¿Cuántas terminaron en una valoración? ¿Cuántas compraron tratamiento?</p>
+      <p class="tj__frase">Este mes 80 personas preguntaron. Solo 6 empezaron tratamiento.</p>
+      <p class="tj__sub">Subir de 6 a 9 son 3 tratamientos de $4,000: <b>+$12,000 potenciales</b> con la misma publicidad.</p>
       <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="leads">Nos pasa →</button></div>
       <span class="sello" aria-hidden="true">Nos pasa</span>
       <div class="sol">
         <h3>¿De dónde vienen los pacientes que sí terminan pagando tratamiento?</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>De 6 a 9 pacientes nuevos × $4,000 por tratamiento = <b>+$12,000 al mes</b> sin gastar un peso más en anuncios.</p></div>
         <p>Una página web te dice cuántas personas entraron. Yo conecto el resto: anuncio → WhatsApp → valoración → tratamiento → renovación. Así saben qué canal trae pacientes que de verdad compran, cuánto cuesta conseguir uno y en qué paso se pierden.</p>
         <div class="embudo">
           <div class="embudo__cab"><span>Instagram · este mes</span><span class="ejemplo">Ejemplo</span></div>
@@ -294,12 +301,13 @@
 
     <li class="tj" data-card="portal">
       <div class="tj__top"><span>Nº 07</span><span>Recepción</span></div>
-      <p class="tj__frase">«¿Cuándo es mi cita? ¿Cuántas me quedan?»</p>
-      <p class="tj__sub">Recepción contesta lo mismo por WhatsApp todo el día.</p>
+      <p class="tj__frase">Recepción contesta 40 veces al día «¿cuándo es mi cita?».</p>
+      <p class="tj__sub">40 mensajes × 2 minutos = <b>casi 27 horas al mes</b> de recepción respondiendo lo mismo.</p>
       <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="portal">Nos pasa →</button></div>
       <span class="sello" aria-hidden="true">Nos pasa</span>
       <div class="sol">
         <h3>Menos «¿cuándo es mi cita?» por WhatsApp.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>40 mensajes al día × 2 min = 80 min diarios ≈ <b>27 horas al mes</b> que podrían ser agenda, cobranza o seguimiento.</p></div>
         <p>El paciente o su familia consultan lo que la clínica decida mostrar, sin escribirle a recepción: próxima cita, indicaciones, ejercicios, sesiones restantes, pagos, documentos compartidos y progreso.</p>
         <div class="cel">
           <div class="cel__cab"><span>Portal · Carlos D.</span><span class="ejemplo">Ejemplo</span></div>
@@ -317,11 +325,12 @@
     <li class="tj" data-card="sucursales">
       <div class="tj__top"><span>Nº 08</span><span>Equipo y sucursales</span></div>
       <p class="tj__frase">Empezó en una sede y hoy se atiende en otra.</p>
-      <p class="tj__sub">¿La otra sede, y el otro terapeuta, saben exactamente qué lleva?</p>
+      <p class="tj__sub">Si la otra sede no sabe qué lleva, <b>repite la valoración o pierde el hilo</b>, y el paciente lo nota.</p>
       <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="sucursales">Nos pasa →</button></div>
       <span class="sello" aria-hidden="true">Nos pasa</span>
       <div class="sol">
         <h3>Con varios terapeutas o sedes, debe seguir siendo un solo paciente.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>Cada valoración repetida es una hora de terapeuta que no se cobra, y cada paciente que siente que «empieza de cero» es uno que puede irse.</p></div>
         <p>Expediente único sin importar dónde se atienda. Cada especialista registra su parte y el equipo consulta lo que le corresponde según sus permisos. Objetivos compartidos, sin cinco versiones distintas del mismo paciente.</p>
         <div class="equipo">
           <div class="equipo__cab"><span>Sofía Martínez · 3 objetivos activos</span><span class="ejemplo">Ejemplo</span></div>
@@ -356,10 +365,54 @@
   </dialog>
 </section>
 
+<!-- 2 · CUÁNTO PODRÍA ESTAR COSTÁNDOLES -->
+<section class="seccion" id="costo">
+  <div class="cab">
+    <span class="eyebrow" data-n="2">Cuánto cuesta</span>
+    <h2>¿Cuánto podría estar costándoles?</h2>
+    <p class="intro">Seleccionen lo que les pasa y calcúlenlo con sus números. Toma un minuto.</p>
+  </div>
+  <div class="checks" id="checks">
+    <label><input type="checkbox" value="cancel"><span><b>Cancelaciones que no se rellenan</b><small>La hora se queda vacía.</small></span></label>
+    <label><input type="checkbox" value="abandono"><span><b>Pacientes que abandonan el tratamiento</b><small>Se van antes de terminar su plan.</small></span></label>
+    <label><input type="checkbox" value="leads"><span><b>Prospectos que preguntan y no agendan</b><small>Escriben, preguntan precio y desaparecen.</small></span></label>
+    <label><input type="checkbox" value="paquetes"><span><b>Paquetes que terminan sin seguimiento</b><small>Nadie revisa cómo sigue el paciente.</small></span></label>
+    <label><input type="checkbox" value="ocupacion"><span><b>Horarios con baja ocupación</b><small>Hay horas que casi nunca se llenan.</small></span></label>
+    <label><input type="checkbox" value="autoriza"><span><b>Autorizaciones que vencen</b><small>La carta pase se acaba sin renovarse.</small></span></label>
+  </div>
+  <div class="checks__pie">
+    <button type="button" class="boton boton--terra" id="diag-abrir">Calcular con mis números →</button>
+    <p class="aviso" id="checks-aviso" hidden>Seleccionen al menos una.</p>
+  </div>
+
+  <dialog class="ficha diag" id="diag" aria-labelledby="diag-titulo">
+    <div class="ficha__cab">
+      <span class="ficha__tag">Diagnóstico económico</span>
+      <button type="button" class="ficha__x" id="diag-x" aria-label="Cerrar">×</button>
+    </div>
+    <div class="ficha__cuerpo">
+      <h3 id="diag-titulo">Con sus números</h3>
+      <div class="monitor__pantalla diag__total">
+        <span class="monitor__k">Capacidad no aprovechada</span>
+        <b class="monitor__num" id="diag-num">$0</b>
+        <svg class="monitor__ecg" viewBox="0 0 600 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34 H180 L196 34 L206 12 L218 54 L230 4 L242 40 L252 34 H420 L432 34 L440 22 L450 44 L458 34 H600"/></svg>
+        <span class="monitor__det">al mes, aproximadamente</span>
+      </div>
+      <p class="diag__aviso">No significa que todo sea recuperable. En el diagnóstico revisamos cuánto sí podría atacarse y por dónde conviene empezar.</p>
+      <div id="diag-filas"></div>
+
+    </div>
+    <div class="ficha__pie">
+      <a class="boton boton--wa" id="diag-wa" data-t="wa-diagnostico-calc" href="#" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar diagnóstico sin costo</a>
+      <button type="button" class="boton boton--linea" id="diag-cerrar">Seguir viendo</button>
+    </div>
+  </dialog>
+</section>
+
 <!-- B · PLAN DE TRATAMIENTO -->
 <section class="seccion" id="plan">
   <div class="cab">
-    <span class="eyebrow" data-n="2">Su plan</span>
+    <span class="eyebrow" data-n="3">Su plan</span>
     <h2 id="plan-titulo">Marquen arriba lo que les pasa y aquí aparece su plan.</h2>
     <p class="intro" id="plan-intro">Un solo sistema, construido alrededor de su clínica. Empezamos por lo que más dinero o tiempo les cuesta.</p>
   </div>
@@ -404,43 +457,6 @@
   </div>
 </section>
 
-<!-- C · CUÁNTO CUESTA -->
-<section class="seccion" id="costo">
-  <div class="cab">
-    <span class="eyebrow" data-n="3">Cuánto cuesta</span>
-    <h2>¿Cuánto les cuesta hoy una agenda que no se llena sola?</h2>
-    <p class="intro">Una estimación en 30 segundos, con sus números.</p>
-  </div>
-
-  <div class="monitor" id="calc">
-    <div class="monitor__pantalla">
-      <span class="monitor__k" id="calc-etq">Se les va al mes</span>
-      <b class="monitor__num" id="calc-num">$ — — —</b>
-      <svg class="monitor__ecg" viewBox="0 0 600 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34 H180 L196 34 L206 12 L218 54 L230 4 L242 40 L252 34 H420 L432 34 L440 22 L450 44 L458 34 H600"/></svg>
-      <span class="monitor__det" id="calc-det">Pongan sus números para ver el resultado.</span>
-    </div>
-    <button type="button" class="boton boton--terra" id="calc-abrir">Calcularlo →</button>
-    <div class="monitor__cuerpo" id="calc-cuerpo" hidden>
-      <div class="tabs" role="tablist">
-        <button type="button" role="tab" aria-selected="true" data-tab="cancel">Citas que se pierden</button>
-        <button type="button" role="tab" aria-selected="false" data-tab="renov">Paquetes sin renovar</button>
-      </div>
-      <div class="panel" data-panel="cancel">
-        <label class="rango"><span>Sesiones a la semana <output data-for="c-sesiones"></output></span><input type="range" id="c-sesiones" min="20" max="800" step="10" value="150"></label>
-        <label class="rango"><span>¿Qué porcentaje cancela o no llega? <output data-for="c-cancela"></output></span><input type="range" id="c-cancela" min="2" max="35" step="1" value="12"></label>
-        <label class="rango"><span>Precio por sesión <output data-for="c-precio"></output></span><input type="range" id="c-precio" min="200" max="2500" step="50" value="700"></label>
-      </div>
-      <div class="panel" data-panel="renov" hidden>
-        <label class="rango"><span>Pacientes que terminan su paquete al mes <output data-for="c-terminan"></output></span><input type="range" id="c-terminan" min="5" max="300" step="5" value="30"></label>
-        <label class="rango"><span>¿Cuántos no renuevan porque nadie se los ofreció a tiempo? <output data-for="c-norenuevan"></output></span><input type="range" id="c-norenuevan" min="5" max="60" step="5" value="20"></label>
-        <label class="rango"><span>Valor de un paquete <output data-for="c-paquete"></output></span><input type="range" id="c-paquete" min="1000" max="20000" step="500" value="5000"></label>
-      </div>
-      <p class="monitor__mitad" id="calc-mitad"></p>
-      <p class="nota">Es una estimación con los números que ustedes ponen. En la revisión los medimos con su agenda real.</p>
-    </div>
-  </div>
-</section>
-
 <!-- D · CASO REAL -->
 <section class="seccion" id="caso">
   <div class="cab">
@@ -455,25 +471,55 @@
   <p class="honesto">Es trabajo hecho para una clienta real, en psicología. Todavía no tengo una clínica de fisioterapia en producción: lo específico de fisioterapia se construye encima de esa base. Otros casos, en deporte y educación, en <a href="/plataformas/">la página principal</a>.</p>
 </section>
 
-<!-- E · CÓMO EMPEZAMOS Y PRECIOS -->
+<!-- 5 · DIAGNÓSTICO -->
+<section class="seccion" id="diagnostico">
+  <div class="cab">
+    <span class="eyebrow" data-n="5">Diagnóstico sin costo</span>
+    <h2>Primero analizo la clínica. Después decidimos si se construye algo.</h2>
+    <p class="intro">No es «háblame para que te venda». Es una revisión de cómo funciona hoy la clínica, con un entregable que se quedan.</p>
+  </div>
+  <div class="diag-grid">
+    <ol class="diag-pasos">
+      <li><span>45 min</span><b>Me cuentan cómo trabajan.</b><p>Agenda, cancelaciones, paquetes, aseguradoras, captación. No necesito que me expliquen tecnología: necesito cosas como «esto lo apuntamos aquí» o «si alguien cancela, hacemos esto».</p></li>
+      <li><span>Después</span><b>Les entrego un documento.</b><p>Dónde se están yendo pacientes, horas o ingresos; qué atacaría primero y por qué; y una propuesta con alcance, tiempos y costo.</p></li>
+      <li><span>Y luego</span><b>Ustedes deciden.</b><p>Aunque decidan no construirlo conmigo, el diagnóstico es suyo.</p></li>
+    </ol>
+    <div class="documento" aria-hidden="true">
+      <span class="documento__k">Diagnóstico · su clínica</span>
+      <b>Oportunidades</b>
+      <p><i class="l" style="--w:92%"></i><i class="l" style="--w:76%"></i></p>
+      <b>Prioridades</b>
+      <p><i class="n">1</i><i class="l" style="--w:70%"></i></p>
+      <p><i class="n">2</i><i class="l" style="--w:58%"></i></p>
+      <p><i class="n">3</i><i class="l" style="--w:64%"></i></p>
+      <b>Propuesta</b>
+      <p><i class="l" style="--w:84%"></i><i class="l" style="--w:46%"></i></p>
+      <span class="documento__sello">Es suyo</span>
+    </div>
+  </div>
+  <div class="cta-plan">
+    <a class="boton boton--wa" data-t="wa-diagnostico" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Quiero%20solicitar%20el%20diagn%C3%B3stico%20sin%20costo%20para%20mi%20cl%C3%ADnica%20de%20fisioterapia." target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar diagnóstico sin costo</a>
+    <span>45 minutos. Después, el documento con oportunidades, prioridades y propuesta.</span>
+  </div>
+</section>
+
+<!-- 6 · PRECIOS -->
 <section class="seccion" id="precios">
   <div class="cab">
-    <span class="eyebrow" data-n="5">Cómo empezamos y precios</span>
-    <h2>Primero entiendo cómo funciona su clínica.</h2>
+    <span class="eyebrow" data-n="6">Precios</span>
+    <h2>No hace falta empezar con todo.</h2>
   </div>
-  <ol class="pasos">
-    <li><span>01</span><b>Me cuentan el proceso.</b><p>No necesito que me expliquen tecnología. Necesito cosas como «esto lo apuntamos aquí», «esto se lo manda recepción al terapeuta», «si alguien cancela, hacemos esto».</p></li>
-    <li><span>02</span><b>Encontramos dónde se pierde tiempo o dinero.</b><p>No empiezo proponiendo una app. Primero identificamos uno o dos procesos que valga la pena cambiar.</p></li>
-    <li><span>03</span><b>Construimos uno.</b><p>No una plataforma enorme: un flujo, usado por personas reales de su clínica.</p></li>
-    <li><span>04</span><b>Si funciona, seguimos.</b><p>Lo siguiente puede ser sesiones, pagos, aseguradoras, seguimiento, captación, ejercicios o sucursales. Solo si de verdad hace falta.</p></li>
-  </ol>
   <dl class="precios">
-    <div><dt>Diagnóstico<small>Reviso cómo llevan hoy el proceso y les digo dónde veo oportunidad.</small></dt><dd class="gratis">Sin costo</dd></div>
-    <div><dt>Primer flujo en producción<small>Por ejemplo: paquetes y sesiones, citas y anticipos, o seguimiento de prospectos.</small></dt><dd>Desde $18,000 MXN</dd></div>
-    <div><dt>Plataforma inicial<small>Según usuarios, procesos e integraciones.</small></dt><dd>Normalmente $35,000 – $60,000 MXN</dd></div>
+    <div><dt>Diagnóstico<small>45 minutos y un documento con oportunidades, prioridades y propuesta.</small></dt><dd class="gratis">Sin costo</dd></div>
+    <div><dt>Primer flujo en producción<small>Por ejemplo: lista de espera y cancelaciones, paquetes y sesiones, o seguimiento de prospectos.</small></dt><dd>Desde $20,000 MXN</dd></div>
+    <div><dt>Plataforma inicial<small>Según usuarios, procesos e integraciones.</small></dt><dd>Normalmente $40,000 – $70,000 MXN</dd></div>
     <div><dt>Proyectos más amplios</dt><dd>Cotización según alcance</dd></div>
     <div><dt>Soporte y evolución<small>Hosting, monitoreo, cambios menores y alguien responsable de que siga funcionando.</small></dt><dd>Desde $4,000 MXN/mes</dd></div>
   </dl>
+  <div class="avances">
+    <b>La implementación puede dividirse por avances. No es necesario pagar todo el proyecto al inicio.</b>
+    <ol><li>Anticipo</li><li>Primera versión operativa</li><li>Salida a producción</li></ol>
+  </div>
   <p class="nota">Las funciones nuevas se cotizan aparte, siempre con estimado antes de empezar.</p>
 
   <div class="privacidad">
@@ -485,9 +531,9 @@
 <!-- CIERRE -->
 <section class="seccion final" id="escribir">
   <div class="cab">
-    <span class="eyebrow" data-n="6">Empieza aquí</span>
+    <span class="eyebrow" data-n="7">Empieza aquí</span>
     <h2>¿Qué siguen llevando hoy en Excel o WhatsApp?</h2>
-    <p class="intro">Puede ser algo tan simple como las sesiones autorizadas, las cancelaciones, los ejercicios o los prospectos. Me lo cuentan y les digo cómo lo plantearía. Sin costo.</p>
+    <p class="intro">Puede ser algo tan simple como las sesiones autorizadas, las cancelaciones, los ejercicios o los prospectos. Escríbanlo aquí y lo usamos como punto de partida del diagnóstico sin costo.</p>
   </div>
 
   <form class="form" id="form" novalidate>
@@ -504,7 +550,7 @@
     </fieldset>
     <div class="full"><label for="f-proceso">¿Qué proceso quieren dejar de hacer manualmente?</label><textarea id="f-proceso" name="proceso" placeholder="Por ejemplo: las sesiones autorizadas por aseguradora las contamos en Excel cada viernes."></textarea><p class="aviso" id="f-aviso" hidden>Cuéntame aunque sea en una línea qué proceso es.</p></div>
     <div class="full form__acciones">
-      <button class="boton boton--wa" type="submit"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Revisar mi proceso</button>
+      <button class="boton boton--wa" type="submit"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar diagnóstico</button>
       <a class="enlace" href="mailto:bodgar@bodgar.dev?subject=Cl%C3%ADnica%20de%20fisioterapia" id="f-correo">o mandarlo por correo</a>
     </div>
     <p class="full nota" style="margin:0">No incluyan información de pacientes: solo necesito entender el proceso. El mensaje se abre en su WhatsApp con lo que marcaron, para que lo revisen antes de enviarlo.</p>
