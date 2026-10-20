@@ -1,35 +1,41 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-MX">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bodgar Espinosa — Mantenimiento de apps para negocios</title>
-<meta name="description" content="Ingeniero móvil senior. Mantengo apps de iOS y Android funcionando cuando Apple y Google cambian las reglas. Tarifa mensual fija desde $600 USD.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A0D14">
+<title>Bodgar Espinosa — Mantenimiento de apps iOS y Android para negocios</title>
+<meta name="description" content="Ingeniero móvil senior. Mantengo apps de iOS y Android funcionando cuando Apple y Google cambian las reglas. Cuota mensual fija desde $4,000 MXN.">
 <link rel="canonical" href="https://bodgar.dev/es/">
 <link rel="alternate" hreflang="en" href="https://bodgar.dev/">
 <link rel="alternate" hreflang="es" href="https://bodgar.dev/es/">
 <link rel="alternate" hreflang="x-default" href="https://bodgar.dev/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bodgar.dev/es/">
-<meta property="og:title" content="Bodgar Espinosa — Mantenimiento de apps para negocios">
-<meta property="og:description" content="Ingeniero móvil senior. Mantengo apps de iOS y Android funcionando cuando Apple y Google cambian las reglas. Tarifa mensual fija desde $600 USD.">
+<meta property="og:title" content="Evito que la app de tu negocio se rompa">
+<meta property="og:description" content="Mantengo apps de iOS y Android funcionando cuando Apple y Google cambian las reglas. Cuota mensual fija desde $4,000 MXN.">
 <meta property="og:image" content="https://bodgar.dev/assets/og-es.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/home/home.css">
 <script>document.documentElement.className += " js";</script>
 </head>
-<body>
+<body data-moneda="MXN">
 
 <header class="topbar">
-  <div class="wrap">
-    <a class="wordmark" href="/es/">Bodgar Espinosa <span>— ingeniero móvil</span></a>
+  <div class="topbar__in">
+    <a class="marca" href="/es/"><span class="marca__logo" aria-hidden="true"></span><span>Bodgar Espinosa <em>· ingeniero móvil</em></span></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#problemas">Problemas</a>
+      <a href="#plan">Tu plan</a>
+      <a href="#costo">Cuánto cuesta</a>
+      <a href="#precios">Precios</a>
+    </nav>
     <nav class="lang" aria-label="Idioma">
       <a href="/" lang="en" hreflang="en">EN</a>
-      <span class="sep" aria-hidden="true">/</span>
       <a href="/es/" aria-current="true" lang="es">ES</a>
     </nav>
   </div>
@@ -37,221 +43,419 @@
 
 <main>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <h1 class="reveal">Evito que la app de tu negocio se rompa.</h1>
-      <div class="lede prose reveal">
-        <p>Apple y Google mueven sus SDK, políticas y requisitos todo el tiempo. Una app puede funcionar perfecto hoy, pero entre más tiempo pasa sin mantenimiento, más cara e impredecible se vuelve la siguiente actualización obligatoria. Y el cliente que no puede reservar, pedir o pagar no te llama por teléfono. Se va con otro.</p>
-        <p>Soy ingeniero móvil con diez años construyendo apps que ya tienes en tu celular. <strong>Mantengo la tuya funcionando por una cuota mensual fija.</strong></p>
+<!-- HÉROE: dos celulares y un interruptor -->
+<section class="hero" id="inicio">
+  <div class="hero__grid">
+    <div class="hero__txt">
+      <span class="eyebrow">iOS y Android · más de 10 años</span>
+      <h1>Evito que la app de tu negocio <span>se rompa.</span></h1>
+      <p class="hero__sub">Apple y Google cambian sus reglas todo el año. Tu app puede funcionar perfecto hoy y cerrarse sola en septiembre. <b>Y el cliente que no puede reservar, pedir o pagar no te llama: se va con otro.</b></p>
+      <div class="hero__ctas">
+        <a class="boton boton--azul" href="mailto:bodgar@bodgar.dev?subject=Revisi%C3%B3n%20gratis%20de%20mi%20app&amp;body=Este%20es%20el%20link%20de%20mi%20app%3A%20">Mándame tu app → diagnóstico gratis</a>
+        <a class="boton boton--linea" href="https://cal.com/bodgar/free-app-check" target="_blank" rel="noopener noreferrer">O agenda 20 minutos</a>
       </div>
-      <div class="actions reveal">
-        <a class="btn" href="mailto:bodgar@bodgar.dev?subject=Revisi%C3%B3n%20gratis%20de%20mi%20app&amp;body=Este%20es%20el%20link%20de%20mi%20app%3A%20">Mándame tu app &rarr; diagnóstico gratis de una página</a>
-        <a class="btn-quiet" href="https://cal.com/bodgar/free-app-check" target="_blank" rel="noopener noreferrer">O agenda 20 minutos</a>
-      </div>
-      <p class="meta-line reveal">Más de 10 años &middot; iOS y Android &middot; Apps que usan millones</p>
+      <p class="nota">Te devuelvo un reporte de una página con lo que ya está roto y lo que viene. Sin llamada de ventas a menos que tú la quieras.</p>
     </div>
-  </section>
 
-  <!-- PROOF -->
-  <section class="pad">
-    <div class="wrap">
-      <span class="mono eyebrow reveal">En producci&oacute;n</span>
-      <h2 class="reveal">Apps que he construido y publicado.</h2>
-      <p class="prose reveal" style="margin-top:18px;color:var(--ink-soft)">No es un portafolio de maquetas. Abre cualquiera ahora mismo &mdash; están en producción y seguro usaste una esta semana.</p>
-
-      <div class="apps">
-        <a class="app reveal" style="--d:0ms" href="https://apps.apple.com/us/app/petsmart/id1175467091" target="_blank" rel="noopener noreferrer">
-          <span class="app-icon"><img src="/assets/apps/petsmart.png" width="256" height="256" loading="lazy" alt="PetSmart"></span>
-          <span class="app-name">PetSmart</span>
-          <span class="app-role">Plataforma &middot; 2026</span>
-        </a>
-        <a class="app reveal" style="--d:60ms" href="https://apps.apple.com/us/app/venmo/id351727428" target="_blank" rel="noopener noreferrer">
-          <span class="app-icon"><img src="/assets/apps/venmo.png" width="256" height="256" loading="lazy" alt="Venmo"></span>
-          <span class="app-name">Venmo</span>
-          <span class="app-role">Funciones &middot; 2023</span>
-        </a>
-        <a class="app reveal" style="--d:120ms" href="https://apps.apple.com/us/app/walmart-shopping-savings/id338137227" target="_blank" rel="noopener noreferrer">
-          <span class="app-icon"><img src="/assets/apps/walmart.png" width="256" height="256" loading="lazy" alt="Walmart"></span>
-          <span class="app-name">Walmart</span>
-          <span class="app-role">Recompensas &middot; 2022</span>
-        </a>
-        <a class="app reveal" style="--d:180ms" href="https://apps.apple.com/us/app/dominos-pizza-usa/id436491861" target="_blank" rel="noopener noreferrer">
-          <span class="app-icon"><img src="/assets/apps/dominos.png" width="256" height="256" loading="lazy" alt="Domino's"></span>
-          <span class="app-name">Domino's</span>
-          <span class="app-role">Arquitectura &middot; 2024</span>
-        </a>
-        <a class="app reveal" style="--d:240ms" href="https://apps.apple.com/us/app/banco-azteca/id1203433478" target="_blank" rel="noopener noreferrer">
-          <span class="app-icon"><img src="/assets/apps/azteca.png" width="256" height="256" loading="lazy" alt="Banco Azteca"></span>
-          <span class="app-name">Banco Azteca</span>
-          <span class="app-role">Pagos &middot; 2018&ndash;22</span>
-        </a>
+    <div class="escena" aria-label="Simulación: la misma app con y sin mantenimiento">
+      <div class="escena__control">
+        <span class="escena__sim">Simulación</span>
+        <button type="button" class="interruptor" id="interruptor" role="switch" aria-checked="false">
+          <span class="interruptor__txt">Mantenimiento</span>
+          <span class="interruptor__riel"><span class="interruptor__bola"></span></span>
+          <span class="interruptor__estado" id="interruptor-estado">Apagado</span>
+        </button>
+        <span class="escena__pista" id="pista">Préndelo →</span>
       </div>
 
-      <p class="apps-note reveal">Las construí como parte de los equipos de ingeniería de Grid Dynamics, HCLTech, Globant, Evolutyz y Banco Azteca. No son mis clientes &mdash; son las apps donde está mi código.</p>
-    </div>
-  </section>
+      <div class="evento" id="evento" aria-live="polite">
+        <span class="evento__fecha" id="evento-fecha">1 jul</span>
+        <b class="evento__t" id="evento-t">Vence el certificado de notificaciones</b>
+      </div>
 
-  <!-- PROBLEM -->
-  <section class="pad">
-    <div class="wrap">
-      <span class="mono eyebrow reveal">El problema</span>
-      <h2 class="reveal">Nadie tocó tu app. Las plataformas se movieron de todos modos.</h2>
+      <div class="telefonos">
+        <div class="tel tel--ios" id="tel-ios">
+          <div class="tel__pantalla">
+            <div class="tel__isla" aria-hidden="true"></div>
+            <div class="app">
+              <div class="app__barra"><span>9:41</span><span class="app__iconos">▮▮ ◔</span></div>
+              <div class="app__cab"><span class="app__logo"></span><div><b>Tu negocio</b><small>App Store · <span class="estrellas" data-r="ios">★ 4.8</span></small></div></div>
+              <div class="app__tarjeta"><small>Próxima cita</small><b>Jueves · 10:00</b><span class="app__btn">Reservar</span></div>
+              <div class="app__lista"><i></i><i></i><i></i></div>
+              <div class="app__pagar"><span>Total $480</span><span class="app__btn app__btn--pagar">Pagar</span></div>
+            </div>
+            <div class="capa capa--falla"><div class="alerta-ios"><b>Tu negocio se cerró inesperadamente</b><span>Volver a abrir</span></div></div>
+            <div class="capa capa--pago"><div class="toast-error">Error al pagar (410)</div></div>
+            <div class="capa capa--notif"><div class="notif-perdida"><span>🔕</span><b>0 recordatorios enviados hoy</b></div></div>
+            <div class="capa capa--ok"><div class="toast-ok"></div></div>
+          </div>
+          <span class="tel__k">iPhone</span>
+        </div>
 
-      <div class="breaks reveal">
-        <div class="brk">
-          <span class="mono when">Cada septiembre</span>
-          <p class="what">Sale una versión nueva de iOS y la mayoría de los celulares se actualiza en semanas. Una app hecha para versiones viejas puede empezar a fallar, y cada año que se salta hace más grande la siguiente actualización.</p>
-        </div>
-        <div class="brk">
-          <span class="mono when">Sin avisarte</span>
-          <p class="what">Apple y Google ponen fechas límite para SDK y políticas nuevas. El aviso llega a una cuenta de desarrollador que ya nadie revisa. Si se pasa una, no puedes publicar actualizaciones hasta corregirlo, y en Google Play la app puede dejar de mostrarse a usuarios nuevos.</p>
-        </div>
-        <div class="brk">
-          <span class="mono when">En silencio</span>
-          <p class="what">Los certificados vencen. El servicio de pagos, reservas o mapas que vive dentro de tu app deja de dar soporte a versiones viejas. Una mañana un botón puede dejar de responder.</p>
-        </div>
-        <div class="brk">
-          <span class="mono when">Y entonces</span>
-          <p class="what">Tu app baja en los resultados de búsqueda, las reseñas se te voltean, y la gente que iba a reservar contigo reserva con alguien más.</p>
+        <div class="tel tel--android" id="tel-android">
+          <div class="tel__pantalla">
+            <div class="tel__camara" aria-hidden="true"></div>
+            <div class="app">
+              <div class="app__barra"><span>9:41</span><span class="app__iconos">▲ ▮▮</span></div>
+              <div class="app__cab"><span class="app__logo"></span><div><b>Tu negocio</b><small>Google Play · <span class="estrellas" data-r="android">★ 4.8</span></small></div></div>
+              <div class="app__tarjeta"><small>Próxima cita</small><b>Jueves · 10:00</b><span class="app__btn">Reservar</span></div>
+              <div class="app__lista"><i></i><i></i><i></i></div>
+              <div class="app__pagar"><span>Total $480</span><span class="app__btn app__btn--pagar">Pagar</span></div>
+            </div>
+            <div class="capa capa--play"><div class="play-bloqueo"><b>Esta app no está disponible para usuarios nuevos</b><span>Google Play · requisito de SDK vencido</span></div></div>
+            <div class="capa capa--pago"><div class="toast-error">Error al pagar (410)</div></div>
+            <div class="capa capa--notif"><div class="notif-perdida"><span>🔕</span><b>0 recordatorios enviados hoy</b></div></div>
+            <div class="capa capa--ok"><div class="toast-ok"></div></div>
+          </div>
+          <span class="tel__k">Android</span>
         </div>
       </div>
 
-      <p class="closer reveal">Nada de esto empieza por algo que hiciste. Casi todo trae fecha límite.</p>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="pad">
-    <div class="wrap">
-      <span class="mono eyebrow reveal">Precios</span>
-      <h2 class="reveal">Una cuota fija al mes. Sin sorpresas.</h2>
-      <p class="prose reveal" style="margin-top:18px;color:var(--ink-soft)">Siempre sabes cuánto pagas, y la cuota mensual nunca se convierte en una factura sorpresa. Elige el nivel de cobertura que quieres.</p>
-
-      <div class="plans reveal">
-        <div class="plan">
-          <div class="plan-name">Essentials</div>
-          <div class="price">$600</div>
-          <div class="price-sub">al mes, USD</div>
-          <ul class="plan-list">
-            <li>Tu app se revisa contra cada versi&oacute;n nueva de iOS y Android, y se actualiza cuando hace falta</li>
-            <li>Requisitos de App Store y Google Play siempre al d&iacute;a</li>
-            <li>Parches de seguridad aplicados</li>
-            <li>Servicios de terceros actualizados antes de que te corten</li>
-            <li>Certificados renovados antes de que venzan</li>
-            <li>Un reporte mensual en lenguaje claro</li>
-            <li class="promise">Ideas, siempre gratis. Cada mes te digo qu&eacute; mejorar&iacute;a y cu&aacute;nto costar&iacute;a. T&uacute; decides qu&eacute; sigue &mdash; o si no sigue nada.</li>
-          </ul>
-        </div>
-
-        <div class="plan lead">
-          <div class="plan-name">Standard</div>
-          <div class="price">$1,200</div>
-          <div class="price-sub">al mes, USD</div>
-          <ul class="plan-list">
-            <li class="carry">Todo lo de Essentials, m&aacute;s:</li>
-            <li>Correcci&oacute;n de errores conforme aparecen</li>
-            <li>Monitoreo de fallas, para detectarlas antes de que tus clientes las reporten</li>
-            <li>4 horas de desarrollo al mes, para lo que t&uacute; quieras construir. Las horas que no uses pasan al mes siguiente.</li>
-            <li class="promise">Ideas, siempre gratis. Cada mes te digo qu&eacute; mejorar&iacute;a y cu&aacute;nto costar&iacute;a. T&uacute; decides qu&eacute; sigue &mdash; o si no sigue nada.</li>
-          </ul>
-        </div>
-
-        <div class="plan">
-          <div class="plan-name">Priority</div>
-          <div class="price">$2,000</div>
-          <div class="price-sub">al mes, USD</div>
-          <ul class="plan-list">
-            <li class="carry">Todo lo de Standard, m&aacute;s:</li>
-            <li>Respuesta garantizada en 24 horas</li>
-            <li>10 horas de desarrollo al mes. Las horas que no uses pasan al mes siguiente.</li>
-            <li>Rechazos de la App Store atendidos por m&iacute;</li>
-            <li class="promise">Ideas, siempre gratis. Cada mes te digo qu&eacute; mejorar&iacute;a y cu&aacute;nto costar&iacute;a. T&uacute; decides qu&eacute; sigue &mdash; o si no sigue nada.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="plans-foot reveal">
-        <p class="foot-terms">Cancela cuando quieras &middot; Costo &uacute;nico de arranque desde $800&nbsp;USD</p>
-        <p class="foot-quote">Los proyectos m&aacute;s grandes se cotizan aparte a $75&nbsp;USD la hora. Siempre ves el estimado antes de que empiece.</p>
+      <div class="marcador">
+        <div><span>Clientes perdidos este año</span><b id="perdidos">0</b></div>
+        <div><span>Fallas evitadas</span><b id="evitadas">0</b></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section class="pad">
-    <div class="wrap">
-      <span class="mono eyebrow reveal">Con quién vas a trabajar</span>
-      <h2 class="reveal">Conmigo. Ese es justamente el punto.</h2>
-
-      <div class="about-grid reveal">
-        <img class="portrait" src="/assets/bodgar.jpg" width="576" height="720" alt="Bodgar Espinosa">
-        <div class="about-body">
-          <p>Soy Bodgar, ingeniero móvil en la Ciudad de México. Llevo diez años construyendo y cuidando apps de iOS y Android para empresas como Google, Walmart, Venmo, Domino's y PetSmart, trabajando con equipos de Estados Unidos. Trabajo de forma remota y estoy disponible en horario laboral de EE.&nbsp;UU.</p>
-          <p>Aquí no te pasan con un ejecutivo de cuenta ni con un equipo que rota cada mes. <strong>Hablas directo con quien escribe el código.</strong> Tomo pocas apps a la vez para que cada una reciba atención de verdad.</p>
-          <p style="margin-top:26px"><a class="btn-quiet" href="/assets/Bodgar-Espinosa-CV.pdf" target="_blank" rel="noopener noreferrer">Descargar mi CV (PDF)</a></p>
-        </div>
-      </div>
+<!-- EN PRODUCCIÓN -->
+<section class="seccion" id="apps">
+  <div class="cab">
+    <span class="eyebrow" data-n="★">En producción</span>
+    <h2>Apps que he construido y publicado.</h2>
+    <p class="intro">No es un portafolio de maquetas: están en producción y seguro usaste una esta semana. Tócalas, abren en la tienda.</p>
+  </div>
+  <div class="inicio-tel">
+    <div class="inicio-tel__fondo"></div>
+    <div class="inicio-tel__rejilla">
+      <a class="icono" href="https://apps.apple.com/us/app/petsmart/id1175467091" target="_blank" rel="noopener noreferrer"><img src="/assets/apps/petsmart.png" width="256" height="256" loading="lazy" alt="PetSmart"><b>PetSmart</b><small>Plataforma · 2026</small></a>
+      <a class="icono" href="https://apps.apple.com/us/app/venmo/id351727428" target="_blank" rel="noopener noreferrer"><img src="/assets/apps/venmo.png" width="256" height="256" loading="lazy" alt="Venmo"><b>Venmo</b><small>Funciones · 2023</small></a>
+      <a class="icono" href="https://apps.apple.com/us/app/walmart-shopping-savings/id338137227" target="_blank" rel="noopener noreferrer"><img src="/assets/apps/walmart.png" width="256" height="256" loading="lazy" alt="Walmart"><b>Walmart</b><small>Recompensas · 2022</small></a>
+      <a class="icono" href="https://apps.apple.com/us/app/dominos-pizza-usa/id436491861" target="_blank" rel="noopener noreferrer"><img src="/assets/apps/dominos.png" width="256" height="256" loading="lazy" alt="Domino's"><b>Domino's</b><small>Arquitectura · 2024</small></a>
+      <a class="icono" href="https://apps.apple.com/us/app/banco-azteca/id1203433478" target="_blank" rel="noopener noreferrer"><img src="/assets/apps/azteca.png" width="256" height="256" loading="lazy" alt="Banco Azteca"><b>Banco Azteca</b><small>Pagos · 2018–22</small></a>
     </div>
-  </section>
+  </div>
+  <p class="nota nota--centro">Las construí como parte de los equipos de ingeniería de Grid Dynamics, HCLTech, Globant, Evolutyz y Banco Azteca. No son mis clientes: son las apps donde está mi código.</p>
+</section>
 
-  <!-- PRODUCTS -->
-  <section class="pad">
-    <div class="wrap">
-      <span class="mono eyebrow reveal">Más allá del mantenimiento</span>
-      <h2 class="reveal">Cuando la app necesita más, también construyo lo nuevo.</h2>
-      <p class="prose reveal" style="margin-top:18px;color:var(--ink-soft)">Estos son productos que diseñé, construí y opero yo mismo &mdash; la aplicación, el servidor detrás, los pagos y la base de datos. La misma persona de principio a fin.</p>
+<!-- 1 · PROBLEMAS -->
+<section class="seccion" id="problemas">
+  <div class="cab">
+    <span class="eyebrow" data-n="1">Problemas</span>
+    <h2>Nadie tocó tu app. Las plataformas se movieron de todos modos.</h2>
+    <p class="intro">¿Te llegó alguna de estas? Toca las que te pasan: con lo que marques te digo qué plan necesitas.</p>
+  </div>
 
-      <div class="work">
-        <a class="card reveal" style="--d:0ms" href="https://pasas.mx" target="_blank" rel="noopener noreferrer">
-          <span class="shot"><img src="/assets/work/pasas.jpg" width="1000" height="625" loading="lazy" alt="Pasas.mx"></span>
-          <span class="card-body">
-            <span class="card-title">Pasas.mx <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9.5 9.5"/><path d="M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg></span>
-            <span class="card-note">Plataforma de estudio para alumnos: lecciones, ejercicios y seguimiento de avance para toda la familia en una cuenta.</span>
-            <span class="card-go">Ver sitio <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9.5 9.5"/><path d="M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg></span>
-          </span>
-        </a>
-        <a class="card reveal" style="--d:90ms" href="https://yolandamiranda.mx" target="_blank" rel="noopener noreferrer">
-          <span class="shot"><img src="/assets/work/yolanda.jpg" width="1000" height="625" loading="lazy" alt="Consulta"></span>
-          <span class="card-body">
-            <span class="card-title">Consulta <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9.5 9.5"/><path d="M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg></span>
-            <span class="card-note">Agenda y cobro para un consultorio de psicolog&iacute;a: citas en l&iacute;nea, pago con tarjeta, paquetes y recordatorios.</span>
-            <span class="card-go">Ver sitio <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9.5 9.5"/><path d="M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg></span>
-          </span>
-        </a>
-        <a class="card reveal" style="--d:180ms" href="https://padelcrown.mx" target="_blank" rel="noopener noreferrer">
-          <span class="shot"><img src="/assets/work/padelcrown.jpg" width="1000" height="624" loading="lazy" alt="Padel Crown"></span>
-          <span class="card-body">
-            <span class="card-title">Padel Crown <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9.5 9.5"/><path d="M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg></span>
-            <span class="card-note">La plataforma que opera una liga de p&aacute;del: inscripciones, grupos, marcadores en vivo y una tabla que se reordena conforme terminan los partidos.</span>
-            <span class="card-go">Ver sitio <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9.5 9.5"/><path d="M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg></span>
-          </span>
-        </a>
+  <ul class="notifs compacta" id="notifs">
+    <li class="nt" data-card="ios" data-plan="essentials" data-nombre="La app falla con cada iOS nuevo" data-hago="La pruebo con cada beta de iOS desde junio y la dejo lista antes de septiembre." data-gana="Septiembre deja de ser una lotería.">
+      <div class="nt__cab"><span class="nt__app nt__app--apple"></span><span>App Store · reseña nueva</span><time>ahora</time></div>
+      <p class="nt__frase">«Desde que actualicé el iPhone la app se cierra sola.»</p>
+      <p class="nt__sub">Cada día que se cierra es un día de pedidos que no entran: <b>40 al día × $350 = $14,000 diarios</b>.</p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="ios">Me pasa →</button></div>
+      <span class="sello" aria-hidden="true">Me pasa</span>
+      <div class="sol">
+        <h3>Tu app lista antes de que salga el iOS nuevo.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>40 pedidos al día × $350 × 3 días hasta que alguien lo arregla = <b>$42,000</b>, más las reseñas de una estrella.</p></div>
+        <p>Apple publica la versión beta en junio y la final en septiembre. Pruebo tu app con cada beta, corrijo lo que se rompa y la publico antes de que tus clientes actualicen.</p>
+        <ol class="flujo"><li><b>Junio</b><small>beta de iOS</small></li><li><b>La pruebo</b><small>en tu app</small></li><li><b>Corrijo</b><small>lo que falle</small></li><li class="ok"><b>Septiembre</b><small>✓ ya estaba lista</small></li></ol>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Septiembre deja de ser una lotería. Tus clientes actualizan el celular y la app sigue funcionando.</p></div>
+        <p class="incluido">Incluido desde <b>Essentials</b></p>
+        <a class="boton boton--azul" data-t="correo-ios" href="mailto:bodgar@bodgar.dev?subject=Mi%20app%20falla%20con%20iOS%20nuevo&amp;body=Este%20es%20el%20link%20de%20mi%20app%3A%20">Revisa mi app</a>
       </div>
-    </div>
-  </section>
+    </li>
 
-  <!-- FINAL CTA -->
-  <section class="pad final">
-    <div class="wrap">
-      <span class="mono eyebrow reveal" style="color:inherit;opacity:.6">Empieza aquí</span>
-      <h2 class="reveal">¿No sabes si tu app tiene un problema?</h2>
-      <p>Mándame el link de tu app en la tienda. La reviso y te devuelvo un reporte de una página con lo que ya está roto y lo que viene. Gratis, y sin llamada de ventas a menos que tú la quieras.</p>
-      <div class="actions reveal">
-        <a class="btn" href="mailto:bodgar@bodgar.dev?subject=Revisi%C3%B3n%20gratis%20de%20mi%20app&amp;body=Este%20es%20el%20link%20de%20mi%20app%3A%20">Mándame el link de tu app</a>
-        <a class="btn-quiet" href="https://cal.com/bodgar/free-app-check" target="_blank" rel="noopener noreferrer">O agenda 20 minutos</a>
+    <li class="nt" data-card="sdk" data-plan="essentials" data-nombre="Fechas límite de Google Play y Apple" data-hago="Vigilo las fechas límite de SDK y políticas y actualizo antes de que venzan." data-gana="Nunca te sacan de la tienda por un aviso que nadie leyó.">
+      <div class="nt__cab"><span class="nt__app nt__app--play"></span><span>Google Play Console</span><time>hace 3 meses</time></div>
+      <p class="nt__frase">«Actualiza el nivel de API antes del 31 de agosto.» Llegó a un correo que nadie revisa.</p>
+      <p class="nt__sub">Si se pasa la fecha, <b>Google Play deja de mostrar tu app a clientes nuevos</b> y no puedes publicar actualizaciones.</p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="sdk">Me pasa →</button></div>
+      <span class="sello" aria-hidden="true">Me pasa</span>
+      <div class="sol">
+        <h3>Las fechas límite las veo yo, no tu correo olvidado.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>Si 30 clientes nuevos al mes te encuentran en Google Play y cada uno vale $1,500 al año = <b>$45,000 al año</b> que dejan de llegar mientras la app está oculta.</p></div>
+        <p>Apple y Google ponen fechas para SDK, permisos y políticas de privacidad. Las tengo en calendario para tu app y actualizo con tiempo. Si llega un aviso, lo atiendo yo.</p>
+        <div class="aviso-consola"><span>Google Play Console · Política</span><b>Tu app debe apuntar al nivel de API más reciente antes del 31 de agosto.</b><em>✓ Actualizado el 12 de julio</em></div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Nunca te sacan de la tienda ni te bloquean actualizaciones por un aviso que nadie leyó.</p></div>
+        <p class="incluido">Incluido desde <b>Essentials</b></p>
+        <a class="boton boton--azul" data-t="correo-sdk" href="mailto:bodgar@bodgar.dev?subject=Aviso%20de%20Google%20Play%20o%20Apple&amp;body=Este%20es%20el%20link%20de%20mi%20app%3A%20">Revisa mi app</a>
       </div>
+    </li>
+
+    <li class="nt" data-card="notifs" data-plan="essentials" data-nombre="Notificaciones y certificados que vencen" data-hago="Renuevo certificados y llaves antes de que venzan y vigilo que las notificaciones lleguen." data-gana="Los recordatorios siguen saliendo y las citas no se pierden.">
+      <div class="nt__cab"><span class="nt__app nt__app--campana"></span><span>Notificaciones</span><time>hace 2 semanas</time></div>
+      <p class="nt__frase">Las notificaciones dejaron de llegar… y nadie se dio cuenta.</p>
+      <p class="nt__sub">Un certificado venció en silencio. <b>Los recordatorios no salen y los clientes faltan a su cita.</b></p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="notifs">Me pasa →</button></div>
+      <span class="sello" aria-hidden="true">Me pasa</span>
+      <div class="sol">
+        <h3>Certificados renovados antes de que venzan.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>Si sin recordatorio faltan 5 clientes más por semana y cada cita vale $400 = <b>$8,000 al mes</b> hasta que alguien nota que no salen.</p></div>
+        <p>Las notificaciones, los inicios de sesión y los pagos dependen de certificados y llaves con fecha de vencimiento. Los tengo registrados y los renuevo antes.</p>
+        <ol class="flujo"><li class="x"><b>1 de julio</b><small>vencía el certificado</small></li><li class="ok"><b>15 de junio</b><small>✓ renovado</small></li><li><b>Reporte</b><small>te lo digo en claro</small></li></ol>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Los recordatorios siguen saliendo y nadie se entera de que hubo un vencimiento.</p></div>
+        <p class="incluido">Incluido desde <b>Essentials</b></p>
+        <a class="boton boton--azul" data-t="correo-notifs" href="mailto:bodgar@bodgar.dev?subject=Mis%20notificaciones%20dejaron%20de%20llegar&amp;body=Este%20es%20el%20link%20de%20mi%20app%3A%20">Revisa mi app</a>
+      </div>
+    </li>
+
+    <li class="nt" data-card="pagos" data-plan="essentials" data-nombre="Pagos, mapas o reservas que dejan de funcionar" data-hago="Actualizo los servicios de terceros antes de que retiren su versión vieja." data-gana="El cliente que llega a pagar, paga.">
+      <div class="nt__cab"><span class="nt__app nt__app--pago"></span><span>Proveedor de pagos</span><time>hace 6 meses</time></div>
+      <p class="nt__frase">«Retiraremos la versión anterior de nuestro SDK el 3 de noviembre.»</p>
+      <p class="nt__sub">Ese día el cliente llega hasta el botón de pagar… <b>y no puede</b>.</p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="pagos">Me pasa →</button></div>
+      <span class="sello" aria-hidden="true">Me pasa</span>
+      <div class="sol">
+        <h3>Servicios de terceros al día antes de que te corten.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>Si la app cobra $200,000 al mes y los pagos fallan 4 días = <b>~$26,000</b> que no entran, más los clientes que ya no regresan.</p></div>
+        <p>Pagos, mapas, reservas, inicio de sesión: casi todo lo que vive dentro de tu app depende de un proveedor que avisa con meses de anticipación. Migro antes de la fecha.</p>
+        <ol class="flujo"><li><b>Mayo</b><small>el proveedor avisa</small></li><li><b>Octubre</b><small>migro y pruebo</small></li><li class="ok"><b>3 de noviembre</b><small>✓ nadie lo notó</small></li></ol>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>El cliente que llega a pagar, paga.</p></div>
+        <p class="incluido">Incluido desde <b>Essentials</b></p>
+        <a class="boton boton--azul" data-t="correo-pagos" href="mailto:bodgar@bodgar.dev?subject=Los%20pagos%20de%20mi%20app%20fallan&amp;body=Este%20es%20el%20link%20de%20mi%20app%3A%20">Revisa mi app</a>
+      </div>
+    </li>
+
+    <li class="nt" data-card="resenas" data-plan="standard" data-nombre="Errores que bajan las reseñas" data-hago="Monitoreo de fallas y corrección de errores conforme aparecen." data-gana="Te enteras antes que tus clientes y la calificación se recupera.">
+      <div class="nt__cab"><span class="nt__app nt__app--estrella"></span><span>Reseñas</span><time>esta semana</time></div>
+      <p class="nt__frase">De 4.8 a 3.9 estrellas por un error que nadie atiende.</p>
+      <p class="nt__sub">Con menos estrellas <b>menos gente la descarga</b>, y los que ya la tienen se quejan en público.</p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="resenas">Me pasa →</button></div>
+      <span class="sello" aria-hidden="true">Me pasa</span>
+      <div class="sol">
+        <h3>Te enteras de las fallas antes que tus clientes.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>Si bajar de 4.8 a 3.9 estrellas te quita 1 de cada 4 descargas y cada cliente nuevo vale $1,500 al año: con 40 descargas al mes son <b>$15,000 al año</b> menos.</p></div>
+        <p>Instalo monitoreo de fallas: cada vez que la app se cierra o algo truena, me llega a mí con el detalle. Lo corrijo antes de que se vuelva una reseña.</p>
+        <div class="estrellas-viz"><div><span>Antes</span><b>3.9 ★</b></div><div class="flecha">→</div><div class="ok"><span>Error corregido + monitoreo</span><b>4.6 ★</b></div></div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>La calificación se recupera y deja de espantar a clientes nuevos.</p></div>
+        <p class="incluido">Incluido desde <b>Standard</b></p>
+        <a class="boton boton--azul" data-t="correo-resenas" href="mailto:bodgar@bodgar.dev?subject=Errores%20y%20malas%20rese%C3%B1as%20en%20mi%20app&amp;body=Este%20es%20el%20link%20de%20mi%20app%3A%20">Revisa mi app</a>
+      </div>
+    </li>
+
+    <li class="nt" data-card="dev" data-plan="standard" data-nombre="El desarrollador original ya no contesta" data-hago="Recupero accesos (cuentas, código, llaves), documento la app y me vuelvo el responsable." data-gana="Dejas de depender de alguien que no contesta.">
+      <div class="nt__cab"><span class="nt__app nt__app--chat"></span><span>WhatsApp</span><time>visto hace 3 semanas</time></div>
+      <p class="nt__frase">El desarrollador que hizo la app ya no contesta.</p>
+      <p class="nt__sub">Y las cuentas, el código y las llaves están a su nombre. <b>Cualquier cambio, aunque sea pequeño, se vuelve un problema.</b></p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="dev">Me pasa →</button></div>
+      <span class="sello" aria-hidden="true">Me pasa</span>
+      <div class="sol">
+        <h3>Primero recupero lo que es tuyo. Después la mantengo.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>Rehacer una app desde cero porque nadie tiene el código cuesta fácilmente <b>$150,000 o más</b>. Recuperar accesos y documentarla cuesta una fracción.</p></div>
+        <p>Te ayudo a recuperar los accesos que deberían estar a tu nombre, reviso en qué estado está el código y lo documento para que nunca vuelvas a depender de una sola persona, ni siquiera de mí.</p>
+        <ul class="checklist"><li>Cuenta de Apple Developer</li><li>Google Play Console</li><li>Repositorio del código</li><li>Llaves y certificados</li><li>Servidor y servicios</li></ul>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Tu app vuelve a ser tuya, y alguien responde cuando algo falla.</p></div>
+        <p class="incluido">Recomendado: <b>Standard</b>, con el arranque</p>
+        <a class="boton boton--azul" data-t="correo-dev" href="mailto:bodgar@bodgar.dev?subject=El%20desarrollador%20de%20mi%20app%20ya%20no%20contesta&amp;body=Este%20es%20el%20link%20de%20mi%20app%3A%20">Revisa mi app</a>
+      </div>
+    </li>
+
+    <li class="nt" data-card="rechazo" data-plan="priority" data-nombre="Rechazos de la App Store" data-hago="Respondo a revisión de Apple, ajusto lo necesario y reenvío, con respuesta en 24 horas." data-gana="Tus arreglos y novedades salen a tiempo.">
+      <div class="nt__cab"><span class="nt__app nt__app--apple"></span><span>App Store Connect</span><time>ayer</time></div>
+      <p class="nt__frase">«Tu actualización fue rechazada.» Y nadie sabe por qué.</p>
+      <p class="nt__sub">Mientras no se corrige, <b>no puedes publicar ni un arreglo</b>, y la promoción que tenías planeada se atrasa.</p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="rechazo">Me pasa →</button></div>
+      <span class="sello" aria-hidden="true">Me pasa</span>
+      <div class="sol">
+        <h3>Los rechazos de Apple los atiendo yo.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>Una promoción que se retrasa una semana porque la actualización no sale puede ser <b>la venta de toda esa semana</b>.</p></div>
+        <p>Leo el motivo del rechazo, respondo a revisión en el idioma que Apple espera, ajusto lo que haga falta y reenvío. Con respuesta garantizada en 24 horas.</p>
+        <div class="aviso-consola"><span>App Store Connect · Revisión</span><b>Guideline 5.1.1 · Recopilación de datos y almacenamiento</b><em>✓ Respondido y reenviado al día siguiente</em></div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Tus arreglos y novedades salen cuando tienen que salir.</p></div>
+        <p class="incluido">Incluido en <b>Priority</b></p>
+        <a class="boton boton--azul" data-t="correo-rechazo" href="mailto:bodgar@bodgar.dev?subject=Apple%20rechaz%C3%B3%20mi%20actualizaci%C3%B3n&amp;body=Este%20es%20el%20link%20de%20mi%20app%3A%20">Revisa mi app</a>
+      </div>
+    </li>
+
+    <li class="nt" data-card="nueva" data-plan="standard" data-nombre="Funciones nuevas que nadie se atreve a hacer" data-hago="Horas de desarrollo al mes que se acumulan, para construir lo que la app necesita." data-gana="La app crece sin un proyecto nuevo cada vez.">
+      <div class="nt__cab"><span class="nt__app nt__app--idea"></span><span>Pendientes del negocio</span><time>desde marzo</time></div>
+      <p class="nt__frase">Queremos agregar algo nuevo, pero nadie se atreve a tocar el código.</p>
+      <p class="nt__sub">La función que haría crecer la app <b>se queda meses en la lista</b>.</p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="nueva">Me pasa →</button></div>
+      <span class="sello" aria-hidden="true">Me pasa</span>
+      <div class="sol">
+        <h3>Horas de desarrollo cada mes, que se acumulan.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>Pedir reservas desde la app en vez de por WhatsApp puede liberar <b>horas de recepción cada semana</b>. Cada mes que se pospone, se pierde.</p></div>
+        <p>Standard incluye 4 horas de desarrollo al mes y Priority 10. Las que no uses pasan al mes siguiente, así que puedes juntar para algo más grande. Y cada mes te digo qué mejoraría y cuánto costaría.</p>
+        <div class="horas"><div><span>Mes 1</span><i style="--w:33%"></i><b>4 h</b></div><div><span>Mes 2</span><i style="--w:66%"></i><b>8 h</b></div><div class="ok"><span>Mes 3</span><i style="--w:100%"></i><b>12 h → función nueva</b></div></div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>La app crece sin abrir un proyecto nuevo cada vez.</p></div>
+        <p class="incluido">Incluido desde <b>Standard</b></p>
+        <a class="boton boton--azul" data-t="correo-nueva" href="mailto:bodgar@bodgar.dev?subject=Quiero%20agregar%20algo%20a%20mi%20app&amp;body=Este%20es%20el%20link%20de%20mi%20app%3A%20">Revisa mi app</a>
+      </div>
+    </li>
+  </ul>
+  <button type="button" class="notifs-mas" id="notifs-mas">Ver 4 más</button>
+
+  <div class="conteo">
+    <p>Marcaste <b id="conteo-n">0</b> de 8.</p>
+    <a class="boton boton--azul" href="#plan" id="conteo-ir" data-t="ver-plan" hidden>Ver mi plan ↓</a>
+  </div>
+
+  <dialog class="ficha" id="ficha" aria-labelledby="ficha-frase">
+    <div class="ficha__cab"><span class="ficha__tag" id="ficha-tag"></span><button type="button" class="ficha__x" id="ficha-x" aria-label="Cerrar">×</button></div>
+    <p class="ficha__frase" id="ficha-frase"></p>
+    <div class="ficha__cuerpo" id="ficha-cuerpo"></div>
+    <div class="ficha__pie">
+      <button type="button" class="boton boton--linea" id="ficha-otro">Ver otro</button>
+      <button type="button" class="boton boton--azul" id="ficha-plan">Ver mi plan ↓</button>
+      <button type="button" class="ficha__quitar" id="ficha-quitar">No me pasa, quitarlo</button>
     </div>
-  </section>
+  </dialog>
+</section>
+
+<!-- 2 · TU PLAN -->
+<section class="seccion" id="plan">
+  <div class="cab">
+    <span class="eyebrow" data-n="2">Tu plan</span>
+    <h2 id="plan-titulo">Marca arriba lo que te pasa y aquí aparece tu plan.</h2>
+    <p class="intro" id="plan-intro">Con lo que marques te digo qué haría y qué plan te conviene. Ni más, ni menos.</p>
+  </div>
+  <div class="reporte" id="reporte">
+    <div class="reporte__cab"><div><span class="reporte__k">Plan de mantenimiento</span><b>Tu app</b></div><span class="reporte__folio" id="reporte-folio">APP-000</span></div>
+    <div class="reporte__vacio" id="reporte-vacio"><p>Todavía no marcas nada.</p><a class="boton boton--linea" href="#problemas" data-t="volver-problemas">Ver los problemas ↑</a></div>
+    <ol class="reporte__lista" id="reporte-lista"></ol>
+    <div class="reporte__rec" id="reporte-rec" hidden>
+      <span>Plan recomendado</span>
+      <b id="rec-nombre"></b>
+      <p id="rec-porque"></p>
+    </div>
+  </div>
+  <div class="cta-plan">
+    <a class="boton boton--azul" id="plan-correo" data-t="correo-plan" href="mailto:bodgar@bodgar.dev?subject=Revisi%C3%B3n%20gratis%20de%20mi%20app">Mándame tu app con este plan</a>
+    <span>Se abre tu correo con lo que marcaste. Solo agrega el link de tu app en la tienda.</span>
+  </div>
+</section>
+
+<!-- 3 · CUÁNTO CUESTA -->
+<section class="seccion" id="costo">
+  <div class="cab">
+    <span class="eyebrow" data-n="3">Cuánto cuesta</span>
+    <h2>¿Cuánto te cuesta que la app falle unos días?</h2>
+    <p class="intro">Con tus números. Después compáralo con la cuota de mantenimiento.</p>
+  </div>
+  <div class="calc" id="calc">
+    <div class="calc__pantalla">
+      <span class="calc__k">Una falla te cuesta</span>
+      <b class="calc__num" id="calc-num">$0</b>
+      <span class="calc__det" id="calc-det"></span>
+      <span class="calc__vs" id="calc-vs"></span>
+    </div>
+    <div class="calc__campos">
+      <label class="rango"><span>Pedidos, citas o pagos al día por la app <output data-for="c-pedidos"></output></span><input type="range" id="c-pedidos" min="1" max="500" step="1" value="40"></label>
+      <label class="rango"><span>Ticket promedio <output data-for="c-ticket" data-fmt="$"></output></span><input type="range" id="c-ticket" min="50" max="5000" step="50" value="350"></label>
+      <label class="rango"><span>¿Cuántos se van con otro si la app no sirve? <output data-for="c-perdida" data-fmt="%"></output></span><input type="range" id="c-perdida" min="5" max="100" step="5" value="30"></label>
+      <label class="rango"><span>Días hasta que alguien lo nota y lo arregla <output data-for="c-dias"></output></span><input type="range" id="c-dias" min="1" max="30" step="1" value="5"></label>
+    </div>
+    <p class="nota">Es una estimación con tus números, no una promesa. En el diagnóstico gratis te digo qué tan expuesta está tu app.</p>
+  </div>
+</section>
+
+<!-- 4 · PRECIOS -->
+<section class="seccion" id="precios">
+  <div class="cab">
+    <span class="eyebrow" data-n="4">Precios</span>
+    <h2>Una cuota fija al mes. Sin sorpresas.</h2>
+    <p class="intro">Siempre sabes cuánto pagas. Elige el nivel de cobertura que quieres.</p>
+  </div>
+  <div class="planes">
+    <div class="plan" data-plan="essentials" data-nombre="Essentials" data-precio="$4,000 MXN al mes" data-monto="4000">
+      <span class="plan__rec">Recomendado para ti</span>
+      <div class="plan__nombre">Essentials</div>
+      <div class="plan__precio">$4,000</div>
+      <div class="plan__sub">al mes, MXN</div>
+      <ul>
+        <li>Tu app revisada contra cada versión nueva de iOS y Android, y actualizada cuando hace falta</li>
+        <li>Requisitos de App Store y Google Play siempre al día</li>
+        <li>Parches de seguridad aplicados</li>
+        <li>Servicios de terceros actualizados antes de que te corten</li>
+        <li>Certificados renovados antes de que venzan</li>
+        <li>Un reporte mensual en lenguaje claro</li>
+        <li class="promesa">Ideas, siempre gratis: cada mes te digo qué mejoraría y cuánto costaría. Tú decides.</li>
+      </ul>
+    </div>
+    <div class="plan plan--destacado" data-plan="standard" data-nombre="Standard" data-precio="$8,000 MXN al mes" data-monto="8000">
+      <span class="plan__rec">Recomendado para ti</span>
+      <span class="plan__popular">El más elegido</span>
+      <div class="plan__nombre">Standard</div>
+      <div class="plan__precio">$8,000</div>
+      <div class="plan__sub">al mes, MXN</div>
+      <ul>
+        <li class="trae">Todo lo de Essentials, más:</li>
+        <li>Corrección de errores conforme aparecen</li>
+        <li>Monitoreo de fallas, para detectarlas antes de que tus clientes las reporten</li>
+        <li>4 horas de desarrollo al mes para lo que quieras construir. Las que no uses pasan al mes siguiente.</li>
+        <li class="promesa">Ideas, siempre gratis: cada mes te digo qué mejoraría y cuánto costaría. Tú decides.</li>
+      </ul>
+    </div>
+    <div class="plan" data-plan="priority" data-nombre="Priority" data-precio="$13,000 MXN al mes" data-monto="13000">
+      <span class="plan__rec">Recomendado para ti</span>
+      <div class="plan__nombre">Priority</div>
+      <div class="plan__precio">$13,000</div>
+      <div class="plan__sub">al mes, MXN</div>
+      <ul>
+        <li class="trae">Todo lo de Standard, más:</li>
+        <li>Respuesta garantizada en 24 horas</li>
+        <li>10 horas de desarrollo al mes. Las que no uses pasan al mes siguiente.</li>
+        <li>Rechazos de la App Store atendidos por mí</li>
+        <li class="promesa">Ideas, siempre gratis: cada mes te digo qué mejoraría y cuánto costaría. Tú decides.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="planes__pie">
+    <p><b>Cancela cuando quieras</b> · Costo único de arranque desde $5,000 MXN</p>
+    <p class="nota">Los proyectos más grandes se cotizan aparte a $500 MXN la hora. Siempre ves el estimado antes de que empiece.</p>
+  </div>
+</section>
+
+<!-- CON QUIÉN -->
+<section class="seccion" id="quien">
+  <div class="cab">
+    <span class="eyebrow" data-n="5">Con quién vas a trabajar</span>
+    <h2>Conmigo. Ese es justamente el punto.</h2>
+  </div>
+  <div class="quien">
+    <img src="/assets/bodgar.jpg" width="576" height="720" alt="Bodgar Espinosa" loading="lazy">
+    <div>
+      <p>Soy Bodgar, ingeniero móvil en la Ciudad de México. Llevo diez años construyendo y cuidando apps de iOS y Android para empresas como Google, Walmart, Venmo, Domino's y PetSmart, trabajando con equipos de Estados Unidos.</p>
+      <p>Aquí no te pasan con un ejecutivo de cuenta ni con un equipo que rota cada mes. <b>Hablas directo con quien escribe el código.</b> Tomo pocas apps a la vez para que cada una reciba atención de verdad.</p>
+      <p><a class="enlace" href="/assets/Bodgar-Espinosa-CV.pdf" target="_blank" rel="noopener noreferrer">Descargar mi CV (PDF)</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- MÁS ALLÁ -->
+<section class="seccion" id="mas">
+  <div class="cab">
+    <span class="eyebrow" data-n="6">Más allá del mantenimiento</span>
+    <h2>Cuando la app necesita más, también construyo lo nuevo.</h2>
+    <p class="intro">Productos que diseñé, construí y opero yo mismo: la aplicación, el servidor, los pagos y la base de datos.</p>
+  </div>
+  <div class="obras">
+    <a class="obra" href="https://pasas.mx" target="_blank" rel="noopener noreferrer"><span class="obra__img"><img src="/assets/work/pasas.jpg" width="1000" height="625" loading="lazy" alt="Pasas.mx"></span><b>Pasas.mx ↗</b><span>Plataforma de estudio: lecciones, ejercicios y avance de toda la familia en una cuenta.</span></a>
+    <a class="obra" href="https://yolandamiranda.mx" target="_blank" rel="noopener noreferrer"><span class="obra__img"><img src="/assets/work/yolanda.jpg" width="1000" height="625" loading="lazy" alt="Consulta"></span><b>Consulta ↗</b><span>Agenda y cobro para un consultorio de psicología: citas en línea, pago con tarjeta, paquetes y recordatorios.</span></a>
+    <a class="obra" href="https://padelcrown.mx" target="_blank" rel="noopener noreferrer"><span class="obra__img"><img src="/assets/work/padelcrown.jpg" width="1000" height="624" loading="lazy" alt="Padel Crown"></span><b>Padel Crown ↗</b><span>La plataforma que opera una liga de pádel: inscripciones, grupos, marcadores en vivo y tabla que se reordena sola.</span></a>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section class="seccion final" id="empieza">
+  <div class="final__caja">
+    <span class="eyebrow">Empieza aquí</span>
+    <h2>¿No sabes si tu app tiene un problema?</h2>
+    <p class="intro">Mándame el link de tu app en la tienda. La reviso y te devuelvo un reporte de una página con lo que ya está roto y lo que viene. Gratis, y sin llamada de ventas a menos que tú la quieras.</p>
+    <div class="hero__ctas">
+      <a class="boton boton--azul" href="mailto:bodgar@bodgar.dev?subject=Revisi%C3%B3n%20gratis%20de%20mi%20app&amp;body=Este%20es%20el%20link%20de%20mi%20app%3A%20">Mándame el link de tu app</a>
+      <a class="boton boton--linea" href="https://cal.com/bodgar/free-app-check" target="_blank" rel="noopener noreferrer">O agenda 20 minutos</a>
+    </div>
+  </div>
+</section>
 
 </main>
 
-<footer>
-  <div class="wrap">
-    <p class="foot-cross"><a href="/plataformas/" lang="es">&iquest;Est&aacute;s en M&eacute;xico y necesitas una plataforma a la medida?</a></p>
-  </div>
-  <div class="wrap foot">
-    <span>&copy; 2026 Bodgar Espinosa &middot; Ciudad de México</span>
+<footer class="pie">
+  <p class="pie__cruce"><a href="/plataformas/">¿Estás en México y necesitas una plataforma a la medida? →</a></p>
+  <div class="pie__in">
+    <span>© 2026 Bodgar Espinosa · Ciudad de México</span>
     <nav>
       <a href="mailto:bodgar@bodgar.dev">bodgar@bodgar.dev</a>
       <a href="https://www.linkedin.com/in/bodgarespinosa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -261,22 +465,12 @@
   </div>
 </footer>
 
-<script>
-(function () {
-  var items = document.querySelectorAll(".reveal");
-  if (!("IntersectionObserver" in window)) {
-    for (var i = 0; i < items.length; i++) items[i].classList.add("in");
-    return;
-  }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-    });
-  }, { rootMargin: "0px 0px -6% 0px", threshold: 0.06 });
-  for (var j = 0; j < items.length; j++) io.observe(items[j]);
-})();
-</script>
+<a class="manif" id="manif" href="#plan" data-t="manifiesto" hidden>
+  <span class="manif__n"><b id="manif-n">0</b> <span id="manif-txt">marcados</span></span>
+  <span class="manif__ir">Ver mi plan ↓</span>
+</a>
 
 <script src="/assets/t.js" defer></script>
+<script src="/assets/home/home.js" defer></script>
 </body>
 </html>

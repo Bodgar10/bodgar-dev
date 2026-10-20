@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bodgar Espinosa — Mobile app maintenance for small businesses</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A0D14">
+<title>Bodgar Espinosa — iOS &amp; Android app maintenance for small businesses</title>
 <meta name="description" content="Senior mobile engineer. I keep iOS and Android apps running when Apple and Google change the rules. Flat monthly pricing from $600.">
 <link rel="canonical" href="https://bodgar.dev/">
 <link rel="alternate" hreflang="en" href="https://bodgar.dev/">
@@ -11,25 +12,30 @@
 <link rel="alternate" hreflang="x-default" href="https://bodgar.dev/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bodgar.dev/">
-<meta property="og:title" content="Bodgar Espinosa — Mobile app maintenance for small businesses">
-<meta property="og:description" content="Senior mobile engineer. I keep iOS and Android apps running when Apple and Google change the rules. Flat monthly pricing from $600.">
+<meta property="og:title" content="I keep small-business apps from breaking">
+<meta property="og:description" content="I keep iOS and Android apps running when Apple and Google change the rules. Flat monthly pricing from $600.">
 <meta property="og:image" content="https://bodgar.dev/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/home/home.css">
 <script>document.documentElement.className += " js";</script>
 </head>
-<body>
+<body data-moneda="USD">
 
 <header class="topbar">
-  <div class="wrap">
-    <a class="wordmark" href="/">Bodgar Espinosa <span>— mobile engineer</span></a>
+  <div class="topbar__in">
+    <a class="marca" href="/"><span class="marca__logo" aria-hidden="true"></span><span>Bodgar Espinosa <em>· mobile engineer</em></span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#problemas">Problems</a>
+      <a href="#plan">Your plan</a>
+      <a href="#costo">The cost</a>
+      <a href="#precios">Pricing</a>
+    </nav>
     <nav class="lang" aria-label="Language">
       <a href="/" aria-current="true" lang="en">EN</a>
-      <span class="sep" aria-hidden="true">/</span>
       <a href="/es/" lang="es" hreflang="es">ES</a>
     </nav>
   </div>
@@ -37,221 +43,419 @@
 
 <main>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <h1 class="reveal">I keep small-business apps from breaking.</h1>
-      <div class="lede prose reveal">
-        <p>Apple and Google keep moving their SDKs, policies and platform requirements forward. An app can work perfectly today, but the longer it goes without maintenance, the more expensive and unpredictable the next required update gets. And the customer who can't book, order or pay doesn't call you. They go somewhere else.</p>
-        <p>I'm a mobile engineer with ten years building apps you already have on your phone. <strong>I keep yours running for a flat monthly fee.</strong></p>
+<!-- HERO: two phones and a switch -->
+<section class="hero" id="inicio">
+  <div class="hero__grid">
+    <div class="hero__txt">
+      <span class="eyebrow">iOS &amp; Android · 10+ years</span>
+      <h1>I keep small-business apps <span>from breaking.</span></h1>
+      <p class="hero__sub">Apple and Google change the rules all year. Your app can work perfectly today and start crashing in September. <b>And the customer who can't book, order or pay doesn't call you. They go somewhere else.</b></p>
+      <div class="hero__ctas">
+        <a class="boton boton--azul" href="mailto:bodgar@bodgar.dev?subject=Free%20app%20check&amp;body=Here%20is%20my%20App%20Store%20link%3A%20">Send me your app → free check</a>
+        <a class="boton boton--linea" href="https://cal.com/bodgar/free-app-check" target="_blank" rel="noopener noreferrer">Or book 20 minutes</a>
       </div>
-      <div class="actions reveal">
-        <a class="btn" href="mailto:bodgar@bodgar.dev?subject=Free%20app%20check&amp;body=Here%20is%20my%20App%20Store%20link%3A%20">Send me your app &rarr; free 1-page assessment</a>
-        <a class="btn-quiet" href="https://cal.com/bodgar/free-app-check" target="_blank" rel="noopener noreferrer">Or book 20 minutes</a>
-      </div>
-      <p class="meta-line reveal">10+ years &middot; iOS &amp; Android &middot; Apps used by millions</p>
+      <p class="nota">You get a one-page report of what's already broken and what's coming. No sales call unless you want one.</p>
     </div>
-  </section>
 
-  <!-- PROOF -->
-  <section class="pad">
-    <div class="wrap">
-      <span class="mono eyebrow reveal">In production</span>
-      <h2 class="reveal">Apps I've built and shipped.</h2>
-      <p class="prose reveal" style="margin-top:18px;color:var(--ink-soft)">Not a portfolio of mockups. Open any of them right now — they're live, and you've probably used one this week.</p>
-
-      <div class="apps">
-        <a class="app reveal" style="--d:0ms" href="https://apps.apple.com/us/app/petsmart/id1175467091" target="_blank" rel="noopener noreferrer">
-          <span class="app-icon"><img src="/assets/apps/petsmart.png" width="256" height="256" loading="lazy" alt="PetSmart"></span>
-          <span class="app-name">PetSmart</span>
-          <span class="app-role">Platform &middot; 2026</span>
-        </a>
-        <a class="app reveal" style="--d:60ms" href="https://apps.apple.com/us/app/venmo/id351727428" target="_blank" rel="noopener noreferrer">
-          <span class="app-icon"><img src="/assets/apps/venmo.png" width="256" height="256" loading="lazy" alt="Venmo"></span>
-          <span class="app-name">Venmo</span>
-          <span class="app-role">Features &middot; 2023</span>
-        </a>
-        <a class="app reveal" style="--d:120ms" href="https://apps.apple.com/us/app/walmart-shopping-savings/id338137227" target="_blank" rel="noopener noreferrer">
-          <span class="app-icon"><img src="/assets/apps/walmart.png" width="256" height="256" loading="lazy" alt="Walmart"></span>
-          <span class="app-name">Walmart</span>
-          <span class="app-role">Rewards &middot; 2022</span>
-        </a>
-        <a class="app reveal" style="--d:180ms" href="https://apps.apple.com/us/app/dominos-pizza-usa/id436491861" target="_blank" rel="noopener noreferrer">
-          <span class="app-icon"><img src="/assets/apps/dominos.png" width="256" height="256" loading="lazy" alt="Domino's"></span>
-          <span class="app-name">Domino's</span>
-          <span class="app-role">Architecture &middot; 2024</span>
-        </a>
-        <a class="app reveal" style="--d:240ms" href="https://apps.apple.com/us/app/banco-azteca/id1203433478" target="_blank" rel="noopener noreferrer">
-          <span class="app-icon"><img src="/assets/apps/azteca.png" width="256" height="256" loading="lazy" alt="Banco Azteca"></span>
-          <span class="app-name">Banco Azteca</span>
-          <span class="app-role">Payments &middot; 2018&ndash;22</span>
-        </a>
+    <div class="escena" aria-label="Simulation: the same app with and without maintenance">
+      <div class="escena__control">
+        <span class="escena__sim">Simulation</span>
+        <button type="button" class="interruptor" id="interruptor" role="switch" aria-checked="false">
+          <span class="interruptor__txt">Maintenance</span>
+          <span class="interruptor__riel"><span class="interruptor__bola"></span></span>
+          <span class="interruptor__estado" id="interruptor-estado">Off</span>
+        </button>
+        <span class="escena__pista" id="pista">Turn it on →</span>
       </div>
 
-      <p class="apps-note reveal">I built these as part of the engineering teams at Grid Dynamics, HCLTech, Globant, Evolutyz and Banco Azteca. They're not my clients &mdash; they're the apps my code is in.</p>
-    </div>
-  </section>
+      <div class="evento" id="evento" aria-live="polite">
+        <span class="evento__fecha" id="evento-fecha">Jul 1</span>
+        <b class="evento__t" id="evento-t">The push notification certificate expires</b>
+      </div>
 
-  <!-- PROBLEM -->
-  <section class="pad">
-    <div class="wrap">
-      <span class="mono eyebrow reveal">The problem</span>
-      <h2 class="reveal">Nobody touched your app. The platforms moved anyway.</h2>
+      <div class="telefonos">
+        <div class="tel tel--ios" id="tel-ios">
+          <div class="tel__pantalla">
+            <div class="tel__isla" aria-hidden="true"></div>
+            <div class="app">
+              <div class="app__barra"><span>9:41</span><span class="app__iconos">▮▮ ◔</span></div>
+              <div class="app__cab"><span class="app__logo"></span><div><b>Your business</b><small>App Store · <span class="estrellas" data-r="ios">★ 4.8</span></small></div></div>
+              <div class="app__tarjeta"><small>Next appointment</small><b>Thursday · 10:00</b><span class="app__btn">Book</span></div>
+              <div class="app__lista"><i></i><i></i><i></i></div>
+              <div class="app__pagar"><span>Total $48</span><span class="app__btn app__btn--pagar">Pay</span></div>
+            </div>
+            <div class="capa capa--falla"><div class="alerta-ios"><b>Your business quit unexpectedly</b><span>Reopen</span></div></div>
+            <div class="capa capa--pago"><div class="toast-error">Payment failed (410)</div></div>
+            <div class="capa capa--notif"><div class="notif-perdida"><span>🔕</span><b>0 reminders sent today</b></div></div>
+            <div class="capa capa--ok"><div class="toast-ok"></div></div>
+          </div>
+          <span class="tel__k">iPhone</span>
+        </div>
 
-      <div class="breaks reveal">
-        <div class="brk">
-          <span class="mono when">Every September</span>
-          <p class="what">A new version of iOS ships and most phones update within weeks. An app built for older versions can start showing glitches, and every skipped year makes the next update bigger.</p>
-        </div>
-        <div class="brk">
-          <span class="mono when">Without warning</span>
-          <p class="what">Apple and Google set deadlines for new SDKs and policies. The notice goes to a developer account nobody checks any more. Miss one and you can't ship updates until it's fixed, and on Google Play the app can stop showing up for new users.</p>
-        </div>
-        <div class="brk">
-          <span class="mono when">Quietly</span>
-          <p class="what">Certificates expire. The payment, booking or map service inside your app drops support for old versions. One morning a button can simply stop working.</p>
-        </div>
-        <div class="brk">
-          <span class="mono when">And then</span>
-          <p class="what">Your app slides down the search results, your reviews turn, and the people who would have booked with you book with someone else.</p>
+        <div class="tel tel--android" id="tel-android">
+          <div class="tel__pantalla">
+            <div class="tel__camara" aria-hidden="true"></div>
+            <div class="app">
+              <div class="app__barra"><span>9:41</span><span class="app__iconos">▲ ▮▮</span></div>
+              <div class="app__cab"><span class="app__logo"></span><div><b>Your business</b><small>Google Play · <span class="estrellas" data-r="android">★ 4.8</span></small></div></div>
+              <div class="app__tarjeta"><small>Next appointment</small><b>Thursday · 10:00</b><span class="app__btn">Book</span></div>
+              <div class="app__lista"><i></i><i></i><i></i></div>
+              <div class="app__pagar"><span>Total $48</span><span class="app__btn app__btn--pagar">Pay</span></div>
+            </div>
+            <div class="capa capa--play"><div class="play-bloqueo"><b>This app isn't available to new users</b><span>Google Play · target SDK requirement missed</span></div></div>
+            <div class="capa capa--pago"><div class="toast-error">Payment failed (410)</div></div>
+            <div class="capa capa--notif"><div class="notif-perdida"><span>🔕</span><b>0 reminders sent today</b></div></div>
+            <div class="capa capa--ok"><div class="toast-ok"></div></div>
+          </div>
+          <span class="tel__k">Android</span>
         </div>
       </div>
 
-      <p class="closer reveal">None of this starts with something you did. Most of it comes with a deadline.</p>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="pad">
-    <div class="wrap">
-      <span class="mono eyebrow reveal">Pricing</span>
-      <h2 class="reveal">One flat fee a month. No surprises.</h2>
-      <p class="prose reveal" style="margin-top:18px;color:var(--ink-soft)">You always know what you're paying, and the monthly fee never turns into a surprise invoice. Pick the level of cover you want.</p>
-
-      <div class="plans reveal">
-        <div class="plan">
-          <div class="plan-name">Essentials</div>
-          <div class="price">$600</div>
-          <div class="price-sub">per month, USD</div>
-          <ul class="plan-list">
-            <li>Your app is checked against every new iOS and Android release, and updated when needed</li>
-            <li>App Store and Google Play requirements kept up to date</li>
-            <li>Security patches applied</li>
-            <li>Third-party services updated before they cut you off</li>
-            <li>Certificates renewed before they expire</li>
-            <li>A monthly report in plain English</li>
-            <li class="promise">Ideas, always free. Each month I tell you what I'd improve and what it would cost. You decide what happens next &mdash; or nothing at all.</li>
-          </ul>
-        </div>
-
-        <div class="plan lead">
-          <div class="plan-name">Standard</div>
-          <div class="price">$1,200</div>
-          <div class="price-sub">per month, USD</div>
-          <ul class="plan-list">
-            <li class="carry">Everything in Essentials, plus:</li>
-            <li>Bugs fixed as they come up</li>
-            <li>Crash monitoring, so I find problems before your customers report them</li>
-            <li>4 hours of development time each month, for whatever you want built. Unused hours roll over one month.</li>
-            <li class="promise">Ideas, always free. Each month I tell you what I'd improve and what it would cost. You decide what happens next &mdash; or nothing at all.</li>
-          </ul>
-        </div>
-
-        <div class="plan">
-          <div class="plan-name">Priority</div>
-          <div class="price">$2,000</div>
-          <div class="price-sub">per month, USD</div>
-          <ul class="plan-list">
-            <li class="carry">Everything in Standard, plus:</li>
-            <li>Guaranteed 24-hour response</li>
-            <li>10 hours of development time each month. Unused hours roll over one month.</li>
-            <li>App Store rejections handled for you</li>
-            <li class="promise">Ideas, always free. Each month I tell you what I'd improve and what it would cost. You decide what happens next &mdash; or nothing at all.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="plans-foot reveal">
-        <p class="foot-terms">Cancel anytime &middot; One-time onboarding fee from $800&nbsp;USD</p>
-        <p class="foot-quote">Bigger projects are quoted separately at $75&nbsp;USD/hour. You'll always see the estimate before I start.</p>
+      <div class="marcador">
+        <div><span>Customers lost this year</span><b id="perdidos">0</b></div>
+        <div><span>Outages avoided</span><b id="evitadas">0</b></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section class="pad">
-    <div class="wrap">
-      <span class="mono eyebrow reveal">Who you'd be working with</span>
-      <h2 class="reveal">Just me. That's the point.</h2>
-
-      <div class="about-grid reveal">
-        <img class="portrait" src="/assets/bodgar.jpg" width="576" height="720" alt="Bodgar Espinosa">
-        <div class="about-body">
-          <p>I'm Bodgar, a mobile engineer in Mexico City. For ten years I've built and looked after iOS and Android apps for companies like Google, Walmart, Venmo, Domino's and PetSmart, working alongside US teams. I work remotely and I'm available across US business hours.</p>
-          <p>You won't be handed to an account manager or a rotating team. <strong>You talk to the person writing the code.</strong> I take on a small number of apps so that each one actually gets looked at.</p>
-          <p style="margin-top:26px"><a class="btn-quiet" href="/assets/Bodgar-Espinosa-CV.pdf" target="_blank" rel="noopener noreferrer">Download my CV (PDF)</a></p>
-        </div>
-      </div>
+<!-- IN PRODUCTION -->
+<section class="seccion" id="apps">
+  <div class="cab">
+    <span class="eyebrow" data-n="★">In production</span>
+    <h2>Apps I've built and shipped.</h2>
+    <p class="intro">Not a portfolio of mockups: they're live, and you've probably used one this week. Tap them, they open in the App Store.</p>
+  </div>
+  <div class="inicio-tel">
+    <div class="inicio-tel__fondo"></div>
+    <div class="inicio-tel__rejilla">
+      <a class="icono" href="https://apps.apple.com/us/app/petsmart/id1175467091" target="_blank" rel="noopener noreferrer"><img src="/assets/apps/petsmart.png" width="256" height="256" loading="lazy" alt="PetSmart"><b>PetSmart</b><small>Platform · 2026</small></a>
+      <a class="icono" href="https://apps.apple.com/us/app/venmo/id351727428" target="_blank" rel="noopener noreferrer"><img src="/assets/apps/venmo.png" width="256" height="256" loading="lazy" alt="Venmo"><b>Venmo</b><small>Features · 2023</small></a>
+      <a class="icono" href="https://apps.apple.com/us/app/walmart-shopping-savings/id338137227" target="_blank" rel="noopener noreferrer"><img src="/assets/apps/walmart.png" width="256" height="256" loading="lazy" alt="Walmart"><b>Walmart</b><small>Rewards · 2022</small></a>
+      <a class="icono" href="https://apps.apple.com/us/app/dominos-pizza-usa/id436491861" target="_blank" rel="noopener noreferrer"><img src="/assets/apps/dominos.png" width="256" height="256" loading="lazy" alt="Domino's"><b>Domino's</b><small>Architecture · 2024</small></a>
+      <a class="icono" href="https://apps.apple.com/us/app/banco-azteca/id1203433478" target="_blank" rel="noopener noreferrer"><img src="/assets/apps/azteca.png" width="256" height="256" loading="lazy" alt="Banco Azteca"><b>Banco Azteca</b><small>Payments · 2018–22</small></a>
     </div>
-  </section>
+  </div>
+  <p class="nota nota--centro">I built these as part of the engineering teams at Grid Dynamics, HCLTech, Globant, Evolutyz and Banco Azteca. They aren't my clients. They're the apps my code is in.</p>
+</section>
 
-  <!-- PRODUCTS -->
-  <section class="pad">
-    <div class="wrap">
-      <span class="mono eyebrow reveal">Beyond maintenance</span>
-      <h2 class="reveal">When an app needs more, I build the new part too.</h2>
-      <p class="prose reveal" style="margin-top:18px;color:var(--ink-soft)">These are products I designed, built and run on my own &mdash; the app, the server behind it, the payments, the database. Same person, start to finish.</p>
+<!-- 1 · PROBLEMS -->
+<section class="seccion" id="problemas">
+  <div class="cab">
+    <span class="eyebrow" data-n="1">Problems</span>
+    <h2>Nobody touched your app. The platforms moved anyway.</h2>
+    <p class="intro">Got any of these? Tap the ones that sound like you, and I'll tell you which plan you need.</p>
+  </div>
 
-      <div class="work">
-        <a class="card reveal" style="--d:0ms" href="https://pasas.mx" target="_blank" rel="noopener noreferrer">
-          <span class="shot"><img src="/assets/work/pasas.jpg" width="1000" height="625" loading="lazy" alt="Pasas.mx"></span>
-          <span class="card-body">
-            <span class="card-title">Pasas.mx <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9.5 9.5"/><path d="M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg></span>
-            <span class="card-note">A study platform for students: lessons, exercises and progress tracking for the whole family under one account.</span>
-            <span class="card-go">Open site <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9.5 9.5"/><path d="M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg></span>
-          </span>
-        </a>
-        <a class="card reveal" style="--d:90ms" href="https://yolandamiranda.mx" target="_blank" rel="noopener noreferrer">
-          <span class="shot"><img src="/assets/work/yolanda.jpg" width="1000" height="625" loading="lazy" alt="Consulta"></span>
-          <span class="card-body">
-            <span class="card-title">Consulta <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9.5 9.5"/><path d="M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg></span>
-            <span class="card-note">Booking and payments for a private therapy practice: online scheduling, card payments, packages and reminders.</span>
-            <span class="card-go">Open site <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9.5 9.5"/><path d="M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg></span>
-          </span>
-        </a>
-        <a class="card reveal" style="--d:180ms" href="https://padelcrown.mx" target="_blank" rel="noopener noreferrer">
-          <span class="shot"><img src="/assets/work/padelcrown.jpg" width="1000" height="624" loading="lazy" alt="Padel Crown"></span>
-          <span class="card-body">
-            <span class="card-title">Padel Crown <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9.5 9.5"/><path d="M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg></span>
-            <span class="card-note">The platform running a padel league: sign-ups, groups, live scores, and a table that reorders itself as matches finish.</span>
-            <span class="card-go">Open site <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9.5 9.5"/><path d="M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg></span>
-          </span>
-        </a>
+  <ul class="notifs compacta" id="notifs">
+    <li class="nt" data-card="ios" data-plan="essentials" data-nombre="The app breaks with every new iOS" data-hago="I test it against every iOS beta from June and have it ready before September." data-gana="September stops being a gamble.">
+      <div class="nt__cab"><span class="nt__app nt__app--apple"></span><span>App Store · new review</span><time>now</time></div>
+      <p class="nt__frase">“Ever since I updated my iPhone the app keeps closing.”</p>
+      <p class="nt__sub">Every day it crashes is a day of orders that don't come in: <b>40 a day × $45 = $1,800 a day</b>.</p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="ios">This is me →</button></div>
+      <span class="sello" aria-hidden="true">That's me</span>
+      <div class="sol">
+        <h3>Your app ready before the new iOS ships.</h3>
+        <div class="cuenta"><span class="cuenta__k">The math · example</span><p>40 orders a day × $45 × 3 days until someone fixes it = <b>$5,400</b>, plus the one-star reviews.</p></div>
+        <p>Apple ships the iOS beta in June and the final version in September. I test your app against every beta, fix what breaks and publish before your customers update.</p>
+        <ol class="flujo"><li><b>June</b><small>iOS beta</small></li><li><b>I test it</b><small>on your app</small></li><li><b>I fix</b><small>what breaks</small></li><li class="ok"><b>September</b><small>✓ already ready</small></li></ol>
+        <div class="gana"><span class="gana__k">What you get</span><p>September stops being a gamble. Your customers update their phones and the app keeps working.</p></div>
+        <p class="incluido">Included from <b>Essentials</b></p>
+        <a class="boton boton--azul" data-t="correo-ios" href="mailto:bodgar@bodgar.dev?subject=My%20app%20breaks%20on%20new%20iOS&amp;body=Here%20is%20my%20App%20Store%20link%3A%20">Check my app</a>
       </div>
-    </div>
-  </section>
+    </li>
 
-  <!-- FINAL CTA -->
-  <section class="pad final">
-    <div class="wrap">
-      <span class="mono eyebrow reveal" style="color:inherit;opacity:.6">Start here</span>
-      <h2 class="reveal">Not sure your app has a problem?</h2>
-      <p>Send me your App Store link. I'll go through it and send you a one-page report on what's already broken and what's coming. Free, and there's no call unless you want one.</p>
-      <div class="actions reveal">
-        <a class="btn" href="mailto:bodgar@bodgar.dev?subject=Free%20app%20check&amp;body=Here%20is%20my%20App%20Store%20link%3A%20">Send me your app link</a>
-        <a class="btn-quiet" href="https://cal.com/bodgar/free-app-check" target="_blank" rel="noopener noreferrer">Or book 20 minutes</a>
+    <li class="nt" data-card="sdk" data-plan="essentials" data-nombre="Google Play and Apple deadlines" data-hago="I track SDK and policy deadlines and update before they hit." data-gana="You never get pulled from the store over a notice nobody read.">
+      <div class="nt__cab"><span class="nt__app nt__app--play"></span><span>Google Play Console</span><time>3 months ago</time></div>
+      <p class="nt__frase">“Update your target API level by August 31.” It went to an inbox nobody checks.</p>
+      <p class="nt__sub">Miss the date and <b>Google Play stops showing your app to new customers</b>, and you can't ship updates.</p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="sdk">This is me →</button></div>
+      <span class="sello" aria-hidden="true">That's me</span>
+      <div class="sol">
+        <h3>I watch the deadlines, not your forgotten inbox.</h3>
+        <div class="cuenta"><span class="cuenta__k">The math · example</span><p>If 30 new customers a month find you on Google Play and each is worth $120 a year = <b>$43,200 a year</b> that stops coming in while the app is hidden.</p></div>
+        <p>Apple and Google set dates for SDKs, permissions and privacy policies. I keep them on a calendar for your app and update in time. If a notice comes in, I handle it.</p>
+        <div class="aviso-consola"><span>Google Play Console · Policy</span><b>Your app must target the latest API level by August 31.</b><em>✓ Updated on July 12</em></div>
+        <div class="gana"><span class="gana__k">What you get</span><p>You never get pulled from the store or blocked from updating over a notice nobody read.</p></div>
+        <p class="incluido">Included from <b>Essentials</b></p>
+        <a class="boton boton--azul" data-t="correo-sdk" href="mailto:bodgar@bodgar.dev?subject=Google%20Play%20or%20Apple%20notice&amp;body=Here%20is%20my%20App%20Store%20link%3A%20">Check my app</a>
       </div>
+    </li>
+
+    <li class="nt" data-card="notifs" data-plan="essentials" data-nombre="Notifications and certificates that expire" data-hago="I renew certificates and keys before they expire and make sure notifications go out." data-gana="Reminders keep going out and appointments don't get missed.">
+      <div class="nt__cab"><span class="nt__app nt__app--campana"></span><span>Notifications</span><time>2 weeks ago</time></div>
+      <p class="nt__frase">Push notifications stopped arriving… and nobody noticed.</p>
+      <p class="nt__sub">A certificate expired quietly. <b>Reminders don't go out and customers miss their appointments.</b></p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="notifs">This is me →</button></div>
+      <span class="sello" aria-hidden="true">That's me</span>
+      <div class="sol">
+        <h3>Certificates renewed before they expire.</h3>
+        <div class="cuenta"><span class="cuenta__k">The math · example</span><p>If 5 more customers a week no-show without a reminder and each appointment is worth $50 = <b>$1,000 a month</b> until someone notices.</p></div>
+        <p>Push notifications, sign-in and payments all depend on certificates and keys with expiration dates. I keep track of them and renew early.</p>
+        <ol class="flujo"><li class="x"><b>July 1</b><small>certificate expiring</small></li><li class="ok"><b>June 15</b><small>✓ renewed</small></li><li><b>Report</b><small>in plain English</small></li></ol>
+        <div class="gana"><span class="gana__k">What you get</span><p>Reminders keep going out and nobody finds out there was ever an expiration.</p></div>
+        <p class="incluido">Included from <b>Essentials</b></p>
+        <a class="boton boton--azul" data-t="correo-notifs" href="mailto:bodgar@bodgar.dev?subject=My%20push%20notifications%20stopped&amp;body=Here%20is%20my%20App%20Store%20link%3A%20">Check my app</a>
+      </div>
+    </li>
+
+    <li class="nt" data-card="pagos" data-plan="essentials" data-nombre="Payments, maps or booking that stop working" data-hago="I update third-party services before they retire their old version." data-gana="The customer who reaches checkout actually pays.">
+      <div class="nt__cab"><span class="nt__app nt__app--pago"></span><span>Payment provider</span><time>6 months ago</time></div>
+      <p class="nt__frase">“We'll retire the previous version of our SDK on November 3.”</p>
+      <p class="nt__sub">That day the customer gets all the way to the pay button… <b>and can't</b>.</p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="pagos">This is me →</button></div>
+      <span class="sello" aria-hidden="true">That's me</span>
+      <div class="sol">
+        <h3>Third-party services updated before they cut you off.</h3>
+        <div class="cuenta"><span class="cuenta__k">The math · example</span><p>If the app takes $20,000 a month and payments fail for 4 days = <b>~$2,600</b> that doesn't come in, plus customers who don't come back.</p></div>
+        <p>Payments, maps, booking, sign-in: almost everything inside your app depends on a provider that gives months of notice. I migrate before the date.</p>
+        <ol class="flujo"><li><b>May</b><small>provider announces</small></li><li><b>October</b><small>I migrate and test</small></li><li class="ok"><b>November 3</b><small>✓ nobody noticed</small></li></ol>
+        <div class="gana"><span class="gana__k">What you get</span><p>The customer who reaches checkout actually pays.</p></div>
+        <p class="incluido">Included from <b>Essentials</b></p>
+        <a class="boton boton--azul" data-t="correo-pagos" href="mailto:bodgar@bodgar.dev?subject=Payments%20in%20my%20app%20are%20failing&amp;body=Here%20is%20my%20App%20Store%20link%3A%20">Check my app</a>
+      </div>
+    </li>
+
+    <li class="nt" data-card="resenas" data-plan="standard" data-nombre="Bugs dragging the rating down" data-hago="Crash monitoring and bug fixes as they show up." data-gana="You hear about crashes before your customers do, and the rating recovers.">
+      <div class="nt__cab"><span class="nt__app nt__app--estrella"></span><span>Ratings</span><time>this week</time></div>
+      <p class="nt__frase">From 4.8 to 3.9 stars over a bug nobody fixes.</p>
+      <p class="nt__sub">Fewer stars means <b>fewer people download it</b>, and the ones who have it complain in public.</p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="resenas">This is me →</button></div>
+      <span class="sello" aria-hidden="true">That's me</span>
+      <div class="sol">
+        <h3>You hear about crashes before your customers do.</h3>
+        <div class="cuenta"><span class="cuenta__k">The math · example</span><p>If dropping from 4.8 to 3.9 stars costs you 1 in 4 downloads and each new customer is worth $120 a year: at 40 downloads a month that's <b>$14,400 a year</b> less.</p></div>
+        <p>I set up crash monitoring: every time the app closes or something breaks, I get the details. I fix it before it turns into a review.</p>
+        <div class="estrellas-viz"><div><span>Before</span><b>3.9 ★</b></div><div class="flecha">→</div><div class="ok"><span>Bug fixed + monitoring</span><b>4.6 ★</b></div></div>
+        <div class="gana"><span class="gana__k">What you get</span><p>The rating recovers and stops scaring off new customers.</p></div>
+        <p class="incluido">Included from <b>Standard</b></p>
+        <a class="boton boton--azul" data-t="correo-resenas" href="mailto:bodgar@bodgar.dev?subject=Bugs%20and%20bad%20reviews%20in%20my%20app&amp;body=Here%20is%20my%20App%20Store%20link%3A%20">Check my app</a>
+      </div>
+    </li>
+
+    <li class="nt" data-card="dev" data-plan="standard" data-nombre="The original developer stopped answering" data-hago="I recover access (accounts, code, keys), document the app and become the person responsible." data-gana="You stop depending on someone who doesn't answer.">
+      <div class="nt__cab"><span class="nt__app nt__app--chat"></span><span>Messages</span><time>seen 3 weeks ago</time></div>
+      <p class="nt__frase">The developer who built the app stopped answering.</p>
+      <p class="nt__sub">And the accounts, the code and the keys are in their name. <b>Every change, even a small one, becomes a problem.</b></p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="dev">This is me →</button></div>
+      <span class="sello" aria-hidden="true">That's me</span>
+      <div class="sol">
+        <h3>First I recover what's yours. Then I maintain it.</h3>
+        <div class="cuenta"><span class="cuenta__k">The math · example</span><p>Rebuilding an app from scratch because nobody has the code easily runs <b>$40,000 or more</b>. Recovering access and documenting it costs a fraction.</p></div>
+        <p>I help you recover the access that should be in your name, review the state of the code and document it so you never depend on a single person again, not even me.</p>
+        <ul class="checklist"><li>Apple Developer account</li><li>Google Play Console</li><li>Code repository</li><li>Keys and certificates</li><li>Server and services</li></ul>
+        <div class="gana"><span class="gana__k">What you get</span><p>Your app is yours again, and someone answers when something breaks.</p></div>
+        <p class="incluido">Recommended: <b>Standard</b>, with onboarding</p>
+        <a class="boton boton--azul" data-t="correo-dev" href="mailto:bodgar@bodgar.dev?subject=My%20app%20developer%20stopped%20answering&amp;body=Here%20is%20my%20App%20Store%20link%3A%20">Check my app</a>
+      </div>
+    </li>
+
+    <li class="nt" data-card="rechazo" data-plan="priority" data-nombre="App Store rejections" data-hago="I answer Apple's review, adjust what's needed and resubmit, with a 24-hour response." data-gana="Your fixes and features ship on time.">
+      <div class="nt__cab"><span class="nt__app nt__app--apple"></span><span>App Store Connect</span><time>yesterday</time></div>
+      <p class="nt__frase">“Your update was rejected.” And nobody knows why.</p>
+      <p class="nt__sub">Until it's fixed, <b>you can't ship a single fix</b>, and the promotion you planned slips.</p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="rechazo">This is me →</button></div>
+      <span class="sello" aria-hidden="true">That's me</span>
+      <div class="sol">
+        <h3>I handle Apple's rejections.</h3>
+        <div class="cuenta"><span class="cuenta__k">The math · example</span><p>A promotion that slips a week because the update won't go out can be <b>that whole week's sales</b>.</p></div>
+        <p>I read the rejection reason, reply to App Review the way Apple expects, adjust what's needed and resubmit. With a guaranteed 24-hour response.</p>
+        <div class="aviso-consola"><span>App Store Connect · App Review</span><b>Guideline 5.1.1 · Data Collection and Storage</b><em>✓ Answered and resubmitted the next day</em></div>
+        <div class="gana"><span class="gana__k">What you get</span><p>Your fixes and new features ship when they need to.</p></div>
+        <p class="incluido">Included in <b>Priority</b></p>
+        <a class="boton boton--azul" data-t="correo-rechazo" href="mailto:bodgar@bodgar.dev?subject=Apple%20rejected%20my%20update&amp;body=Here%20is%20my%20App%20Store%20link%3A%20">Check my app</a>
+      </div>
+    </li>
+
+    <li class="nt" data-card="nueva" data-plan="standard" data-nombre="New features nobody dares to build" data-hago="Development hours every month that roll over, to build what the app needs." data-gana="The app grows without opening a new project each time.">
+      <div class="nt__cab"><span class="nt__app nt__app--idea"></span><span>Business to-do list</span><time>since March</time></div>
+      <p class="nt__frase">We want to add something new, but nobody dares to touch the code.</p>
+      <p class="nt__sub">The feature that would grow the app <b>sits on the list for months</b>.</p>
+      <div class="nt__pie"><button type="button" class="nt__btn" data-abrir="nueva">This is me →</button></div>
+      <span class="sello" aria-hidden="true">That's me</span>
+      <div class="sol">
+        <h3>Development hours every month, and they roll over.</h3>
+        <div class="cuenta"><span class="cuenta__k">The math · example</span><p>Taking bookings in the app instead of by phone can free up <b>hours of front-desk time every week</b>. Every month it waits is lost.</p></div>
+        <p>Standard includes 4 development hours a month and Priority 10. Unused hours roll over, so you can save up for something bigger. And every month I tell you what I'd improve and what it would cost.</p>
+        <div class="horas"><div><span>Month 1</span><i style="--w:33%"></i><b>4 h</b></div><div><span>Month 2</span><i style="--w:66%"></i><b>8 h</b></div><div class="ok"><span>Month 3</span><i style="--w:100%"></i><b>12 h → new feature</b></div></div>
+        <div class="gana"><span class="gana__k">What you get</span><p>The app grows without opening a new project every time.</p></div>
+        <p class="incluido">Included from <b>Standard</b></p>
+        <a class="boton boton--azul" data-t="correo-nueva" href="mailto:bodgar@bodgar.dev?subject=I%20want%20to%20add%20something%20to%20my%20app&amp;body=Here%20is%20my%20App%20Store%20link%3A%20">Check my app</a>
+      </div>
+    </li>
+  </ul>
+  <button type="button" class="notifs-mas" id="notifs-mas">Show 4 more</button>
+
+  <div class="conteo">
+    <p>You picked <b id="conteo-n">0</b> of 8.</p>
+    <a class="boton boton--azul" href="#plan" id="conteo-ir" data-t="ver-plan" hidden>See my plan ↓</a>
+  </div>
+
+  <dialog class="ficha" id="ficha" aria-labelledby="ficha-frase">
+    <div class="ficha__cab"><span class="ficha__tag" id="ficha-tag"></span><button type="button" class="ficha__x" id="ficha-x" aria-label="Close">×</button></div>
+    <p class="ficha__frase" id="ficha-frase"></p>
+    <div class="ficha__cuerpo" id="ficha-cuerpo"></div>
+    <div class="ficha__pie">
+      <button type="button" class="boton boton--linea" id="ficha-otro">See another</button>
+      <button type="button" class="boton boton--azul" id="ficha-plan">See my plan ↓</button>
+      <button type="button" class="ficha__quitar" id="ficha-quitar">Not me, remove it</button>
     </div>
-  </section>
+  </dialog>
+</section>
+
+<!-- 2 · YOUR PLAN -->
+<section class="seccion" id="plan">
+  <div class="cab">
+    <span class="eyebrow" data-n="2">Your plan</span>
+    <h2 id="plan-titulo">Tap what's happening to you above and your plan shows up here.</h2>
+    <p class="intro" id="plan-intro">Based on what you pick, I'll tell you what I'd do and which plan fits. No more, no less.</p>
+  </div>
+  <div class="reporte" id="reporte">
+    <div class="reporte__cab"><div><span class="reporte__k">Maintenance plan</span><b>Your app</b></div><span class="reporte__folio" id="reporte-folio">APP-000</span></div>
+    <div class="reporte__vacio" id="reporte-vacio"><p>Nothing picked yet.</p><a class="boton boton--linea" href="#problemas" data-t="volver-problemas">See the problems ↑</a></div>
+    <ol class="reporte__lista" id="reporte-lista"></ol>
+    <div class="reporte__rec" id="reporte-rec" hidden>
+      <span>Recommended plan</span>
+      <b id="rec-nombre"></b>
+      <p id="rec-porque"></p>
+    </div>
+  </div>
+  <div class="cta-plan">
+    <a class="boton boton--azul" id="plan-correo" data-t="correo-plan" href="mailto:bodgar@bodgar.dev?subject=Free%20app%20check">Send me your app with this plan</a>
+    <span>Your email opens with what you picked. Just add your App Store link.</span>
+  </div>
+</section>
+
+<!-- 3 · THE COST -->
+<section class="seccion" id="costo">
+  <div class="cab">
+    <span class="eyebrow" data-n="3">The cost</span>
+    <h2>What does it cost when the app is down for a few days?</h2>
+    <p class="intro">With your numbers. Then compare it with the maintenance fee.</p>
+  </div>
+  <div class="calc" id="calc">
+    <div class="calc__pantalla">
+      <span class="calc__k">One outage costs you</span>
+      <b class="calc__num" id="calc-num">$0</b>
+      <span class="calc__det" id="calc-det"></span>
+      <span class="calc__vs" id="calc-vs"></span>
+    </div>
+    <div class="calc__campos">
+      <label class="rango"><span>Orders, bookings or payments a day through the app <output data-for="c-pedidos"></output></span><input type="range" id="c-pedidos" min="1" max="500" step="1" value="40"></label>
+      <label class="rango"><span>Average ticket <output data-for="c-ticket" data-fmt="$"></output></span><input type="range" id="c-ticket" min="5" max="500" step="5" value="45"></label>
+      <label class="rango"><span>How many go elsewhere if the app doesn't work? <output data-for="c-perdida" data-fmt="%"></output></span><input type="range" id="c-perdida" min="5" max="100" step="5" value="30"></label>
+      <label class="rango"><span>Days until someone notices and fixes it <output data-for="c-dias"></output></span><input type="range" id="c-dias" min="1" max="30" step="1" value="5"></label>
+    </div>
+    <p class="nota">An estimate with your numbers, not a promise. The free check tells you how exposed your app really is.</p>
+  </div>
+</section>
+
+<!-- 4 · PRICING -->
+<section class="seccion" id="precios">
+  <div class="cab">
+    <span class="eyebrow" data-n="4">Pricing</span>
+    <h2>One flat fee a month. No surprises.</h2>
+    <p class="intro">You always know what you're paying. Pick the level of coverage you want.</p>
+  </div>
+  <div class="planes">
+    <div class="plan" data-plan="essentials" data-nombre="Essentials" data-precio="$600 USD per month" data-monto="600">
+      <span class="plan__rec">Recommended for you</span>
+      <div class="plan__nombre">Essentials</div>
+      <div class="plan__precio">$600</div>
+      <div class="plan__sub">per month, USD</div>
+      <ul>
+        <li>Your app checked against every new iOS and Android release, and updated when needed</li>
+        <li>App Store and Google Play requirements always current</li>
+        <li>Security patches applied</li>
+        <li>Third-party services updated before they cut you off</li>
+        <li>Certificates renewed before they expire</li>
+        <li>A monthly report in plain English</li>
+        <li class="promesa">Ideas, always free: every month I tell you what I'd improve and what it would cost. You decide.</li>
+      </ul>
+    </div>
+    <div class="plan plan--destacado" data-plan="standard" data-nombre="Standard" data-precio="$1,200 USD per month" data-monto="1200">
+      <span class="plan__rec">Recommended for you</span>
+      <span class="plan__popular">Most popular</span>
+      <div class="plan__nombre">Standard</div>
+      <div class="plan__precio">$1,200</div>
+      <div class="plan__sub">per month, USD</div>
+      <ul>
+        <li class="trae">Everything in Essentials, plus:</li>
+        <li>Bug fixes as they come up</li>
+        <li>Crash monitoring, so I catch problems before your customers report them</li>
+        <li>4 development hours a month for whatever you want to build. Unused hours roll over.</li>
+        <li class="promesa">Ideas, always free: every month I tell you what I'd improve and what it would cost. You decide.</li>
+      </ul>
+    </div>
+    <div class="plan" data-plan="priority" data-nombre="Priority" data-precio="$2,000 USD per month" data-monto="2000">
+      <span class="plan__rec">Recommended for you</span>
+      <div class="plan__nombre">Priority</div>
+      <div class="plan__precio">$2,000</div>
+      <div class="plan__sub">per month, USD</div>
+      <ul>
+        <li class="trae">Everything in Standard, plus:</li>
+        <li>Guaranteed 24-hour response</li>
+        <li>10 development hours a month. Unused hours roll over.</li>
+        <li>App Store rejections handled by me</li>
+        <li class="promesa">Ideas, always free: every month I tell you what I'd improve and what it would cost. You decide.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="planes__pie">
+    <p><b>Cancel anytime</b> · One-time onboarding fee from $800 USD</p>
+    <p class="nota">Bigger projects are quoted separately at $75 USD/hour. You'll always see the estimate before I start.</p>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="seccion" id="quien">
+  <div class="cab">
+    <span class="eyebrow" data-n="5">Who you'd be working with</span>
+    <h2>Just me. That's the point.</h2>
+  </div>
+  <div class="quien">
+    <img src="/assets/bodgar.jpg" width="576" height="720" alt="Bodgar Espinosa" loading="lazy">
+    <div>
+      <p>I'm Bodgar, a mobile engineer based in Mexico City. For ten years I've built and maintained iOS and Android apps for companies like Google, Walmart, Venmo, Domino's and PetSmart, working with US teams. I work remotely and I'm available during US business hours.</p>
+      <p>You don't get handed to an account manager or a team that rotates every month. <b>You talk directly to the person writing the code.</b> I take on a small number of apps at a time so each one gets real attention.</p>
+      <p><a class="enlace" href="/assets/Bodgar-Espinosa-CV.pdf" target="_blank" rel="noopener noreferrer">Download my CV (PDF)</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- BEYOND -->
+<section class="seccion" id="mas">
+  <div class="cab">
+    <span class="eyebrow" data-n="6">Beyond maintenance</span>
+    <h2>When an app needs more, I build the new part too.</h2>
+    <p class="intro">Products I designed, built and run myself: the app, the server, the payments and the database.</p>
+  </div>
+  <div class="obras">
+    <a class="obra" href="https://pasas.mx" target="_blank" rel="noopener noreferrer"><span class="obra__img"><img src="/assets/work/pasas.jpg" width="1000" height="625" loading="lazy" alt="Pasas.mx"></span><b>Pasas.mx ↗</b><span>A study platform for students: lessons, practice and progress for the whole family in one account.</span></a>
+    <a class="obra" href="https://yolandamiranda.mx" target="_blank" rel="noopener noreferrer"><span class="obra__img"><img src="/assets/work/yolanda.jpg" width="1000" height="625" loading="lazy" alt="Consulta"></span><b>Consulta ↗</b><span>Booking and billing for a psychology practice: online appointments, card payments, packages and reminders.</span></a>
+    <a class="obra" href="https://padelcrown.mx" target="_blank" rel="noopener noreferrer"><span class="obra__img"><img src="/assets/work/padelcrown.jpg" width="1000" height="624" loading="lazy" alt="Padel Crown"></span><b>Padel Crown ↗</b><span>The platform that runs a padel league: sign-ups, groups, live scores and a standings table that reorders itself.</span></a>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="seccion final" id="empieza">
+  <div class="final__caja">
+    <span class="eyebrow">Start here</span>
+    <h2>Not sure your app has a problem?</h2>
+    <p class="intro">Send me your App Store link. I'll review it and send back a one-page report of what's already broken and what's coming. Free, and no sales call unless you want one.</p>
+    <div class="hero__ctas">
+      <a class="boton boton--azul" href="mailto:bodgar@bodgar.dev?subject=Free%20app%20check&amp;body=Here%20is%20my%20App%20Store%20link%3A%20">Send me your app link</a>
+      <a class="boton boton--linea" href="https://cal.com/bodgar/free-app-check" target="_blank" rel="noopener noreferrer">Or book 20 minutes</a>
+    </div>
+  </div>
+</section>
 
 </main>
 
-<footer>
-  <div class="wrap">
-    <p class="foot-cross"><a href="/plataformas/" lang="es">&iquest;Est&aacute;s en M&eacute;xico y necesitas una plataforma a la medida?</a></p>
-  </div>
-  <div class="wrap foot">
-    <span>&copy; 2026 Bodgar Espinosa &middot; Mexico City</span>
+<footer class="pie">
+  <p class="pie__cruce"><a href="/plataformas/" lang="es">¿Estás en México y necesitas una plataforma a la medida? →</a></p>
+  <div class="pie__in">
+    <span>© 2026 Bodgar Espinosa · Mexico City</span>
     <nav>
       <a href="mailto:bodgar@bodgar.dev">bodgar@bodgar.dev</a>
       <a href="https://www.linkedin.com/in/bodgarespinosa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -261,22 +465,12 @@
   </div>
 </footer>
 
-<script>
-(function () {
-  var items = document.querySelectorAll(".reveal");
-  if (!("IntersectionObserver" in window)) {
-    for (var i = 0; i < items.length; i++) items[i].classList.add("in");
-    return;
-  }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-    });
-  }, { rootMargin: "0px 0px -6% 0px", threshold: 0.06 });
-  for (var j = 0; j < items.length; j++) io.observe(items[j]);
-})();
-</script>
+<a class="manif" id="manif" href="#plan" data-t="manifiesto" hidden>
+  <span class="manif__n"><b id="manif-n">0</b> <span id="manif-txt">selected</span></span>
+  <span class="manif__ir">See my plan ↓</span>
+</a>
 
 <script src="/assets/t.js" defer></script>
+<script src="/assets/home/home.js" defer></script>
 </body>
 </html>
