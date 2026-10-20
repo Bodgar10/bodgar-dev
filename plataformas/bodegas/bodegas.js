@@ -2,7 +2,7 @@
  *
  * La nave (racks, lámparas, banda con escáner), las etiquetas de problema
  * que se marcan y abren su solución, el plan que se arma con lo marcado,
- * la báscula de costos y las tarimas del modelo por cliente.
+ * la báscula de costos y las tarimas: la plataforma fija repartida entre clientes.
  *
  * Nada va a un servidor: lo marcado vive en sessionStorage y viaja solo
  * dentro del mensaje de WhatsApp que la persona revisa antes de enviar.
@@ -508,17 +508,17 @@
       caja.appendChild(t);
     }
     while (caja.children.length > n) caja.removeChild(caja.lastChild);
-    var BASE = 2000, EXTRA = 1500, POR = 500;
-    var cobras = n * EXTRA, costo = BASE + n * POR, queda = cobras - costo;
+    var FIJO = 2000, EXTRA = 1500;
+    var cobras = n * EXTRA, queda = cobras - FIJO;
     $("t-cobras-k").textContent = n + " × " + dinero(EXTRA);
     $("t-cobras").textContent = "+" + dinero(cobras) + "/mes";
-    $("t-costo-k").textContent = dinero(BASE) + " base + " + n + " × " + dinero(POR);
-    $("t-costo").textContent = "−" + dinero(costo) + "/mes";
+    $("t-unidad-k").textContent = dinero(FIJO) + " ÷ " + n + (n === 1 ? " cliente" : " clientes");
+    $("t-unidad").textContent = dinero(FIJO / n) + "/mes";
     $("t-total").textContent = (queda < 0 ? "−" : "") + dinero(Math.abs(queda));
     $("t-total").classList.toggle("negativo", queda < 0);
-    $("t-punto").textContent = queda < 0
+    $("t-punto").textContent = n === 1
       ? "Con 1 cliente todavía no se paga sola: desde el 2.º, sí."
-      : "Se paga sola desde el 2.º cliente con Plan Control.";
+      : "Con " + n + " clientes te sale en " + dinero(FIJO / n) + " por cliente. Entre más clientes, más barata.";
     salidas();
   }
   $("t-clientes").addEventListener("input", function () {

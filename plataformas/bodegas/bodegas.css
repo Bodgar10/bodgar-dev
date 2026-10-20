@@ -585,3 +585,4 @@ main + .franjas { margin-top: clamp(80px, 12vw, 130px); }
 .tarimas__cuentas dd { align-self: center; }
 #t-total.negativo { color: var(--rojo); }
 .tarimas__punto { margin: 0 0 10px; font-weight: 700; font-size: 15px; color: var(--amarillo-2); }
+.tarimas__unidad dd { color: var(--amarillo-2); font-size: 20px; }
