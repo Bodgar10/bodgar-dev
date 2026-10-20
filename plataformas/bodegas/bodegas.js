@@ -508,7 +508,17 @@
       caja.appendChild(t);
     }
     while (caja.children.length > n) caja.removeChild(caja.lastChild);
-    $("t-total").textContent = dinero(n * 1000);
+    var BASE = 2000, EXTRA = 1500, POR = 500;
+    var cobras = n * EXTRA, costo = BASE + n * POR, queda = cobras - costo;
+    $("t-cobras-k").textContent = n + " × " + dinero(EXTRA);
+    $("t-cobras").textContent = "+" + dinero(cobras) + "/mes";
+    $("t-costo-k").textContent = dinero(BASE) + " base + " + n + " × " + dinero(POR);
+    $("t-costo").textContent = "−" + dinero(costo) + "/mes";
+    $("t-total").textContent = (queda < 0 ? "−" : "") + dinero(Math.abs(queda));
+    $("t-total").classList.toggle("negativo", queda < 0);
+    $("t-punto").textContent = queda < 0
+      ? "Con 1 cliente todavía no se paga sola: desde el 2.º, sí."
+      : "Se paga sola desde el 2.º cliente con Plan Control.";
     salidas();
   }
   $("t-clientes").addEventListener("input", function () {

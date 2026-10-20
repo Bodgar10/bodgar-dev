@@ -411,10 +411,11 @@
       <h3>Si eres 3PL, puede crecer con tus clientes. Y si además lo vendes como servicio premium:</h3>
       <label class="rango"><span>Clientes con «Plan Control» <small>(portal + evidencias + tracking)</small> <output data-for="t-clientes"></output></span><input type="range" id="t-clientes" min="1" max="60" step="1" value="20"></label>
       <dl class="tarimas__cuentas">
-        <div><dt>Le cobras de más a cada cliente</dt><dd>+$1,500/mes</dd></div>
-        <div><dt>La plataforma te cuesta por cliente</dt><dd>$500/mes</dd></div>
-        <div class="tarimas__total"><dt>Te quedas cada mes</dt><dd id="t-total">$20,000</dd></div>
+        <div><dt>Cobras de más <small id="t-cobras-k">20 × $1,500</small></dt><dd id="t-cobras">+$30,000/mes</dd></div>
+        <div><dt>La plataforma te cuesta <small id="t-costo-k">$2,000 base + 20 × $500</small></dt><dd id="t-costo">−$12,000/mes</dd></div>
+        <div class="tarimas__total"><dt>Te quedas cada mes</dt><dd id="t-total">$18,000</dd></div>
       </dl>
+      <p class="tarimas__punto" id="t-punto">Se paga sola desde el 2.º cliente con Plan Control.</p>
       <p class="calc__nota">Cifras de ejemplo. El modelo y los montos se definen después de revisar tu operación.</p>
     </div>
     <div class="tarimas__viz" id="tarimas" aria-hidden="true"></div>

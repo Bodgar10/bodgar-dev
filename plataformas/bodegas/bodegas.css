@@ -580,3 +580,8 @@ main + .franjas { margin-top: clamp(80px, 12vw, 130px); }
   --pb-acento: var(--tinta); --pb-acento-txt: var(--amarillo); --pb-fondo: var(--superficie); --pb-linea: var(--linea); --pb-texto: var(--texto);
   --pb-suave: var(--texto-2); --pb-si: var(--verde); --pb-lema: var(--amarillo); }
 .pb__monto { font-stretch: 75%; }
+
+.tarimas__cuentas dt small { display: block; font-family: var(--mono); font-size: 12.5px; color: var(--gris); margin-top: 2px; }
+.tarimas__cuentas dd { align-self: center; }
+#t-total.negativo { color: var(--rojo); }
+.tarimas__punto { margin: 0 0 10px; font-weight: 700; font-size: 15px; color: var(--amarillo-2); }
