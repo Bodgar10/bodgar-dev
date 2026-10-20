@@ -1,0 +1,38 @@
+# Caché de los archivos estáticos (Cloudflare Workers static assets lee este
+# archivo en cada deploy). Sin él todo salía con max-age=0: cada visita volvía
+# a preguntar por cada CSS, JS, fuente e imagen.
+#
+# 🔴 Las reglas NO se pisan entre sí: si dos coinciden, Cloudflare junta los
+# encabezados. Por eso van por carpeta o archivo, nunca un /* general.
+# El HTML no aparece aquí: sigue con max-age=0 para que un deploy se vea ya.
+
+# Fuentes: el nombre lleva hash, nunca cambian en sitio.
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Imágenes: si una cambia, va con nombre nuevo.
+/assets/apps/*
+  Cache-Control: public, max-age=2592000
+/assets/work/*
+  Cache-Control: public, max-age=2592000
+/assets/bodgar.webp
+  Cache-Control: public, max-age=2592000
+
+# CSS y JS: no llevan hash, así que caché corta. 10 min frescos y hasta un día
+# sirviendo la copia vieja mientras se revalida por detrás.
+/assets/home/*
+  Cache-Control: public, max-age=600, stale-while-revalidate=86400
+/assets/styles.css
+  Cache-Control: public, max-age=600, stale-while-revalidate=86400
+/assets/demos.css
+  Cache-Control: public, max-age=600, stale-while-revalidate=86400
+/assets/demos.js
+  Cache-Control: public, max-age=600, stale-while-revalidate=86400
+/assets/t.js
+  Cache-Control: public, max-age=600, stale-while-revalidate=86400
+/plataformas/fisioterapia/fisio.*
+  Cache-Control: public, max-age=600, stale-while-revalidate=86400
+/plataformas/bodegas/bodegas.*
+  Cache-Control: public, max-age=600, stale-while-revalidate=86400
+/aom/x7k2/aom.*
+  Cache-Control: public, max-age=600, stale-while-revalidate=86400

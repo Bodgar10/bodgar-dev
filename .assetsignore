@@ -1,0 +1,8 @@
+# Lo que NO se publica en bodgar.dev (sintaxis de .gitignore).
+# Antes se servían /.git/, /supabase/*.sql y el README.
+.git
+.gitignore
+.assetsignore
+README.md
+supabase
+herramientas
