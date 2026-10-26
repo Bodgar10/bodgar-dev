@@ -301,7 +301,7 @@
   });
 
   function guardar() { try { sessionStorage.setItem(GUARDADO, JSON.stringify(lista())); } catch (e) {} }
-  function textoBoton(si) { return si ? "✓ Ver solución" : "Nos pasa →"; }
+  function textoBoton(si) { return si ? "✓ En su plan · ver" : "Ver cómo se resuelve →"; }
 
   function marcar(k, si) {
     if (!!marcas[k] === si) return;
@@ -317,7 +317,9 @@
     $("conteo-n").textContent = n;
     $("conteo-ir").hidden = n === 0;
     $("manif-n").textContent = n;
-    $("manif-txt").textContent = n === 1 ? "problema marcado" : "problemas marcados";
+    $("manif-txt").textContent = "en su plan";
+    var msg = WA + encodeURIComponent(mensajeDiag());
+    $("final-wa").href = msg; $("wa-flota").href = msg;
     if (subio) { var m = $("manif"); m.classList.remove("salta"); void m.offsetWidth; m.classList.add("salta"); }
     plan();
     flotante();
@@ -328,7 +330,7 @@
   function abrir(k) {
     var c = carta(k);
     if (!c) return;
-    if (!marcas[k]) { marcar(k, true); track("clic", "problemas:nos-pasa-" + k); }
+    if (!marcas[k]) { marcar(k, true); track("clic", "problemas:ver-" + k); }
     else track("clic", "problemas:reabrir-" + k);
     actual = k;
     $("ficha-tag").textContent = c.querySelector(".tj__top span:last-child").textContent;
@@ -342,7 +344,11 @@
   function irA(id) { var d = $(id); if (d) d.scrollIntoView({ behavior: CALMA ? "auto" : "smooth", block: "start" }); }
 
   document.querySelectorAll("[data-abrir]").forEach(function (b) {
-    b.addEventListener("click", function () { abrir(b.getAttribute("data-abrir")); });
+    b.addEventListener("click", function (e) { e.stopPropagation(); abrir(b.getAttribute("data-abrir")); });
+  });
+  // Toda la tarjeta se puede tocar, no solo el botón.
+  document.querySelectorAll(".tj[data-card]").forEach(function (c) {
+    c.addEventListener("click", function () { abrir(c.getAttribute("data-card")); });
   });
   $("ficha-x").addEventListener("click", cerrar);
   $("ficha-otro").addEventListener("click", function () {
@@ -383,8 +389,8 @@
     var cosa = crece ? (n === 1 ? "punto" : "puntos") : (n === 1 ? "problema" : "problemas");
     $("plan-titulo").textContent = n === 0
       ? "Marquen arriba lo que les pasa y aquí aparece su plan."
-      : n === 1 ? "Marcaron 1 " + cosa + ". Tiene tratamiento."
-      : "Marcaron " + n + " " + cosa + ". Los " + n + " se resuelven con el mismo sistema.";
+      : n === 1 ? "Revisaron 1 " + cosa + ". Tiene tratamiento."
+      : "Revisaron " + n + " " + cosa + ". Los " + n + " se resuelven con el mismo sistema.";
     $("plan-intro").textContent = n
       ? "Esto es lo que construiría, lo que ganaría la clínica y por dónde empezaría yo."
       : "Un solo sistema, construido alrededor de su clínica. Empezamos por lo que más dinero o tiempo les cuesta.";
@@ -429,12 +435,21 @@
 
   /* ---------- Plan flotante ---------- */
   var vistos = {};
+  function mostrarFlota(el, si) {
+    if (si === el.classList.contains("visible")) return;
+    if (si) { el.hidden = false; requestAnimationFrame(function () { el.classList.add("visible"); }); }
+    else el.classList.remove("visible");
+  }
+  // Fuera del héroe siempre hay algo flotando: el plan si ya abrieron algo; si no, WhatsApp.
   function flotante() {
-    var m = $("manif");
-    var mostrar = lista().length > 0 && !vistos.plan && !vistos.escribir && !vistos.inicio;
-    if (mostrar === m.classList.contains("visible")) return;
-    if (mostrar) { m.hidden = false; requestAnimationFrame(function () { m.classList.add("visible"); }); }
-    else m.classList.remove("visible");
+    var fuera = !vistos.plan && !vistos.escribir && !vistos.inicio, hay = lista().length > 0;
+    mostrarFlota($("manif"), fuera && hay);
+    mostrarFlota($("wa-flota"), fuera && !hay);
+  }
+  function mensajeDiag() {
+    var l = lista(), t = "Hola Bodgar. Quiero el diagnóstico de 45 minutos para mi clínica.";
+    if (l.length) t += "\nLo que más nos interesó: " + l.map(function (k) { return PROB[k].nombre.toLowerCase(); }).join(", ") + ".";
+    return t;
   }
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (es) {

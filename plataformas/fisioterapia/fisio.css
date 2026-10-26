@@ -700,3 +700,18 @@ input[type="range"] { width: 100%; height: 32px; margin: 0; accent-color: var(--
   --pb-fuerte: var(--tinta); --pb-fuerte-txt: var(--crema); --pb-fuerte-linea: rgba(244,241,234,0.18); --pb-monto: #F2B79C;
   --pb-acento: var(--salvia); --pb-acento-txt: var(--tinta); --pb-fondo: var(--papel); --pb-linea: var(--linea); --pb-texto: var(--tinta);
   --pb-suave: var(--gris); --pb-si: var(--verde); --pb-lema: var(--terra); }
+
+/* Tarjeta completa tocable, flotante de WhatsApp y botón final de un toque */
+.tj[data-card] { cursor: pointer; }
+.wa-flota { position: fixed; right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); z-index: 60; display: inline-flex; align-items: center; gap: 10px; padding: 14px 20px; border-radius: 999px; background: var(--wa); color: #fff; font-weight: 700; text-decoration: none; box-shadow: 0 12px 30px rgba(18, 140, 94, 0.35); transform: translateY(160%); transition: transform 0.3s cubic-bezier(.2, 1.3, .5, 1); }
+.wa-flota.visible { transform: none; }
+.wa-flota:hover { color: #fff; background: #0F7A51; }
+.wa-flota .wa { width: 22px; height: 22px; }
+.final__wa { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin: 0 0 22px; padding: 20px 22px; border-radius: 18px; background: var(--menta); }
+.final__wa > span { flex: 1 1 260px; font-size: 15px; color: var(--tinta-2); }
+.boton--grande { min-height: 58px; padding: 0 28px; font-size: 18px; }
+@media (max-width: 640px) {
+  .wa-flota { left: 16px; right: 16px; justify-content: center; }
+  .final__wa .boton { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .wa-flota { transition: none; } }

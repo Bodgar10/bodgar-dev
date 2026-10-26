@@ -284,7 +284,7 @@
     if (c) {
       c.classList.toggle("marcada", si);
       var btn = c.querySelector(".etq__btn");
-      if (btn) btn.textContent = si ? "✓ Ver solución" : (k === "cobros" ? "Sí pasa →" : "Esto me pasa →");
+      if (btn) btn.textContent = si ? "✓ En tu plan" : "Cómo se resuelve →";
     }
     guardar();
     refrescar(si);
@@ -295,7 +295,9 @@
     $("conteo-n").textContent = n;
     $("conteo-ir").hidden = n === 0;
     $("manif-n").textContent = n;
-    $("manif-txt").textContent = n === 1 ? "problema marcado" : "problemas marcados";
+    $("manif-txt").textContent = "en tu plan";
+    var msg = WA + encodeURIComponent(mensajeRevision());
+    $("final-wa").href = msg; $("wa-flota").href = msg;
     if (subio) {
       var m = $("manif");
       m.classList.remove("salta"); void m.offsetWidth; m.classList.add("salta");
@@ -309,7 +311,7 @@
   function abrir(k) {
     var c = carta(k);
     if (!c) return;
-    if (!marcas[k]) { marcar(k, true); track("clic", "problemas:me-pasa-" + k); }
+    if (!marcas[k]) { marcar(k, true); track("clic", "problemas:ver-" + k); }
     else track("clic", "problemas:reabrir-" + k);
     actual = k;
     $("ficha-tag").textContent = c.querySelector(".etq__top span:last-child").textContent;
@@ -329,7 +331,11 @@
   }
 
   document.querySelectorAll("[data-abrir]").forEach(function (b) {
-    b.addEventListener("click", function () { abrir(b.getAttribute("data-abrir")); });
+    b.addEventListener("click", function (e) { e.stopPropagation(); abrir(b.getAttribute("data-abrir")); });
+  });
+  // Toda la etiqueta se puede tocar, no solo el botón.
+  document.querySelectorAll(".etq[data-card]").forEach(function (c) {
+    c.addEventListener("click", function () { abrir(c.getAttribute("data-card")); });
   });
   $("ficha-x").addEventListener("click", cerrar);
   $("ficha-otro").addEventListener("click", function () {
@@ -362,8 +368,8 @@
     var l = lista(), n = l.length;
     $("sol-titulo").textContent = n === 0
       ? "Marca arriba lo que te pasa y aquí aparece tu plan."
-      : n === 1 ? "Marcaste 1 problema. Tiene solución."
-      : "Marcaste " + n + " problemas. Los " + n + " se resuelven con el mismo sistema.";
+      : n === 1 ? "Revisaste 1 problema. Tiene solución."
+      : "Revisaste " + n + " problemas. Los " + n + " se resuelven con el mismo sistema.";
     $("sol-intro").textContent = n
       ? "Esto es lo que construiría, lo que ganarías y por dónde empezaría yo."
       : "Un solo sistema, construido alrededor de tu operación. Empezamos por la fuga que más dinero te cuesta.";
@@ -407,12 +413,21 @@
 
   /* ---------- Manifiesto flotante ---------- */
   var vistos = {};
+  function mostrarFlota(el, si) {
+    if (si === el.classList.contains("visible")) return;
+    if (si) { el.hidden = false; requestAnimationFrame(function () { el.classList.add("visible"); }); }
+    else el.classList.remove("visible");
+  }
+  // Fuera del héroe siempre hay algo flotando: el plan si ya abrió algo; si no, WhatsApp.
   function flotante() {
-    var m = $("manif");
-    var mostrar = lista().length > 0 && !vistos.solucion && !vistos.hablemos && !vistos.inicio;
-    if (mostrar === m.classList.contains("visible")) return;
-    if (mostrar) { m.hidden = false; requestAnimationFrame(function () { m.classList.add("visible"); }); }
-    else m.classList.remove("visible");
+    var fuera = !vistos.solucion && !vistos.hablemos && !vistos.inicio, hay = lista().length > 0;
+    mostrarFlota($("manif"), fuera && hay);
+    mostrarFlota($("wa-flota"), fuera && !hay);
+  }
+  function mensajeRevision() {
+    var l = lista(), t = "Hola Bodgar. Quiero la revisión sin costo de mi bodega.";
+    if (l.length) t += "\nLo que más me interesó: " + l.map(function (k) { return PROB[k].nombre.toLowerCase(); }).join(", ") + ".";
+    return t;
   }
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (es) {
@@ -577,7 +592,7 @@
   codigos();
   lista().forEach(function (k) {
     var c = carta(k);
-    if (c) { c.classList.add("marcada"); c.querySelector(".etq__btn").textContent = "✓ Ver solución"; }
+    if (c) { c.classList.add("marcada"); c.querySelector(".etq__btn").textContent = "✓ En tu plan"; }
   });
   refrescar(false);
   tarimas();
