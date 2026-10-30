@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#130f1c">
+<title>Érase una fiesta · Invitaciones digitales animadas</title>
+<meta name="description" content="Invitaciones digitales animadas para bodas, XV años, cumpleaños y fiestas infantiles. Cada fiesta en su propio mundo: se abren con un toque, tienen música, cuenta regresiva y confirmación por WhatsApp.">
+<link rel="canonical" href="https://bodgar.dev/erase-una-fiesta/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bodgar.dev/erase-una-fiesta/">
+<meta property="og:title" content="Érase una fiesta · Invitaciones digitales animadas">
+<meta property="og:description" content="Cada fiesta es otra historia. Tu invitación debería contarla: boda, XV años, princesas, aventura o el mundo que imagines.">
+<meta property="og:image" content="https://bodgar.dev/erase-una-fiesta/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icono.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/instrument-sans-latin-11aa495c.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-garamond-latin-500i-b61f1c3b.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fiesta.css">
+<script>document.documentElement.className += " js";</script>
+</head>
+<body data-mundo="inicio">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+    <symbol id="i-pluma" viewBox="0 0 24 24"><path d="M20 4c-7 0-12 5-13 12l-3 4M7 16c4 0 9-2 11-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <linearGradient id="g-grieta" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff4d9d"/><stop offset=".5" stop-color="#ffd36b"/><stop offset="1" stop-color="#45e8ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<canvas id="chispas" aria-hidden="true"></canvas>
+
+<header class="barra">
+  <div class="in barra__in">
+    <a class="marca" href="#inicio" aria-label="Érase una fiesta, inicio">
+      <span class="marca__txt" id="marca">Érase una fiesta</span>
+      <span class="marca__mundo" id="marcaMundo" aria-hidden="true"></span>
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#frase">Tu frase</a>
+      <a href="#mundos">Mundos</a>
+      <a href="#incluye">Qué incluye</a>
+      <a href="#precios">Precios</a>
+    </nav>
+    <a class="barra__wa" data-t="wa-barra" data-wa="Hola, vi Érase una fiesta y quiero cotizar una invitación." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>Cotizar</span></a>
+  </div>
+</header>
+
+<main>
+
+<!-- ========== HÉROE: una invitación partida entre dos mundos ========== -->
+<section class="hero" id="inicio">
+  <div class="in hero__in">
+    <div class="hero__txt">
+      <p class="eyebrow">Invitaciones digitales animadas</p>
+      <h1 aria-label="Érase una vez tu fiesta.">
+        <span class="h1-a" aria-hidden="true">Érase una vez</span>
+        <span class="h1-b" id="h1b" aria-hidden="true">tu fiesta.</span>
+      </h1>
+      <p class="sub">Cada fiesta es otra historia, y tu invitación debería contarla. La hacemos en su propio mundo, con su letra, su música y su magia. Se abre con un toque, cuenta los días y te manda las confirmaciones por WhatsApp.</p>
+      <div class="ctas">
+        <a class="boton boton--luz" data-t="wa-hero" data-wa="Hola, vi Érase una fiesta y quiero una invitación para mi fiesta. Es un/una ____ el día ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quiero mi invitación</a>
+        <a class="boton boton--linea" href="#mundos">Ver los mundos ↓</a>
+      </div>
+      <ul class="datos" aria-label="En resumen">
+        <li><b>48 h</b> primer borrador</li>
+        <li><b>$890</b> desde</li>
+        <li><b>1 link</b> para WhatsApp</li>
+      </ul>
+    </div>
+
+    <figure class="partida" id="partida" aria-label="La misma invitación en dos mundos: una boda y una aventura en la selva. Arrastra la grieta para cambiar de mundo.">
+      <div class="partida__marco">
+        <!-- mundo de abajo: boda -->
+        <div class="carta carta--boda" aria-hidden="true">
+          <span class="polvo"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="carta__eti">Nos casamos</span>
+          <span class="carta__nom">Ana <em>&amp;</em> Luis</span>
+          <span class="carta__lin">Con la magia de las cosas que duran, queremos que estés en el primer capítulo.</span>
+          <span class="carta__fecha">14 · 02 · 2027</span>
+          <span class="carta__btn">Confirmar asistencia</span>
+        </div>
+        <!-- mundo de arriba: aventura -->
+        <div class="carta carta--aventura" id="cartaArriba" aria-hidden="true">
+          <svg class="hojas" viewBox="0 0 300 520" preserveAspectRatio="xMidYMid slice"><g fill="#1f6b43"><path d="M-20 60c60-30 110-10 130 30-60 10-100 0-130-30Z"/><path d="M320 120c-60-40-120-20-140 20 60 14 110 6 140-20Z"/><path d="M-20 470c50-50 120-40 140 0-60 20-110 20-140 0Z"/><path d="M330 430c-50-40-110-30-130 10 50 16 100 14 130-10Z"/></g><g fill="#2f8a55"><path d="M10 0c30 40 30 80 0 110-20-40-20-75 0-110Z"/><path d="M290 520c-30-40-30-80 0-110 20 40 20 75 0 110Z"/></g></svg>
+          <span class="luciernagas"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="carta__eti">¡Expedición confirmada!</span>
+          <span class="carta__nom">Mateo<small>cumple 7</small></span>
+          <span class="carta__lin">Se buscan valientes para cruzar la selva. Trae gorra y ganas de explorar.</span>
+          <span class="carta__fecha">Sáb 6 · Mar</span>
+          <span class="carta__btn">Me apunto</span>
+        </div>
+        <svg class="costura" id="costura" aria-hidden="true"><path id="costuraPath" d=""/></svg>
+        <span class="tirador" id="tirador" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6 3 12l6 6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <input class="partida__rango" id="rango" type="range" min="4" max="96" value="52" aria-label="Mover la grieta entre la boda y la aventura">
+      </div>
+      <figcaption>Arrastra la grieta: es la misma invitación en dos mundos.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ========== TU FRASE EN CADA MUNDO ========== -->
+<section class="frase" id="frase">
+  <div class="in frase__in">
+    <div class="frase__txt">
+      <p class="eyebrow">Pruébalo</p>
+      <h2>Escribe lo que desees en tu mensaje. Nosotros le damos su mundo.</h2>
+      <p class="sub sub--corta">Las mismas palabras cambian según el mundo donde viven. Escribe la tuya y mira cómo suena en cada uno.</p>
+      <div class="campo">
+        <label for="fraseIn">Tu frase</label>
+        <input id="fraseIn" type="text" maxlength="70" value="Ven a celebrar conmigo" autocomplete="off" spellcheck="true">
+      </div>
+      <div class="chips" role="tablist" aria-label="Elige un mundo">
+        <button type="button" role="tab" class="chip" data-m="boda" aria-selected="true">Boda</button>
+        <button type="button" role="tab" class="chip" data-m="xv" aria-selected="false">XV años</button>
+        <button type="button" role="tab" class="chip" data-m="princesas" aria-selected="false">Princesas</button>
+        <button type="button" role="tab" class="chip" data-m="aventura" aria-selected="false">Aventura</button>
+        <button type="button" role="tab" class="chip" data-m="padel" aria-selected="false">Pádel</button>
+      </div>
+    </div>
+    <div class="escena" id="escena" aria-live="polite">
+      <div class="capa capa--boda activa" data-m="boda">
+        <span class="capa__orn" aria-hidden="true">✦ ── ✦ ── ✦</span>
+        <p class="capa__txt"></p>
+        <span class="capa__firma">Ana &amp; Luis · 14 de febrero</span>
+      </div>
+      <div class="capa capa--xv" data-m="xv">
+        <span class="capa__orn" aria-hidden="true">XV</span>
+        <p class="capa__txt"></p>
+        <span class="capa__firma">Valentina · bajo las estrellas</span>
+      </div>
+      <div class="capa capa--princesas" data-m="princesas">
+        <svg class="capa__corona" viewBox="0 0 64 40" aria-hidden="true"><path d="M6 34 2 8l16 12L32 2l14 18L62 8l-4 26Z" fill="#e8b84b" stroke="#a8742a" stroke-width="2" stroke-linejoin="round"/><circle cx="32" cy="22" r="4" fill="#c2457e"/></svg>
+        <span class="capa__pre">Por decreto real:</span>
+        <p class="capa__txt"></p>
+        <span class="capa__firma">La princesa Sofía · 5 años</span>
+      </div>
+      <div class="capa capa--aventura" data-m="aventura">
+        <span class="capa__sello" aria-hidden="true">Misión</span>
+        <p class="capa__txt"></p>
+        <span class="capa__firma">Explorador Mateo · cumple 7</span>
+      </div>
+      <div class="capa capa--padel" data-m="padel">
+        <span class="capa__marcador" aria-hidden="true"><b>15</b>–<b>0</b></span>
+        <p class="capa__txt"></p>
+        <span class="capa__firma">Bodgar · 31 · Tepoztlán</span>
+      </div>
+      <svg class="escena__grieta" viewBox="0 0 20 400" preserveAspectRatio="none" aria-hidden="true"><path d="M10 0 4 40 14 80 6 125 15 170 5 215 13 260 4 305 14 350 8 400" fill="none" stroke="url(#g-grieta)" stroke-width="3" vector-effect="non-scaling-stroke"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LOS MUNDOS ========== -->
+<section class="mundos" id="mundos" aria-labelledby="h-mundos">
+  <div class="in mundos__cab">
+    <p class="eyebrow">Los mundos</p>
+    <h2 id="h-mundos">Cada fiesta abre una puerta distinta</h2>
+    <p class="sub sub--corta">Baja y cruza de uno a otro. Cada mundo tiene su propia letra, su propia música y su propia forma de abrirse.</p>
+  </div>
+
+  <!-- Boda -->
+  <article class="mundo mundo--boda" data-mundo="boda" id="boda" aria-labelledby="t-boda">
+    <svg class="grieta" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 L6 8 L13 24 L21 6 L29 20 L37 4 L46 22 L55 9 L63 25 L72 7 L80 21 L89 5 L100 18"/></svg>
+    <canvas class="ambiente" data-tipo="boda" aria-hidden="true"></canvas>
+    <div class="in mundo__in">
+      <div class="mundo__txt">
+        <p class="mundo__cap">Capítulo I · Bodas</p>
+        <h3 class="mundo__t" id="t-boda">La magia de lo que dura</h3>
+        <blockquote class="mundo__voz">“Hay historias que merecen testigos. La nuestra estrena capítulo y queremos que estés en la primera página.”</blockquote>
+        <ul class="mundo__trucos">
+          <li>El sobre se abre con un toque y rompe el sello de lacre.</li>
+          <li>Polvo dorado que sigue tu dedo por toda la invitación.</li>
+          <li>El día contado en capítulos: ceremonia, cena, vals y fiesta.</li>
+        </ul>
+        <a class="boton boton--mundo" data-t="wa-boda" data-wa="Hola, vi Érase una fiesta y quiero una invitación de boda. Nos casamos el ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quiero este mundo</a>
+      </div>
+      <div class="cel" aria-hidden="true">
+        <div class="cel__pantalla mini mini--boda">
+          <span class="mini__eti">Toca para abrir</span>
+          <div class="sobre">
+            <div class="sobre__carta"><span>Nos casamos</span><b>Ana &amp; Luis</b><i>14 · 02 · 2027</i></div>
+            <div class="sobre__cuerpo"></div>
+            <div class="sobre__tapa"></div>
+            <div class="sobre__sello">A·L</div>
+          </div>
+          <span class="mini__pie">Hacienda por confirmar · Valle de Bravo</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- XV -->
+  <article class="mundo mundo--xv" data-mundo="xv" id="xv" aria-labelledby="t-xv">
+    <svg class="grieta" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 16 L8 4 L15 22 L24 9 L31 25 L40 6 L48 19 L57 3 L66 23 L74 8 L83 24 L91 7 L100 20"/></svg>
+    <canvas class="ambiente" data-tipo="xv" aria-hidden="true"></canvas>
+    <div class="in mundo__in mundo__in--rev">
+      <div class="mundo__txt">
+        <p class="mundo__cap">Capítulo II · XV años</p>
+        <h3 class="mundo__t" id="t-xv">Una noche bajo las estrellas</h3>
+        <blockquote class="mundo__voz">“Quince años, un vals y una noche que no se repite. Valentina te espera bajo las estrellas.”</blockquote>
+        <ul class="mundo__trucos">
+          <li>Cuenta regresiva en vivo entre estrellas fugaces.</li>
+          <li>El vals empieza a sonar al abrir la invitación.</li>
+          <li>La noche como una gala: entrada, vals, brindis y pista.</li>
+        </ul>
+        <a class="boton boton--mundo" data-t="wa-xv" data-wa="Hola, vi Érase una fiesta y quiero una invitación de XV años. La fiesta es el ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quiero este mundo</a>
+      </div>
+      <div class="cel" aria-hidden="true">
+        <div class="cel__pantalla mini mini--xv">
+          <span class="deco deco--a"></span>
+          <span class="mini__eti">Mis XV años</span>
+          <b class="xv__nom">Valentina</b>
+          <span class="xv__num">XV</span>
+          <div class="xv__cuenta" id="xvCuenta"><span><b>--</b>días</span><span><b>--</b>hrs</span><span><b>--</b>min</span><span><b>--</b>seg</span></div>
+          <span class="mini__pie">15 · 05 · 2027 · Salón por confirmar</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Princesas -->
+  <article class="mundo mundo--princesas" data-mundo="princesas" id="princesas" aria-labelledby="t-princesas">
+    <svg class="grieta" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 L7 6 L16 23 L23 8 L32 21 L41 5 L49 24 L58 8 L65 21 L74 4 L82 22 L90 9 L100 17"/></svg>
+    <canvas class="ambiente" data-tipo="princesas" aria-hidden="true"></canvas>
+    <div class="in mundo__in">
+      <div class="mundo__txt">
+        <p class="mundo__cap">Capítulo III · Princesas</p>
+        <h3 class="mundo__t" id="t-princesas">Un castillo que se abre al tocarlo</h3>
+        <blockquote class="mundo__voz">“Por decreto real, la princesa Sofía cumple 5 años. Se solicita tu presencia en el castillo y tu mejor corona.”</blockquote>
+        <ul class="mundo__trucos">
+          <li>Las puertas del castillo se abren con un toque.</li>
+          <li>Destellos que caen y banderines que se mueven con el viento.</li>
+          <li>Vestimenta ilustrada: corona opcional, ganas obligatorias.</li>
+        </ul>
+        <a class="boton boton--mundo" data-t="wa-princesas" data-wa="Hola, vi Érase una fiesta y quiero una invitación de princesas para un cumpleaños infantil. Es el ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quiero este mundo</a>
+      </div>
+      <div class="cel" aria-hidden="true">
+        <div class="cel__pantalla mini mini--princesas">
+          <svg class="castillo" viewBox="0 0 200 150">
+            <g fill="#f7d6e6" stroke="#8b4f8f" stroke-width="2" stroke-linejoin="round">
+              <rect x="30" y="60" width="30" height="90"/><rect x="140" y="60" width="30" height="90"/>
+              <rect x="60" y="80" width="80" height="70"/><rect x="85" y="40" width="30" height="110"/>
+              <path d="M26 60 45 28 64 60Z" fill="#c9a5ff"/><path d="M136 60 155 28 174 60Z" fill="#c9a5ff"/><path d="M81 40 100 6 119 40Z" fill="#c9a5ff"/>
+              <path d="M88 150v-26a12 12 0 0 1 24 0v26Z" fill="#8b4f8f"/>
+            </g>
+            <g class="banderas" fill="#c2457e"><path class="b1" d="M45 28V14l14 5-14 5"/><path class="b2" d="M100 6V-8l14 5-14 5"/><path class="b3" d="M155 28V14l14 5-14 5"/></g>
+            <g fill="#ffe28a"><rect x="40" y="80" width="10" height="14" rx="5"/><rect x="150" y="80" width="10" height="14" rx="5"/><rect x="95" y="62" width="10" height="14" rx="5"/></g>
+          </svg>
+          <span class="brillos"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="mini__eti">Por decreto real</span>
+          <b class="pr__nom">Sofía</b>
+          <span class="pr__lin">cumple 5 años</span>
+          <span class="mini__pie">Sábado 12 de abril · El castillo por confirmar</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Aventura -->
+  <article class="mundo mundo--aventura" data-mundo="aventura" id="aventura" aria-labelledby="t-aventura">
+    <svg class="grieta" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 L9 5 L17 24 L25 7 L34 22 L42 4 L51 20 L59 6 L68 25 L76 9 L85 23 L93 6 L100 19"/></svg>
+    <canvas class="ambiente" data-tipo="aventura" aria-hidden="true"></canvas>
+    <div class="in mundo__in mundo__in--rev">
+      <div class="mundo__txt">
+        <p class="mundo__cap">Capítulo IV · Aventura</p>
+        <h3 class="mundo__t" id="t-aventura">Una expedición en vez de una fiesta</h3>
+        <blockquote class="mundo__voz">“¡Atención, exploradores! Mateo cumple 7 y necesita valientes para cruzar la selva. Trae gorra y ganas de aventura.”</blockquote>
+        <ul class="mundo__trucos">
+          <li>Un mapa que dibuja el camino hasta la fiesta.</li>
+          <li>Una brújula que apunta directo a la ubicación.</li>
+          <li>Misiones en vez de horario: llegada, juegos, piñata y pastel.</li>
+        </ul>
+        <a class="boton boton--mundo" data-t="wa-aventura" data-wa="Hola, vi Érase una fiesta y quiero una invitación de aventura para un cumpleaños infantil. Es el ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quiero este mundo</a>
+      </div>
+      <div class="cel" aria-hidden="true">
+        <div class="cel__pantalla mini mini--aventura">
+          <svg class="mapa" viewBox="0 0 220 300">
+            <path d="M20 40c40-20 70 10 100 0s60-30 90-10M10 140c50-10 70 20 110 10s70-20 90 0M20 250c40-15 80 15 110 5s50-20 80-5" fill="none" stroke="#c9ad6f" stroke-width="1.5"/>
+            <g fill="#5e8f4c" opacity=".7"><circle cx="40" cy="90" r="14"/><circle cx="58" cy="82" r="11"/><circle cx="170" cy="200" r="16"/><circle cx="188" cy="212" r="10"/><circle cx="60" cy="230" r="12"/></g>
+            <path d="M30 270 60 214 54 170 110 150 150 104 130 70 176 46" class="ruta" fill="none" stroke="#b5452b" stroke-width="3" stroke-dasharray="6 7" stroke-linecap="round"/>
+            <g class="equis" stroke="#b5452b" stroke-width="5" stroke-linecap="round"><path d="M166 36l20 20M186 36l-20 20"/></g>
+          </svg>
+          <svg class="brujula" viewBox="0 0 60 60"><circle cx="30" cy="30" r="27" fill="#fff6d9" stroke="#6b4b22" stroke-width="3"/><g class="aguja"><path d="M30 8l5 22h-10Z" fill="#b5452b"/><path d="M30 52l5-22h-10Z" fill="#2b3a2f"/></g><circle cx="30" cy="30" r="3" fill="#6b4b22"/></svg>
+          <span class="mini__eti">¡Expedición confirmada!</span>
+          <b class="av__nom">¡Mateo cumple 7!</b>
+          <span class="mini__pie">Sáb 6 de marzo · Base secreta por confirmar</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Pádel: ejemplo real -->
+  <article class="mundo mundo--padel" data-mundo="padel" id="padel" aria-labelledby="t-padel">
+    <svg class="grieta" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 14 L8 24 L16 6 L25 21 L33 3 L42 23 L50 8 L59 22 L67 5 L76 24 L84 9 L92 22 L100 7"/></svg>
+    <canvas class="ambiente" data-tipo="padel" aria-hidden="true"></canvas>
+    <div class="in mundo__in">
+      <div class="mundo__txt">
+        <p class="mundo__cap">Capítulo V · Cumpleaños <span class="real">Ejemplo real</span></p>
+        <h3 class="mundo__t" id="t-padel">Un partido de pádel en Tepoztlán</h3>
+        <blockquote class="mundo__voz">“31 y en su mejor forma. Pádel, sol de Tepoztlán y nadie llevando la cuenta de quién pierde.”</blockquote>
+        <ul class="mundo__trucos">
+          <li>Se abre como un saque: tocas la pelota y entra a la cancha.</li>
+          <li>Una cancha de noche con luces de estadio y la pelota en rally.</li>
+          <li>El itinerario va 15, 30, 40 y juego. La música suena a videojuego.</li>
+        </ul>
+        <div class="mundo__acciones">
+          <a class="boton boton--mundo" data-t="ver-padel" href="ejemplos/padel/" target="_blank" rel="noopener">Abrir la invitación completa ↗</a>
+          <a class="boton boton--linea" data-t="wa-cumple" data-wa="Hola, vi Érase una fiesta y quiero una invitación de cumpleaños con temática de ____. Es el ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer">Quiero la de mi cumple</a>
+        </div>
+      </div>
+      <div class="cel cel--vivo">
+        <div class="cel__pantalla mini--padel">
+          <iframe id="padelVivo" title="Invitación real del cumpleaños 31 de Bodgar, con temática de pádel" data-src="ejemplos/padel/" loading="lazy" tabindex="-1"></iframe>
+          <span class="cel__vivo-eti" aria-hidden="true">En vivo</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="mas-mundos">
+    <div class="in">
+      <p class="mas-mundos__t">Y los mundos que se te ocurran</p>
+      <ul class="mas-mundos__l">
+        <li>Baby shower entre nubes</li><li>Bautizo con luz de vitral</li><li>Graduación en un estadio</li><li>Cumple en el espacio</li><li>Boda en la playa al atardecer</li><li>Fiesta de dinosaurios</li><li>Noche de casino</li><li>Posada mexicana</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========== QUÉ INCLUYE ========== -->
+<section class="seccion" id="incluye" aria-labelledby="h-incluye">
+  <div class="in">
+    <p class="eyebrow">Qué trae cada invitación</p>
+    <h2 id="h-incluye">Todo lo que tus invitados necesitan, en un solo link</h2>
+    <ul class="incluye">
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 10h24v16H4ZM4 10l12 9 12-9"/></svg><b>Entrada que se abre al tocar</b><span>Sobre, boleto, cofre o castillo. Se abre en menos de un segundo, o sola si nadie toca.</span></li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4v4M16 24v4M4 16h4M24 16h4M8 8l3 3M21 21l3 3M8 24l3-3M21 11l3-3"/><circle cx="16" cy="16" r="4"/></svg><b>Fondo animado del tema</b><span>Polvo dorado, estrellas, luciérnagas o luces de estadio, dibujado para tu fiesta.</span></li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M12 24V7l14-3v17"/><circle cx="9" cy="24" r="3"/><circle cx="23" cy="21" r="3"/></svg><b>Música</b><span>Suena al abrirla y tiene su botón para pausarla.</span></li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="17" r="11"/><path d="M16 11v6l4 3M12 3h8"/></svg><b>Cuenta regresiva</b><span>En vivo, con botón para agregarla al calendario.</span></li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29s9-8.5 9-15.5a9 9 0 0 0-18 0C7 20.5 16 29 16 29Z"/><circle cx="16" cy="13.5" r="3"/></svg><b>Ubicación</b><span>Ceremonia y recepción, cada una con su botón al mapa.</span></li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 5h14l6 6v16H6Z"/><path d="M10 14h12M10 19h12M10 24h7"/></svg><b>Itinerario con historia</b><span>Capítulos, misiones o sets en lugar de una lista de horas.</span></li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M11 4 4 8l3 7 3-2v15h12V13l3 2 3-7-7-4c-1 3-3 4-5 4s-4-1-5-4Z"/></svg><b>Código de vestimenta</b><span>Ilustrado, con el color reservado si aplica.</span></li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="7" width="24" height="18" rx="2"/><path d="m4 21 7-6 6 5 4-3 7 5"/><circle cx="21" cy="12" r="2"/></svg><b>Galería de fotos</b><span>Sus fotos en marcos del mismo mundo.</span></li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="12" width="22" height="16" rx="1"/><path d="M3 8h26v4H3ZM16 8v20M16 8c-2-5-8-5-8-1s6 1 8 1c2 0 8 3 8-1s-6-4-8 1"/></svg><b>Mesa de regalos</b><span>Con el tono que ustedes quieran, hasta en broma.</span></li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 17l6 6L26 9"/></svg><b>Confirmación por WhatsApp</b><span>El invitado pone su nombre y cuántos van. A ti te llega el mensaje listo.</span></li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3l2.5 8.5L27 14l-8.5 2.5L16 25l-2.5-8.5L5 14l8.5-2.5Z"/></svg><b>Detalles mágicos</b><span>Destellos que siguen el dedo y sorpresas al tocar.</span></li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M13 19a5 5 0 0 0 7 0l5-5a5 5 0 0 0-7-7l-2 2M19 13a5 5 0 0 0-7 0l-5 5a5 5 0 0 0 7 7l2-2"/></svg><b>Su propio link</b><span>Se manda por WhatsApp. Sin apps ni descargas.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== CÓMO FUNCIONA ========== -->
+<section class="seccion seccion--pasos" id="como" aria-labelledby="h-como">
+  <div class="in">
+    <p class="eyebrow">Cómo funciona</p>
+    <h2 id="h-como">De tu idea a tu link en cuatro pasos</h2>
+    <ol class="pasos">
+      <li><span class="pasos__n">1</span><div><b>Nos cuentas tu fiesta</b><p>Por WhatsApp: tipo de evento, fecha, lugar, colores y la historia que quieren contar.</p></div></li>
+      <li><span class="pasos__n">2</span><div><b>Elegimos su mundo</b><p>Te proponemos la entrada, la música y cómo se cuenta el itinerario.</p></div></li>
+      <li><span class="pasos__n">3</span><div><b>Ves el borrador en 48 horas</b><p>Te llega un link de prueba para verlo en tu celular. Incluye rondas de cambios.</p></div></li>
+      <li><span class="pasos__n">4</span><div><b>Lo mandas por WhatsApp</b><p>Recibes el link final. Si cambia la hora o el lugar, lo actualizamos y el link sigue igual.</p></div></li>
+    </ol>
+    <p class="nota">Para empezar pedimos el 50%. El resto, cuando la invitación está lista para mandarse.</p>
+  </div>
+</section>
+
+<!-- ========== PRECIOS ========== -->
+<section class="seccion" id="precios" aria-labelledby="h-precios">
+  <div class="in">
+    <p class="eyebrow">Precios</p>
+    <h2 id="h-precios">Un solo pago por fiesta</h2>
+    <div class="planes">
+      <article class="plan">
+        <h3>Esencial</h3>
+        <p class="plan__p"><b>$890</b> MXN</p>
+        <p class="plan__d">Un mundo de nuestro catálogo, con tus datos, fotos y colores.</p>
+        <ul>
+          <li>Entrada animada y fondo del tema</li>
+          <li>Música, cuenta regresiva y ubicación</li>
+          <li>Confirmación por WhatsApp</li>
+          <li>Borrador en 48 h y una ronda de cambios</li>
+        </ul>
+        <a class="boton boton--linea" data-t="wa-plan-esencial" data-wa="Hola, vi Érase una fiesta y me interesa el paquete Esencial ($890). Mi fiesta es: ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer">Pedir Esencial</a>
+      </article>
+      <article class="plan plan--top">
+        <span class="plan__eti">La más pedida</span>
+        <h3>Temática</h3>
+        <p class="plan__p"><b>$1,890</b> MXN</p>
+        <p class="plan__d">Un mundo diseñado para tu fiesta, como los de arriba.</p>
+        <ul>
+          <li>Todo lo del Esencial</li>
+          <li>Entrada y fondo hechos para tu tema</li>
+          <li>Itinerario contado como historia</li>
+          <li>Vestimenta ilustrada, galería y regalos</li>
+          <li>Dos rondas de cambios</li>
+        </ul>
+        <a class="boton boton--luz" data-t="wa-plan-tematica" data-wa="Hola, vi Érase una fiesta y me interesa el paquete Temática ($1,890). Mi fiesta es: ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir Temática</a>
+      </article>
+      <article class="plan">
+        <h3>Boda y XV</h3>
+        <p class="plan__p"><b>$3,490</b> MXN</p>
+        <p class="plan__d">Para las fiestas que se planean con meses de anticipación.</p>
+        <ul>
+          <li>Todo lo de Temática</li>
+          <li>Padrinos, hospedaje y mesa de regalos</li>
+          <li>Pases con nombre para cada familia</li>
+          <li>Lista de confirmaciones al día</li>
+          <li>Cambios sin límite hasta el evento</li>
+        </ul>
+        <a class="boton boton--linea" data-t="wa-plan-boda" data-wa="Hola, vi Érase una fiesta y me interesa el paquete Boda y XV ($3,490). La fecha es: ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer">Pedir Boda y XV</a>
+      </article>
+    </div>
+    <div class="extras">
+      <p class="extras__t">Extras</p>
+      <ul>
+        <li><span>Pases con nombre por invitado</span><b>+$590</b></li>
+        <li><span>Video vertical para estados</span><b>+$390</b></li>
+        <li><span>Entrega en 24 horas</span><b>+30%</b></li>
+        <li><span>Dominio propio (ej. anayluis.com)</span><b>Cotizar</b></li>
+      </ul>
+    </div>
+    <p class="nota">Precios en pesos mexicanos, pago único por evento. El link queda activo hasta 3 meses después de la fiesta.</p>
+  </div>
+</section>
+
+<!-- ========== PREGUNTAS ========== -->
+<section class="seccion" id="preguntas" aria-labelledby="h-preg">
+  <div class="in in--angosto">
+    <p class="eyebrow">Preguntas</p>
+    <h2 id="h-preg">Lo que casi todos preguntan</h2>
+    <div class="faq">
+      <details><summary>¿Funciona en cualquier celular?</summary><p>Sí. Se abre en el navegador de cualquier celular, sin descargar nada. También se ve bien en computadora.</p></details>
+      <details><summary>¿Pueden poner personajes de películas o caricaturas?</summary><p>No usamos personajes ni logos que tienen dueño. Hacemos mundos originales inspirados en lo que le gusta al festejado: un castillo, una selva, el espacio, su equipo favorito.</p></details>
+      <details><summary>¿Y si cambia la fecha o el lugar?</summary><p>Lo actualizamos y el mismo link cambia solo. Nadie tiene que reenviar nada.</p></details>
+      <details><summary>¿Cómo me llegan las confirmaciones?</summary><p>Cada invitado pone su nombre, si va y cuántas personas son. Se abre WhatsApp con el mensaje ya escrito y te llega a tu número. En el paquete Boda y XV además llevamos la lista al día.</p></details>
+      <details><summary>¿Cuánto tiempo sigue funcionando el link?</summary><p>Hasta 3 meses después del evento. Si quieres que se quede como recuerdo, se puede extender.</p></details>
+      <details><summary>¿Se puede imprimir?</summary><p>Está pensada para el celular. Si quieres algo para tu estado de WhatsApp, el video vertical es el extra que buscas.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FINAL ========== -->
+<section class="seccion final" id="escribir" aria-labelledby="h-final">
+  <div class="in in--angosto">
+    <p class="eyebrow">Tu turno</p>
+    <h2 id="h-final">¿Qué historia cuenta tu fiesta?</h2>
+    <p class="sub sub--corta">Cuéntanos en una línea y te respondemos con la idea de su mundo.</p>
+    <form class="forma" id="forma" novalidate>
+      <fieldset>
+        <legend>¿Qué celebras?</legend>
+        <div class="opciones">
+          <input type="radio" name="evento" id="ev-boda" value="una boda" checked><label for="ev-boda">Boda</label>
+          <input type="radio" name="evento" id="ev-xv" value="unos XV años"><label for="ev-xv">XV años</label>
+          <input type="radio" name="evento" id="ev-cumple" value="un cumpleaños"><label for="ev-cumple">Cumpleaños</label>
+          <input type="radio" name="evento" id="ev-infantil" value="una fiesta infantil"><label for="ev-infantil">Infantil</label>
+          <input type="radio" name="evento" id="ev-baby" value="un baby shower"><label for="ev-baby">Baby shower</label>
+          <input type="radio" name="evento" id="ev-otra" value="otra fiesta"><label for="ev-otra">Otra</label>
+        </div>
+      </fieldset>
+      <div class="dos">
+        <div class="campo"><label for="f-nombre">Tu nombre</label><input id="f-nombre" type="text" autocomplete="name" placeholder="Ej. Mariana"></div>
+        <div class="campo"><label for="f-fecha">Fecha de la fiesta</label><input id="f-fecha" type="text" placeholder="Ej. 14 de febrero"></div>
+      </div>
+      <div class="campo"><label for="f-historia">La historia en una línea</label><textarea id="f-historia" rows="3" placeholder="Ej. Mi hija cumple 6 y ama los dinosaurios"></textarea></div>
+      <p class="error" id="f-error" hidden>Escribe tu nombre para saber a quién respondemos.</p>
+      <a class="boton boton--luz boton--ancho" id="f-enviar" data-t="wa-forma" href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg>Mandar por WhatsApp</a>
+      <p class="nota">Se abre WhatsApp con tu mensaje listo. Solo dale enviar.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="in pie__in">
+    <p class="pie__marca">Érase una fiesta</p>
+    <p>Invitaciones digitales animadas · Ciudad de México</p>
+    <p class="pie__chico">WhatsApp: <span class="pie__num">55 2714 9106</span> · Sitio por <a href="/">bodgar.dev</a></p>
+  </div>
+</footer>
+
+<a class="flota" id="flota" data-t="wa-flotante" data-wa="Hola, vi Érase una fiesta y quiero cotizar una invitación." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+<script src="fiesta.js" defer></script>
+</body>
+</html>

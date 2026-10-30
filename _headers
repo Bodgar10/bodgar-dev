@@ -38,3 +38,5 @@
   Cache-Control: public, max-age=600, stale-while-revalidate=86400
 /aom/x7k2/aom.*
   Cache-Control: public, max-age=600, stale-while-revalidate=86400
+/erase-una-fiesta/fiesta.*
+  Cache-Control: public, max-age=600, stale-while-revalidate=86400
