@@ -5,485 +5,894 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#130f1c">
 <title>Érase una fiesta · Invitaciones digitales animadas</title>
-<meta name="description" content="Invitaciones digitales animadas para bodas, XV años, cumpleaños y fiestas infantiles. Cada fiesta en su propio mundo: se abren con un toque, tienen música, cuenta regresiva y confirmación por WhatsApp.">
+<meta name="description" content="Invitaciones digitales animadas para XV años, bodas, baby shower y fiestas infantiles. Cada fiesta en su propio mundo: se abren con un toque, cuentan los días y reciben confirmaciones por WhatsApp.">
 <link rel="canonical" href="https://bodgar.dev/erase-una-fiesta/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bodgar.dev/erase-una-fiesta/">
 <meta property="og:title" content="Érase una fiesta · Invitaciones digitales animadas">
-<meta property="og:description" content="Cada fiesta es otra historia. Tu invitación debería contarla: boda, XV años, princesas, aventura o el mundo que imagines.">
+<meta property="og:description" content="Princesas, concierto, boda, juguetes, emociones, espacio o baby shower: tu invitación en su propio mundo.">
 <meta property="og:image" content="https://bodgar.dev/erase-una-fiesta/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="icono.svg" type="image/svg+xml">
-<link rel="preload" href="/assets/fonts/instrument-sans-latin-11aa495c.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/cormorant-garamond-latin-500i-b61f1c3b.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="fiesta.css">
-<script>document.documentElement.className += " js";</script>
-</head>
-<body data-mundo="inicio">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700&family=Pinyon+Script&family=Cinzel:wght@400;600&family=Archivo:wdth,wght@62..125,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Baloo+2:wght@600;800&family=Fredoka:wght@400;600;700&family=Michroma&family=Quicksand:wght@500;700&display=swap">
+<style>
+/* Layout: un cuento en capítulos. Cada capítulo cambia los colores de toda la página y el fondo animado; texto a un lado, teléfono con la invitación del mundo al otro. */
+@property --bg{syntax:'<color>';inherits:true;initial-value:#130f1c}
+@property --fg{syntax:'<color>';inherits:true;initial-value:#f4ecff}
+@property --muted{syntax:'<color>';inherits:true;initial-value:#b4a8cc}
+@property --accent{syntax:'<color>';inherits:true;initial-value:#e8c27a}
+@property --ink{syntax:'<color>';inherits:true;initial-value:#130f1c}
+@property --line{syntax:'<color>';inherits:true;initial-value:rgba(244,236,255,.16)}
+@property --card{syntax:'<color>';inherits:true;initial-value:rgba(255,255,255,.05)}
+:root{
+  --bg:#130f1c; --fg:#f4ecff; --muted:#b4a8cc; --accent:#e8c27a; --ink:#130f1c;
+  --line:rgba(244,236,255,.16); --card:rgba(255,255,255,.05);
+  --serif:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  --sans:"Figtree","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --script:"Pinyon Script","Snell Roundhand",cursive;
+  --cinzel:"Cinzel","Trajan Pro",Georgia,serif;
+  --archivo:"Archivo","Arial Narrow",Impact,sans-serif;
+  --corm:"Cormorant Garamond",Garamond,Georgia,serif;
+  --baloo:"Baloo 2","Arial Rounded MT Bold",system-ui,sans-serif;
+  --fredoka:"Fredoka","Arial Rounded MT Bold",system-ui,sans-serif;
+  --mich:"Michroma","Eurostile","Arial",sans-serif;
+  --quick:"Quicksand","Avenir Next",system-ui,sans-serif;
+  color-scheme:dark;
+}
+body[data-world="prologo"]{--bg:#130f1c;--fg:#f4ecff;--muted:#b4a8cc;--accent:#e8c27a;--ink:#130f1c;--line:rgba(244,236,255,.16);--card:rgba(255,255,255,.05)}
+body[data-world="princesa"]{--bg:#071233;--fg:#f7f1e3;--muted:#b9c3dc;--accent:#d6b25e;--ink:#071233;--line:rgba(214,178,94,.35);--card:rgba(11,26,62,.6)}
+body[data-world="concierto"]{--bg:#08061f;--fg:#f5f3ff;--muted:#a9a6d6;--accent:#c9b2ff;--ink:#08061f;--line:rgba(201,178,255,.28);--card:rgba(18,15,69,.6)}
+body[data-world="boda"]{--bg:#f4efe4;--fg:#2c3628;--muted:#66705f;--accent:#7d8b62;--ink:#fbf8f1;--line:rgba(44,54,40,.18);--card:rgba(255,255,255,.6)}
+body[data-world="juguetes"]{--bg:#ffe28a;--fg:#1d2858;--muted:#3f4a7a;--accent:#e8452c;--ink:#ffffff;--line:rgba(29,40,88,.2);--card:rgba(255,255,255,.65)}
+body[data-world="emociones"]{--bg:#22123d;--fg:#ffffff;--muted:#d6c8f0;--accent:#ffd23f;--ink:#22123d;--line:rgba(255,255,255,.2);--card:rgba(34,18,61,.55)}
+body[data-world="espacio"]{--bg:#02040f;--fg:#e6f0ff;--muted:#9aa8c8;--accent:#ff8a3d;--ink:#02040f;--line:rgba(230,240,255,.18);--card:rgba(8,14,40,.6)}
+body[data-world="baby"]{--bg:#dcecff;--fg:#2d3e63;--muted:#5a6a8e;--accent:#e9799f;--ink:#ffffff;--line:rgba(45,62,99,.16);--card:rgba(255,255,255,.65)}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden;
+  transition:--bg 1s ease,--fg 1s ease,--muted 1s ease,--accent 1s ease,--ink 1s ease,--line 1s ease,--card 1s ease;
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
+#bg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+main,header,footer{position:relative;z-index:2}
+a{color:inherit}
+
+.gutter{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.inner{max-width:1120px;margin:0 auto}
+
+/* ---------- Navegación ---------- */
+.nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:30;background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.logo{font-family:var(--serif);font-style:italic;font-size:1.45rem;line-height:1;text-decoration:none;white-space:nowrap}
+.logo b{font-style:normal;font-weight:400;color:var(--accent)}
+.nav nav{display:flex;align-items:center;gap:18px}
+.nav nav a.l{font-size:.86rem;text-decoration:none;color:var(--muted)}
+.nav nav a.l:hover{color:var(--fg)}
+@media (max-width:640px){.nav nav a.l{display:none}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-weight:600;font-size:.92rem;padding:12px 22px;border-radius:999px;text-decoration:none;cursor:pointer;border:1px solid var(--fg);color:var(--fg);background:transparent;transition:transform .2s,background .3s,color .3s}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+.btn.sm{padding:8px 16px;font-size:.84rem}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.tab:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---------- Hero ---------- */
+.hero{padding-block:120px 80px}
+.hero .inner{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(3.4rem,10vw,7rem);line-height:.92;margin:14px 0 20px;letter-spacing:-.01em}
+.hero h1 em{color:var(--accent)}
+.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:44ch;margin:0 0 28px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:36px;padding-top:24px;border-top:1px solid var(--line)}
+.facts div{display:flex;flex-direction:column}
+.facts b{font-family:var(--serif);font-weight:400;font-size:1.9rem;line-height:1}
+.facts span{font-size:.8rem;color:var(--muted)}
+.hero-phone{display:flex;flex-direction:column;align-items:center;gap:16px}
+.world-tag{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.world-tag b{color:var(--fg);font-weight:600}
+@media (max-width:860px){
+  .hero{padding-block:100px 56px}
+  .hero .inner{grid-template-columns:1fr;gap:40px}
+}
+
+/* ---------- Teléfono ---------- */
+.phone{position:relative;width:min(290px,74vw);max-width:100%;aspect-ratio:9/19;border-radius:46px;padding:10px;background:linear-gradient(145deg,#2a2733,#0c0a12 40%,#1d1a24);box-shadow:0 0 0 1px rgba(255,255,255,.08),0 40px 80px -20px rgba(0,0,0,.6),0 20px 40px -20px rgba(0,0,0,.5)}
+.glass{position:relative;height:100%;border-radius:36px;overflow:hidden;container-type:inline-size;background:#000;isolation:isolate}
+.glass::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:30%;height:22px;border-radius:999px;background:#000;z-index:20}
+.glass > .scr{opacity:0;visibility:hidden;transition:opacity .55s ease,visibility 0s linear .55s}
+.glass > .scr.on{opacity:1;visibility:visible;transition:opacity .55s ease,visibility 0s}
+
+/* ---------- Pantallas (todo en cqw) ---------- */
+.scr{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3.2cqw;padding:16cqw 8cqw 12cqw;text-align:center;overflow:hidden}
+.scr > *{position:relative;z-index:2}
+.nm{display:block;max-width:100%;overflow-wrap:anywhere;line-height:1}
+.cd{display:flex;gap:2cqw}
+.cd span{display:flex;flex-direction:column;align-items:center;width:15cqw;padding:2.4cqw 0 1.8cqw;border-radius:2.6cqw}
+.cd b{font-size:6.4cqw;line-height:1;font-variant-numeric:tabular-nums}
+.cd i{font-style:normal;font-size:2.3cqw;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-top:1cqw}
+.cta{display:inline-block;padding:3.6cqw 7cqw;border-radius:999px;font-size:3.6cqw;font-weight:600;letter-spacing:.06em}
+
+/* Princesa */
+.s-princesa{background:radial-gradient(120% 70% at 50% 0%,#1b3478,#071233 70%);color:#f7f1e3}
+.s-princesa .sky{position:absolute;inset:0;z-index:1;background-image:radial-gradient(1px 1px at 12% 18%,#fff,transparent),radial-gradient(1.5px 1.5px at 78% 12%,#fff,transparent),radial-gradient(1px 1px at 60% 40%,#fff,transparent),radial-gradient(1px 1px at 30% 70%,#fff,transparent),radial-gradient(1.5px 1.5px at 88% 62%,#fff,transparent),radial-gradient(1px 1px at 45% 88%,#fff,transparent),radial-gradient(1px 1px at 8% 52%,#fff,transparent),radial-gradient(2px 2px at 70% 82%,#f8e7b0,transparent),radial-gradient(1.5px 1.5px at 22% 38%,#f8e7b0,transparent);animation:tw 3s ease-in-out infinite alternate}
+@keyframes tw{to{opacity:.4}}
+.s-princesa .tiara{width:54cqw;overflow:visible;filter:drop-shadow(0 0 2.5cqw rgba(200,220,255,.85));animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-1.6cqw)}}
+.s-princesa small{font-family:var(--corm);font-style:italic;font-size:5.2cqw;color:#b9c3dc}
+.s-princesa .nm{font-family:var(--script);font-weight:400;font-size:min(27cqw,calc(150cqw / var(--n)));padding:0 2cqw;background:linear-gradient(100deg,#9c7a32,#d6b25e 25%,#fff7d9 40%,#d6b25e 55%,#9c7a32);background-size:250% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite}
+@keyframes shine{from{background-position:120% center}to{background-position:-130% center}}
+.s-princesa .ln{font-family:var(--cinzel);font-size:3.8cqw;letter-spacing:.3em;text-transform:uppercase;color:#d6b25e}
+.s-princesa .dt{font-family:var(--cinzel);font-size:4.2cqw;letter-spacing:.12em}
+.s-princesa .cd span{border:1px solid rgba(214,178,94,.45);background:rgba(7,18,51,.5)}
+.s-princesa .cd b{font-family:var(--cinzel);color:#f8e7b0}
+.s-princesa .cd i{font-family:var(--cinzel)}
+.s-princesa .cta{font-family:var(--cinzel);background:linear-gradient(100deg,#9c7a32,#d6b25e,#f8e7b0,#d6b25e);color:#071233}
+
+/* Concierto */
+.s-concierto{background:linear-gradient(#08061f,#151055);color:#f5f3ff;font-family:var(--archivo);justify-content:flex-start;padding-top:18cqw}
+.s-concierto .beam{position:absolute;top:-4cqw;width:40cqw;height:160cqw;z-index:1;transform-origin:top center;filter:blur(2cqw);opacity:.6;clip-path:polygon(42% 0,58% 0,100% 100%,0 100%)}
+.s-concierto .b1{left:-6cqw;background:linear-gradient(rgba(34,70,255,.95),transparent 75%);animation:sw1 5s ease-in-out infinite}
+.s-concierto .b2{left:30cqw;background:linear-gradient(rgba(255,111,210,.85),transparent 75%);animation:sw2 6s ease-in-out infinite}
+.s-concierto .b3{left:66cqw;background:linear-gradient(rgba(139,92,255,.95),transparent 75%);animation:sw1 4.6s ease-in-out infinite reverse}
+@keyframes sw1{0%,100%{transform:rotate(16deg)}50%{transform:rotate(-14deg)}}
+@keyframes sw2{0%,100%{transform:rotate(-18deg)}50%{transform:rotate(12deg)}}
+.s-concierto .tour{font-weight:600;font-stretch:80%;font-size:3cqw;letter-spacing:.36em;text-transform:uppercase;padding:1.6cqw 4cqw;border:1px solid rgba(201,178,255,.4);border-radius:999px;background:rgba(8,6,31,.5)}
+.s-concierto .nm{font-weight:900;font-stretch:68%;text-transform:uppercase;overflow-wrap:normal;font-size:min(26cqw,calc(140cqw / var(--n)));line-height:.86;color:#fff;text-shadow:0 0 3cqw rgba(201,178,255,.9),0 0 10cqw rgba(34,70,255,.8);animation:led 2.6s ease-in-out infinite}
+@keyframes led{50%{text-shadow:0 0 1.5cqw rgba(201,178,255,.6),0 0 6cqw rgba(34,70,255,.5)}}
+.s-concierto .dday{font-weight:900;font-stretch:80%;font-size:4.6cqw;padding:1.4cqw 4.4cqw;border-radius:999px;background:#c9b2ff;color:#08061f;box-shadow:0 0 5cqw rgba(201,178,255,.7)}
+.s-concierto .set{width:100%;border-radius:4cqw;background:rgba(8,6,31,.6);border:1px solid rgba(201,178,255,.25);padding:1cqw 4cqw;text-align:left}
+.s-concierto .set div{display:flex;gap:3cqw;align-items:baseline;padding:2.2cqw 0;border-bottom:1px solid rgba(201,178,255,.18);font-weight:700;font-stretch:80%;font-size:3.8cqw;text-transform:uppercase}
+.s-concierto .set div:last-child{border:0}
+.s-concierto .set em{font-style:normal;color:#c9b2ff;font-weight:500;font-size:3cqw}
+.s-concierto .set small{margin-left:auto;font-weight:400;font-size:2.8cqw;color:#a9a6d6;text-transform:none}
+.s-concierto .cta{background:linear-gradient(100deg,#2246ff,#8b5cff,#ff6fd2);color:#fff;font-stretch:85%;text-transform:uppercase;letter-spacing:.14em;font-size:3.2cqw}
+.s-concierto .sticks{position:absolute;left:0;right:0;bottom:0;height:22cqw;z-index:1;display:flex;justify-content:space-around;align-items:flex-end;padding:0 3cqw;background:linear-gradient(transparent,rgba(2,1,16,.9) 60%)}
+.s-concierto .stk{width:2cqw;height:13cqw;border-radius:1cqw;background:linear-gradient(#ccc,#666);transform-origin:bottom center;animation:wave 1.4s ease-in-out infinite;position:relative}
+.s-concierto .stk::before{content:"";position:absolute;left:50%;top:-4cqw;width:6cqw;height:6cqw;border-radius:50%;transform:translateX(-50%);background:radial-gradient(circle at 40% 35%,#fff,var(--c) 50%,transparent 72%);box-shadow:0 0 4cqw var(--c)}
+@keyframes wave{0%,100%{transform:rotate(-16deg)}50%{transform:rotate(16deg)}}
+
+/* Boda */
+.s-boda{background:radial-gradient(90% 60% at 50% 30%,#fffdf8,#efe7d8);color:#2c3628;font-family:var(--corm)}
+.s-boda .wreath{position:relative;width:74cqw;aspect-ratio:1;display:grid;place-items:center;align-content:center;gap:1cqw}
+.s-boda .wreath svg{position:absolute;inset:0;width:100%;height:100%;color:#7d8b62;animation:spin 80s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.s-boda small{font-style:italic;font-size:4.4cqw;color:#7d8b62}
+.s-boda .nm{font-weight:600;font-style:italic;font-size:min(14cqw,calc(88cqw / var(--n)));color:#2c3628;padding:0 12cqw}
+.s-boda .ln{font-size:2.7cqw;letter-spacing:.2em;text-transform:uppercase;color:#a8874a}
+.s-boda .dt{font-size:5.4cqw;letter-spacing:.22em}
+.s-boda .note{font-style:italic;font-size:4.6cqw;color:#66705f;max-width:60cqw;line-height:1.3}
+.s-boda .cta{border:1px solid #7d8b62;color:#2c3628;font-family:var(--sans);font-size:3.2cqw;letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.5)}
+.s-boda .pt{position:absolute;top:-6cqw;width:3.4cqw;height:5cqw;border-radius:60% 0 60% 0;background:#f2c9c2;z-index:1;animation:fall linear infinite;opacity:.85}
+.s-boda .pt:nth-child(2n){background:#e9d6b4;width:2.6cqw;height:4cqw}
+@keyframes fall{0%{transform:translate(0,0) rotate(0)}50%{transform:translate(6cqw,100cqw) rotate(200deg)}100%{transform:translate(-4cqw,220cqw) rotate(400deg)}}
+
+/* Juguetes */
+.s-juguetes{background:#ffd84d;background-image:radial-gradient(#ffc81f 22%,transparent 23%);background-size:10cqw 10cqw;color:#1d2858;font-family:var(--baloo)}
+.s-juguetes::before{content:"";position:absolute;inset:4cqw;border:.8cqw dashed rgba(255,255,255,.85);border-radius:6cqw;z-index:1}
+.s-juguetes small{font-weight:800;font-size:4.6cqw;color:#2f6fe0;letter-spacing:.04em}
+.s-juguetes .blocks{display:flex;flex-wrap:wrap;justify-content:center;gap:1.6cqw;max-width:84cqw}
+.s-juguetes .blk{--s:min(15cqw,calc(70cqw / var(--n)));width:var(--s);height:var(--s);display:grid;place-items:center;border-radius:2cqw;color:#fff;font-weight:800;font-size:calc(var(--s) * .68);line-height:1;padding-top:.6cqw;box-shadow:inset -.9cqw -.9cqw 0 rgba(0,0,0,.18),inset .7cqw .7cqw 0 rgba(255,255,255,.3),0 1.4cqw 0 rgba(0,0,0,.18);animation:drop .7s cubic-bezier(.3,1.6,.5,1) both,bob 2.4s ease-in-out infinite;animation-delay:calc(var(--i) * .1s),calc(.8s + var(--i) * .15s)}
+.s-juguetes .sp{width:3cqw}
+@keyframes drop{from{transform:translateY(-60cqw) rotate(-20deg)}to{transform:none}}
+@keyframes bob{50%{transform:translateY(-1.4cqw) rotate(-3deg)}}
+.s-juguetes .ln{font-weight:800;font-size:12cqw;line-height:1;color:#e8452c;position:relative}
+.s-juguetes .ln svg{position:absolute;left:0;right:0;bottom:-3cqw;width:100%;height:4cqw;color:#2f6fe0}
+.s-juguetes .dt{font-weight:600;font-size:4.6cqw;margin-top:2cqw}
+.s-juguetes .cta{background:#e8452c;color:#fff;font-weight:800;font-size:4.4cqw;letter-spacing:.02em;box-shadow:0 1.6cqw 0 #a82b17;border-radius:4cqw}
+.s-juguetes .star{position:absolute;width:9cqw;color:#2fb36b;z-index:1;animation:spin 9s linear infinite}
+
+/* Emociones */
+.s-emociones{background:#22123d;color:#fff;font-family:var(--fredoka)}
+.s-emociones .blob{position:absolute;width:70cqw;height:70cqw;border-radius:50%;filter:blur(9cqw);opacity:.8;z-index:1;animation:drift 9s ease-in-out infinite alternate}
+.s-emociones .o1{background:#ffd23f;left:-20cqw;top:-10cqw}
+.s-emociones .o2{background:#4f8cff;right:-25cqw;top:40cqw;animation-duration:11s}
+.s-emociones .o3{background:#ff6b6b;left:-10cqw;bottom:-20cqw;animation-duration:8s}
+.s-emociones .o4{background:#a974ff;right:-15cqw;bottom:-25cqw;animation-duration:12s}
+@keyframes drift{to{transform:translate(18cqw,-14cqw) scale(1.2)}}
+.s-emociones small{font-weight:600;font-size:4.6cqw;opacity:.92}
+.s-emociones .nm{font-weight:700;font-size:min(24cqw,calc(140cqw / var(--n)));text-shadow:0 1.4cqw 5cqw rgba(34,18,61,.5)}
+.s-emociones .ln{font-weight:600;font-size:7cqw}
+.s-emociones .dt{font-size:4.4cqw;opacity:.92}
+.s-emociones .q{margin-top:2cqw;font-size:3.8cqw;font-weight:600}
+.s-emociones .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:2cqw}
+.s-emociones .chips span{padding:2cqw 4cqw;border-radius:999px;font-size:3.6cqw;font-weight:600;color:#22123d;animation:pop 2.4s ease-in-out infinite}
+.s-emociones .chips span:nth-child(2){animation-delay:.8s}.s-emociones .chips span:nth-child(3){animation-delay:1.6s}
+@keyframes pop{0%,70%,100%{transform:none}80%{transform:scale(1.12)}}
+.s-emociones .cta{background:#fff;color:#22123d;font-size:4cqw;font-weight:700}
+
+/* Espacio */
+.s-espacio{background:radial-gradient(90% 60% at 75% 15%,#1b2560,#02040f 70%);color:#e6f0ff;font-family:var(--mich)}
+.s-espacio .stars{position:absolute;inset:-50% 0 0;z-index:1;background-image:radial-gradient(1px 1px at 10% 10%,#fff,transparent),radial-gradient(1px 1px at 40% 25%,#fff,transparent),radial-gradient(1.5px 1.5px at 75% 5%,#fff,transparent),radial-gradient(1px 1px at 90% 35%,#fff,transparent),radial-gradient(1px 1px at 20% 45%,#fff,transparent),radial-gradient(1.5px 1.5px at 55% 60%,#fff,transparent),radial-gradient(1px 1px at 5% 80%,#fff,transparent),radial-gradient(1px 1px at 65% 90%,#fff,transparent);background-size:100% 50%;animation:warp 6s linear infinite}
+@keyframes warp{to{transform:translateY(50%)}}
+.s-espacio .planet{position:absolute;right:-12cqw;top:10cqw;width:42cqw;aspect-ratio:1;border-radius:50%;z-index:1;background:radial-gradient(circle at 35% 30%,#ffd1a1,#ff8a3d 45%,#9a2f6b 85%);box-shadow:inset -4cqw -4cqw 8cqw rgba(0,0,0,.45);animation:float 6s ease-in-out infinite}
+.s-espacio .planet::after{content:"";position:absolute;left:-18%;top:42%;width:136%;height:18%;border-radius:50%;border:1.2cqw solid rgba(230,240,255,.55);transform:rotate(-18deg)}
+.s-espacio .moon{position:absolute;left:8cqw;bottom:26cqw;width:12cqw;aspect-ratio:1;border-radius:50%;z-index:1;background:radial-gradient(circle at 35% 30%,#e6f0ff,#8b98b8);opacity:.85}
+.s-espacio .rocket{width:20cqw;animation:float 2.6s ease-in-out infinite}
+.s-espacio .flame{transform-origin:50% 0;animation:flick .18s ease-in-out infinite alternate}
+@keyframes flick{to{transform:scaleY(.7)}}
+.s-espacio small{font-size:2.8cqw;letter-spacing:.4em;color:#ff8a3d}
+.s-espacio .nm{overflow-wrap:normal;font-size:min(15cqw,calc(74cqw / var(--n)));text-transform:uppercase;letter-spacing:.06em}
+.s-espacio .ln{font-size:4cqw;letter-spacing:.14em;text-transform:uppercase}
+.s-espacio .dt{font-size:3.2cqw;letter-spacing:.2em;color:#9aa8c8}
+.s-espacio .cd span{border:1px solid rgba(255,138,61,.5);background:rgba(2,4,15,.55)}
+.s-espacio .cd b{font-family:var(--mich);font-size:5.2cqw;color:#ffb27a}
+.s-espacio .cta{background:#ff8a3d;color:#02040f;font-size:3cqw;letter-spacing:.16em;text-transform:uppercase}
+
+/* Baby shower */
+.s-baby{background:linear-gradient(#bcdcff,#f5faff 70%);color:#2d3e63;font-family:var(--quick)}
+.s-baby .cloud{position:absolute;width:30cqw;height:10cqw;border-radius:999px;background:#fff;z-index:1;opacity:.95;animation:cloud linear infinite}
+.s-baby .cloud::before,.s-baby .cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+.s-baby .cloud::before{width:13cqw;height:13cqw;left:4cqw;top:-6cqw}
+.s-baby .cloud::after{width:16cqw;height:16cqw;left:11cqw;top:-9cqw}
+@keyframes cloud{from{transform:translateX(-50cqw)}to{transform:translateX(140cqw)}}
+.s-baby .bal{position:absolute;width:13cqw;z-index:1;animation:float 3.4s ease-in-out infinite}
+.s-baby small{font-weight:500;font-size:4.2cqw;color:#5a6a8e;max-width:64cqw;line-height:1.3}
+.s-baby .ln{font-family:var(--script);font-size:14cqw;line-height:1;color:#e9799f}
+.s-baby .nm{font-weight:700;font-size:min(16cqw,calc(100cqw / var(--n)));letter-spacing:.04em}
+.s-baby .dt{font-weight:500;font-size:4.4cqw}
+.s-baby .cd span{background:rgba(255,255,255,.75);box-shadow:0 1cqw 3cqw rgba(45,62,99,.12)}
+.s-baby .cd b{font-family:var(--quick);font-weight:700;color:#e9799f}
+.s-baby .cta{background:#e9799f;color:#fff;font-weight:700;font-size:3.8cqw}
+
+/* ---------- Capítulos ---------- */
+.chapter{min-height:96svh;display:flex;align-items:center;padding-block:96px}
+.chapter .inner{width:100%;display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center}
+.chapter:nth-of-type(even) .inner{grid-template-columns:auto 1fr}
+.chapter:nth-of-type(even) .txt{order:2}
+.txt{min-width:0;max-width:540px;display:flex;flex-direction:column;gap:18px}
+.txt .story{font-family:var(--serif);font-style:italic;font-size:clamp(1.35rem,3.6vw,1.75rem);line-height:1.3;margin:0;color:var(--fg)}
+.txt h2{margin:0;line-height:1;font-size:clamp(2.8rem,9vw,4.6rem);text-wrap:balance}
+.txt p{margin:0;color:var(--muted);max-width:46ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.chips li{font-size:.82rem;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card)}
+.txt .btn{align-self:flex-start;margin-top:6px}
+.chapter[data-world="princesa"] h2{font-family:var(--script);font-weight:400;font-size:clamp(3.4rem,12vw,6rem);color:var(--accent)}
+.chapter[data-world="concierto"] h2{font-family:var(--archivo);font-weight:900;font-stretch:68%;text-transform:uppercase;font-size:clamp(3.6rem,13vw,6.4rem);text-shadow:0 0 30px rgba(139,92,255,.7)}
+.chapter[data-world="boda"] h2{font-family:var(--corm);font-style:italic;font-weight:600}
+.chapter[data-world="juguetes"] h2{font-family:var(--baloo);font-weight:800;color:var(--accent)}
+.chapter[data-world="emociones"] h2{font-family:var(--fredoka);font-weight:700;background:linear-gradient(90deg,#ffd23f,#ff6b6b,#a974ff,#4f8cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.chapter[data-world="espacio"] h2{font-family:var(--mich);text-transform:uppercase;font-size:clamp(1.9rem,6.4vw,3.2rem);letter-spacing:.04em;line-height:1.15}
+.chapter[data-world="baby"] h2{font-family:var(--quick);font-weight:700}
+.capn{font-size:.74rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.capn b{color:var(--accent)}
+@media (max-width:860px){
+  .chapter{min-height:auto;padding-block:72px}
+  .chapter .inner,.chapter:nth-of-type(even) .inner{grid-template-columns:1fr;gap:36px;justify-items:center}
+  .chapter:nth-of-type(even) .txt{order:0}
+  .txt{text-align:left;width:100%}
+}
+
+/* Indicador de capítulo */
+.capbar{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140%);z-index:25;display:flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);font-size:.8rem;white-space:nowrap;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.capbar.show{transform:translate(-50%,0)}
+.capbar .dots{display:flex;gap:5px}
+.capbar .dots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .4s,transform .4s}
+.capbar .dots i.on{background:var(--accent);transform:scale(1.4)}
+
+/* ---------- Interludio ---------- */
+.interlude{padding-block:80px 40px;text-align:center}
+.interlude p{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,5vw,2.6rem);line-height:1.25;max-width:24ch;margin:0 auto;text-wrap:balance}
+.interlude span{display:block;margin-top:14px;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- Comparador ---------- */
+.studio{padding-block:96px}
+.studio .inner{display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center}
+.studio h2,.sec-h{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,7vw,4rem);line-height:1.02;margin:10px 0 14px;text-wrap:balance}
+.studio p.d{color:var(--muted);max-width:44ch;margin:0 0 24px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:520px}
+.fields label{display:flex;flex-direction:column;gap:6px;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.fields label.wide{grid-column:1/-1}
+input,select,textarea{font:inherit;font-size:1rem;letter-spacing:normal;text-transform:none;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%;min-width:0}
+select option{background:#130f1c;color:#f4ecff}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;max-width:560px}
+.tab{font:inherit;font-size:.88rem;font-weight:600;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer;transition:all .3s}
+.tab[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+@media (max-width:860px){
+  .studio .inner{grid-template-columns:1fr;gap:36px;justify-items:center}
+  .studio .ctrl{width:100%}
+  .fields{grid-template-columns:1fr}
+}
+
+/* ---------- Incluye, pasos, precios ---------- */
+.block{padding-block:88px}
+.block .head{max-width:640px;margin-bottom:36px}
+.inc{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.inc div{background:var(--bg);padding:20px;display:flex;flex-direction:column;gap:4px}
+.inc b{font-weight:600}
+.inc span{font-size:.9rem;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;list-style:none;padding:0;margin:0;counter-reset:s}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:6px;padding-top:16px;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s);font-family:var(--serif);font-size:2.4rem;line-height:1;color:var(--accent)}
+.steps b{font-weight:600}
+.steps span{font-size:.92rem;color:var(--muted)}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+.plan{position:relative;display:flex;flex-direction:column;gap:12px;padding:28px 24px;border-radius:20px;border:1px solid var(--line);background:var(--card)}
+.plan.pop{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 30px 60px -30px rgba(232,194,122,.35)}
+.plan .badge{position:absolute;top:-12px;left:24px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--accent);color:var(--ink)}
+.plan h3{margin:0;font-family:var(--serif);font-weight:400;font-size:1.8rem}
+.plan .price{font-family:var(--serif);font-size:3rem;line-height:1}
+.plan .price small{font-family:var(--sans);font-size:.8rem;color:var(--muted)}
+.plan ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:.92rem;color:var(--muted);flex:1}
+.plan li{padding-left:18px;position:relative}
+.plan li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;transform:rotate(45deg);background:var(--accent)}
+.plan .btn{margin-top:8px}
+.extras{margin-top:20px;font-size:.9rem;color:var(--muted)}
+@media (max-width:860px){.prices{grid-template-columns:1fr}}
+
+.faq{display:grid;gap:10px;max-width:760px}
+.faq details{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:14px 18px}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin:8px 0 0;color:var(--muted)}
+
+.contact{padding-block:96px 120px}
+.contact .inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact form{display:grid;gap:12px}
+.contact label{display:flex;flex-direction:column;gap:6px;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.contact .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact .num{margin-top:18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--muted)}
+.contact .num code{font-family:var(--serif);font-size:1.5rem;color:var(--fg);user-select:all}
+@media (max-width:860px){.contact .inner{grid-template-columns:1fr}}
+@media (max-width:480px){.contact .two{grid-template-columns:1fr}}
+
+footer{padding-block:28px calc(28px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);font-size:.86rem;color:var(--muted)}
+footer .inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body data-world="prologo">
+
+
+<!-- Símbolos -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
-    <symbol id="i-pluma" viewBox="0 0 24 24"><path d="M20 4c-7 0-12 5-13 12l-3 4M7 16c4 0 9-2 11-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
-    <linearGradient id="g-grieta" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#ff4d9d"/><stop offset=".5" stop-color="#ffd36b"/><stop offset="1" stop-color="#45e8ff"/>
-    </linearGradient>
+    <linearGradient id="gCrystal" x1="0" y1="0" x2=".35" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".4" stop-color="#dfe9ff" stop-opacity=".6"/><stop offset=".72" stop-color="#9db8ff" stop-opacity=".4"/><stop offset="1" stop-color="#fff" stop-opacity=".9"/></linearGradient>
+    <linearGradient id="gBand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".5" stop-color="#b8ccff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity=".85"/></linearGradient>
+    <radialGradient id="gGem" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#9fc1ff"/><stop offset=".5" stop-color="#2c4fa8"/><stop offset="1" stop-color="#0b1a3e"/></radialGradient>
+    <symbol id="tiara" viewBox="0 0 220 120">
+      <path d="M110 4 L127 56 L110 92 L93 56Z M78 28 L89 66 L78 94 L67 66Z M142 28 L153 66 L142 94 L131 66Z M50 48 L59 76 L50 97 L41 76Z M170 48 L179 76 L170 97 L161 76Z M24 64 L31 85 L24 101 L17 85Z M196 64 L203 85 L196 101 L189 85Z" fill="url(#gCrystal)" stroke="#fff" stroke-width="1.1" stroke-linejoin="round"/>
+      <path d="M110 4 L127 56 L110 92Z M78 28 L89 66 L78 94Z M142 28 L153 66 L142 94Z M50 48 L59 76 L50 97Z M170 48 L179 76 L170 97Z" fill="#5a78c8" fill-opacity=".32"/>
+      <path d="M8 100 Q110 80 212 100 L212 115 Q110 95 8 115 Z" fill="url(#gBand)" stroke="#fff" stroke-width="1"/>
+      <g fill="#fff"><circle cx="50" cy="101" r="3"/><circle cx="80" cy="98.5" r="2.6"/><circle cx="110" cy="97.5" r="3.6"/><circle cx="140" cy="98.5" r="2.6"/><circle cx="170" cy="101" r="3"/></g>
+      <ellipse cx="110" cy="60" rx="7.5" ry="10" fill="url(#gGem)" stroke="#fff" stroke-width="1.3"/>
+      <circle cx="110" cy="4" r="3" fill="#fff"/>
+    </symbol>
+    <symbol id="leaf" viewBox="0 0 200 200"><path d="M100 6 q9 7 0 19 q-9 -7 0 -19z" fill="currentColor"/><path d="M100 6 v19" stroke="#fffdf8" stroke-width=".6"/></symbol>
+    <symbol id="rocket" viewBox="0 0 60 100">
+      <path d="M30 2 C46 16 48 44 42 66 H18 C12 44 14 16 30 2Z" fill="#e6f0ff"/>
+      <path d="M30 2 C38 9 42 18 44 28 H16 C18 18 22 9 30 2Z" fill="#ff8a3d"/>
+      <circle cx="30" cy="40" r="7" fill="#1b2560" stroke="#9aa8c8" stroke-width="2"/>
+      <path d="M18 52 L6 70 L18 66Z M42 52 L54 70 L42 66Z" fill="#ff8a3d"/>
+    </symbol>
+    <symbol id="balloon" viewBox="0 0 40 80"><ellipse cx="20" cy="20" rx="17" ry="20" fill="currentColor"/><path d="M17 40 h6 l-3 4z" fill="currentColor"/><path d="M20 44 q-5 10 0 18 t0 18" fill="none" stroke="#8a97b5" stroke-width="1"/><ellipse cx="13" cy="12" rx="4" ry="6" fill="#fff" opacity=".45"/></symbol>
+    <symbol id="star5" viewBox="0 0 24 24"><path d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.8 9.4 9 8.6z" fill="currentColor"/></symbol>
   </defs>
 </svg>
 
-<canvas id="chispas" aria-hidden="true"></canvas>
+<canvas id="bg" aria-hidden="true"></canvas>
 
-<header class="barra">
-  <div class="in barra__in">
-    <a class="marca" href="#inicio" aria-label="Érase una fiesta, inicio">
-      <span class="marca__txt" id="marca">Érase una fiesta</span>
-      <span class="marca__mundo" id="marcaMundo" aria-hidden="true"></span>
-    </a>
-    <nav class="nav" aria-label="Secciones">
-      <a href="#frase">Tu frase</a>
-      <a href="#mundos">Mundos</a>
-      <a href="#incluye">Qué incluye</a>
-      <a href="#precios">Precios</a>
+<header class="nav gutter">
+  <div class="inner">
+    <a class="logo" href="#inicio">Érase una <b>fiesta</b></a>
+    <nav>
+      <a class="l" href="#mundos">Mundos</a>
+      <a class="l" href="#tu-turno">Pruébalo</a>
+      <a class="l" href="#precios">Precios</a>
+      <a class="btn solid sm" target="_blank" rel="noopener" href="https://wa.me/525527149106?text=Hola%2C%20quiero%20cotizar%20una%20invitaci%C3%B3n%20digital">Cotizar</a>
     </nav>
-    <a class="barra__wa" data-t="wa-barra" data-wa="Hola, vi Érase una fiesta y quiero cotizar una invitación." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>Cotizar</span></a>
   </div>
 </header>
 
+<div class="capbar" id="capbar" aria-hidden="true"><span id="capname">Capítulo I · Princesas</span><span class="dots" id="capdots"></span></div>
+
 <main>
-
-<!-- ========== HÉROE: una invitación partida entre dos mundos ========== -->
-<section class="hero" id="inicio">
-  <div class="in hero__in">
-    <div class="hero__txt">
-      <p class="eyebrow">Invitaciones digitales animadas</p>
-      <h1 aria-label="Érase una vez tu fiesta.">
-        <span class="h1-a" aria-hidden="true">Érase una vez</span>
-        <span class="h1-b" id="h1b" aria-hidden="true">tu fiesta.</span>
-      </h1>
-      <p class="sub">Cada fiesta es otra historia, y tu invitación debería contarla. La hacemos en su propio mundo, con su letra, su música y su magia. Se abre con un toque, cuenta los días y te manda las confirmaciones por WhatsApp.</p>
-      <div class="ctas">
-        <a class="boton boton--luz" data-t="wa-hero" data-wa="Hola, vi Érase una fiesta y quiero una invitación para mi fiesta. Es un/una ____ el día ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quiero mi invitación</a>
-        <a class="boton boton--linea" href="#mundos">Ver los mundos ↓</a>
-      </div>
-      <ul class="datos" aria-label="En resumen">
-        <li><b>48 h</b> primer borrador</li>
-        <li><b>$890</b> desde</li>
-        <li><b>1 link</b> para WhatsApp</li>
-      </ul>
-    </div>
-
-    <figure class="partida" id="partida" aria-label="La misma invitación en dos mundos: una boda y una aventura en la selva. Arrastra la grieta para cambiar de mundo.">
-      <div class="partida__marco">
-        <!-- mundo de abajo: boda -->
-        <div class="carta carta--boda" aria-hidden="true">
-          <span class="polvo"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-          <span class="carta__eti">Nos casamos</span>
-          <span class="carta__nom">Ana <em>&amp;</em> Luis</span>
-          <span class="carta__lin">Con la magia de las cosas que duran, queremos que estés en el primer capítulo.</span>
-          <span class="carta__fecha">14 · 02 · 2027</span>
-          <span class="carta__btn">Confirmar asistencia</span>
+  <!-- Prólogo -->
+  <section class="hero gutter" id="inicio" data-world="prologo">
+    <div class="inner">
+      <div>
+        <div class="eyebrow">Invitaciones digitales animadas</div>
+        <h1>Érase una vez <em>tu fiesta.</em></h1>
+        <p class="lead">Una invitación que se abre con un toque, cuenta los días que faltan y te manda las confirmaciones por WhatsApp. Baja despacio: esta página va a cambiar de mundo frente a ti.</p>
+        <div class="cta-row">
+          <a class="btn solid" target="_blank" rel="noopener" href="https://wa.me/525527149106?text=Hola%2C%20quiero%20mi%20invitaci%C3%B3n%20digital">Quiero mi invitación</a>
+          <a class="btn" href="#mundos">Cruzar los mundos ↓</a>
         </div>
-        <!-- mundo de arriba: aventura -->
-        <div class="carta carta--aventura" id="cartaArriba" aria-hidden="true">
-          <svg class="hojas" viewBox="0 0 300 520" preserveAspectRatio="xMidYMid slice"><g fill="#1f6b43"><path d="M-20 60c60-30 110-10 130 30-60 10-100 0-130-30Z"/><path d="M320 120c-60-40-120-20-140 20 60 14 110 6 140-20Z"/><path d="M-20 470c50-50 120-40 140 0-60 20-110 20-140 0Z"/><path d="M330 430c-50-40-110-30-130 10 50 16 100 14 130-10Z"/></g><g fill="#2f8a55"><path d="M10 0c30 40 30 80 0 110-20-40-20-75 0-110Z"/><path d="M290 520c-30-40-30-80 0-110 20 40 20 75 0 110Z"/></g></svg>
-          <span class="luciernagas"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-          <span class="carta__eti">¡Expedición confirmada!</span>
-          <span class="carta__nom">Mateo<small>cumple 7</small></span>
-          <span class="carta__lin">Se buscan valientes para cruzar la selva. Trae gorra y ganas de explorar.</span>
-          <span class="carta__fecha">Sáb 6 · Mar</span>
-          <span class="carta__btn">Me apunto</span>
-        </div>
-        <svg class="costura" id="costura" aria-hidden="true"><path id="costuraPath" d=""/></svg>
-        <span class="tirador" id="tirador" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6 3 12l6 6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <input class="partida__rango" id="rango" type="range" min="4" max="96" value="52" aria-label="Mover la grieta entre la boda y la aventura">
-      </div>
-      <figcaption>Arrastra la grieta: es la misma invitación en dos mundos.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- ========== TU FRASE EN CADA MUNDO ========== -->
-<section class="frase" id="frase">
-  <div class="in frase__in">
-    <div class="frase__txt">
-      <p class="eyebrow">Pruébalo</p>
-      <h2>Escribe lo que desees en tu mensaje. Nosotros le damos su mundo.</h2>
-      <p class="sub sub--corta">Las mismas palabras cambian según el mundo donde viven. Escribe la tuya y mira cómo suena en cada uno.</p>
-      <div class="campo">
-        <label for="fraseIn">Tu frase</label>
-        <input id="fraseIn" type="text" maxlength="70" value="Ven a celebrar conmigo" autocomplete="off" spellcheck="true">
-      </div>
-      <div class="chips" role="tablist" aria-label="Elige un mundo">
-        <button type="button" role="tab" class="chip" data-m="boda" aria-selected="true">Boda</button>
-        <button type="button" role="tab" class="chip" data-m="xv" aria-selected="false">XV años</button>
-        <button type="button" role="tab" class="chip" data-m="princesas" aria-selected="false">Princesas</button>
-        <button type="button" role="tab" class="chip" data-m="aventura" aria-selected="false">Aventura</button>
-        <button type="button" role="tab" class="chip" data-m="padel" aria-selected="false">Pádel</button>
-      </div>
-    </div>
-    <div class="escena" id="escena" aria-live="polite">
-      <div class="capa capa--boda activa" data-m="boda">
-        <span class="capa__orn" aria-hidden="true">✦ ── ✦ ── ✦</span>
-        <p class="capa__txt"></p>
-        <span class="capa__firma">Ana &amp; Luis · 14 de febrero</span>
-      </div>
-      <div class="capa capa--xv" data-m="xv">
-        <span class="capa__orn" aria-hidden="true">XV</span>
-        <p class="capa__txt"></p>
-        <span class="capa__firma">Valentina · bajo las estrellas</span>
-      </div>
-      <div class="capa capa--princesas" data-m="princesas">
-        <svg class="capa__corona" viewBox="0 0 64 40" aria-hidden="true"><path d="M6 34 2 8l16 12L32 2l14 18L62 8l-4 26Z" fill="#e8b84b" stroke="#a8742a" stroke-width="2" stroke-linejoin="round"/><circle cx="32" cy="22" r="4" fill="#c2457e"/></svg>
-        <span class="capa__pre">Por decreto real:</span>
-        <p class="capa__txt"></p>
-        <span class="capa__firma">La princesa Sofía · 5 años</span>
-      </div>
-      <div class="capa capa--aventura" data-m="aventura">
-        <span class="capa__sello" aria-hidden="true">Misión</span>
-        <p class="capa__txt"></p>
-        <span class="capa__firma">Explorador Mateo · cumple 7</span>
-      </div>
-      <div class="capa capa--padel" data-m="padel">
-        <span class="capa__marcador" aria-hidden="true"><b>15</b>–<b>0</b></span>
-        <p class="capa__txt"></p>
-        <span class="capa__firma">Bodgar · 31 · Tepoztlán</span>
-      </div>
-      <svg class="escena__grieta" viewBox="0 0 20 400" preserveAspectRatio="none" aria-hidden="true"><path d="M10 0 4 40 14 80 6 125 15 170 5 215 13 260 4 305 14 350 8 400" fill="none" stroke="url(#g-grieta)" stroke-width="3" vector-effect="non-scaling-stroke"/></svg>
-    </div>
-  </div>
-</section>
-
-<!-- ========== LOS MUNDOS ========== -->
-<section class="mundos" id="mundos" aria-labelledby="h-mundos">
-  <div class="in mundos__cab">
-    <p class="eyebrow">Los mundos</p>
-    <h2 id="h-mundos">Cada fiesta abre una puerta distinta</h2>
-    <p class="sub sub--corta">Baja y cruza de uno a otro. Cada mundo tiene su propia letra, su propia música y su propia forma de abrirse.</p>
-  </div>
-
-  <!-- Boda -->
-  <article class="mundo mundo--boda" data-mundo="boda" id="boda" aria-labelledby="t-boda">
-    <svg class="grieta" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 L6 8 L13 24 L21 6 L29 20 L37 4 L46 22 L55 9 L63 25 L72 7 L80 21 L89 5 L100 18"/></svg>
-    <canvas class="ambiente" data-tipo="boda" aria-hidden="true"></canvas>
-    <div class="in mundo__in">
-      <div class="mundo__txt">
-        <p class="mundo__cap">Capítulo I · Bodas</p>
-        <h3 class="mundo__t" id="t-boda">La magia de lo que dura</h3>
-        <blockquote class="mundo__voz">“Hay historias que merecen testigos. La nuestra estrena capítulo y queremos que estés en la primera página.”</blockquote>
-        <ul class="mundo__trucos">
-          <li>El sobre se abre con un toque y rompe el sello de lacre.</li>
-          <li>Polvo dorado que sigue tu dedo por toda la invitación.</li>
-          <li>El día contado en capítulos: ceremonia, cena, vals y fiesta.</li>
-        </ul>
-        <a class="boton boton--mundo" data-t="wa-boda" data-wa="Hola, vi Érase una fiesta y quiero una invitación de boda. Nos casamos el ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quiero este mundo</a>
-      </div>
-      <div class="cel" aria-hidden="true">
-        <div class="cel__pantalla mini mini--boda">
-          <span class="mini__eti">Toca para abrir</span>
-          <div class="sobre">
-            <div class="sobre__carta"><span>Nos casamos</span><b>Ana &amp; Luis</b><i>14 · 02 · 2027</i></div>
-            <div class="sobre__cuerpo"></div>
-            <div class="sobre__tapa"></div>
-            <div class="sobre__sello">A·L</div>
-          </div>
-          <span class="mini__pie">Hacienda por confirmar · Valle de Bravo</span>
+        <div class="facts">
+          <div><b>48 h</b><span>primer borrador</span></div>
+          <div><b>$590</b><span>desde, pago único</span></div>
+          <div><b>1 link</b><span>listo para WhatsApp</span></div>
         </div>
       </div>
+      <div class="hero-phone">
+        <div class="phone"><div class="glass" id="heroGlass"></div></div>
+        <div class="world-tag">Mundo · <b id="heroTag">Princesas</b></div>
+      </div>
     </div>
-  </article>
+  </section>
 
-  <!-- XV -->
-  <article class="mundo mundo--xv" data-mundo="xv" id="xv" aria-labelledby="t-xv">
-    <svg class="grieta" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 16 L8 4 L15 22 L24 9 L31 25 L40 6 L48 19 L57 3 L66 23 L74 8 L83 24 L91 7 L100 20"/></svg>
-    <canvas class="ambiente" data-tipo="xv" aria-hidden="true"></canvas>
-    <div class="in mundo__in mundo__in--rev">
-      <div class="mundo__txt">
-        <p class="mundo__cap">Capítulo II · XV años</p>
-        <h3 class="mundo__t" id="t-xv">Una noche bajo las estrellas</h3>
-        <blockquote class="mundo__voz">“Quince años, un vals y una noche que no se repite. Valentina te espera bajo las estrellas.”</blockquote>
-        <ul class="mundo__trucos">
-          <li>Cuenta regresiva en vivo entre estrellas fugaces.</li>
-          <li>El vals empieza a sonar al abrir la invitación.</li>
-          <li>La noche como una gala: entrada, vals, brindis y pista.</li>
-        </ul>
-        <a class="boton boton--mundo" data-t="wa-xv" data-wa="Hola, vi Érase una fiesta y quiero una invitación de XV años. La fiesta es el ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quiero este mundo</a>
-      </div>
-      <div class="cel" aria-hidden="true">
-        <div class="cel__pantalla mini mini--xv">
-          <span class="deco deco--a"></span>
-          <span class="mini__eti">Mis XV años</span>
-          <b class="xv__nom">Valentina</b>
-          <span class="xv__num">XV</span>
-          <div class="xv__cuenta" id="xvCuenta"><span><b>--</b>días</span><span><b>--</b>hrs</span><span><b>--</b>min</span><span><b>--</b>seg</span></div>
-          <span class="mini__pie">15 · 05 · 2027 · Salón por confirmar</span>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- Princesas -->
-  <article class="mundo mundo--princesas" data-mundo="princesas" id="princesas" aria-labelledby="t-princesas">
-    <svg class="grieta" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 L7 6 L16 23 L23 8 L32 21 L41 5 L49 24 L58 8 L65 21 L74 4 L82 22 L90 9 L100 17"/></svg>
-    <canvas class="ambiente" data-tipo="princesas" aria-hidden="true"></canvas>
-    <div class="in mundo__in">
-      <div class="mundo__txt">
-        <p class="mundo__cap">Capítulo III · Princesas</p>
-        <h3 class="mundo__t" id="t-princesas">Un castillo que se abre al tocarlo</h3>
-        <blockquote class="mundo__voz">“Por decreto real, la princesa Sofía cumple 5 años. Se solicita tu presencia en el castillo y tu mejor corona.”</blockquote>
-        <ul class="mundo__trucos">
-          <li>Las puertas del castillo se abren con un toque.</li>
-          <li>Destellos que caen y banderines que se mueven con el viento.</li>
-          <li>Vestimenta ilustrada: corona opcional, ganas obligatorias.</li>
-        </ul>
-        <a class="boton boton--mundo" data-t="wa-princesas" data-wa="Hola, vi Érase una fiesta y quiero una invitación de princesas para un cumpleaños infantil. Es el ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quiero este mundo</a>
-      </div>
-      <div class="cel" aria-hidden="true">
-        <div class="cel__pantalla mini mini--princesas">
-          <svg class="castillo" viewBox="0 0 200 150">
-            <g fill="#f7d6e6" stroke="#8b4f8f" stroke-width="2" stroke-linejoin="round">
-              <rect x="30" y="60" width="30" height="90"/><rect x="140" y="60" width="30" height="90"/>
-              <rect x="60" y="80" width="80" height="70"/><rect x="85" y="40" width="30" height="110"/>
-              <path d="M26 60 45 28 64 60Z" fill="#c9a5ff"/><path d="M136 60 155 28 174 60Z" fill="#c9a5ff"/><path d="M81 40 100 6 119 40Z" fill="#c9a5ff"/>
-              <path d="M88 150v-26a12 12 0 0 1 24 0v26Z" fill="#8b4f8f"/>
-            </g>
-            <g class="banderas" fill="#c2457e"><path class="b1" d="M45 28V14l14 5-14 5"/><path class="b2" d="M100 6V-8l14 5-14 5"/><path class="b3" d="M155 28V14l14 5-14 5"/></g>
-            <g fill="#ffe28a"><rect x="40" y="80" width="10" height="14" rx="5"/><rect x="150" y="80" width="10" height="14" rx="5"/><rect x="95" y="62" width="10" height="14" rx="5"/></g>
-          </svg>
-          <span class="brillos"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-          <span class="mini__eti">Por decreto real</span>
-          <b class="pr__nom">Sofía</b>
-          <span class="pr__lin">cumple 5 años</span>
-          <span class="mini__pie">Sábado 12 de abril · El castillo por confirmar</span>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- Aventura -->
-  <article class="mundo mundo--aventura" data-mundo="aventura" id="aventura" aria-labelledby="t-aventura">
-    <svg class="grieta" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 L9 5 L17 24 L25 7 L34 22 L42 4 L51 20 L59 6 L68 25 L76 9 L85 23 L93 6 L100 19"/></svg>
-    <canvas class="ambiente" data-tipo="aventura" aria-hidden="true"></canvas>
-    <div class="in mundo__in mundo__in--rev">
-      <div class="mundo__txt">
-        <p class="mundo__cap">Capítulo IV · Aventura</p>
-        <h3 class="mundo__t" id="t-aventura">Una expedición en vez de una fiesta</h3>
-        <blockquote class="mundo__voz">“¡Atención, exploradores! Mateo cumple 7 y necesita valientes para cruzar la selva. Trae gorra y ganas de aventura.”</blockquote>
-        <ul class="mundo__trucos">
-          <li>Un mapa que dibuja el camino hasta la fiesta.</li>
-          <li>Una brújula que apunta directo a la ubicación.</li>
-          <li>Misiones en vez de horario: llegada, juegos, piñata y pastel.</li>
-        </ul>
-        <a class="boton boton--mundo" data-t="wa-aventura" data-wa="Hola, vi Érase una fiesta y quiero una invitación de aventura para un cumpleaños infantil. Es el ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quiero este mundo</a>
-      </div>
-      <div class="cel" aria-hidden="true">
-        <div class="cel__pantalla mini mini--aventura">
-          <svg class="mapa" viewBox="0 0 220 300">
-            <path d="M20 40c40-20 70 10 100 0s60-30 90-10M10 140c50-10 70 20 110 10s70-20 90 0M20 250c40-15 80 15 110 5s50-20 80-5" fill="none" stroke="#c9ad6f" stroke-width="1.5"/>
-            <g fill="#5e8f4c" opacity=".7"><circle cx="40" cy="90" r="14"/><circle cx="58" cy="82" r="11"/><circle cx="170" cy="200" r="16"/><circle cx="188" cy="212" r="10"/><circle cx="60" cy="230" r="12"/></g>
-            <path d="M30 270 60 214 54 170 110 150 150 104 130 70 176 46" class="ruta" fill="none" stroke="#b5452b" stroke-width="3" stroke-dasharray="6 7" stroke-linecap="round"/>
-            <g class="equis" stroke="#b5452b" stroke-width="5" stroke-linecap="round"><path d="M166 36l20 20M186 36l-20 20"/></g>
-          </svg>
-          <svg class="brujula" viewBox="0 0 60 60"><circle cx="30" cy="30" r="27" fill="#fff6d9" stroke="#6b4b22" stroke-width="3"/><g class="aguja"><path d="M30 8l5 22h-10Z" fill="#b5452b"/><path d="M30 52l5-22h-10Z" fill="#2b3a2f"/></g><circle cx="30" cy="30" r="3" fill="#6b4b22"/></svg>
-          <span class="mini__eti">¡Expedición confirmada!</span>
-          <b class="av__nom">¡Mateo cumple 7!</b>
-          <span class="mini__pie">Sáb 6 de marzo · Base secreta por confirmar</span>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- Pádel: ejemplo real -->
-  <article class="mundo mundo--padel" data-mundo="padel" id="padel" aria-labelledby="t-padel">
-    <svg class="grieta" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 14 L8 24 L16 6 L25 21 L33 3 L42 23 L50 8 L59 22 L67 5 L76 24 L84 9 L92 22 L100 7"/></svg>
-    <canvas class="ambiente" data-tipo="padel" aria-hidden="true"></canvas>
-    <div class="in mundo__in">
-      <div class="mundo__txt">
-        <p class="mundo__cap">Capítulo V · Cumpleaños <span class="real">Ejemplo real</span></p>
-        <h3 class="mundo__t" id="t-padel">Un partido de pádel en Tepoztlán</h3>
-        <blockquote class="mundo__voz">“31 y en su mejor forma. Pádel, sol de Tepoztlán y nadie llevando la cuenta de quién pierde.”</blockquote>
-        <ul class="mundo__trucos">
-          <li>Se abre como un saque: tocas la pelota y entra a la cancha.</li>
-          <li>Una cancha de noche con luces de estadio y la pelota en rally.</li>
-          <li>El itinerario va 15, 30, 40 y juego. La música suena a videojuego.</li>
-        </ul>
-        <div class="mundo__acciones">
-          <a class="boton boton--mundo" data-t="ver-padel" href="ejemplos/padel/" target="_blank" rel="noopener">Abrir la invitación completa ↗</a>
-          <a class="boton boton--linea" data-t="wa-cumple" data-wa="Hola, vi Érase una fiesta y quiero una invitación de cumpleaños con temática de ____. Es el ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer">Quiero la de mi cumple</a>
-        </div>
-      </div>
-      <div class="cel cel--vivo">
-        <div class="cel__pantalla mini--padel">
-          <iframe id="padelVivo" title="Invitación real del cumpleaños 31 de Bodgar, con temática de pádel" data-src="ejemplos/padel/" loading="lazy" tabindex="-1"></iframe>
-          <span class="cel__vivo-eti" aria-hidden="true">En vivo</span>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <div class="mas-mundos">
-    <div class="in">
-      <p class="mas-mundos__t">Y los mundos que se te ocurran</p>
-      <ul class="mas-mundos__l">
-        <li>Baby shower entre nubes</li><li>Bautizo con luz de vitral</li><li>Graduación en un estadio</li><li>Cumple en el espacio</li><li>Boda en la playa al atardecer</li><li>Fiesta de dinosaurios</li><li>Noche de casino</li><li>Posada mexicana</li>
-      </ul>
-    </div>
+  <div class="interlude gutter" id="mundos" data-world="prologo">
+    <p>Había una vez una fiesta que quería ser recordada. Y descubrió que podía ser cualquier mundo.</p>
+    <span>Siete mundos · siete invitaciones</span>
   </div>
-</section>
 
-<!-- ========== QUÉ INCLUYE ========== -->
-<section class="seccion" id="incluye" aria-labelledby="h-incluye">
-  <div class="in">
-    <p class="eyebrow">Qué trae cada invitación</p>
-    <h2 id="h-incluye">Todo lo que tus invitados necesitan, en un solo link</h2>
-    <ul class="incluye">
-      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 10h24v16H4ZM4 10l12 9 12-9"/></svg><b>Entrada que se abre al tocar</b><span>Sobre, boleto, cofre o castillo. Se abre en menos de un segundo, o sola si nadie toca.</span></li>
-      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4v4M16 24v4M4 16h4M24 16h4M8 8l3 3M21 21l3 3M8 24l3-3M21 11l3-3"/><circle cx="16" cy="16" r="4"/></svg><b>Fondo animado del tema</b><span>Polvo dorado, estrellas, luciérnagas o luces de estadio, dibujado para tu fiesta.</span></li>
-      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M12 24V7l14-3v17"/><circle cx="9" cy="24" r="3"/><circle cx="23" cy="21" r="3"/></svg><b>Música</b><span>Suena al abrirla y tiene su botón para pausarla.</span></li>
-      <li><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="17" r="11"/><path d="M16 11v6l4 3M12 3h8"/></svg><b>Cuenta regresiva</b><span>En vivo, con botón para agregarla al calendario.</span></li>
-      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29s9-8.5 9-15.5a9 9 0 0 0-18 0C7 20.5 16 29 16 29Z"/><circle cx="16" cy="13.5" r="3"/></svg><b>Ubicación</b><span>Ceremonia y recepción, cada una con su botón al mapa.</span></li>
-      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 5h14l6 6v16H6Z"/><path d="M10 14h12M10 19h12M10 24h7"/></svg><b>Itinerario con historia</b><span>Capítulos, misiones o sets en lugar de una lista de horas.</span></li>
-      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M11 4 4 8l3 7 3-2v15h12V13l3 2 3-7-7-4c-1 3-3 4-5 4s-4-1-5-4Z"/></svg><b>Código de vestimenta</b><span>Ilustrado, con el color reservado si aplica.</span></li>
-      <li><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="7" width="24" height="18" rx="2"/><path d="m4 21 7-6 6 5 4-3 7 5"/><circle cx="21" cy="12" r="2"/></svg><b>Galería de fotos</b><span>Sus fotos en marcos del mismo mundo.</span></li>
-      <li><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="12" width="22" height="16" rx="1"/><path d="M3 8h26v4H3ZM16 8v20M16 8c-2-5-8-5-8-1s6 1 8 1c2 0 8 3 8-1s-6-4-8 1"/></svg><b>Mesa de regalos</b><span>Con el tono que ustedes quieran, hasta en broma.</span></li>
-      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 17l6 6L26 9"/></svg><b>Confirmación por WhatsApp</b><span>El invitado pone su nombre y cuántos van. A ti te llega el mensaje listo.</span></li>
-      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3l2.5 8.5L27 14l-8.5 2.5L16 25l-2.5-8.5L5 14l8.5-2.5Z"/></svg><b>Detalles mágicos</b><span>Destellos que siguen el dedo y sorpresas al tocar.</span></li>
-      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M13 19a5 5 0 0 0 7 0l5-5a5 5 0 0 0-7-7l-2 2M19 13a5 5 0 0 0-7 0l-5 5a5 5 0 0 0 7 7l2-2"/></svg><b>Su propio link</b><span>Se manda por WhatsApp. Sin apps ni descargas.</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ========== CÓMO FUNCIONA ========== -->
-<section class="seccion seccion--pasos" id="como" aria-labelledby="h-como">
-  <div class="in">
-    <p class="eyebrow">Cómo funciona</p>
-    <h2 id="h-como">De tu idea a tu link en cuatro pasos</h2>
-    <ol class="pasos">
-      <li><span class="pasos__n">1</span><div><b>Nos cuentas tu fiesta</b><p>Por WhatsApp: tipo de evento, fecha, lugar, colores y la historia que quieren contar.</p></div></li>
-      <li><span class="pasos__n">2</span><div><b>Elegimos su mundo</b><p>Te proponemos la entrada, la música y cómo se cuenta el itinerario.</p></div></li>
-      <li><span class="pasos__n">3</span><div><b>Ves el borrador en 48 horas</b><p>Te llega un link de prueba para verlo en tu celular. Incluye rondas de cambios.</p></div></li>
-      <li><span class="pasos__n">4</span><div><b>Lo mandas por WhatsApp</b><p>Recibes el link final. Si cambia la hora o el lugar, lo actualizamos y el link sigue igual.</p></div></li>
-    </ol>
-    <p class="nota">Para empezar pedimos el 50%. El resto, cuando la invitación está lista para mandarse.</p>
-  </div>
-</section>
-
-<!-- ========== PRECIOS ========== -->
-<section class="seccion" id="precios" aria-labelledby="h-precios">
-  <div class="in">
-    <p class="eyebrow">Precios</p>
-    <h2 id="h-precios">Un solo pago por fiesta</h2>
-    <div class="planes">
-      <article class="plan">
-        <h3>Esencial</h3>
-        <p class="plan__p"><b>$890</b> MXN</p>
-        <p class="plan__d">Un mundo de nuestro catálogo, con tus datos, fotos y colores.</p>
-        <ul>
-          <li>Entrada animada y fondo del tema</li>
-          <li>Música, cuenta regresiva y ubicación</li>
-          <li>Confirmación por WhatsApp</li>
-          <li>Borrador en 48 h y una ronda de cambios</li>
-        </ul>
-        <a class="boton boton--linea" data-t="wa-plan-esencial" data-wa="Hola, vi Érase una fiesta y me interesa el paquete Esencial ($890). Mi fiesta es: ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer">Pedir Esencial</a>
-      </article>
-      <article class="plan plan--top">
-        <span class="plan__eti">La más pedida</span>
-        <h3>Temática</h3>
-        <p class="plan__p"><b>$1,890</b> MXN</p>
-        <p class="plan__d">Un mundo diseñado para tu fiesta, como los de arriba.</p>
-        <ul>
-          <li>Todo lo del Esencial</li>
-          <li>Entrada y fondo hechos para tu tema</li>
-          <li>Itinerario contado como historia</li>
-          <li>Vestimenta ilustrada, galería y regalos</li>
-          <li>Dos rondas de cambios</li>
-        </ul>
-        <a class="boton boton--luz" data-t="wa-plan-tematica" data-wa="Hola, vi Érase una fiesta y me interesa el paquete Temática ($1,890). Mi fiesta es: ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir Temática</a>
-      </article>
-      <article class="plan">
-        <h3>Boda y XV</h3>
-        <p class="plan__p"><b>$3,490</b> MXN</p>
-        <p class="plan__d">Para las fiestas que se planean con meses de anticipación.</p>
-        <ul>
-          <li>Todo lo de Temática</li>
-          <li>Padrinos, hospedaje y mesa de regalos</li>
-          <li>Pases con nombre para cada familia</li>
-          <li>Lista de confirmaciones al día</li>
-          <li>Cambios sin límite hasta el evento</li>
-        </ul>
-        <a class="boton boton--linea" data-t="wa-plan-boda" data-wa="Hola, vi Érase una fiesta y me interesa el paquete Boda y XV ($3,490). La fecha es: ____." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer">Pedir Boda y XV</a>
-      </article>
-    </div>
-    <div class="extras">
-      <p class="extras__t">Extras</p>
-      <ul>
-        <li><span>Pases con nombre por invitado</span><b>+$590</b></li>
-        <li><span>Video vertical para estados</span><b>+$390</b></li>
-        <li><span>Entrega en 24 horas</span><b>+30%</b></li>
-        <li><span>Dominio propio (ej. anayluis.com)</span><b>Cotizar</b></li>
-      </ul>
-    </div>
-    <p class="nota">Precios en pesos mexicanos, pago único por evento. El link queda activo hasta 3 meses después de la fiesta.</p>
-  </div>
-</section>
-
-<!-- ========== PREGUNTAS ========== -->
-<section class="seccion" id="preguntas" aria-labelledby="h-preg">
-  <div class="in in--angosto">
-    <p class="eyebrow">Preguntas</p>
-    <h2 id="h-preg">Lo que casi todos preguntan</h2>
-    <div class="faq">
-      <details><summary>¿Funciona en cualquier celular?</summary><p>Sí. Se abre en el navegador de cualquier celular, sin descargar nada. También se ve bien en computadora.</p></details>
-      <details><summary>¿Pueden poner personajes de películas o caricaturas?</summary><p>No usamos personajes ni logos que tienen dueño. Hacemos mundos originales inspirados en lo que le gusta al festejado: un castillo, una selva, el espacio, su equipo favorito.</p></details>
-      <details><summary>¿Y si cambia la fecha o el lugar?</summary><p>Lo actualizamos y el mismo link cambia solo. Nadie tiene que reenviar nada.</p></details>
-      <details><summary>¿Cómo me llegan las confirmaciones?</summary><p>Cada invitado pone su nombre, si va y cuántas personas son. Se abre WhatsApp con el mensaje ya escrito y te llega a tu número. En el paquete Boda y XV además llevamos la lista al día.</p></details>
-      <details><summary>¿Cuánto tiempo sigue funcionando el link?</summary><p>Hasta 3 meses después del evento. Si quieres que se quede como recuerdo, se puede extender.</p></details>
-      <details><summary>¿Se puede imprimir?</summary><p>Está pensada para el celular. Si quieres algo para tu estado de WhatsApp, el video vertical es el extra que buscas.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- ========== FINAL ========== -->
-<section class="seccion final" id="escribir" aria-labelledby="h-final">
-  <div class="in in--angosto">
-    <p class="eyebrow">Tu turno</p>
-    <h2 id="h-final">¿Qué historia cuenta tu fiesta?</h2>
-    <p class="sub sub--corta">Cuéntanos en una línea y te respondemos con la idea de su mundo.</p>
-    <form class="forma" id="forma" novalidate>
-      <fieldset>
-        <legend>¿Qué celebras?</legend>
-        <div class="opciones">
-          <input type="radio" name="evento" id="ev-boda" value="una boda" checked><label for="ev-boda">Boda</label>
-          <input type="radio" name="evento" id="ev-xv" value="unos XV años"><label for="ev-xv">XV años</label>
-          <input type="radio" name="evento" id="ev-cumple" value="un cumpleaños"><label for="ev-cumple">Cumpleaños</label>
-          <input type="radio" name="evento" id="ev-infantil" value="una fiesta infantil"><label for="ev-infantil">Infantil</label>
-          <input type="radio" name="evento" id="ev-baby" value="un baby shower"><label for="ev-baby">Baby shower</label>
-          <input type="radio" name="evento" id="ev-otra" value="otra fiesta"><label for="ev-otra">Otra</label>
-        </div>
-      </fieldset>
-      <div class="dos">
-        <div class="campo"><label for="f-nombre">Tu nombre</label><input id="f-nombre" type="text" autocomplete="name" placeholder="Ej. Mariana"></div>
-        <div class="campo"><label for="f-fecha">Fecha de la fiesta</label><input id="f-fecha" type="text" placeholder="Ej. 14 de febrero"></div>
+  <section class="chapter gutter" data-world="princesa" data-cap="I · Princesas">
+    <div class="inner">
+      <div class="txt">
+        <div class="capn">Capítulo <b>I</b> · Princesas</div>
+        <p class="story">Primero llegó una niña que cumplía quince y quería ser reina por una noche.</p>
+        <h2>Una tiara de cristal</h2>
+        <p>Su invitación se abre como un libro de cuento. Tiene estrellas fugaces, polvo dorado y destellos que siguen el dedo de quien la toca.</p>
+        <ul class="chips"><li>Libro que se abre</li><li>Estrellas fugaces</li><li>Programa en capítulos</li></ul>
+        <a class="btn solid" target="_blank" rel="noopener" href="https://wa.me/525527149106?text=Hola%2C%20me%20encant%C3%B3%20el%20mundo%20de%20Princesas">Quiero este mundo</a>
       </div>
-      <div class="campo"><label for="f-historia">La historia en una línea</label><textarea id="f-historia" rows="3" placeholder="Ej. Mi hija cumple 6 y ama los dinosaurios"></textarea></div>
-      <p class="error" id="f-error" hidden>Escribe tu nombre para saber a quién respondemos.</p>
-      <a class="boton boton--luz boton--ancho" id="f-enviar" data-t="wa-forma" href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg>Mandar por WhatsApp</a>
-      <p class="nota">Se abre WhatsApp con tu mensaje listo. Solo dale enviar.</p>
-    </form>
-  </div>
-</section>
+      <div class="phone"><div class="glass" data-screen="princesa"></div></div>
+    </div>
+  </section>
 
+  <section class="chapter gutter" data-world="concierto" data-cap="II · Concierto">
+    <div class="inner">
+      <div class="txt">
+        <div class="capn">Capítulo <b>II</b> · Concierto</div>
+        <p class="story">Su prima prefería los escenarios. Quería ver su nombre en la pantalla gigante.</p>
+        <h2>XV Tour</h2>
+        <p>La invitación es un boleto de concierto. Hay reflectores que barren el cielo, un público con lightsticks y una cuenta regresiva que dice D-21.</p>
+        <ul class="chips"><li>Boleto de entrada</li><li>Setlist de la noche</li><li>Photocards</li></ul>
+        <a class="btn solid" target="_blank" rel="noopener" href="https://wa.me/525527149106?text=Hola%2C%20me%20encant%C3%B3%20el%20mundo%20de%20Concierto">Quiero este mundo</a>
+      </div>
+      <div class="phone"><div class="glass" data-screen="concierto"></div></div>
+    </div>
+  </section>
+
+  <section class="chapter gutter" data-world="boda" data-cap="III · Boda">
+    <div class="inner">
+      <div class="txt">
+        <div class="capn">Capítulo <b>III</b> · Boda</div>
+        <p class="story">Después, dos personas tenían una historia que contar, y querían que empezara con un sobre lacrado.</p>
+        <h2>Nos casamos</h2>
+        <p>Al abrirla caen pétalos y el día se cuenta en capítulos. Padrinos, hospedaje y mesa de regalos van en el mismo link.</p>
+        <ul class="chips"><li>Sobre con sello</li><li>Pétalos animados</li><li>Padrinos y regalos</li></ul>
+        <a class="btn solid" target="_blank" rel="noopener" href="https://wa.me/525527149106?text=Hola%2C%20quiero%20una%20invitaci%C3%B3n%20para%20boda">Quiero este mundo</a>
+      </div>
+      <div class="phone"><div class="glass" data-screen="boda"></div></div>
+    </div>
+  </section>
+
+  <section class="chapter gutter" data-world="juguetes" data-cap="IV · Juguetes">
+    <div class="inner">
+      <div class="txt">
+        <div class="capn">Capítulo <b>IV</b> · Juguetes</div>
+        <p class="story">El más pequeño soñaba con un cuarto donde los juguetes cobraran vida.</p>
+        <h2>¡A jugar!</h2>
+        <p>Los bloques caen y forman su nombre. Hay colores de crayola y botones que dan ganas de apretar. Es un mundo hecho para él, sin personajes de película.</p>
+        <ul class="chips"><li>Su nombre en bloques</li><li>Colores de crayola</li><li>Confirmar en un toque</li></ul>
+        <a class="btn solid" target="_blank" rel="noopener" href="https://wa.me/525527149106?text=Hola%2C%20me%20encant%C3%B3%20el%20mundo%20de%20Juguetes">Quiero este mundo</a>
+      </div>
+      <div class="phone"><div class="glass" data-screen="juguetes"></div></div>
+    </div>
+  </section>
+
+  <section class="chapter gutter" data-world="emociones" data-cap="V · Emociones">
+    <div class="inner">
+      <div class="txt">
+        <div class="capn">Capítulo <b>V</b> · Emociones</div>
+        <p class="story">Su hermana quería que cada invitado sintiera algo al abrirla.</p>
+        <h2>Todo lo que siento</h2>
+        <p>Los colores se mezclan como emociones y el fondo nunca está quieto. Cada invitado responde una pregunta: ¿cómo te sientes de venir?</p>
+        <ul class="chips"><li>Fondo que respira</li><li>Selector de emociones</li><li>Mensajes para ella</li></ul>
+        <a class="btn solid" target="_blank" rel="noopener" href="https://wa.me/525527149106?text=Hola%2C%20me%20encant%C3%B3%20el%20mundo%20de%20Emociones">Quiero este mundo</a>
+      </div>
+      <div class="phone"><div class="glass" data-screen="emociones"></div></div>
+    </div>
+  </section>
+
+  <section class="chapter gutter" data-world="espacio" data-cap="VI · Espacio">
+    <div class="inner">
+      <div class="txt">
+        <div class="capn">Capítulo <b>VI</b> · Espacio</div>
+        <p class="story">Otro niño quería despegar. Su fiesta tenía cuenta regresiva de lanzamiento.</p>
+        <h2>Misión: cumpleaños</h2>
+        <p>Planetas en órbita, un cohete listo y el itinerario como bitácora de misión. Aquí los invitados no confirman: abordan la nave.</p>
+        <ul class="chips"><li>Cuenta T-menos</li><li>Planetas en órbita</li><li>Bitácora de misión</li></ul>
+        <a class="btn solid" target="_blank" rel="noopener" href="https://wa.me/525527149106?text=Hola%2C%20me%20encant%C3%B3%20el%20mundo%20del%20Espacio">Quiero este mundo</a>
+      </div>
+      <div class="phone"><div class="glass" data-screen="espacio"></div></div>
+    </div>
+  </section>
+
+  <section class="chapter gutter" data-world="baby" data-cap="VII · Baby shower">
+    <div class="inner">
+      <div class="txt">
+        <div class="capn">Capítulo <b>VII</b> · Baby shower</div>
+        <p class="story">Y alguien más esperaba a una persona que todavía no conocía.</p>
+        <h2>Alguien muy pequeñito</h2>
+        <p>Nubes que pasan despacio, globos que flotan y un libro donde cada invitado deja un deseo para el bebé.</p>
+        <ul class="chips"><li>Nubes y globos</li><li>Libro de deseos</li><li>Lluvia de regalos</li></ul>
+        <a class="btn solid" target="_blank" rel="noopener" href="https://wa.me/525527149106?text=Hola%2C%20quiero%20una%20invitaci%C3%B3n%20para%20baby%20shower">Quiero este mundo</a>
+      </div>
+      <div class="phone"><div class="glass" data-screen="baby"></div></div>
+    </div>
+  </section>
+
+  <!-- Comparador -->
+  <section class="studio gutter" id="tu-turno" data-world="dyn" data-cap="Tu turno">
+    <div class="inner">
+      <div class="ctrl">
+        <div class="eyebrow">Tu turno</div>
+        <h2>Escribe tu fiesta. Elige su mundo.</h2>
+        <p class="d">Pon el nombre y la frase. Luego toca un mundo y mira cómo cambia la invitación, y con ella toda la página.</p>
+        <div class="fields">
+          <label for="f-name">Nombre<input id="f-name" type="text" value="Valentina" maxlength="22" autocomplete="off"></label>
+          <label for="f-line">Frase<input id="f-line" type="text" value="Mis XV años" maxlength="24" autocomplete="off"></label>
+          <label class="wide" for="f-date">Fecha<input id="f-date" type="text" value="12 · Marzo · 2027" maxlength="26" autocomplete="off"></label>
+        </div>
+        <div class="tabs" id="tabs" role="group" aria-label="Mundos"></div>
+      </div>
+      <div class="phone"><div class="glass" id="studioGlass"></div></div>
+    </div>
+  </section>
+
+  <!-- Qué incluye -->
+  <section class="block gutter" data-world="prologo">
+    <div class="inner">
+      <div class="head">
+        <div class="eyebrow">Qué incluye</div>
+        <h2 class="sec-h">Todo lo que tus invitados necesitan, en un solo link.</h2>
+      </div>
+      <div class="inc">
+        <div><b>Entrada que se abre</b><span>Sobre, libro, boleto o cofre, con un toque.</span></div>
+        <div><b>Fondo animado</b><span>Estrellas, pétalos, reflectores o planetas, según tu mundo.</span></div>
+        <div><b>Cuenta regresiva</b><span>Y un botón para guardar la fecha en el calendario.</span></div>
+        <div><b>Ubicación con mapa</b><span>Ceremonia y recepción con su botón de Google Maps.</span></div>
+        <div><b>Itinerario narrado</b><span>Capítulos, setlist o misiones, contado a tu manera.</span></div>
+        <div><b>Código de vestimenta</b><span>Ilustrado y con el color reservado del festejado.</span></div>
+        <div><b>Galería de fotos</b><span>En marcos que van con el mundo de tu fiesta.</span></div>
+        <div><b>Confirmación por WhatsApp</b><span>El invitado llena sus datos y te llega el mensaje listo.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block gutter" data-world="prologo">
+    <div class="inner">
+      <div class="head">
+        <div class="eyebrow">Cómo funciona</div>
+        <h2 class="sec-h">De tu idea a tu link en cuatro pasos.</h2>
+      </div>
+      <ol class="steps">
+        <li><b>Nos cuentas tu fiesta</b><span>Tipo de evento, fecha, colores y lo que le gusta al festejado, por WhatsApp.</span></li>
+        <li><b>Elegimos su mundo</b><span>Te proponemos la entrada, el fondo y cómo se cuenta el día.</span></li>
+        <li><b>Ves el borrador en 48 h</b><span>Un link de prueba en tu celular para pedir cambios.</span></li>
+        <li><b>Lo mandas por WhatsApp</b><span>Si cambia la fecha o el lugar, el mismo link se actualiza.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block gutter" id="precios" data-world="prologo">
+    <div class="inner">
+      <div class="head">
+        <div class="eyebrow">Precios</div>
+        <h2 class="sec-h">Un solo pago por fiesta.</h2>
+      </div>
+      <div class="prices">
+        <article class="plan">
+          <h3>Esencial</h3>
+          <div class="price">$590 <small>MXN</small></div>
+          <ul><li>Un mundo del catálogo con tus datos y fotos</li><li>Entrada, cuenta regresiva y ubicación</li><li>Confirmación por WhatsApp</li><li>Una ronda de cambios</li></ul>
+          <a class="btn" target="_blank" rel="noopener" href="https://wa.me/525527149106?text=Hola%2C%20me%20interesa%20el%20paquete%20Esencial">Elegir Esencial</a>
+        </article>
+        <article class="plan pop">
+          <span class="badge">La más pedida</span>
+          <h3>Temática</h3>
+          <div class="price">$990 <small>MXN</small></div>
+          <ul><li>Todo lo de Esencial</li><li>Entrada y fondo hechos para tu tema</li><li>Itinerario narrado, vestimenta y galería</li><li>Dos rondas de cambios</li></ul>
+          <a class="btn solid" target="_blank" rel="noopener" href="https://wa.me/525527149106?text=Hola%2C%20me%20interesa%20el%20paquete%20Tem%C3%A1tica">Elegir Temática</a>
+        </article>
+        <article class="plan">
+          <h3>Boda y XV</h3>
+          <div class="price">$1,690 <small>MXN</small></div>
+          <ul><li>Todo lo de Temática</li><li>Padrinos, hospedaje y mesa de regalos</li><li>Pases con nombre por familia</li><li>Cambios hasta el día del evento</li></ul>
+          <a class="btn" target="_blank" rel="noopener" href="https://wa.me/525527149106?text=Hola%2C%20me%20interesa%20el%20paquete%20Boda%20y%20XV">Elegir Boda y XV</a>
+        </article>
+      </div>
+      <p class="extras">Extras: video vertical para estados +$290 · entrega en 24 h +30%. El link queda activo hasta 3 meses después de tu fiesta.</p>
+    </div>
+  </section>
+
+  <section class="block gutter" data-world="prologo">
+    <div class="inner">
+      <div class="head"><div class="eyebrow">Preguntas</div><h2 class="sec-h">Lo que todos nos preguntan.</h2></div>
+      <div class="faq">
+        <details><summary>¿Funciona en cualquier celular?</summary><p>Sí. Se abre en el navegador sin descargar nada, y también se ve en computadora.</p></details>
+        <details><summary>¿Pueden usar personajes de películas?</summary><p>No usamos personajes ni logos de marcas. Creamos un mundo original inspirado en lo que le gusta al festejado.</p></details>
+        <details><summary>¿Y si cambia la fecha o el lugar?</summary><p>Lo actualizamos y el mismo link cambia solo. No tienes que volver a mandarlo.</p></details>
+        <details><summary>¿Cómo me llegan las confirmaciones?</summary><p>El invitado pone su nombre, si asiste y cuántos son. Se abre WhatsApp con el mensaje listo para mandarte.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact gutter" id="contacto" data-world="prologo">
+    <div class="inner">
+      <div>
+        <div class="eyebrow">Tu capítulo</div>
+        <h2 class="sec-h">¿Qué historia cuenta tu fiesta?</h2>
+        <p style="color:var(--muted);max-width:40ch;margin:0">Cuéntanos en una línea y te respondemos por WhatsApp con una propuesta de mundo.</p>
+        <div class="num"><code id="waNum">55 2714 9106</code><button class="btn sm" id="copyNum" type="button">Copiar número</button></div>
+      </div>
+      <form id="lead" novalidate>
+        <div class="two">
+          <label for="l-type">Tipo de evento
+            <select id="l-type"><option>Boda</option><option selected>XV años</option><option>Cumpleaños infantil</option><option>Baby shower</option><option>Bautizo</option><option>Otra</option></select>
+          </label>
+          <label for="l-world">Mundo favorito
+            <select id="l-world"><option>Princesas</option><option>Concierto</option><option>Boda</option><option>Juguetes</option><option>Emociones</option><option>Espacio</option><option>Baby shower</option><option>Otro, se los cuento</option></select>
+          </label>
+        </div>
+        <div class="two">
+          <label for="l-name">Tu nombre<input id="l-name" type="text" autocomplete="name" placeholder="Nombre"></label>
+          <label for="l-date">Fecha de la fiesta<input id="l-date" type="text" placeholder="Ej. 12 de marzo"></label>
+        </div>
+        <label for="l-story">La historia en una línea<textarea id="l-story" rows="3" placeholder="Ej. Le encantan las estrellas y su vestido es azul marino"></textarea></label>
+        <a class="btn solid" id="leadSend" target="_blank" rel="noopener" href="https://wa.me/525527149106">Mandar por WhatsApp</a>
+      </form>
+    </div>
+  </section>
 </main>
 
-<footer class="pie">
-  <div class="in pie__in">
-    <p class="pie__marca">Érase una fiesta</p>
-    <p>Invitaciones digitales animadas · Ciudad de México</p>
-    <p class="pie__chico">WhatsApp: <span class="pie__num">55 2714 9106</span> · Sitio por <a href="/">bodgar.dev</a></p>
-  </div>
+<footer class="gutter" data-world="prologo">
+  <div class="inner"><span>Érase una fiesta · Invitaciones digitales animadas · Ciudad de México</span><span>bodgar.dev</span></div>
 </footer>
 
-<a class="flota" id="flota" data-t="wa-flotante" data-wa="Hola, vi Érase una fiesta y quiero cotizar una invitación." href="https://wa.me/525527149106" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+<script>
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function e(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function n(s){ return Math.max(3, String(s).length); }
 
-<script src="fiesta.js" defer></script>
+  var WORLDS = ['princesa','concierto','boda','juguetes','emociones','espacio','baby'];
+  var LABEL = {princesa:'Princesas',concierto:'Concierto',boda:'Boda',juguetes:'Juguetes',emociones:'Emociones',espacio:'Espacio',baby:'Baby shower'};
+  var SAMPLE = {
+    princesa:{name:'Azul',line:'Mis XV años',date:'8 · Diciembre · 2026'},
+    concierto:{name:'Sofía',line:'XV Tour',date:'2026.11.21'},
+    boda:{name:'Ana & Luis',line:'Nos casamos',date:'14 · 02 · 2027'},
+    juguetes:{name:'Mateo',line:'cumple 4',date:'Sábado 7 de marzo'},
+    emociones:{name:'Emma',line:'cumple 8',date:'Domingo 19 de abril'},
+    espacio:{name:'Leo',line:'cumple 6',date:'Despegue · 23 · 05'},
+    baby:{name:'Camila',line:'Baby shower',date:'Sábado 13 de junio'}
+  };
+  function cd(){ return '<div class="cd"><span><b>21</b><i>días</i></span><span><b>08</b><i>hrs</i></span><span><b>24</b><i>min</i></span><span><b class="sec">59</b><i>seg</i></span></div>'; }
+
+  var T = {
+    princesa:function(d){ return '<div class="scr s-princesa"><i class="sky"></i>'+
+      '<svg class="tiara" viewBox="0 0 220 120" aria-hidden="true"><use href="#tiara"/></svg>'+
+      '<small>Había una vez</small><b class="nm" style="--n:'+n(d.name)+'">'+e(d.name)+'</b>'+
+      '<span class="ln">'+e(d.line)+'</span><span class="dt">'+e(d.date)+'</span>'+cd()+'<span class="cta">Confirmar asistencia</span></div>'; },
+    concierto:function(d){ return '<div class="scr s-concierto"><i class="beam b1"></i><i class="beam b2"></i><i class="beam b3"></i>'+
+      '<span class="tour">'+e(d.line)+' · Live</span><b class="nm" style="--n:'+n(d.name)+'">'+e(d.name)+'</b>'+
+      '<span class="dday">D-21 · '+e(d.date)+'</span>'+
+      '<div class="set"><div><em>01</em>Entrada<small>la llegada</small></div><div><em>02</em>Vals<small>con papá</small></div><div><em>03</em>Encore<small>a bailar</small></div></div>'+
+      '<span class="cta">Aparta tu lugar</span>'+
+      '<div class="sticks"><i class="stk" style="--c:#2246ff"></i><i class="stk" style="--c:#c9b2ff;animation-delay:.2s"></i><i class="stk" style="--c:#ff6fd2;animation-delay:.4s"></i><i class="stk" style="--c:#8b5cff;animation-delay:.1s"></i><i class="stk" style="--c:#2246ff;animation-delay:.5s"></i><i class="stk" style="--c:#c9b2ff;animation-delay:.3s"></i><i class="stk" style="--c:#ff6fd2;animation-delay:.6s"></i></div></div>'; },
+    boda:function(d){
+      var leaves=''; for(var i=0;i<24;i++){ leaves+='<use href="#leaf" transform="rotate('+(i*15)+' 100 100)'+(i%2?' translate(0 3) scale(1)':'')+'" opacity="'+(i%2?'.75':'1')+'"/>'; }
+      var pts=''; for(var k=0;k<7;k++){ pts+='<i class="pt" style="left:'+(8+k*13)+'%;animation-duration:'+(6+k%3*1.5)+'s;animation-delay:-'+(k*1.1)+'s"></i>'; }
+      return '<div class="scr s-boda">'+pts+
+      '<div class="wreath"><svg viewBox="0 0 200 200" aria-hidden="true">'+leaves+'<circle cx="100" cy="100" r="74" fill="none" stroke="#a8874a" stroke-width=".6"/></svg>'+
+      '<small>'+e(d.line)+'</small><b class="nm" style="--n:'+n(d.name)+'">'+e(d.name)+'</b><span class="ln">y queremos que estés</span></div>'+
+      '<span class="dt">'+e(d.date)+'</span><p class="note">Ceremonia, cena y baile. Te contamos el día en capítulos.</p><span class="cta">Confirmar asistencia</span></div>'; },
+    juguetes:function(d){
+      var cols=['#e8452c','#2f6fe0','#2fb36b','#ff8c1a','#8a4fe0'], b='', c=0, letters=String(d.name).split('');
+      for(var i=0;i<letters.length;i++){ var ch=letters[i]; if(ch===' '){ b+='<i class="sp"></i>'; continue; } b+='<span class="blk" style="--i:'+c+';background:'+cols[c%cols.length]+'">'+e(ch.toUpperCase())+'</span>'; c++; }
+      return '<div class="scr s-juguetes" style="--n:'+Math.max(4,letters.length)+'">'+
+      '<svg class="star" style="left:9cqw;top:14cqw" aria-hidden="true"><use href="#star5"/></svg><svg class="star" style="right:9cqw;bottom:30cqw;color:#2f6fe0;animation-direction:reverse" aria-hidden="true"><use href="#star5"/></svg>'+
+      '<small>¡Vamos a jugar!</small><div class="blocks">'+b+'</div>'+
+      '<span class="ln">'+e(d.line)+'<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 Q20 1 35 6 T68 5 T98 4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>'+
+      '<span class="dt">'+e(d.date)+'</span><span class="cta">¡Sí voy!</span></div>'; },
+    emociones:function(d){ return '<div class="scr s-emociones"><i class="blob o1"></i><i class="blob o2"></i><i class="blob o3"></i><i class="blob o4"></i>'+
+      '<small>Una fiesta llena de colores</small><b class="nm" style="--n:'+n(d.name)+'">'+e(d.name)+'</b><span class="ln">'+e(d.line)+'</span><span class="dt">'+e(d.date)+'</span>'+
+      '<span class="q">¿Cómo te sientes de venir?</span><div class="chips"><span style="background:#ffd23f">¡Feliz!</span><span style="background:#8fb6ff">Emocionado</span><span style="background:#ff9a9a">¡Todo junto!</span></div>'+
+      '<span class="cta">Confirmar</span></div>'; },
+    espacio:function(d){ return '<div class="scr s-espacio"><i class="stars"></i><i class="planet"></i><i class="moon"></i>'+
+      '<svg class="rocket" viewBox="0 0 60 100" aria-hidden="true"><use href="#rocket"/><path class="flame" d="M22 68 Q30 98 38 68Z" fill="#ffb27a"/></svg>'+
+      '<small>Misión</small><b class="nm" style="--n:'+n(d.name)+'">'+e(d.name)+'</b><span class="ln">'+e(d.line)+'</span><span class="dt">'+e(d.date)+'</span>'+cd()+
+      '<span class="cta">Abordar la nave</span></div>'; },
+    baby:function(d){ return '<div class="scr s-baby">'+
+      '<i class="cloud" style="top:20cqw;animation-duration:22s;animation-delay:-4s"></i><i class="cloud" style="top:62cqw;animation-duration:30s;animation-delay:-16s;transform:scale(.7)"></i><i class="cloud" style="bottom:34cqw;animation-duration:26s;animation-delay:-10s"></i>'+
+      '<svg class="bal" viewBox="0 0 40 80" style="left:7cqw;top:24cqw;color:#f7b6cb" aria-hidden="true"><use href="#balloon"/></svg><svg class="bal" viewBox="0 0 40 80" style="right:8cqw;top:34cqw;color:#a9cfff;animation-delay:-1.2s" aria-hidden="true"><use href="#balloon"/></svg><svg class="bal" viewBox="0 0 40 80" style="right:20cqw;top:16cqw;width:9cqw;color:#ffe08a;animation-delay:-2s" aria-hidden="true"><use href="#balloon"/></svg>'+
+      '<small>Esperamos a alguien muy pequeñito</small><span class="ln">'+e(d.line)+'</span><b class="nm" style="--n:'+n(d.name)+'">'+e(d.name)+'</b><span class="dt">'+e(d.date)+'</span>'+cd()+
+      '<span class="cta">Confirmar asistencia</span></div>'; }
+  };
+
+  /* Pantallas de capítulos */
+  Array.prototype.forEach.call(document.querySelectorAll('.glass[data-screen]'), function(g){
+    var w = g.getAttribute('data-screen'); g.innerHTML = T[w](SAMPLE[w]); g.firstChild.classList.add('on');
+  });
+
+  /* Teléfono del inicio: recorre los mundos */
+  var hero = document.getElementById('heroGlass'), heroTag = document.getElementById('heroTag');
+  hero.innerHTML = WORLDS.map(function(w){ return T[w](SAMPLE[w]); }).join('');
+  var hs = hero.children, hi = 0; hs[0].classList.add('on');
+  if(!reduce) setInterval(function(){
+    hs[hi].classList.remove('on'); hi = (hi+1) % hs.length; hs[hi].classList.add('on'); heroTag.textContent = LABEL[WORLDS[hi]];
+  }, 2600);
+
+  /* Comparador */
+  var studio = document.getElementById('studioGlass'), tabs = document.getElementById('tabs');
+  var fN = document.getElementById('f-name'), fL = document.getElementById('f-line'), fD = document.getElementById('f-date');
+  var studioWorld = 'princesa';
+  WORLDS.forEach(function(w){
+    var b = document.createElement('button'); b.type='button'; b.className='tab'; b.textContent=LABEL[w]; b.setAttribute('data-w',w);
+    b.setAttribute('aria-pressed', w===studioWorld ? 'true':'false');
+    b.addEventListener('click', function(){ studioWorld = w; syncTabs(); showStudio(); pick(true); });
+    tabs.appendChild(b);
+  });
+  function syncTabs(){ Array.prototype.forEach.call(tabs.children, function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-w')===studioWorld ? 'true':'false'); }); }
+  function data(){ return {name:fN.value.trim()||'Tu nombre', line:fL.value.trim()||'Tu frase', date:fD.value.trim()||'Tu fecha'}; }
+  function renderStudio(){
+    var d = data();
+    studio.innerHTML = WORLDS.map(function(w){ return T[w](d).replace('class="scr ', 'data-w="'+w+'" class="scr '); }).join('');
+    showStudio();
+  }
+  function showStudio(){ Array.prototype.forEach.call(studio.children, function(s){ s.classList.toggle('on', s.getAttribute('data-w')===studioWorld); }); }
+  var tmr; [fN,fL,fD].forEach(function(i){ i.addEventListener('input', function(){ clearTimeout(tmr); tmr = setTimeout(renderStudio, 180); }); });
+  renderStudio();
+
+  /* Segundos de las cuentas regresivas */
+  function pad(x){ return (x<10?'0':'')+x; }
+  setInterval(function(){ var s = pad(59 - new Date().getSeconds()); Array.prototype.forEach.call(document.querySelectorAll('.sec'), function(el){ el.textContent = s; }); }, 1000);
+
+  /* Mundo según el scroll */
+  var secs = Array.prototype.slice.call(document.querySelectorAll('[data-world]')).filter(function(el){ return el !== document.body; });
+  var chapters = secs.filter(function(s){ return s.getAttribute('data-cap'); });
+  var capbar = document.getElementById('capbar'), capname = document.getElementById('capname'), capdots = document.getElementById('capdots');
+  chapters.forEach(function(){ capdots.appendChild(document.createElement('i')); });
+  var current = 'prologo';
+  function setWorld(w){
+    if(w === current) return; current = w; document.body.setAttribute('data-world', w);
+    if(reduce) drawStatic();
+  }
+  function pick(force){
+    var mid = window.innerHeight * 0.5, w = 'prologo', cap = null, ci = -1;
+    for(var i=0;i<secs.length;i++){
+      var r = secs[i].getBoundingClientRect();
+      if(r.top <= mid && r.bottom > mid){ w = secs[i].getAttribute('data-world'); cap = secs[i].getAttribute('data-cap'); ci = chapters.indexOf(secs[i]); break; }
+    }
+    if(w === 'dyn') w = studioWorld;
+    setWorld(w);
+    if(cap){
+      capbar.classList.add('show');
+      capname.textContent = cap === 'Tu turno' ? 'Tu turno · ' + LABEL[studioWorld] : 'Capítulo ' + cap;
+      Array.prototype.forEach.call(capdots.children, function(d,k){ d.classList.toggle('on', k===ci); });
+    } else capbar.classList.remove('show');
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(function(){ ticking = false; pick(); }); } }, {passive:true});
+  window.addEventListener('resize', function(){ pick(); });
+
+  /* Formulario de contacto */
+  var lead = document.getElementById('lead'), send = document.getElementById('leadSend');
+  function buildLead(){
+    var g = function(id){ return document.getElementById(id).value.trim(); };
+    var t = 'Hola, quiero una invitación de ' + g('l-type') + '.';
+    if(g('l-name')) t += ' Soy ' + g('l-name') + '.';
+    if(g('l-date')) t += ' La fiesta es el ' + g('l-date') + '.';
+    t += ' Me gusta el mundo: ' + g('l-world') + '.';
+    if(g('l-story')) t += ' La historia: ' + g('l-story');
+    send.href = 'https://wa.me/525527149106?text=' + encodeURIComponent(t);
+  }
+  lead.addEventListener('input', buildLead); lead.addEventListener('change', buildLead); lead.addEventListener('submit', function(ev){ ev.preventDefault(); });
+  buildLead();
+  var copyBtn = document.getElementById('copyNum');
+  copyBtn.addEventListener('click', function(){
+    function fb(){ var r=document.createRange(); r.selectNodeContents(document.getElementById('waNum')); var s=getSelection(); s.removeAllRanges(); s.addRange(r); copyBtn.textContent='Número seleccionado'; }
+    try{ navigator.clipboard.writeText('5527149106').then(function(){ copyBtn.textContent='Copiado'; }, fb); }catch(err){ fb(); }
+    setTimeout(function(){ copyBtn.textContent='Copiar número'; }, 2200);
+  });
+
+  /* ---------- Fondo animado por mundo ---------- */
+  var cv = document.getElementById('bg'), ctx = cv.getContext('2d'), W = 0, H = 0;
+  function R(a,b){ return a + Math.random()*(b-a); }
+  function cnt(k){ return Math.round(Math.max(k*.45, Math.min(k*1.4, k * W*H/(1200*800)))); }
+  function glow(x,y,r,rgb,a){ var g=ctx.createRadialGradient(x,y,0,x,y,r); g.addColorStop(0,'rgba('+rgb+','+a+')'); g.addColorStop(1,'rgba('+rgb+',0)'); ctx.fillStyle=g; ctx.beginPath(); ctx.arc(x,y,r,0,6.283); ctx.fill(); }
+  function spark(x,y,s,rgb,a){ ctx.fillStyle='rgba('+rgb+','+a+')'; ctx.beginPath(); ctx.moveTo(x,y-s); ctx.quadraticCurveTo(x,y,x+s,y); ctx.quadraticCurveTo(x,y,x,y+s); ctx.quadraticCurveTo(x,y,x-s,y); ctx.quadraticCurveTo(x,y,x,y-s); ctx.fill(); }
+  function rr(x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+
+  var S = {
+    prologo:{ init:function(){ this.f=[]; for(var i=0;i<cnt(46);i++) this.f.push({x:R(0,W),y:R(0,H),p:R(0,6.28),s:R(.15,.45)}); },
+      draw:function(t){ this.f.forEach(function(f){ f.x+=Math.sin(t/2200+f.p)*f.s; f.y+=Math.cos(t/2600+f.p)*f.s-.08; if(f.y<-10) f.y=H+10; if(f.x<-10) f.x=W+10; if(f.x>W+10) f.x=-10;
+        var a=.25+.75*Math.abs(Math.sin(t/1000+f.p)); glow(f.x,f.y,9,'232,194,122',a*.55); ctx.fillStyle='rgba(255,236,190,'+a+')'; ctx.beginPath(); ctx.arc(f.x,f.y,1.4,0,6.283); ctx.fill(); }); } },
+    princesa:{ init:function(){ this.st=[]; this.d=[]; this.sh=null; this.next=1500;
+        for(var i=0;i<cnt(160);i++) this.st.push({x:R(0,W),y:R(0,H),r:Math.random()<.08?R(1.3,2):R(.3,1.1),p:R(0,6.28),v:R(.0008,.0025)});
+        for(var j=0;j<cnt(55);j++) this.d.push({x:R(0,W),y:R(0,H),r:R(.6,2),vy:R(.15,.45),p:R(0,6.28)}); },
+      draw:function(t){ var me=this;
+        this.st.forEach(function(s){ var a=.25+.75*Math.abs(Math.sin(t*s.v+s.p)); if(s.r>1.2) spark(s.x,s.y,s.r*2.6*a+1,'255,248,225',a); else { ctx.fillStyle='rgba(225,232,255,'+a+')'; ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,6.283); ctx.fill(); } });
+        this.d.forEach(function(d){ d.y+=d.vy; d.x+=Math.sin(t/1500+d.p)*.25; if(d.y>H+8){ d.y=-8; d.x=R(0,W); } ctx.fillStyle='rgba(230,196,110,'+(.35+.6*Math.abs(Math.sin(t/800+d.p)))+')'; ctx.beginPath(); ctx.arc(d.x,d.y,d.r,0,6.283); ctx.fill(); });
+        if(!this.sh && t>this.next) this.sh={x:R(W*.1,W*.9),y:R(0,H*.3),vx:R(5,8)*(Math.random()<.5?-1:1),vy:R(2,3.4),l:1};
+        if(this.sh){ var s=this.sh, g=ctx.createLinearGradient(s.x,s.y,s.x-s.vx*14,s.y-s.vy*14); g.addColorStop(0,'rgba(255,248,225,'+s.l+')'); g.addColorStop(1,'rgba(255,248,225,0)');
+          ctx.strokeStyle=g; ctx.lineWidth=1.6; ctx.beginPath(); ctx.moveTo(s.x,s.y); ctx.lineTo(s.x-s.vx*14,s.y-s.vy*14); ctx.stroke(); s.x+=s.vx; s.y+=s.vy; s.l-=.012; if(s.l<=0){ me.sh=null; me.next=t+R(2500,5500); } } } },
+    concierto:{ init:function(){ var n=W<700?5:7; this.L=[]; var C=['34,70,255','139,92,255','201,178,255','255,255,255','255,111,210'];
+        for(var i=0;i<n;i++) this.L.push({x:(i+.5)/n*W,c:C[i%C.length],b:((i+.5)/n-.5)*-.6,a:R(.18,.4),s:R(.00035,.0007),p:R(0,6.28),w:R(.05,.085)});
+        this.o=[]; for(var k=0;k<Math.round(W/4);k++) this.o.push({x:R(0,W),y:R(H*.72,H*.98),r:R(.8,2.4),c:Math.random()<.7?'201,178,255':(Math.random()<.5?'255,111,210':'34,70,255'),p:R(0,6.28)}); },
+      draw:function(t){ var Lg=H*1.2; ctx.globalCompositeOperation='lighter';
+        this.L.forEach(function(l){ var an=l.b+Math.sin(t*l.s+l.p)*l.a, sx=l.x, sy=0, ex=sx+Math.sin(an)*Lg, ey=Math.cos(an)*Lg, g=ctx.createLinearGradient(sx,sy,ex,ey);
+          g.addColorStop(0,'rgba('+l.c+',.4)'); g.addColorStop(.5,'rgba('+l.c+',.1)'); g.addColorStop(1,'rgba('+l.c+',0)'); ctx.fillStyle=g;
+          ctx.beginPath(); ctx.moveTo(sx-3,sy); ctx.lineTo(sx+Math.sin(an-l.w)*Lg,Math.cos(an-l.w)*Lg); ctx.lineTo(sx+Math.sin(an+l.w)*Lg,Math.cos(an+l.w)*Lg); ctx.lineTo(sx+3,sy); ctx.fill(); glow(sx,8,30,l.c,.8); });
+        this.o.forEach(function(o){ var a=.3+.65*Math.abs(Math.sin(t/800+o.p+o.x*.004)); ctx.fillStyle='rgba('+o.c+','+a+')'; ctx.beginPath(); ctx.arc(o.x+Math.sin(t/650+o.x*.012)*3,o.y,o.r,0,6.283); ctx.fill(); });
+        ctx.globalCompositeOperation='source-over'; } },
+    boda:{ init:function(){ this.p=[]; var C=['242,201,194','233,214,180','212,170,160','168,135,74'];
+        for(var i=0;i<cnt(40);i++) this.p.push({x:R(0,W),y:R(-H,H),s:R(5,11),vy:R(.4,1),r:R(0,6.28),vr:R(-.02,.02),p:R(0,6.28),c:C[Math.floor(R(0,C.length))]});
+        this.lv=[]; for(var j=0;j<cnt(10);j++) this.lv.push({x:R(0,W),y:R(-H,H),s:R(8,14),vy:R(.3,.7),r:R(0,6.28),p:R(0,6.28)}); },
+      draw:function(t){
+        this.p.forEach(function(p){ p.y+=p.vy; p.x+=Math.sin(t/1400+p.p)*.6; p.r+=p.vr; if(p.y>H+20){ p.y=-20; p.x=R(0,W); }
+          ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r); ctx.scale(1,.55+.45*Math.abs(Math.sin(t/700+p.p))); ctx.fillStyle='rgba('+p.c+',.75)'; ctx.beginPath(); ctx.ellipse(0,0,p.s,p.s*.62,0,0,6.283); ctx.fill(); ctx.restore(); });
+        this.lv.forEach(function(l){ l.y+=l.vy; l.x+=Math.sin(t/1800+l.p)*.5; if(l.y>H+20){ l.y=-20; l.x=R(0,W); }
+          ctx.save(); ctx.translate(l.x,l.y); ctx.rotate(l.r+Math.sin(t/1200+l.p)*.6); ctx.fillStyle='rgba(125,139,98,.55)'; ctx.beginPath(); ctx.moveTo(0,-l.s); ctx.quadraticCurveTo(l.s*.6,0,0,l.s); ctx.quadraticCurveTo(-l.s*.6,0,0,-l.s); ctx.fill(); ctx.restore(); }); } },
+    juguetes:{ init:function(){ this.b=[]; var C=['232,69,44','47,111,224','47,179,107','255,140,26','138,79,224'], Lt='ABCDEFGHIJKLMNOPQRSTUVWXYZ123';
+        for(var i=0;i<cnt(18);i++) this.b.push({x:R(0,W),y:R(-H,H),s:R(26,46),vy:R(.5,1.1),r:R(0,6.28),vr:R(-.01,.01),c:C[Math.floor(R(0,C.length))],l:Lt[Math.floor(R(0,Lt.length))]});
+        this.cf=[]; for(var j=0;j<cnt(40);j++) this.cf.push({x:R(0,W),y:R(-H,H),w:R(4,9),h:R(8,14),vy:R(.8,1.6),r:R(0,6.28),c:C[Math.floor(R(0,C.length))],p:R(0,6.28)}); },
+      draw:function(t){
+        this.cf.forEach(function(c){ c.y+=c.vy; c.r+=.04; if(c.y>H+20){ c.y=-20; c.x=R(0,W); } ctx.save(); ctx.translate(c.x+Math.sin(t/900+c.p)*8,c.y); ctx.rotate(c.r); ctx.fillStyle='rgba('+c.c+',.8)'; ctx.fillRect(-c.w/2,-c.h/2*Math.abs(Math.cos(c.r*2)),c.w,c.h*Math.abs(Math.cos(c.r*2))+1); ctx.restore(); });
+        this.b.forEach(function(b){ b.y+=b.vy; b.r+=b.vr; if(b.y>H+60){ b.y=-60; b.x=R(0,W); } var s=b.s;
+          ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(b.r);
+          ctx.fillStyle='rgba(0,0,0,.12)'; rr(-s/2+3,-s/2+5,s,s,s*.16); ctx.fill();
+          ctx.fillStyle='rgb('+b.c+')'; rr(-s/2,-s/2,s,s,s*.16); ctx.fill();
+          ctx.fillStyle='rgba(255,255,255,.25)'; rr(-s/2+3,-s/2+3,s-6,s*.3,s*.1); ctx.fill();
+          ctx.fillStyle='#fff'; ctx.font='800 '+Math.round(s*.6)+'px "Baloo 2", sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(b.l,0,s*.06); ctx.restore(); }); } },
+    emociones:{ init:function(){ this.o=[]; var C=['255,210,63','79,140,255','255,107,107','63,209,160','169,116,255','255,150,210'];
+        for(var i=0;i<6;i++) this.o.push({c:C[i],x:R(0,W),y:R(0,H),r:R(Math.max(W,H)*.22,Math.max(W,H)*.38),ax:R(.00012,.00025),ay:R(.0001,.0002),p:R(0,6.28)});
+        this.bb=[]; for(var j=0;j<cnt(26);j++) this.bb.push({x:R(0,W),y:R(0,H),r:R(3,9),vy:R(.2,.6),p:R(0,6.28),c:C[Math.floor(R(0,C.length))]}); },
+      draw:function(t){
+        this.o.forEach(function(o){ var x=o.x+Math.sin(t*o.ax+o.p)*W*.25, y=o.y+Math.cos(t*o.ay+o.p)*H*.2; glow(x,y,o.r,o.c,.42); });
+        this.bb.forEach(function(b){ b.y-=b.vy; b.x+=Math.sin(t/1200+b.p)*.4; if(b.y<-20){ b.y=H+20; b.x=R(0,W); } ctx.strokeStyle='rgba('+b.c+',.7)'; ctx.lineWidth=1.4; ctx.beginPath(); ctx.arc(b.x,b.y,b.r,0,6.283); ctx.stroke(); ctx.fillStyle='rgba(255,255,255,.5)'; ctx.beginPath(); ctx.arc(b.x-b.r*.35,b.y-b.r*.35,b.r*.22,0,6.283); ctx.fill(); }); } },
+    espacio:{ init:function(){ this.st=[]; for(var i=0;i<cnt(220);i++) this.st.push({x:R(-1,1),y:R(-1,1),z:R(.05,1)});
+        this.pl=[{x:W*.85,y:H*.22,r:Math.min(W,H)*.09,c1:'255,209,161',c2:'255,138,61',ring:true,p:0},{x:W*.12,y:H*.75,r:Math.min(W,H)*.045,c1:'180,200,255',c2:'79,100,200',ring:false,p:2}]; },
+      draw:function(t){ var cx=W/2, cy=H/2;
+        this.st.forEach(function(s){ s.z-=.0018; if(s.z<=.02){ s.z=1; s.x=R(-1,1); s.y=R(-1,1); } var x=cx+s.x/s.z*W*.3, y=cy+s.y/s.z*H*.3; if(x<0||x>W||y<0||y>H) return; var a=Math.min(1,(1-s.z)*1.4); ctx.fillStyle='rgba(230,240,255,'+a+')'; ctx.beginPath(); ctx.arc(x,y,(1-s.z)*1.8+.2,0,6.283); ctx.fill(); });
+        this.pl.forEach(function(p){ var y=p.y+Math.sin(t/3000+p.p)*10, g=ctx.createRadialGradient(p.x-p.r*.35,y-p.r*.35,p.r*.1,p.x,y,p.r);
+          g.addColorStop(0,'rgb('+p.c1+')'); g.addColorStop(.6,'rgb('+p.c2+')'); g.addColorStop(1,'rgba(20,10,40,1)'); ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,y,p.r,0,6.283); ctx.fill();
+          if(p.ring){ ctx.strokeStyle='rgba(230,240,255,.5)'; ctx.lineWidth=p.r*.09; ctx.beginPath(); ctx.ellipse(p.x,y,p.r*1.7,p.r*.34,-.3,0,6.283); ctx.stroke(); } }); } },
+    baby:{ init:function(){ this.cl=[]; for(var i=0;i<cnt(7);i++) this.cl.push({x:R(-200,W),y:R(0,H*.9),s:R(.6,1.4),v:R(.12,.35)});
+        this.ba=[]; var C=['247,182,203','169,207,255','255,224,138','190,230,200']; for(var j=0;j<cnt(9);j++) this.ba.push({x:R(0,W),y:R(0,H+300),s:R(18,30),vy:R(.35,.8),p:R(0,6.28),c:C[Math.floor(R(0,C.length))]}); },
+      draw:function(t){
+        this.cl.forEach(function(c){ c.x+=c.v; if(c.x>W+200){ c.x=-220; c.y=R(0,H*.9); } var s=c.s; ctx.fillStyle='rgba(255,255,255,.9)';
+          [[0,0,38],[36,-14,46],[78,0,36],[40,12,40]].forEach(function(q){ ctx.beginPath(); ctx.arc(c.x+q[0]*s,c.y+q[1]*s,q[2]*s,0,6.283); ctx.fill(); }); });
+        this.ba.forEach(function(b){ b.y-=b.vy; if(b.y<-120){ b.y=H+100; b.x=R(0,W); } var x=b.x+Math.sin(t/1500+b.p)*12, s=b.s;
+          ctx.strokeStyle='rgba(138,151,181,.6)'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(x,b.y+s*1.2); ctx.quadraticCurveTo(x-8,b.y+s*2.2,x,b.y+s*3.2); ctx.stroke();
+          ctx.fillStyle='rgba('+b.c+',.9)'; ctx.beginPath(); ctx.ellipse(x,b.y,s*.85,s,0,0,6.283); ctx.fill();
+          ctx.fillStyle='rgba(255,255,255,.45)'; ctx.beginPath(); ctx.ellipse(x-s*.3,b.y-s*.4,s*.18,s*.28,0,0,6.283); ctx.fill(); }); } }
+  };
+  var alpha = {}; Object.keys(S).forEach(function(k){ alpha[k] = k==='prologo' ? 1 : 0; });
+  function size(){
+    var dpr = Math.min(window.devicePixelRatio||1, 2); W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W*dpr; cv.height = H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    Object.keys(S).forEach(function(k){ S[k].init(); });
+  }
+  function frame(t){
+    ctx.clearRect(0,0,W,H);
+    Object.keys(S).forEach(function(k){
+      alpha[k] += ((k===current?1:0) - alpha[k]) * .05;
+      if(alpha[k] > .01){ ctx.globalAlpha = alpha[k]; S[k].draw(t); }
+    });
+    ctx.globalAlpha = 1;
+  }
+  function drawStatic(){ Object.keys(alpha).forEach(function(k){ alpha[k] = k===current?1:0; }); frame(1000); }
+  size(); pick();
+  window.addEventListener('resize', function(){ size(); if(reduce) drawStatic(); });
+  if(reduce){ drawStatic(); return; }
+  function loop(t){ frame(t); requestAnimationFrame(loop); }
+  requestAnimationFrame(loop);
+})();
+</script>
+
 </body>
 </html>
