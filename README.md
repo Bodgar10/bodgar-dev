@@ -31,3 +31,9 @@ Página privada (sin enlaces desde el sitio, `noindex`) para un torneo amateur
 entre amigos. HTML/CSS/JS sueltos en `aom/x7k2/`, sin el rastreador `t.js`.
 Datos en el proyecto de Supabase de Rally, esquema privado `aom`:
 ver `supabase/aom/001_torneo.sql` (incluye cómo armar la liga y capturar resultados).
+
+## /bodgar-31/ — Invitación de cumpleaños (Tepoz Open 31)
+
+Página privada (sin enlaces desde el sitio, `noindex`), igual que `/xv-azul/`.
+Todo en `bodgar-31/`: `index.html` (los datos editables están en `CONFIG` al
+final), `fotos/` y `og.jpg` (vista previa 1200×630 para WhatsApp).
