@@ -277,6 +277,11 @@ footer small{font-family:var(--caps);font-size:.68rem;letter-spacing:.32em;color
 
 .mapas{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:4px}
 .mapas .btn{padding:10px 14px;font-size:.62rem;letter-spacing:.14em}
+.wa-label{font-family:var(--caps);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-align:center;margin-top:4px}
+.wa-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.wa-btns .btn{padding:12px 6px;gap:6px;font-size:.72rem;letter-spacing:.1em}
+.wa-btns .btn svg{width:15px;height:15px;flex:none}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rv.pre{opacity:1;transform:none}
@@ -616,14 +621,15 @@ footer small{font-family:var(--caps);font-size:.68rem;letter-spacing:.32em;color
         <label class="f" for="rs-msg">Unas palabras para Azul (opcional)
           <textarea id="rs-msg" placeholder="Escribe tu deseo para la princesa"></textarea>
         </label>
-        <a id="rs-send" class="btn solid" target="_blank" rel="noopener" href="https://wa.me/525569861439">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>
-          Confirmar por WhatsApp
-        </a>
+        <div class="wa-label">Confirma con quien prefieras</div>
+        <div class="wa-btns">
+          <a class="btn solid wa" data-num="525619030169" target="_blank" rel="noopener" href="https://wa.me/525619030169"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Mamá</a>
+          <a class="btn solid wa" data-num="525618642869" target="_blank" rel="noopener" href="https://wa.me/525618642869"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Papá</a>
+          <a class="btn solid wa" data-num="525569861439" target="_blank" rel="noopener" href="https://wa.me/525569861439"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Azul</a>
+        </div>
         <p class="hint">Se abrirá WhatsApp con tu respuesta lista para enviar.</p>
       </form>
     </div>
-    <div class="phone"><code id="num">55 6986 1439</code><button class="btn mini" id="copy" type="button">Copiar número</button></div>
   </section>
 
   <footer class="rv">
@@ -699,7 +705,7 @@ footer small{font-family:var(--caps);font-size:.68rem;letter-spacing:.32em;color
   } catch (err) { if (window.console) console.error(err); }
   try {
   /* Confirmación */
-  var form = document.getElementById('rsvp'), send = document.getElementById('rs-send');
+  var form = document.getElementById('rsvp'), sends = document.querySelectorAll('.wa-btns .wa');
   var nameI = document.getElementById('rs-name'), guests = document.getElementById('rs-guests'), msg = document.getElementById('rs-msg');
   function updateRsvp(){
     var yes = document.getElementById('rs-yes').checked;
@@ -708,7 +714,7 @@ footer small{font-family:var(--caps);font-size:.68rem;letter-spacing:.32em;color
       ? 'Hola, soy ' + who + '. Confirmo mi asistencia a los XV años de Azul Aneida el domingo 6 de diciembre. Personas: ' + guests.value + '.'
       : 'Hola, soy ' + who + '. No podré asistir a los XV años de Azul Aneida. ¡Muchas felicidades!';
     if(msg.value.trim()) t += '\nPara Azul: ' + msg.value.trim();
-    send.href = 'https://wa.me/525569861439?text=' + encodeURIComponent(t);
+    for (var k = 0; k < sends.length; k++) sends[k].href = 'https://wa.me/' + sends[k].getAttribute('data-num') + '?text=' + encodeURIComponent(t);
     guests.disabled = !yes;
   }
   form.addEventListener('input', updateRsvp); form.addEventListener('change', updateRsvp);
@@ -717,19 +723,7 @@ footer small{font-family:var(--caps);font-size:.68rem;letter-spacing:.32em;color
 
   } catch (err) { if (window.console) console.error(err); }
   try {
-  /* Copiar número */
-  var copyBtn = document.getElementById('copy');
-  copyBtn.addEventListener('click', function(){
-    function fallback(){
-      var r = document.createRange(); r.selectNodeContents(document.getElementById('num'));
-      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
-      copyBtn.textContent = 'Número seleccionado';
-    }
-    try{ navigator.clipboard.writeText('5569861439').then(function(){ copyBtn.textContent = 'Copiado'; }, fallback); }
-    catch(e){ fallback(); }
-    setTimeout(function(){ copyBtn.textContent = 'Copiar número'; }, 2200);
-  });
-
+  /* (sin número visible) */
   } catch (err) { if (window.console) console.error(err); }
   try {
   /* Cielo mágico: estrellas, estrellas fugaces, polvo dorado y estela de varita al tocar */
