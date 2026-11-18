@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F2F6F7">
+<title>Software a medida para consultorios y clínicas dentales | Bodgar Espinosa</title>
+<meta name="description" content="Sistemas a medida para consultorios dentales: presupuestos con seguimiento, sillones sin huecos, ortodoncia y sus mensualidades, tratamientos por fases, laboratorio, especialistas y expediente con odontograma.">
+<link rel="canonical" href="https://bodgar.dev/plataformas/dentistas/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bodgar.dev/plataformas/dentistas/">
+<meta property="og:title" content="Del presupuesto al tratamiento terminado, sin que nada se quede a medias">
+<meta property="og:description" content="Software a la medida para consultorios dentales: presupuestos que se aceptan, sillones ocupados, ortodoncia al corriente y tratamientos que sí se terminan.">
+<meta property="og:image" content="https://bodgar.dev/assets/og-plataformas.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/sora-latin-a3354b18.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="dentistas.css">
+<script>document.documentElement.className += " js";</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="g-barrido" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#BFF0EA" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+    <symbol id="i-diente" viewBox="0 0 32 32"><path d="M9 4.5 C5.6 4.5 4 7.4 4 10.6 C4 15 6.4 17.4 7.4 21.6 C8.2 25 8.6 28 10.4 28 C12.4 28 12.4 22 16 22 C19.6 22 19.6 28 21.6 28 C23.4 28 23.8 25 24.6 21.6 C25.6 17.4 28 15 28 10.6 C28 7.4 26.4 4.5 23 4.5 C20.4 4.5 19 6.2 16 6.2 C13 6.2 11.6 4.5 9 4.5 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="marca" href="/plataformas/"><svg aria-hidden="true"><use href="#i-diente"/></svg><span>Bodgar Espinosa <em>· dentistas</em></span></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#problemas">Problemas</a>
+      <a href="#app">La plataforma</a>
+      <a href="#costo">Cuánto cuesta</a>
+      <a href="#plan">Tu plan</a>
+      <a href="#precios">Precios</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HÉROE: el plan de tratamiento de Laura -->
+<section class="hero" id="inicio">
+  <div class="hero__grid">
+    <div class="hero__txt">
+      <span class="eyebrow">Para consultorios y clínicas dentales</span>
+      <h1>Del presupuesto al tratamiento terminado, <span>sin que nada se quede a medias.</span></h1>
+      <p class="hero__sub"><b>Encuentro dónde tu consultorio está perdiendo pacientes, horas de sillón o ingresos, y construyo software para atacar primero ese punto.</b> Presupuestos que nadie siguió, sillones vacíos, coronas que nunca se colocaron. No tienes que cambiar toda tu operación: empezamos por una fuga concreta, medimos si mejora y solo después seguimos.</p>
+      <ul class="promesas" aria-label="Tres promesas">
+        <li>Presupuestos que se aceptan</li><li>Sillones ocupados</li><li>Tratamientos terminados</li>
+      </ul>
+      <div class="hero__ctas">
+        <a class="boton boton--wa" data-t="wa-diagnostico-hero" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20dentistas%20y%20quiero%20solicitar%20el%20diagn%C3%B3stico%20sin%20costo.%20Tenemos%20____%20sillones." target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar diagnóstico sin costo</a>
+        <a class="boton boton--linea" href="#problemas" data-t="ver-problemas">Ver qué te pasa ↓</a>
+      </div>
+      <p class="nota hero__diag">45 minutos para revisar cómo funciona tu consultorio. Después te entrego un documento con oportunidades, prioridades y una propuesta. <b>Aunque decidas no construirlo conmigo, el diagnóstico es tuyo.</b></p>
+    </div>
+
+    <div class="consulta" aria-hidden="true">
+      <div class="consulta__cab">
+        <div><span>Expediente · plan de tratamiento</span><b>Laura G.</b><span class="consulta__estado" id="estado">Presupuesto entregado</span></div>
+        <span class="sim">Simulación</span>
+      </div>
+      <div class="odonto-wrap">
+      <svg class="odonto" id="odonto" viewBox="0 0 520 358">
+        <path class="encia" d="M73.8 147.5 L76.2 140.2 L79.5 133.0 L83.7 125.9 L88.8 119.0 L94.8 112.4 L101.6 106.0 L109.3 99.8 L117.7 94.0 L126.8 88.6 L136.7 83.5 L147.1 78.8 L158.2 74.6 L169.7 70.8 L181.7 67.4 L194.2 64.6 L206.9 62.2 L220.0 60.4 L233.2 59.1 L246.6 58.3 L260.0 58.0 L273.4 58.3 L286.8 59.1 L300.0 60.4 L313.1 62.2 L325.8 64.6 L338.3 67.4 L350.3 70.8 L361.8 74.6 L372.9 78.8 L383.3 83.5 L393.2 88.6 L402.3 94.0 L410.7 99.8 L418.4 106.0 L425.2 112.4 L431.2 119.0 L436.3 125.9 L440.5 133.0 L443.8 140.2 L446.2 147.5"/>
+        <path class="encia" d="M73.8 210.5 L76.2 217.8 L79.5 225.0 L83.7 232.1 L88.8 239.0 L94.8 245.6 L101.6 252.0 L109.3 258.2 L117.7 264.0 L126.8 269.4 L136.7 274.5 L147.1 279.2 L158.2 283.4 L169.7 287.2 L181.7 290.6 L194.2 293.4 L206.9 295.8 L220.0 297.6 L233.2 298.9 L246.6 299.7 L260.0 300.0 L273.4 299.7 L286.8 298.9 L300.0 297.6 L313.1 295.8 L325.8 293.4 L338.3 290.6 L350.3 287.2 L361.8 283.4 L372.9 279.2 L383.3 274.5 L393.2 269.4 L402.3 264.0 L410.7 258.2 L418.4 252.0 L425.2 245.6 L431.2 239.0 L436.3 232.1 L440.5 225.0 L443.8 217.8 L446.2 210.5"/>
+        <text class="arco-k" x="260" y="132" text-anchor="middle">Superior</text>
+        <text class="arco-k" x="260" y="236" text-anchor="middle">Inferior</text>
+        <g class="diente" data-n="18" transform="translate(78.8 134.3) rotate(-74.6)"><rect class="corona-d" x="-14.5" y="-14.5" width="29" height="29" rx="7"/><rect class="brillo" x="-10.5" y="-10.5" width="8.5" height="4" rx="2"/><rect class="tapa" x="-12.5" y="-12.5" width="25" height="25" rx="6"/><circle class="anillo" r="11.5"/><path class="conducto" d="M0 -8.5 V8.5"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="17" transform="translate(92.2 115.1) rotate(-63.2)"><rect class="corona-d" x="-16.0" y="-16.0" width="32" height="32" rx="7"/><rect class="brillo" x="-12.0" y="-12.0" width="10.0" height="4" rx="2"/><rect class="tapa" x="-14.0" y="-14.0" width="28" height="28" rx="6"/><circle class="anillo" r="13.0"/><path class="conducto" d="M0 -10.0 V10.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="16" transform="translate(113.8 96.6) rotate(-51.0)"><rect class="corona-d" x="-16.5" y="-16.5" width="33" height="33" rx="7"/><rect class="brillo" x="-12.5" y="-12.5" width="10.5" height="4" rx="2"/><rect class="tapa" x="-14.5" y="-14.5" width="29" height="29" rx="6"/><circle class="anillo" r="13.5"/><path class="conducto" d="M0 -10.5 V10.5"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="15" transform="translate(138.2 82.8) rotate(-40.4)"><rect class="corona-d" x="-12.0" y="-15.0" width="24" height="30" rx="8"/><rect class="brillo" x="-8.0" y="-11.0" width="6.0" height="4" rx="2"/><rect class="tapa" x="-10.0" y="-13.0" width="20" height="26" rx="7"/><circle class="anillo" r="9.0"/><path class="conducto" d="M0 -9.0 V9.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="14" transform="translate(162.0 73.2) rotate(-31.4)"><rect class="corona-d" x="-12.0" y="-15.0" width="24" height="30" rx="8"/><rect class="brillo" x="-8.0" y="-11.0" width="6.0" height="4" rx="2"/><rect class="tapa" x="-10.0" y="-13.0" width="20" height="26" rx="7"/><circle class="anillo" r="9.0"/><path class="conducto" d="M0 -9.0 V9.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="13" transform="translate(188.3 65.9) rotate(-22.4)"><rect class="corona-d" x="-12.0" y="-17.5" width="24" height="35" rx="8"/><rect class="brillo" x="-8.0" y="-13.5" width="6.0" height="4" rx="2"/><rect class="tapa" x="-10.0" y="-15.5" width="20" height="31" rx="7"/><circle class="anillo" r="9.0"/><path class="conducto" d="M0 -11.5 V11.5"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="12" transform="translate(215.1 61.0) rotate(-13.8)"><rect class="corona-d" x="-11.0" y="-15.0" width="22" height="30" rx="8"/><rect class="brillo" x="-7.0" y="-11.0" width="5.0" height="4" rx="2"/><rect class="tapa" x="-9.0" y="-13.0" width="18" height="26" rx="7"/><circle class="anillo" r="8.0"/><path class="conducto" d="M0 -9.0 V9.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="11" transform="translate(244.1 58.4) rotate(-4.9)"><rect class="corona-d" x="-13.0" y="-16.5" width="26" height="33" rx="8"/><rect class="brillo" x="-9.0" y="-12.5" width="7.0" height="4" rx="2"/><rect class="tapa" x="-11.0" y="-14.5" width="22" height="29" rx="7"/><circle class="anillo" r="10.0"/><path class="conducto" d="M0 -10.5 V10.5"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="21" transform="translate(275.9 58.4) rotate(4.9)"><rect class="corona-d" x="-13.0" y="-16.5" width="26" height="33" rx="8"/><rect class="brillo" x="-9.0" y="-12.5" width="7.0" height="4" rx="2"/><rect class="tapa" x="-11.0" y="-14.5" width="22" height="29" rx="7"/><circle class="anillo" r="10.0"/><path class="conducto" d="M0 -10.5 V10.5"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="22" transform="translate(304.9 61.0) rotate(13.8)"><rect class="corona-d" x="-11.0" y="-15.0" width="22" height="30" rx="8"/><rect class="brillo" x="-7.0" y="-11.0" width="5.0" height="4" rx="2"/><rect class="tapa" x="-9.0" y="-13.0" width="18" height="26" rx="7"/><circle class="anillo" r="8.0"/><path class="conducto" d="M0 -9.0 V9.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="23" transform="translate(331.7 65.9) rotate(22.4)"><rect class="corona-d" x="-12.0" y="-17.5" width="24" height="35" rx="8"/><rect class="brillo" x="-8.0" y="-13.5" width="6.0" height="4" rx="2"/><rect class="tapa" x="-10.0" y="-15.5" width="20" height="31" rx="7"/><circle class="anillo" r="9.0"/><path class="conducto" d="M0 -11.5 V11.5"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="24" transform="translate(358.0 73.2) rotate(31.4)"><rect class="corona-d" x="-12.0" y="-15.0" width="24" height="30" rx="8"/><rect class="brillo" x="-8.0" y="-11.0" width="6.0" height="4" rx="2"/><rect class="tapa" x="-10.0" y="-13.0" width="20" height="26" rx="7"/><circle class="anillo" r="9.0"/><path class="conducto" d="M0 -9.0 V9.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="25" transform="translate(381.8 82.8) rotate(40.4)"><rect class="corona-d" x="-12.0" y="-15.0" width="24" height="30" rx="8"/><rect class="brillo" x="-8.0" y="-11.0" width="6.0" height="4" rx="2"/><rect class="tapa" x="-10.0" y="-13.0" width="20" height="26" rx="7"/><circle class="anillo" r="9.0"/><path class="conducto" d="M0 -9.0 V9.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="26" transform="translate(406.2 96.6) rotate(51.0)"><rect class="corona-d" x="-16.5" y="-16.5" width="33" height="33" rx="7"/><rect class="brillo" x="-12.5" y="-12.5" width="10.5" height="4" rx="2"/><rect class="tapa" x="-14.5" y="-14.5" width="29" height="29" rx="6"/><circle class="anillo" r="13.5"/><path class="conducto" d="M0 -10.5 V10.5"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="27" transform="translate(427.8 115.1) rotate(63.2)"><rect class="corona-d" x="-16.0" y="-16.0" width="32" height="32" rx="7"/><rect class="brillo" x="-12.0" y="-12.0" width="10.0" height="4" rx="2"/><rect class="tapa" x="-14.0" y="-14.0" width="28" height="28" rx="6"/><circle class="anillo" r="13.0"/><path class="conducto" d="M0 -10.0 V10.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="28" transform="translate(441.2 134.3) rotate(74.6)"><rect class="corona-d" x="-14.5" y="-14.5" width="29" height="29" rx="7"/><rect class="brillo" x="-10.5" y="-10.5" width="8.5" height="4" rx="2"/><rect class="tapa" x="-12.5" y="-12.5" width="25" height="25" rx="6"/><circle class="anillo" r="11.5"/><path class="conducto" d="M0 -8.5 V8.5"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="48" transform="translate(78.8 223.7) rotate(74.6)"><rect class="corona-d" x="-14.5" y="-14.5" width="29" height="29" rx="7"/><rect class="brillo" x="-10.5" y="-10.5" width="8.5" height="4" rx="2"/><rect class="tapa" x="-12.5" y="-12.5" width="25" height="25" rx="6"/><circle class="anillo" r="11.5"/><path class="conducto" d="M0 -8.5 V8.5"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="47" transform="translate(92.2 242.9) rotate(63.2)"><rect class="corona-d" x="-16.0" y="-16.0" width="32" height="32" rx="7"/><rect class="brillo" x="-12.0" y="-12.0" width="10.0" height="4" rx="2"/><rect class="tapa" x="-14.0" y="-14.0" width="28" height="28" rx="6"/><circle class="anillo" r="13.0"/><path class="conducto" d="M0 -10.0 V10.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="46" transform="translate(113.8 261.4) rotate(51.0)"><rect class="corona-d" x="-16.5" y="-16.5" width="33" height="33" rx="7"/><rect class="brillo" x="-12.5" y="-12.5" width="10.5" height="4" rx="2"/><rect class="tapa" x="-14.5" y="-14.5" width="29" height="29" rx="6"/><circle class="anillo" r="13.5"/><path class="conducto" d="M0 -10.5 V10.5"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="45" transform="translate(138.2 275.2) rotate(40.4)"><rect class="corona-d" x="-12.0" y="-15.0" width="24" height="30" rx="8"/><rect class="brillo" x="-8.0" y="-11.0" width="6.0" height="4" rx="2"/><rect class="tapa" x="-10.0" y="-13.0" width="20" height="26" rx="7"/><circle class="anillo" r="9.0"/><path class="conducto" d="M0 -9.0 V9.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="44" transform="translate(162.0 284.8) rotate(31.4)"><rect class="corona-d" x="-12.0" y="-15.0" width="24" height="30" rx="8"/><rect class="brillo" x="-8.0" y="-11.0" width="6.0" height="4" rx="2"/><rect class="tapa" x="-10.0" y="-13.0" width="20" height="26" rx="7"/><circle class="anillo" r="9.0"/><path class="conducto" d="M0 -9.0 V9.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="43" transform="translate(188.3 292.1) rotate(22.4)"><rect class="corona-d" x="-12.0" y="-17.5" width="24" height="35" rx="8"/><rect class="brillo" x="-8.0" y="-13.5" width="6.0" height="4" rx="2"/><rect class="tapa" x="-10.0" y="-15.5" width="20" height="31" rx="7"/><circle class="anillo" r="9.0"/><path class="conducto" d="M0 -11.5 V11.5"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="42" transform="translate(215.1 297.0) rotate(13.8)"><rect class="corona-d" x="-11.0" y="-15.0" width="22" height="30" rx="8"/><rect class="brillo" x="-7.0" y="-11.0" width="5.0" height="4" rx="2"/><rect class="tapa" x="-9.0" y="-13.0" width="18" height="26" rx="7"/><circle class="anillo" r="8.0"/><path class="conducto" d="M0 -9.0 V9.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="41" transform="translate(244.1 299.6) rotate(4.9)"><rect class="corona-d" x="-13.0" y="-16.5" width="26" height="33" rx="8"/><rect class="brillo" x="-9.0" y="-12.5" width="7.0" height="4" rx="2"/><rect class="tapa" x="-11.0" y="-14.5" width="22" height="29" rx="7"/><circle class="anillo" r="10.0"/><path class="conducto" d="M0 -10.5 V10.5"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="31" transform="translate(275.9 299.6) rotate(-4.9)"><rect class="corona-d" x="-13.0" y="-16.5" width="26" height="33" rx="8"/><rect class="brillo" x="-9.0" y="-12.5" width="7.0" height="4" rx="2"/><rect class="tapa" x="-11.0" y="-14.5" width="22" height="29" rx="7"/><circle class="anillo" r="10.0"/><path class="conducto" d="M0 -10.5 V10.5"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="32" transform="translate(304.9 297.0) rotate(-13.8)"><rect class="corona-d" x="-11.0" y="-15.0" width="22" height="30" rx="8"/><rect class="brillo" x="-7.0" y="-11.0" width="5.0" height="4" rx="2"/><rect class="tapa" x="-9.0" y="-13.0" width="18" height="26" rx="7"/><circle class="anillo" r="8.0"/><path class="conducto" d="M0 -9.0 V9.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="33" transform="translate(331.7 292.1) rotate(-22.4)"><rect class="corona-d" x="-12.0" y="-17.5" width="24" height="35" rx="8"/><rect class="brillo" x="-8.0" y="-13.5" width="6.0" height="4" rx="2"/><rect class="tapa" x="-10.0" y="-15.5" width="20" height="31" rx="7"/><circle class="anillo" r="9.0"/><path class="conducto" d="M0 -11.5 V11.5"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="34" transform="translate(358.0 284.8) rotate(-31.4)"><rect class="corona-d" x="-12.0" y="-15.0" width="24" height="30" rx="8"/><rect class="brillo" x="-8.0" y="-11.0" width="6.0" height="4" rx="2"/><rect class="tapa" x="-10.0" y="-13.0" width="20" height="26" rx="7"/><circle class="anillo" r="9.0"/><path class="conducto" d="M0 -9.0 V9.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="35" transform="translate(381.8 275.2) rotate(-40.4)"><rect class="corona-d" x="-12.0" y="-15.0" width="24" height="30" rx="8"/><rect class="brillo" x="-8.0" y="-11.0" width="6.0" height="4" rx="2"/><rect class="tapa" x="-10.0" y="-13.0" width="20" height="26" rx="7"/><circle class="anillo" r="9.0"/><path class="conducto" d="M0 -9.0 V9.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="36" transform="translate(406.2 261.4) rotate(-51.0)"><rect class="corona-d" x="-16.5" y="-16.5" width="33" height="33" rx="7"/><rect class="brillo" x="-12.5" y="-12.5" width="10.5" height="4" rx="2"/><rect class="tapa" x="-14.5" y="-14.5" width="29" height="29" rx="6"/><circle class="anillo" r="13.5"/><path class="conducto" d="M0 -10.5 V10.5"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="37" transform="translate(427.8 242.9) rotate(-63.2)"><rect class="corona-d" x="-16.0" y="-16.0" width="32" height="32" rx="7"/><rect class="brillo" x="-12.0" y="-12.0" width="10.0" height="4" rx="2"/><rect class="tapa" x="-14.0" y="-14.0" width="28" height="28" rx="6"/><circle class="anillo" r="13.0"/><path class="conducto" d="M0 -10.0 V10.0"/><circle class="marca" r="4.2"/></g>
+        <g class="diente" data-n="38" transform="translate(441.2 223.7) rotate(-74.6)"><rect class="corona-d" x="-14.5" y="-14.5" width="29" height="29" rx="7"/><rect class="brillo" x="-10.5" y="-10.5" width="8.5" height="4" rx="2"/><rect class="tapa" x="-12.5" y="-12.5" width="25" height="25" rx="6"/><circle class="anillo" r="11.5"/><path class="conducto" d="M0 -8.5 V8.5"/><circle class="marca" r="4.2"/></g>
+        <text class="num" data-n="18" x="44.1" y="127.8">18</text>
+        <text class="num" data-n="17" x="60.1" y="101.8">17</text>
+        <text class="num" data-n="16" x="85.9" y="76.9">16</text>
+        <text class="num" data-n="15" x="114.9" y="58.3">15</text>
+        <text class="num" data-n="14" x="143.3" y="45.5">14</text>
+        <text class="num" data-n="13" x="174.5" y="35.6">13</text>
+        <text class="num" data-n="12" x="206.4" y="29.1">12</text>
+        <text class="num" data-n="11" x="241.0" y="25.5">11</text>
+        <text class="num" data-n="21" x="279.0" y="25.5">21</text>
+        <text class="num" data-n="22" x="313.6" y="29.1">22</text>
+        <text class="num" data-n="23" x="345.5" y="35.6">23</text>
+        <text class="num" data-n="24" x="376.7" y="45.5">24</text>
+        <text class="num" data-n="25" x="405.1" y="58.3">25</text>
+        <text class="num" data-n="26" x="434.1" y="76.9">26</text>
+        <text class="num" data-n="27" x="459.9" y="101.8">27</text>
+        <text class="num" data-n="28" x="475.9" y="127.8">28</text>
+        <text class="num" data-n="48" x="44.1" y="236.2">48</text>
+        <text class="num" data-n="47" x="60.1" y="262.2">47</text>
+        <text class="num" data-n="46" x="85.9" y="287.1">46</text>
+        <text class="num" data-n="45" x="114.9" y="305.7">45</text>
+        <text class="num" data-n="44" x="143.3" y="318.5">44</text>
+        <text class="num" data-n="43" x="174.5" y="328.4">43</text>
+        <text class="num" data-n="42" x="206.4" y="334.9">42</text>
+        <text class="num" data-n="41" x="241.0" y="338.5">41</text>
+        <text class="num" data-n="31" x="279.0" y="338.5">31</text>
+        <text class="num" data-n="32" x="313.6" y="334.9">32</text>
+        <text class="num" data-n="33" x="345.5" y="328.4">33</text>
+        <text class="num" data-n="34" x="376.7" y="318.5">34</text>
+        <text class="num" data-n="35" x="405.1" y="305.7">35</text>
+        <text class="num" data-n="36" x="434.1" y="287.1">36</text>
+        <text class="num" data-n="37" x="459.9" y="262.2">37</text>
+        <text class="num" data-n="38" x="475.9" y="236.2">38</text>
+        <rect class="barrido" id="barrido" x="60" y="20" width="160" height="320"/>
+      </svg>
+        <div class="aviso-hud" id="hud"><span id="hud-k">↗ Presupuesto entregado</span><b id="hud-t">Laura G. · 3 fases · $12,600</b></div>
+      </div>
+      <span class="sello-presu" id="sello">Aceptado</span>
+      <div class="presu"><span>Presupuesto</span><b>$12,600 <em id="presu-pag"></em></b></div>
+      <div class="fases-h">
+        <div class="fase-h" id="f1"><small>Fase 1</small><b>Limpieza y 2 resinas</b><em>$2,600</em><i></i></div>
+        <div class="fase-h" id="f2"><small>Fase 2</small><b>Endodoncia 36</b><em>$4,500</em><i></i></div>
+        <div class="fase-h" id="f3"><small>Fase 3</small><b>Corona 36</b><em>$5,500</em><i></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="agenda" aria-hidden="true">
+    <div class="agenda__cab">
+      <span class="agenda__dia">Hoy · jueves <i>Simulación</i></span>
+      <span class="agenda__cont">Citas atendidas <b id="ag-ses">0</b></span>
+      <span class="agenda__cont agenda__cont--dinero">Recuperado esta semana <b id="ag-rec">$3,600</b></span>
+    </div>
+    <div class="agenda__vista" id="ag-vista">
+      <div class="agenda__pista" id="ag-pista">
+        <div class="agenda__ahora" id="ag-ahora"><span>ahora</span></div>
+      </div>
+    </div>
+    <div class="agenda__ley"><span style="--c:var(--salvia)">Sillón 1</span><span style="--c:var(--terra)">Sillón 2</span></div>
+  </div>
+</section>
+
+<!-- 1 · PROBLEMAS -->
+<section class="seccion" id="problemas">
+  <div class="cab">
+    <span class="eyebrow" data-n="1">Problemas</span>
+    <h2>¿Alguno de estos te pasa?</h2>
+    <p class="intro">Toca cualquiera para ver cómo se resuelve y cuánto dinero hay detrás. Lo que abras se va armando como tu plan de tratamiento.</p>
+    <p class="nota">Las cifras son ejemplos para pensar el negocio, no una promesa de resultado.</p>
+  </div>
+
+  <ul class="tarjetas compacta" id="tarjetas">
+    <li class="tj tj--dinero" data-card="presupuestos">
+      <div class="tj__top"><span>Nº 01</span><span>Presupuestos</span></div>
+      <p class="tj__frase">Este mes entregaste 20 presupuestos. 12 pacientes nunca regresaron.</p>
+      <p class="tj__sub">Si 3 de esos 12 hubieran aceptado un tratamiento de $12,000: <b>$36,000</b> que se quedaron en un papel.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="presupuestos">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Un presupuesto entregado todavía no es un paciente perdido.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>12 presupuestos sin respuesta · si 1 de cada 4 acepta con seguimiento = 3 × $12,000 = <b>$36,000 al mes</b> en tratamientos aceptados.</p></div>
+        <p>Cada presupuesto queda registrado con sus fases, su precio y su vigencia. Si a los días que tú decidas no hay respuesta, el sistema le manda al paciente el recordatorio que tu consultorio aprobó, o le avisa a recepción que le llame. El paciente puede aceptar por fases y ver cuánto paga en cada una.</p>
+        <ol class="flujo">
+          <li><b>Presupuesto entregado</b><small>lunes · $12,600</small></li>
+          <li class="x"><b>Sin respuesta</b><small>3 días</small></li>
+          <li><b>Recordatorio</b><small>«tu plan sigue vigente»</small></li>
+          <li class="ok"><b>Aceptó la fase 1</b><small>anticipo $1,300</small></li>
+        </ol>
+        <div class="ok-barra">3 presupuestos rescatados este mes · $36,000 en tratamientos <span class="ejemplo">Ejemplo</span></div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Pacientes que ya te habían dicho «lo pienso» y regresan, porque alguien les dio seguimiento a tiempo. Sin que recepción tenga que acordarse de todos.</p></div>
+        <a class="boton boton--wa" data-t="wa-presupuestos" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20dentistas.%20A%20los%20presupuestos%20que%20entregamos%20hoy%20les%20damos%20seguimiento%20as%C3%AD%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero dar seguimiento a mis presupuestos</a>
+      </div>
+    </li>
+
+    <li class="tj tj--dinero" data-card="cancelaciones">
+      <div class="tj__top"><span>Nº 02</span><span>Sillón vacío</span></div>
+      <p class="tj__frase">Esta semana el sillón 2 estuvo vacío 5 horas por cancelaciones y faltas.</p>
+      <p class="tj__sub">A $900 la hora de sillón: <b>$4,500 a la semana</b> de un sillón que ya pagaste (asistente, renta, equipo).</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="cancelaciones">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Una cancelación no tiene que convertirse en una hora de sillón perdida.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>5 horas vacías × $900 = <b>$4,500 a la semana</b> · cerca de <b>$19,000 al mes</b> de sillón sin usar.</p></div>
+        <p>Un día antes, el paciente recibe su recordatorio con dos botones: «Confirmo» o «Necesito cambiarla». Si cancela, el horario se libera y se avisa a los pacientes en lista de espera; el primero que lo toma, se queda con él. Y si alguien falta dos veces, el sistema puede pedirle anticipo en su siguiente cita: la regla la pones tú.</p>
+        <p class="regla">Regla del consultorio: 2 faltas = anticipo de $300 <span class="ejemplo">Ejemplo</span></p>
+        <ol class="flujo">
+          <li class="x"><b>Andrea cancela</b><small>jueves 10:00 · sillón 2</small></li>
+          <li><b>Se libera</b><small>al instante</small></li>
+          <li><b>Aviso a 3</b><small>lista de espera</small></li>
+          <li class="ok"><b>Luis lo toma</b><small>limpieza recuperada</small></li>
+        </ol>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Horas de sillón que se vuelven a vender en lugar de perderse. Ya construyo esta clase de automatización: en la plataforma de consulta que está en producción, un horario apartado y no pagado se libera solo cada noche.</p></div>
+        <a class="boton boton--wa" data-t="wa-cancelaciones" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20dentistas.%20Nos%20pasa%20lo%20de%20los%20sillones%20vac%C3%ADos%20por%20cancelaciones.%20Hoy%20confirmamos%20las%20citas%20as%C3%AD%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero llenar esos huecos</a>
+      </div>
+    </li>
+
+    <li class="tj tj--dinero" data-card="ortodoncia">
+      <div class="tj__top"><span>Nº 03</span><span>Ortodoncia</span></div>
+      <p class="tj__frase">Tienes 38 pacientes de ortodoncia. 6 no vinieron a su control este mes.</p>
+      <p class="tj__sub">Cada control que no se da es <b>una mensualidad que no se cobra</b> y un tratamiento que se alarga.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="ortodoncia">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Ningún paciente de ortodoncia se pierde entre un mes y otro.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>6 controles que no se dieron × $900 de mensualidad = <b>$5,400 este mes</b>. Y cada mes que se alarga un tratamiento es un mes más de sillón por el mismo precio.</p></div>
+        <p>Cada paciente de ortodoncia tiene su plan: en qué mes va, cuántos controles lleva, cuánto ha pagado y cuánto le falta. A mitad de mes, los que no han agendado su control aparecen en una lista para llamarles, y el recordatorio de pago sale solo.</p>
+        <div class="orto">
+          <div class="orto__cab"><span>Valeria S. · ortodoncia · 24 meses</span><span class="ejemplo">Ejemplo</span></div>
+          <div class="orto__meses" aria-hidden="true"><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="carta__datos"><span>Mes <b>14 de 24</b></span><span>Pagados <b>13</b></span><span>Saldo <b>$9,900</b></span></div>
+          <div class="alerta">Sin control este mes · llamarle para agendar</div>
+        </div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Mensualidades al corriente y tratamientos que terminan cuando deben, sin una libreta de quién vino y quién no.</p></div>
+        <a class="boton boton--wa" data-t="wa-ortodoncia" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20dentistas.%20Tenemos%20unos%20____%20pacientes%20de%20ortodoncia%20y%20los%20controles%20y%20pagos%20los%20llevamos%20en%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero ordenar la ortodoncia</a>
+      </div>
+    </li>
+
+    <li class="tj" data-card="fases">
+      <div class="tj__top"><span>Nº 04</span><span>Tratamientos a medias</span></div>
+      <p class="tj__frase">Le hicieron la endodoncia. La corona nunca se colocó.</p>
+      <p class="tj__sub">4 al mes con una corona de $5,500 pendiente: <b>$22,000</b>, y un tratamiento que se queda a la mitad.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="fases">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Cuando termina una fase, la siguiente ya tiene fecha.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>4 tratamientos al mes que se quedan en la primera fase × $5,500 de la fase que faltaba = <b>$22,000 al mes</b>.</p></div>
+        <p>El plan de tratamiento vive en el expediente, dividido en fases. Cuando una se termina, el sistema revisa que la siguiente quede agendada; si pasan los días que tú definas sin cita, le avisa a recepción. Tú decides los tiempos y el tratamiento: el sistema solo no deja que se olvide.</p>
+        <div class="fases">
+          <div class="fases__cab"><span>Laura G. · pieza 36</span><span class="ejemplo">Ejemplo</span></div>
+          <ol>
+            <li class="ok"><i>✓</i><div><b>Endodoncia</b><small>2 citas · 12 y 19 de octubre</small></div><em>$4,500</em></li>
+            <li><i>2</i><div><b>Poste y muñón</b><small>se coloca antes de la corona</small></div><em>incluido</em></li>
+            <li class="no"><i>!</i><div><b>Corona de zirconia</b><small>28 días sin cita</small></div><em>$5,500</em></li>
+          </ol>
+          <div class="alerta">La fase 2 no está agendada · avisar a recepción</div>
+        </div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Tratamientos que se terminan, pacientes que no regresan meses después con un problema y fases que sí se cobran.</p></div>
+        <a class="boton boton--wa" data-t="wa-fases" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20dentistas.%20Los%20tratamientos%20por%20fases%20hoy%20los%20seguimos%20en%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero que se terminen los tratamientos</a>
+      </div>
+    </li>
+
+    <li class="tj" data-card="laboratorio">
+      <div class="tj__top"><span>Nº 05</span><span>Laboratorio</span></div>
+      <p class="tj__frase">El paciente llegó a su cita. La corona no había llegado del laboratorio.</p>
+      <p class="tj__sub">Una hora de sillón perdida, un paciente molesto y <b>otra cita que reacomodar</b>.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="laboratorio">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Te enteras un día antes, no con el paciente en el sillón.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>Cada trabajo que no llega a tiempo es una hora de sillón perdida (≈ <b>$900</b>) y un paciente que pierde la mañana por nada.</p></div>
+        <p>Cada trabajo de laboratorio queda con su orden: paciente, laboratorio, fecha de envío, fecha prometida y la cita en la que se coloca. Un día antes de esa cita, si el trabajo no está marcado como recibido, recepción recibe el aviso a tiempo para llamarle al laboratorio o mover la cita. Al cierre de mes, sabes cuánto le debes a cada laboratorio.</p>
+        <div class="lab">
+          <div class="lab__cab"><span>Trabajos de laboratorio · esta semana</span><span class="ejemplo">Ejemplo</span></div>
+          <div class="lab__f"><b>Corona de zirconia · Laura G.</b><small>Lab. Norte · prometida martes</small><em class="ok">✓ Recibida</em></div>
+          <div class="lab__f"><b>Guarda oclusal · Pedro R.</b><small>Lab. Norte · prometida miércoles</small><em>En proceso</em></div>
+          <div class="lab__f"><b>Prótesis parcial · Ana M.</b><small>Lab. Centro · prometida hoy · cita mañana 10:00</small><em class="mal">⚠ No ha llegado</em></div>
+        </div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Cero citas perdidas por un trabajo que no llegó, y el seguimiento del laboratorio fuera del WhatsApp de recepción.</p></div>
+        <a class="boton boton--wa" data-t="wa-laboratorio" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20dentistas.%20Los%20trabajos%20de%20laboratorio%20hoy%20los%20seguimos%20en%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero controlar el laboratorio</a>
+      </div>
+    </li>
+
+    <li class="tj" data-card="especialistas">
+      <div class="tj__top"><span>Nº 06</span><span>Especialistas</span></div>
+      <p class="tj__frase">El endodoncista viene los martes. Su porcentaje se calcula a mano a fin de mes.</p>
+      <p class="tj__sub">Horas con la calculadora y <b>aclaraciones de «a mí me tocaba más»</b> cada corte.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="especialistas">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>El corte de cada especialista sale solo, y cuadra.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>Si el corte de 3 especialistas toma <b>6 horas al mes</b> más las aclaraciones, eso es lo que hoy cuesta. Con el sistema, el corte sale con un clic.</p></div>
+        <p>Cada tratamiento registra quién lo hizo, cuánto se cobró y cuánto se ha pagado. El porcentaje de cada especialista se calcula sobre lo que ustedes acuerden (lo cobrado, lo realizado o una tarifa fija) y el corte de mes sale listo, con el detalle por paciente para que nadie tenga que preguntar.</p>
+        <div class="corte">
+          <div class="corte__cab"><span>Corte de noviembre · Dr. Ramírez, endodoncia</span><span class="ejemplo">Ejemplo</span></div>
+          <div class="corte__f"><b>6 endodoncias cobradas</b><small>de 8 realizadas</small><em>$27,000</em></div>
+          <div class="corte__f"><b>Porcentaje acordado</b><small>sobre lo cobrado</small><em>40%</em></div>
+          <div class="corte__f"><b>2 pendientes de cobro</b><small>entran al corte cuando se cobren</small><em>—</em></div>
+          <div class="corte__f total"><b>A pagar</b><small>con detalle por paciente</small><em>$10,800</em></div>
+        </div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Cortes que cuadran a la primera, especialistas que confían en el número y una recepción que deja de hacer cuentas.</p></div>
+        <a class="boton boton--wa" data-t="wa-especialistas" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20dentistas.%20Trabajamos%20con%20____%20especialistas%20y%20sus%20porcentajes%20los%20calculamos%20en%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero que el corte salga solo</a>
+      </div>
+    </li>
+
+    <li class="tj" data-card="leads">
+      <div class="tj__top"><span>Nº 07</span><span>Captación</span></div>
+      <p class="tj__frase">45 personas preguntaron por brackets este mes. 4 empezaron tratamiento.</p>
+      <p class="tj__sub">De 4 a 6 son 2 tratamientos de $22,000: <b>+$44,000</b> con la misma publicidad.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="leads">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>¿De dónde vienen los pacientes que sí aceptan su presupuesto?</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>De 4 a 6 pacientes nuevos de ortodoncia × $22,000 = <b>+$44,000</b> sin gastar un peso más en anuncios.</p></div>
+        <p>Una página web te dice cuántas personas entraron. Yo conecto el resto: anuncio → WhatsApp → valoración → presupuesto → tratamiento. Así sabes qué canal trae pacientes que de verdad aceptan, cuánto cuesta conseguir uno y en qué paso se pierden.</p>
+        <div class="embudo">
+          <div class="embudo__cab"><span>Instagram · brackets · este mes</span><span class="ejemplo">Ejemplo</span></div>
+          <div class="embudo__f"><span>Preguntaron por WhatsApp</span><b>45</b><i style="--w:100%"></i></div>
+          <div class="embudo__f"><span>Agendaron valoración</span><b>14</b><i style="--w:31%"></i></div>
+          <div class="embudo__f"><span>Asistieron</span><b>10</b><i style="--w:22%"></i></div>
+          <div class="embudo__f"><span>Recibieron presupuesto</span><b>9</b><i style="--w:20%"></i></div>
+          <div class="embudo__f"><span>Empezaron tratamiento</span><b>4</b><i style="--w:9%"></i></div>
+        </div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Saber en qué canal invertir y en qué paso se te van los pacientes. No cuántos likes hubo: cuántos tratamientos empezaron.</p></div>
+        <a class="boton boton--wa" data-t="wa-leads" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20dentistas.%20Queremos%20saber%20qu%C3%A9%20canal%20nos%20trae%20pacientes.%20Hoy%20anunciamos%20en%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero medir la captación</a>
+      </div>
+    </li>
+
+    <li class="tj" data-card="portal">
+      <div class="tj__top"><span>Nº 08</span><span>Recepción</span></div>
+      <p class="tj__frase">«¿Cuánto me falta por pagar?» Recepción lo contesta 30 veces al día.</p>
+      <p class="tj__sub">30 mensajes × 2 minutos = <b>casi 22 horas al mes</b> respondiendo lo mismo.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="portal">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Menos «¿a qué hora es mi cita?» por WhatsApp.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>30 mensajes al día × 2 min = 60 min diarios ≈ <b>22 horas al mes</b> que podrían ser agenda, cobranza o seguimiento de presupuestos.</p></div>
+        <p>El paciente consulta lo que tu consultorio decida mostrar, sin escribirle a recepción: su próxima cita (y la confirma con un botón), su presupuesto por fases, lo que ha pagado y lo que le falta, las indicaciones que le dejó su dentista y sus comprobantes.</p>
+        <div class="cel">
+          <div class="cel__cab"><span>Portal · Laura G.</span><span class="ejemplo">Ejemplo</span></div>
+          <div class="portal-kpis">
+            <div><b>Jue 10:00</b><span>próxima cita</span></div>
+            <div><b>$7,500</b><span>por pagar</span></div>
+            <div><b>2 de 3</b><span>fase actual</span></div>
+          </div>
+        </div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Una recepción que atiende pacientes en lugar de contestar mensajes, y pacientes que saben exactamente en qué va su tratamiento.</p></div>
+        <a class="boton boton--wa" data-t="wa-portal" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20dentistas.%20Recepci%C3%B3n%20contesta%20todo%20el%20d%C3%ADa%20por%20WhatsApp.%20Lo%20que%20m%C3%A1s%20nos%20preguntan%20es%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero liberar a recepción</a>
+      </div>
+    </li>
+
+    <li class="tj" data-card="expediente">
+      <div class="tj__top"><span>Nº 09</span><span>Expediente</span></div>
+      <p class="tj__frase">La radiografía de este paciente está en el WhatsApp de alguien.</p>
+      <p class="tj__sub">Odontograma en papel, consentimiento en una carpeta y la radiografía en un chat: <b>tres lugares para un solo paciente</b>.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="expediente">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Un solo expediente, en cualquier sillón.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>Cada vez que alguien busca una radiografía en un chat o un consentimiento en una carpeta se van minutos de sillón, y con varios dentistas, cada uno trabaja con una versión distinta del paciente.</p></div>
+        <p>Odontograma, notas de cada cita, radiografías y fotos, presupuestos y consentimientos en un solo lugar. El consentimiento se firma con el dedo en la pantalla y queda guardado con fecha (la firma en pantalla ya la construí y está en uso). Cada persona ve lo que le corresponde según su rol: dentista, especialista, asistente o recepción.</p>
+        <div class="exped">
+          <div class="exped__cab"><span>Laura G. · expediente</span><span class="ejemplo">Ejemplo</span></div>
+          <div class="exped__dientes" aria-hidden="true"><i></i><i class="r"></i><i></i><i class="c"></i><i></i><i class="r"></i><i></i><i></i></div>
+          <ul>
+            <li><span>Radiografía periapical · 36</span><em>12 oct</em></li>
+            <li><span>Consentimiento de endodoncia</span><em class="ok">✓ firmado en pantalla</em></li>
+            <li><span>Nota · resina en 26</span><em>Dra. Paula · 9 oct</em></li>
+          </ul>
+        </div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Todo el paciente en una pantalla, sin buscar en chats, y un consultorio que puede sumar dentistas o sillones sin perder el hilo.</p></div>
+        <a class="boton boton--wa" data-t="wa-expediente" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20dentistas.%20Hoy%20el%20expediente%2C%20las%20radiograf%C3%ADas%20y%20los%20consentimientos%20los%20guardamos%20en%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero un solo expediente</a>
+      </div>
+    </li>
+
+    <li class="tj tj--crece" data-card="limpiezas">
+      <div class="tj__top"><span>Nº 10</span><span>Tu base de pacientes</span></div>
+      <p class="tj__frase">Hace 6 meses le hiciste limpieza a 120 pacientes. ¿Cuántos ya agendaron la siguiente?</p>
+      <p class="tj__sub">Si 30% vuelve a una limpieza de $700: <b>$25,200</b> de pacientes que ya eran tuyos.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="limpiezas">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Que cada paciente regrese cuando le toca.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>120 limpiezas de hace 6 meses · si 30% regresa con un recordatorio = 36 × $700 = <b>$25,200</b> de una base que el consultorio ya tenía. Y en esa cita, muchas veces sale el siguiente tratamiento.</p></div>
+        <p>Tú defines cada cuánto le toca a cada paciente su limpieza o revisión (cada 6 meses, cada 3 en un paciente periodontal, lo que indique el dentista), y el sistema le escribe a tiempo con un botón para agendar.</p>
+        <ol class="flujo">
+          <li class="ok"><b>Limpieza</b><small>12 de mayo</small></li>
+          <li><b>5 meses</b><small>«ya casi te toca»</small></li>
+          <li><b>6 meses</b><small>botón para agendar</small></li>
+          <li class="ok"><b>Agendó</b><small>14 de noviembre</small></li>
+        </ol>
+        <ul class="servicios">
+          <li>limpieza cada 6 meses</li><li>revisión anual</li><li>mantenimiento periodontal</li><li>revisión de ortodoncia terminada</li><li>campañas que el consultorio decida</li>
+        </ul>
+        <p class="big-line">Tu base de pacientes también es un activo.</p>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Agenda que se llena con pacientes que ya confían en ti, antes de gastar en conseguir nuevos.</p></div>
+        <a class="boton boton--wa" data-t="wa-limpiezas" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20dentistas.%20Hacemos%20unas%20____%20limpiezas%20al%20mes%20y%20a%20los%20pacientes%20no%20les%20recordamos%20la%20siguiente." target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero que regresen a tiempo</a>
+      </div>
+    </li>
+  </ul>
+  <button type="button" class="tarjetas-mas" id="tarjetas-mas">Ver 6 problemas más</button>
+
+  <div class="conteo">
+    <p>Revisaste <b id="conteo-n">0</b> de 10.</p>
+    <a class="boton boton--terra" href="#plan" id="conteo-ir" data-t="ver-plan" hidden>Ver tu plan ↓</a>
+  </div>
+
+  <dialog class="ficha" id="ficha" aria-labelledby="ficha-frase">
+    <div class="ficha__cab">
+      <span class="ficha__tag" id="ficha-tag"></span>
+      <button type="button" class="ficha__x" id="ficha-x" aria-label="Cerrar">×</button>
+    </div>
+    <p class="ficha__frase" id="ficha-frase"></p>
+    <div class="ficha__cuerpo" id="ficha-cuerpo"></div>
+    <div class="ficha__pie">
+      <button type="button" class="boton boton--linea" id="ficha-otro">Ver otro problema</button>
+      <button type="button" class="boton boton--terra" id="ficha-plan">Ver tu plan ↓</button>
+      <button type="button" class="ficha__quitar" id="ficha-quitar">Quitar de tu plan</button>
+    </div>
+  </dialog>
+</section>
+
+<!-- 2 · LA PLATAFORMA -->
+<section class="seccion" id="app">
+  <div class="cab rv">
+    <span class="eyebrow" data-n="2">La plataforma</span>
+    <h2>Así se vería. Del lado del paciente y del tuyo.</h2>
+    <p class="intro">Tócala: es una simulación, pero funciona. Confirma una cita, acepta una fase del presupuesto o marca un trabajo de laboratorio como recibido.</p>
+  </div>
+
+  <div class="demo rv">
+    <div class="demo__lado">
+      <div class="vista-sw" role="tablist" aria-label="De quién es la vista">
+        <button type="button" role="tab" aria-selected="true" data-vista="paciente">Lo que ve tu paciente</button>
+        <button type="button" role="tab" aria-selected="false" data-vista="tu">Lo que ves tú</button>
+      </div>
+      <ul class="demo__lista" data-de="paciente">
+        <li><button type="button" data-pant="cita"><b>Su próxima cita</b><span>La confirma o pide cambio con un botón. Recepción se entera sin llamar.</span></button></li>
+        <li><button type="button" data-pant="presu"><b>Su presupuesto por fases</b><span>Qué incluye cada fase, cuánto cuesta y cuál sigue. Puede aceptar la siguiente desde ahí.</span></button></li>
+        <li><button type="button" data-pant="pagos"><b>Sus pagos</b><span>Lo pagado, lo que falta y su comprobante. Con recordatorio.</span></button></li>
+        <li><button type="button" data-pant="indic"><b>Sus indicaciones</b><span>Las que le dejó su dentista después del tratamiento, para que no tenga que preguntar.</span></button></li>
+      </ul>
+      <ul class="demo__lista" data-de="tu" hidden>
+        <li><button type="button" data-pant="hoy"><b>Hoy, por sillón</b><span>Quién confirmó, quién no, y qué trabajo de laboratorio se coloca.</span></button></li>
+        <li><button type="button" data-pant="segui"><b>Presupuestos por seguir</b><span>Los que no han contestado, cuántos días llevan y cuánto suman.</span></button></li>
+        <li><button type="button" data-pant="lab"><b>Laboratorio</b><span>Cada trabajo con su fecha prometida y la cita en la que se coloca.</span></button></li>
+        <li><button type="button" data-pant="corte"><b>Corte de especialistas</b><span>El porcentaje de cada uno, calculado sobre lo que acordaron.</span></button></li>
+      </ul>
+      <p class="nota">Datos de ejemplo. Lo que se muestra y cómo se llama se ajusta a tu consultorio.</p>
+    </div>
+
+    <div class="cel-demo" id="cel">
+      <div class="cel-demo__marco">
+        <div class="cel-demo__barra"><span>9:41</span><i></i><span>●●● 5G</span></div>
+
+        <!-- Vista paciente -->
+        <div class="app" data-de="paciente">
+          <div class="app__cab"><span>Hola, Laura<small>Consultorio dental · ejemplo</small></span><b class="chip-app">Fase 2 de 3</b></div>
+          <div class="pantallas">
+            <div class="pant activa" data-pant="cita">
+              <div class="tarj tarj--tinta">
+                <span class="k">Tu próxima cita</span>
+                <b class="grande">Jueves 20 de noviembre · 10:00</b>
+                <small>Endodoncia 36 · cita 2 de 2 · sillón 1</small>
+                <div class="botones">
+                  <button type="button" class="app__cta app__cta--aqua" id="cita-si">Confirmo</button>
+                  <button type="button" class="app__cta app__cta--linea" id="cita-cambio">Cambiarla</button>
+                </div>
+              </div>
+              <div class="tarj">
+                <span class="k">Antes de tu cita</span>
+                <small style="font-size:14px;color:var(--tinta-2)">Llega 10 minutos antes. Si tomas algún medicamento nuevo, avísanos.</small>
+              </div>
+              <span class="k">Tus citas anteriores</span>
+              <ul class="filas">
+                <li><div><b>Endodoncia · cita 1</b><small>12 de octubre</small></div><em class="ok">✓</em></li>
+                <li><div><b>Limpieza y 2 resinas</b><small>2 de octubre</small></div><em class="ok">✓</em></li>
+              </ul>
+            </div>
+
+            <div class="pant" data-pant="presu">
+              <div class="tarj">
+                <span class="k">Tu plan de tratamiento</span>
+                <div class="fase-app ok"><i>✓</i><div><b>Limpieza y 2 resinas</b><small>terminada</small></div><em>$2,600</em></div>
+                <div class="fase-app curso"><i>2</i><div><b>Endodoncia 36</b><small>en curso · 1 de 2 citas</small></div><em>$4,500</em></div>
+                <div class="fase-app" id="fase3"><i>3</i><div><b>Corona de zirconia 36</b><small id="fase3-est">por aceptar</small></div><em>$5,500</em></div>
+                <span class="k" style="margin-top:6px">Total $12,600 · pagado $5,100</span>
+                <div class="barra-app"><i id="presu-barra" style="--w:40%"></i></div>
+              </div>
+              <button type="button" class="app__cta" id="aceptar-f3">Aceptar la fase 3</button>
+              <p class="app__nota">Tu dentista te explica cada fase. Aceptarla aquí solo aparta tu lugar.</p>
+            </div>
+
+            <div class="pant" data-pant="pagos">
+              <div class="tarj">
+                <span class="k">Pagado</span>
+                <b class="grande" id="pag-n">$5,100 <small>de $12,600</small></b>
+                <div class="barra-app"><i id="pag-barra" style="--w:40%"></i></div>
+                <small id="pag-estado">Por pagar: $7,500 · siguiente pago al iniciar la fase 3</small>
+              </div>
+              <button type="button" class="app__cta" id="pag-subir">Ya transferí · subir comprobante</button>
+              <span class="k">Historial</span>
+              <ul class="filas">
+                <li><div><b>Anticipo endodoncia</b><small>12 de octubre</small></div><em class="ok">$2,500</em></li>
+                <li><div><b>Fase 1 completa</b><small>2 de octubre</small></div><em class="ok">$2,600</em></li>
+              </ul>
+            </div>
+
+            <div class="pant" data-pant="indic">
+              <span class="k">Después de tu endodoncia · las escribió tu dentista</span>
+              <ul class="indic">
+                <li>Evita masticar alimentos duros de ese lado hasta que te coloquemos la corona.</li>
+                <li>Si tienes alguna molestia que no cede, escríbenos por aquí.</li>
+                <li>Tu siguiente fase es la corona: te avisamos cuando llegue del laboratorio.</li>
+              </ul>
+              <p class="app__nota">Ejemplo. Las indicaciones las define el dentista para cada tratamiento.</p>
+            </div>
+          </div>
+          <nav class="app__tabs">
+            <button type="button" data-pant="cita" class="activa"><i>📅</i>Cita</button>
+            <button type="button" data-pant="presu"><i>🦷</i>Plan</button>
+            <button type="button" data-pant="pagos"><i>💳</i>Pagos</button>
+            <button type="button" data-pant="indic"><i>📝</i>Indicaciones</button>
+          </nav>
+        </div>
+
+        <!-- Vista consultorio -->
+        <div class="app app--tu" data-de="tu" hidden>
+          <div class="app__cab"><span>Tu consultorio<small>jueves · ejemplo</small></span><b class="chip-app">2 sillones</b></div>
+          <div class="pantallas">
+            <div class="pant activa" data-pant="hoy">
+              <div class="kpis"><div><b>14</b><span>citas hoy</span></div><div><b id="hoy-conf">11</b><span>confirmadas</span></div><div><b id="hoy-pend">3</b><span>por confirmar</span></div></div>
+              <ul class="filas">
+                <li><div><b>10:00 · S1 · Laura G.</b><small>endodoncia 2 de 2</small></div><em class="ok">✓</em></li>
+                <li class="borde-esp" id="hoy-marco"><div><b>11:00 · S2 · Marco T.</b><small>no ha confirmado</small></div><button type="button" class="mini-btn" id="hoy-recordar">Recordarle</button></li>
+                <li><div><b>12:00 · S1 · Sofía L.</b><small>corona · laboratorio ✓ recibida</small></div><em class="ok">✓</em></li>
+                <li class="borde-mal"><div><b>13:00 · S2 · Ana M.</b><small>prótesis · el laboratorio no la ha entregado</small></div><em class="mal">!</em></li>
+              </ul>
+            </div>
+
+            <div class="pant" data-pant="segui">
+              <span class="k">Aceptados este mes</span>
+              <b class="grande" style="font-family:var(--display);font-size:28px;letter-spacing:-0.02em" id="seg-tot">$41,300</b>
+              <div class="barra-app"><i id="seg-barra" style="--w:46%"></i></div>
+              <small style="font-size:12px;color:var(--gris)">de $90,000 presupuestados</small>
+              <span class="k">Sin respuesta</span>
+              <ul class="filas">
+                <li class="borde-esp"><div><b>Carla V. · $14,500</b><small>3 días · ortodoncia</small></div><button type="button" class="mini-btn" data-seguir="14500">Recordarle</button></li>
+                <li class="borde-mal"><div><b>Raúl C. · $8,200</b><small>7 días · implante</small></div><button type="button" class="mini-btn" data-seguir="8200">Llamarle</button></li>
+                <li class="borde-esp"><div><b>Elena T. · $3,900</b><small>4 días · resinas</small></div><button type="button" class="mini-btn" data-seguir="3900">Recordarle</button></li>
+              </ul>
+              <p class="app__nota">Tú decides cuándo y qué se le dice. La plataforma solo te avisa a tiempo.</p>
+            </div>
+
+            <div class="pant" data-pant="lab">
+              <span class="k">Trabajos de laboratorio</span>
+              <ul class="filas">
+                <li class="hecho"><div><b>Corona · Sofía L.</b><small>Lab. Norte · se coloca hoy 12:00</small></div><em class="ok">✓ Recibida</em></li>
+                <li class="borde-mal" id="lab-ana"><div><b>Prótesis · Ana M.</b><small>Lab. Centro · prometida ayer · cita hoy 13:00</small></div><button type="button" class="mini-btn" id="lab-recibir">Marcar recibida</button></li>
+                <li><div><b>Guarda oclusal · Pedro R.</b><small>Lab. Norte · prometida el martes</small></div><em>En proceso</em></li>
+              </ul>
+              <div class="tarj"><span class="k">Por pagar a laboratorios · noviembre</span><b class="grande">$18,400</b><small>Lab. Norte $11,200 · Lab. Centro $7,200</small></div>
+            </div>
+
+            <div class="pant" data-pant="corte">
+              <span class="k">Corte de noviembre</span>
+              <ul class="filas">
+                <li><div><b>Dr. Ramírez · endodoncia</b><small>6 cobradas · 40%</small></div><em>$10,800</em></li>
+                <li><div><b>Dra. Núñez · ortodoncia</b><small>32 controles · tarifa fija</small></div><em>$12,800</em></li>
+                <li><div><b>Dr. Ortiz · cirugía</b><small>3 extracciones · 35%</small></div><em>$3,150</em></li>
+              </ul>
+              <button type="button" class="app__cta" id="corte-excel">Descargar el corte en Excel</button>
+              <p class="app__nota">El porcentaje y la base de cálculo los acuerda cada consultorio con su especialista.</p>
+            </div>
+          </div>
+          <nav class="app__tabs">
+            <button type="button" data-pant="hoy" class="activa"><i>🪥</i>Hoy</button>
+            <button type="button" data-pant="segui"><i>📋</i>Presupuestos</button>
+            <button type="button" data-pant="lab"><i>📦</i>Laboratorio</button>
+            <button type="button" data-pant="corte"><i>💰</i>Corte</button>
+          </nav>
+        </div>
+        <div class="toast" id="toast" role="status"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · CUÁNTO PODRÍA ESTAR COSTÁNDOTE -->
+<section class="seccion" id="costo">
+  <div class="cab">
+    <span class="eyebrow" data-n="3">Cuánto cuesta</span>
+    <h2>¿Cuánto podría estar costándote?</h2>
+    <p class="intro">Selecciona lo que te pasa y calcúlalo con tus números. Toma un minuto. Unas son fugas; otras, ingreso que tu base de pacientes ya podría generar.</p>
+  </div>
+  <div class="checks" id="checks">
+    <label><input type="checkbox" value="presu"><span><b>Presupuestos que no regresan</b><small>El paciente dice «lo pienso» y no vuelve.</small></span></label>
+    <label><input type="checkbox" value="cancel"><span><b>Cancelaciones y faltas</b><small>El sillón se queda vacío.</small></span></label>
+    <label><input type="checkbox" value="orto"><span><b>Controles de ortodoncia que no se dan</b><small>Mensualidades que no se cobran.</small></span></label>
+    <label><input type="checkbox" value="fases"><span><b>Tratamientos que se quedan a medias</b><small>La siguiente fase nunca se agenda.</small></span></label>
+    <label><input type="checkbox" value="leads"><span><b>Prospectos que preguntan y no agendan</b><small>Preguntan precio y desaparecen.</small></span></label>
+    <label><input type="checkbox" value="limpiezas"><span><b>Pacientes que no regresan a su limpieza</b><small>Nadie les recuerda que ya les toca.</small></span></label>
+  </div>
+  <div class="checks__pie">
+    <button type="button" class="boton boton--terra" id="diag-abrir">Calcular con mis números →</button>
+    <p class="aviso" id="checks-aviso" hidden>Selecciona al menos una.</p>
+  </div>
+
+  <dialog class="ficha diag" id="diag" aria-labelledby="diag-titulo">
+    <div class="ficha__cab">
+      <span class="ficha__tag">Diagnóstico económico</span>
+      <button type="button" class="ficha__x" id="diag-x" aria-label="Cerrar">×</button>
+    </div>
+    <div class="ficha__cuerpo">
+      <h3 id="diag-titulo">Con tus números</h3>
+      <div class="monitor__pantalla diag__total">
+        <span class="monitor__k">Ingreso y capacidad no aprovechados</span>
+        <b class="monitor__num" id="diag-num">$0</b>
+        <svg class="monitor__ecg" viewBox="0 0 600 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34 H180 L196 34 L206 12 L218 54 L230 4 L242 40 L252 34 H420 L432 34 L440 22 L450 44 L458 34 H600"/></svg>
+        <span class="monitor__det">al mes, aproximadamente</span>
+      </div>
+      <p class="diag__aviso">No significa que todo sea recuperable. En el diagnóstico revisamos cuánto sí podría atacarse y por dónde conviene empezar.</p>
+      <div id="diag-filas"></div>
+    </div>
+    <div class="ficha__pie">
+      <a class="boton boton--wa" id="diag-wa" data-t="wa-diagnostico-calc" href="#" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar diagnóstico sin costo</a>
+      <button type="button" class="boton boton--linea" id="diag-cerrar">Seguir viendo</button>
+    </div>
+  </dialog>
+</section>
+
+<!-- 4 · PLAN DE TRATAMIENTO -->
+<section class="seccion" id="plan">
+  <div class="cab">
+    <span class="eyebrow" data-n="4">Tu plan</span>
+    <h2 id="plan-titulo">Marca arriba lo que te pasa y aquí aparece tu plan.</h2>
+    <p class="intro" id="plan-intro">Un solo sistema, construido alrededor de tu consultorio. Empezamos por lo que más dinero o tiempo te cuesta.</p>
+  </div>
+
+  <div class="receta" id="receta">
+    <div class="receta__cab">
+      <div><span class="receta__k">Plan de tratamiento</span><b>Tu consultorio</b></div>
+      <span class="receta__folio" id="receta-folio">Exp. DEN-000</span>
+    </div>
+    <div class="receta__vacia" id="receta-vacia">
+      <p>Todavía no marcas ningún problema.</p>
+      <a class="boton boton--tinta" href="#problemas" data-t="volver-problemas">Ver los problemas ↑</a>
+    </div>
+    <ol class="receta__lista" id="receta-lista"></ol>
+    <div class="receta__inicio" id="receta-inicio" hidden>
+      <span>Primera fase: por dónde empezaría yo</span>
+      <b id="receta-primero"></b>
+      <p id="receta-porque"></p>
+    </div>
+  </div>
+
+  <h3 class="sub">¿Qué gana el consultorio? El software tiene que pagarse solo.</h3>
+  <ul class="ganas" id="ganas">
+    <li data-tipo="recupera"><i>$</i><b>Recuperas ingresos</b><span>Presupuestos que se aceptan, sillones que se vuelven a llenar y mensualidades al corriente.</span></li>
+    <li data-tipo="retiene"><i>♥</i><b>Terminas tratamientos</b><span>Cada fase tiene fecha y ningún paciente se queda a la mitad.</span></li>
+    <li data-tipo="capta"><i>↗</i><b>Captas mejor</b><span>Sabes qué canal trae pacientes que sí aceptan su presupuesto.</span></li>
+    <li data-tipo="libera"><i>⏱</i><b>Liberas a recepción</b><span>Menos mensajes, menos cuentas a mano, laboratorio y cortes bajo control.</span></li>
+    <li data-tipo="crece"><i>＋</i><b>Creces con tu base</b><span>Pacientes que regresan cuando les toca: tu base también es un activo.</span></li>
+  </ul>
+  <p class="remate">No hace falta comprar todo. Primero resolvemos un proceso real y vemos si funciona en tu consultorio.</p>
+
+  <h3 class="sub">Si quieres crecer, así crecería.</h3>
+  <ol class="ruta">
+    <li><span class="ruta__n">1</span><b id="ruta-1">Un solo flujo</b><p id="ruta-1p">En producción, con tu equipo real. Medimos antes y después.</p></li>
+    <li><span class="ruta__n">2</span><b id="ruta-2">El siguiente proceso</b><p id="ruta-2p">Solo si el primero funcionó. Mismo sistema, otra parte del consultorio.</p></li>
+    <li><span class="ruta__n">3</span><b id="ruta-3">Portal del paciente</b><p id="ruta-3p">Citas, presupuesto y pagos en su celular. Menos mensajes a recepción.</p></li>
+    <li class="ruta__meta"><span class="ruta__n">4</span><b>Más sillones, misma recepción</b><p>Otro sillón, otro dentista u otra sede entran al mismo sistema. Crecer no significa contratar a alguien para cuadrar Excel.</p></li>
+  </ol>
+
+  <div class="cta-plan">
+    <a class="boton boton--wa" id="plan-wa" data-t="wa-plan" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20dentistas%20y%20quiero%20revisar%20nuestro%20proceso." target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg><span id="plan-wa-txt">Revisemos mi consultorio</span></a>
+    <span>El mensaje se abre en tu WhatsApp con lo que marcaste, para que lo revises antes de enviarlo.</span>
+  </div>
+</section>
+
+<!-- 5 · LO QUE YA ESTÁ EN PRODUCCIÓN -->
+<section class="seccion" id="caso">
+  <div class="cab">
+    <span class="eyebrow" data-n="5">Lo que ya existe</span>
+    <h2>No empezamos de cero. Esta base ya está en producción.</h2>
+    <p class="intro">No vengo a hacer un experimento con tu consultorio. Lo que construiría para ti se monta sobre piezas que ya usan negocios reales todos los días.</p>
+  </div>
+  <div class="casos">
+    <div class="caso">
+      <span>Salud · clienta real</span>
+      <b>Una profesional de la salud que agendaba por WhatsApp y cobraba por transferencia.</b>
+      <p>Hoy su plataforma tiene:</p>
+      <ul class="etiquetas-caso">
+        <li>reserva en línea</li><li>pagos</li><li>conciliación de transferencias</li><li>paquetes que se descuentan solos</li><li>citas recurrentes</li><li>recordatorios</li><li>liberación automática de horarios sin pagar</li><li>constancia del aviso de privacidad aceptado</li>
+      </ul>
+      <a class="boton boton--linea" href="https://yolandamiranda.mx" target="_blank" rel="noopener noreferrer" data-t="caso-consulta">Ver plataforma real</a>
+    </div>
+    <div class="caso">
+      <span>Operación · cliente real, en uso diario</span>
+      <b>Una bodega que opera todos los días sobre su plataforma.</b>
+      <p>Su plataforma tiene:</p>
+      <ul class="etiquetas-caso">
+        <li>firma con el dedo en la pantalla</li><li>inventario con entradas y salidas</li><li>portal para sus clientes</li><li>correo diario con el resumen</li><li>exportar a Excel</li>
+      </ul>
+    </div>
+  </div>
+  <p class="honesto">Todavía no tengo un consultorio dental en producción: lo específico de odontología (odontograma, presupuestos por fases, laboratorio, cortes de especialistas) se construye encima de esa base. Otros casos, en deporte y educación, en <a href="/plataformas/">la página principal</a>.</p>
+</section>
+
+<!-- 6 · DIAGNÓSTICO -->
+<section class="seccion" id="diagnostico">
+  <div class="cab">
+    <span class="eyebrow" data-n="6">Diagnóstico sin costo</span>
+    <h2>Primero analizo tu consultorio. Después decidimos si se construye algo.</h2>
+    <p class="intro">No es «háblame para que te venda». Es una revisión de cómo funciona hoy tu consultorio, con un entregable que te quedas.</p>
+  </div>
+  <div class="diag-grid">
+    <ol class="diag-pasos">
+      <li><span>45 min</span><b>Me cuentas cómo trabajan.</b><p>Agenda y sillones, presupuestos, ortodoncia, laboratorio, especialistas, cobranza. No necesito que me expliques tecnología: necesito cosas como «el presupuesto lo imprimimos y se lo lleva» o «si alguien cancela, le marcamos a quien se pueda».</p></li>
+      <li><span>Después</span><b>Te entrego un documento.</b><p>Dónde se están yendo pacientes, horas de sillón o ingresos; qué atacaría primero y por qué; y una propuesta con alcance, tiempos y costo.</p></li>
+      <li><span>Y luego</span><b>Tú decides.</b><p>Aunque decidas no construirlo conmigo, el diagnóstico es tuyo.</p></li>
+    </ol>
+    <div class="documento" aria-hidden="true">
+      <span class="documento__k">Diagnóstico · tu consultorio</span>
+      <b>Oportunidades</b>
+      <p><i class="l" style="--w:92%"></i><i class="l" style="--w:76%"></i></p>
+      <b>Prioridades</b>
+      <p><i class="n">1</i><i class="l" style="--w:70%"></i></p>
+      <p><i class="n">2</i><i class="l" style="--w:58%"></i></p>
+      <p><i class="n">3</i><i class="l" style="--w:64%"></i></p>
+      <b>Propuesta</b>
+      <p><i class="l" style="--w:84%"></i><i class="l" style="--w:46%"></i></p>
+      <span class="documento__sello">Es tuyo</span>
+    </div>
+  </div>
+  <div class="cta-plan">
+    <a class="boton boton--wa" data-t="wa-diagnostico" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Quiero%20solicitar%20el%20diagn%C3%B3stico%20sin%20costo%20para%20mi%20consultorio%20dental." target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar diagnóstico sin costo</a>
+    <span>45 minutos. Después, el documento con oportunidades, prioridades y propuesta.</span>
+  </div>
+</section>
+
+<!-- 7 · PRECIOS -->
+<section class="seccion" id="precios">
+  <div class="cab">
+    <span class="eyebrow" data-n="7">Precios</span>
+    <h2>Software especializado, a tu forma.</h2>
+    <p class="intro">No compras un software dental genérico para después adaptar tu consultorio a él. Construimos sobre una base ya probada y la ajustamos a cómo trabajas, con una mensualidad fija y sin una inversión inicial grande.</p>
+  </div>
+  <div class="pb">
+    <div class="pb__precio">
+      <span class="pb__k">Desde</span>
+      <b class="pb__monto">$2,000 <small>MXN al mes</small></b>
+      <ul class="pb__chips"><li>Contrato mínimo de 12 meses</li><li>Sin pago inicial grande</li><li>Plataforma adaptada a tu consultorio</li><li>Nuevos módulos se cotizan aparte</li></ul>
+      <p class="pb__crece">Empieza desde $2,000 MXN/mes y crece conforme tu consultorio lo necesite.</p>
+    </div>
+    <div class="pb__listas">
+      <div><span class="pb__k">Incluye</span><ul class="pb__si"><li>Configuración inicial</li><li>Adaptación del flujo acordado</li><li>Usuarios dentro del alcance</li><li>Corrección de fallas</li><li>Actualizaciones necesarias de la plataforma base</li></ul></div>
+      <div><span class="pb__k">No incluye</span><ul class="pb__no"><li>Funciones nuevas fuera del alcance</li><li>Integraciones adicionales</li><li>Servicios de terceros</li><li>Infraestructura específica, si aplica</li></ul></div>
+      <p class="pb__nota">Si después necesitas más módulos, automatizaciones o reportes, se cotizan aparte antes de construirlos.</p>
+    </div>
+  </div>
+  <div class="pb__frases">
+    <p>No pagas por «un software estándar». <b>Pagas por una plataforma especializada en tu consultorio.</b></p>
+    <p class="pb__lema">Tu consultorio no se adapta al software.<br><span>El software se adapta a tu consultorio.</span></p>
+  </div>
+  <p class="nota" style="margin-top:14px">El diagnóstico de 45 minutos con su documento sigue siendo sin costo.</p>
+
+  <div class="privacidad">
+    <b>La información de tus pacientes no puede tratarse como cualquier dato.</b>
+    <p>La plataforma se diseña desde el principio con accesos por usuario y rol, separación de información, historial de cambios, respaldos, registro de consentimientos y control de qué consulta cada persona.</p>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section class="seccion final" id="escribir">
+  <div class="cab">
+    <span class="eyebrow" data-n="8">Empieza aquí</span>
+    <h2>¿Qué sigues llevando hoy en Excel, en papel o en WhatsApp?</h2>
+    <p class="intro">Puede ser algo tan simple como los presupuestos, las confirmaciones, la ortodoncia o el laboratorio. Con un toque me escribes y agendamos el diagnóstico sin costo.</p>
+  </div>
+
+  <div class="final__wa">
+    <a class="boton boton--wa boton--grande" id="final-wa" data-t="wa-final" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Quiero%20el%20diagn%C3%B3stico%20de%2045%20minutos%20para%20mi%20consultorio%20dental." target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero el diagnóstico de 45 minutos</a>
+    <span>Se abre tu WhatsApp con el mensaje listo. ¿Prefieres contarme más? Usa el formulario de abajo.</span>
+  </div>
+
+  <form class="form" id="form" novalidate>
+    <div><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" autocomplete="name"></div>
+    <div><label for="f-clinica">Consultorio</label><input id="f-clinica" name="clinica" autocomplete="organization"></div>
+    <fieldset class="full">
+      <legend>Hoy lo llevamos en</legend>
+      <div class="chips">
+        <label><input type="radio" name="hoy" value="Excel"><span>Excel</span></label>
+        <label><input type="radio" name="hoy" value="WhatsApp, papel y libreta"><span>WhatsApp, papel y libreta</span></label>
+        <label><input type="radio" name="hoy" value="un software dental que no nos convence"><span>Un software dental que no nos convence</span></label>
+        <label><input type="radio" name="hoy" value="una mezcla de todo"><span>Una mezcla de todo</span></label>
+      </div>
+    </fieldset>
+    <div class="full"><label for="f-proceso">¿Qué proceso quieres dejar de hacer a mano?</label><textarea id="f-proceso" name="proceso" placeholder="Por ejemplo: los presupuestos los entregamos impresos y nadie les da seguimiento."></textarea><p class="aviso" id="f-aviso" hidden>Cuéntame aunque sea en una línea qué proceso es.</p></div>
+    <div class="full form__acciones">
+      <button class="boton boton--wa" type="submit"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar diagnóstico</button>
+      <a class="enlace" href="mailto:bodgar@bodgar.dev?subject=Consultorio%20dental" id="f-correo">o mandarlo por correo</a>
+    </div>
+    <p class="full nota" style="margin:0">No incluyas información de pacientes: solo necesito entender el proceso. El mensaje se abre en tu WhatsApp con lo que marcaste, para que lo revises antes de enviarlo.</p>
+  </form>
+
+  <div class="quien">
+    <img src="/assets/bodgar.webp" width="576" height="720" alt="Bodgar Espinosa" loading="lazy">
+    <div>
+      <p><b>Soy Bodgar Espinosa</b>, ingeniero de software con más de diez años de experiencia. He trabajado en productos para Google, PetSmart, Venmo, Walmart, Domino's y banca. Hoy construyo sistemas a medida para negocios que no tendrían un equipo de ingeniería propio.</p>
+      <p><b>No tienes que explicarme tecnología. Tú me explicas cómo trabajas.</b></p>
+      <p class="fino">Trabajé en esas apps como parte de los equipos de ingeniería de Grid Dynamics, HCLTech, Globant, Evolutyz y Banco Azteca. No son mis clientes.</p>
+      <p><a class="enlace" href="/assets/Bodgar-Espinosa-CV.pdf" target="_blank" rel="noopener noreferrer">Conoce mi experiencia (CV)</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <span>© 2026 Bodgar Espinosa · Ciudad de México</span>
+  <nav>
+    <a href="mailto:bodgar@bodgar.dev">bodgar@bodgar.dev</a>
+    <a href="https://www.linkedin.com/in/bodgarespinosa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="/privacidad/">Aviso de privacidad</a>
+    <a href="/plataformas/">Todos los casos</a>
+    <a href="/plataformas/#tecnica">Para tu equipo técnico →</a>
+  </nav>
+</footer>
+
+<a class="wa-flota" id="wa-flota" data-t="wa-flotante" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Quiero%20el%20diagn%C3%B3stico%20de%2045%20minutos%20para%20mi%20consultorio%20dental." target="_blank" rel="noopener noreferrer" hidden><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg><span>Diagnóstico sin costo</span></a>
+
+<a class="manif" id="manif" href="#plan" data-t="manifiesto" hidden>
+  <span class="manif__k">Tu plan</span>
+  <span class="manif__n"><b id="manif-n">0</b> <span id="manif-txt">en tu plan</span></span>
+  <span class="manif__ir">Ver tu plan ↓</span>
+</a>
+
+<script src="/assets/t.js" defer></script>
+<script src="dentistas.js" defer></script>
+</body>
+</html>

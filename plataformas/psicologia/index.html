@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F4F1EC">
+<title>Plataforma a medida para psicólogos y consultorios de psicología | Bodgar Espinosa</title>
+<meta name="description" content="Para psicólogos y centros de psicología: reserva en línea, cobro con tarjeta o transferencia conciliada, paquetes de sesiones, citas recurrentes, videollamada, recordatorios y aviso de privacidad con constancia. Ya en producción para una psicóloga real.">
+<link rel="canonical" href="https://bodgar.dev/plataformas/psicologia/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bodgar.dev/plataformas/psicologia/">
+<meta property="og:title" content="Que tu agenda no dependa de contestar WhatsApp a las 11 de la noche">
+<meta property="og:description" content="Reservas, cobros, paquetes y recordatorios que funcionan solos, para tu consultorio de psicología. Ya en producción para una psicóloga real.">
+<meta property="og:image" content="https://bodgar.dev/assets/og-plataformas.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/cormorant-garamond-latin-600-0e24538e.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="psicologia.css">
+<script>document.documentElement.className += " js";</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="g-cielo" x1="0" y1="0" x2="0" y2="1">
+      <stop id="cielo-a" offset="0" stop-color="#BFDDEE"/>
+      <stop id="cielo-b" offset="1" stop-color="#EEF5F8"/>
+    </linearGradient>
+    <linearGradient id="g-pared-psi" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F1E9DE"/>
+      <stop offset="1" stop-color="#E7DCCD"/>
+    </linearGradient>
+    <radialGradient id="g-lampara" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFD9A0" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#FFC27A" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#FFC27A" stop-opacity="0"/>
+    </radialGradient>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+    <symbol id="i-sillon" viewBox="0 0 32 32"><path d="M7 15 V10 C7 7.8 8.8 6 11 6 H21 C23.2 6 25 7.8 25 10 V15 M4.5 15.5 C4.5 14.1 5.6 13 7 13 C8.4 13 9.5 14.1 9.5 15.5 V18 H22.5 V15.5 C22.5 14.1 23.6 13 25 13 C26.4 13 27.5 14.1 27.5 15.5 V23 C27.5 24.1 26.6 25 25.5 25 H6.5 C5.4 25 4.5 24.1 4.5 23 Z M8 25 V27.5 M24 25 V27.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="marca" href="/plataformas/"><svg aria-hidden="true"><use href="#i-sillon"/></svg><span>Bodgar Espinosa <em>· psicología</em></span></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#problemas">Problemas</a>
+      <a href="#app">La plataforma</a>
+      <a href="#caso">Caso real</a>
+      <a href="#plan">Tu plan</a>
+      <a href="#precios">Precios</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HÉROE: la sala que anochece -->
+<section class="hero" id="inicio">
+  <div class="hero__grid">
+    <div class="hero__txt">
+      <span class="eyebrow">Para psicólogos, terapeutas y centros de psicología</span>
+      <h1>Que tu agenda no dependa de contestar WhatsApp <span>a las 11 de la noche.</span></h1>
+      <p class="hero__sub"><b>Construyo la plataforma de tu consultorio: reservas, cobros, paquetes y recordatorios que funcionan solos.</b> Ya lo hice para una psicóloga real y su plataforma está en producción. Empezamos por lo que más tiempo o dinero te quita, medimos si mejora y solo después seguimos.</p>
+      <ul class="promesas" aria-label="Tres promesas">
+        <li>Agenda que se llena sola</li><li>Sesiones cobradas</li><li>Tus noches de vuelta</li>
+      </ul>
+      <div class="hero__ctas">
+        <a class="boton boton--wa" data-t="wa-diagnostico-hero" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20psicolog%C3%ADa%20y%20quiero%20el%20diagn%C3%B3stico%20sin%20costo.%20Atiendo%20a%20unos%20____%20pacientes%20a%20la%20semana." target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar diagnóstico sin costo</a>
+        <a class="boton boton--linea" href="#problemas" data-t="ver-problemas">Ver qué te pasa ↓</a>
+      </div>
+      <p class="nota hero__diag">45 minutos para entender cómo trabajas hoy. Después te entrego un documento con oportunidades, prioridades y una propuesta. <b>Aunque decidas no construirlo conmigo, el diagnóstico es tuyo.</b></p>
+    </div>
+
+    <div class="sala" aria-hidden="true">
+      <svg class="sala__svg" viewBox="0 0 640 520">
+        <rect width="640" height="520" fill="url(#g-pared-psi)"/>
+        <!-- ventana -->
+        <g>
+          <rect x="64" y="56" width="214" height="226" rx="6" fill="url(#g-cielo)"/>
+          <circle id="sol" cx="120" cy="230" r="20" fill="#FFE7A8"/>
+          <g id="luna" opacity="0"><circle cx="220" cy="104" r="15" fill="#F4EEDC"/><circle cx="228" cy="98" r="13" fill="url(#g-cielo)"/></g>
+          <g id="estrellas" opacity="0" fill="#F4EEDC"><circle cx="100" cy="86" r="1.6"/><circle cx="150" cy="120" r="1.2"/><circle cx="182" cy="78" r="1.4"/><circle cx="248" cy="150" r="1.2"/><circle cx="118" cy="160" r="1"/></g>
+          <path d="M98 282 L98 250 C110 240 126 236 140 244 C150 226 176 224 188 240 C204 230 230 236 244 252 L244 282 Z" fill="#B8C9BC" opacity="0.6"/>
+          <rect x="64" y="56" width="214" height="226" rx="6" fill="none" stroke="#CDBBA5" stroke-width="9"/>
+          <path d="M171 60 V278 M68 168 H274" stroke="#CDBBA5" stroke-width="6"/>
+          <rect x="52" y="282" width="238" height="12" rx="4" fill="#D9C7B1"/>
+          <path d="M44 46 C60 120 50 220 60 300 L36 300 C30 220 40 120 30 46 Z" fill="#B9AED6"/>
+          <path d="M298 46 C282 120 292 220 282 300 L306 300 C312 220 302 120 312 46 Z" fill="#B9AED6"/>
+          <rect x="26" y="40" width="292" height="8" rx="4" fill="#A99A86"/>
+        </g>
+        <!-- cuadro -->
+        <g>
+          <rect x="350" y="84" width="104" height="128" rx="3" fill="#FBF7F0" stroke="#C8B59C" stroke-width="5"/>
+          <circle cx="388" cy="132" r="22" fill="#E3B49F"/>
+          <path d="M362 196 C380 160 406 168 420 150 C430 170 440 180 444 196 Z" fill="#9DB4A4"/>
+          <circle cx="424" cy="118" r="9" fill="#B9AED6"/>
+        </g>
+        <!-- reloj de pared -->
+        <g>
+          <circle cx="548" cy="122" r="34" fill="#FBF7F0" stroke="#A99A86" stroke-width="5"/>
+          <g stroke="#7B748A" stroke-width="2.4" stroke-linecap="round"><path d="M548 94 V99 M548 145 V150 M520 122 H525 M571 122 H576"/></g>
+          <line id="aguja-h" x1="548" y1="122" x2="548" y2="104" stroke="#2B2540" stroke-width="4" stroke-linecap="round"/>
+          <line id="aguja-m" x1="548" y1="122" x2="548" y2="97" stroke="#2B2540" stroke-width="2.6" stroke-linecap="round"/>
+          <circle cx="548" cy="122" r="3.5" fill="#D9785B"/>
+        </g>
+        <!-- piso y tapete -->
+        <path d="M0 470 H640 V520 H0 Z" fill="#D6C4AE"/>
+        <path d="M0 470 H640" stroke="#C6B197" stroke-width="3"/>
+        <ellipse cx="330" cy="486" rx="250" ry="24" fill="#C9B3A0"/>
+        <ellipse cx="330" cy="486" rx="214" ry="17" fill="none" stroke="#B89E89" stroke-width="2" stroke-dasharray="6 8"/>
+        <!-- planta -->
+        <g>
+          <path d="M18 470 L24 418 H66 L72 470 Z" fill="#B86E4B"/>
+          <path class="hoja h1" d="M44 418 C30 370 6 360 2 330 C30 336 44 372 44 418 Z" fill="#7F9C86"/>
+          <path class="hoja h2" d="M44 418 C52 362 80 348 92 322 C96 356 70 384 44 418 Z" fill="#6C8B74"/>
+          <path class="hoja h3" d="M44 418 C40 378 50 350 46 312 C64 344 58 386 44 418 Z" fill="#93AE98"/>
+        </g>
+        <!-- sillón del terapeuta -->
+        <g>
+          <path d="M104 368 C100 330 116 310 150 310 C184 310 200 330 196 368 Z" fill="#7F9C86"/>
+          <rect x="92" y="380" width="118" height="44" rx="14" fill="#8BA894"/>
+          <rect x="84" y="360" width="26" height="66" rx="12" fill="#7F9C86"/>
+          <rect x="192" y="360" width="26" height="66" rx="12" fill="#7F9C86"/>
+          <path d="M104 424 L100 470 M200 424 L204 470" stroke="#6A5A48" stroke-width="7" stroke-linecap="round"/>
+          <rect x="126" y="372" width="52" height="10" rx="5" fill="#FBF7F0" opacity="0.6"/>
+        </g>
+        <!-- mesita con pañuelos, agua y el celular -->
+        <g>
+          <ellipse cx="300" cy="420" rx="40" ry="9" fill="#B79C80"/>
+          <path d="M300 428 V470 M282 470 H318" stroke="#9C8166" stroke-width="6" stroke-linecap="round"/>
+          <rect x="270" y="398" width="28" height="18" rx="3" fill="#F2EBE0"/>
+          <path d="M280 398 C282 390 290 390 290 398" fill="#FFFFFF" stroke="#E2D8C8" stroke-width="1.5"/>
+          <path d="M312 394 L314 416 H326 L328 394 Z" fill="#DCEAF0" opacity="0.9"/>
+          <rect id="cel-mesa" x="302" y="410" width="20" height="9" rx="2.5" fill="#2B2540"/>
+        </g>
+        <!-- sofá del paciente -->
+        <g>
+          <rect x="360" y="330" width="230" height="64" rx="22" fill="#7E6E9E"/>
+          <rect x="344" y="372" width="262" height="58" rx="18" fill="#8E7CC3"/>
+          <rect x="336" y="352" width="34" height="80" rx="16" fill="#7E6E9E"/>
+          <rect x="580" y="352" width="34" height="80" rx="16" fill="#7E6E9E"/>
+          <rect x="382" y="342" width="62" height="44" rx="14" fill="#E3B49F" transform="rotate(-8 413 364)"/>
+          <path d="M356 430 L352 470 M594 430 L598 470" stroke="#6A5A48" stroke-width="7" stroke-linecap="round"/>
+        </g>
+        <!-- lámpara de pie -->
+        <g>
+          <path d="M620 470 V252" stroke="#6A5A48" stroke-width="5"/>
+          <path d="M604 470 H636" stroke="#6A5A48" stroke-width="6" stroke-linecap="round"/>
+          <path d="M598 252 L636 252 L628 216 L606 216 Z" fill="#F1E2C8" stroke="#D2BD9A" stroke-width="2"/>
+        </g>
+        <!-- la noche y la luz -->
+        <rect class="noche-velo" id="velo" width="640" height="520" opacity="0"/>
+        <g id="luz" opacity="0">
+          <circle class="luz-lampara" cx="617" cy="262" r="170" fill="url(#g-lampara)"/>
+          <path d="M598 252 L636 252 L628 216 L606 216 Z" fill="#FFE2B0"/>
+        </g>
+      </svg>
+
+      <div class="reloj-chip" id="reloj"><span id="reloj-dia">Martes · tu consultorio</span><b id="reloj-h">8:00 AM</b></div>
+      <span class="sim">Simulación</span>
+      <div class="contadores">
+        <div><span>No pasaron por ti</span><b id="c-msj">0</b></div>
+        <div><span>Cobrado hoy</span><b id="c-cobrado">$0</b></div>
+      </div>
+      <div class="aviso-hud" id="hud"><span id="hud-k">✓ Reservó en línea</span><b id="hud-t">Ana R. · jueves 6:00 PM · pagado</b></div>
+    </div>
+  </div>
+
+  <div class="agenda" aria-hidden="true">
+    <div class="agenda__cab">
+      <span class="agenda__dia">Tu semana <i>Simulación</i></span>
+      <span class="agenda__cont">Sesiones dadas <b id="ag-ses">0</b></span>
+      <span class="agenda__cont agenda__cont--dinero">Recuperado esta semana <b id="ag-rec">$0</b></span>
+    </div>
+    <div class="agenda__vista" id="ag-vista">
+      <div class="agenda__pista" id="ag-pista">
+        <div class="agenda__ahora" id="ag-ahora"><span>ahora</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 1 · PROBLEMAS -->
+<section class="seccion" id="problemas">
+  <div class="cab">
+    <span class="eyebrow" data-n="1">Problemas</span>
+    <h2>¿Alguno de estos <em>te pasa?</em></h2>
+    <p class="intro">Toca cualquiera para ver cómo se resuelve y cuánto dinero o tiempo hay detrás. Lo que abras se va armando como tu plan.</p>
+    <p class="nota">Las cifras son ejemplos para pensar el consultorio, no una promesa de resultado.</p>
+  </div>
+
+  <ul class="tarjetas compacta" id="tarjetas">
+    <li class="tj tj--dinero" data-card="inasistencias">
+      <div class="tj__top"><span>Nº 01</span><span>Inasistencias</span></div>
+      <p class="tj__frase">Esta semana 3 pacientes no llegaron, o avisaron una hora antes.</p>
+      <p class="tj__sub">A $800 la sesión: <b>$2,400</b> de horas que ya habías apartado para ellos.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="inasistencias">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Tu política de cancelación, cumplida sin que tengas que cobrarla tú.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>3 sesiones perdidas × $800 = <b>$2,400 a la semana</b> · cerca de <b>$10,000 al mes</b> de horas que nadie más pudo usar.</p></div>
+        <p>El paciente aparta su horario pagando o dejando un anticipo, y acepta tu política de cancelación al reservar. Un día antes recibe su recordatorio. Si un horario apartado no se paga, se libera solo en la noche para que alguien más lo tome: eso ya está funcionando en la plataforma de una psicóloga real.</p>
+        <p class="regla">Tu política: cancelar con menos de 24 horas cuenta como sesión <span class="ejemplo">Ejemplo</span></p>
+        <ol class="flujo">
+          <li><b>Reservó</b><small>pagó al apartar</small></li>
+          <li><b>Recordatorio</b><small>24 h antes</small></li>
+          <li class="x"><b>Avisó tarde</b><small>2 h antes</small></li>
+          <li class="ok"><b>Se aplicó tu política</b><small>sin que tú lo pidieras</small></li>
+        </ol>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Menos horas perdidas y cero conversaciones incómodas para cobrar una sesión: la regla ya estaba clara desde que reservó.</p></div>
+        <a class="boton boton--wa" data-t="wa-inasistencias" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20psicolog%C3%ADa.%20Me%20pasa%20lo%20de%20las%20inasistencias.%20Hoy%20mi%20pol%C3%ADtica%20de%20cancelaci%C3%B3n%20es%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero que se respete mi política</a>
+      </div>
+    </li>
+
+    <li class="tj tj--dinero" data-card="transferencias">
+      <div class="tj__top"><span>Nº 02</span><span>Cobros</span></div>
+      <p class="tj__frase">«Ya te transferí.» Y tú revisando capturas para saber quién pagó.</p>
+      <p class="tj__sub">Si se te escapan 2 sesiones al mes: <b>$1,600</b>, más las horas cuadrando el banco.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="transferencias">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Cada transferencia, ligada a su sesión.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>2 sesiones al mes que nunca se cobraron × $800 = <b>$1,600 al mes</b>, más unas 3 horas revisando capturas y estados de cuenta.</p></div>
+        <p>El paciente paga con tarjeta o por transferencia desde su reserva. Las transferencias se concilian contra cada sesión, así sabes quién pagó, quién no y de quién es ese depósito sin referencia. La conciliación de transferencias ya funciona en la plataforma de la psicóloga con la que trabajo.</p>
+        <div class="conc">
+          <div class="v__cab"><span>Transferencias de esta semana</span><span class="ejemplo">Ejemplo</span></div>
+          <div class="conc__f"><span>$800</span><div>Ana R.<small>sesión del jueves 6:00 PM</small></div><em>✓ Conciliada</em></div>
+          <div class="conc__f"><span>$3,000</span><div>Diego M.<small>paquete de 4 sesiones</small></div><em>✓ Conciliada</em></div>
+          <div class="conc__f"><span>$800</span><div>Sin referencia<small>llegó el martes 9:12 PM</small></div><em class="esp">¿De quién es?</em></div>
+        </div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Sesiones que sí se cobran y nada de revisar capturas de pantalla a media noche.</p></div>
+        <a class="boton boton--wa" data-t="wa-transferencias" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20psicolog%C3%ADa.%20Mis%20pacientes%20me%20pagan%20por%20transferencia%20y%20lo%20reviso%20as%C3%AD%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero dejar de revisar capturas</a>
+      </div>
+    </li>
+
+    <li class="tj tj--dinero" data-card="paquetes">
+      <div class="tj__top"><span>Nº 03</span><span>Paquetes</span></div>
+      <p class="tj__frase">Vendes paquetes de 4 sesiones. Las cuentas van en una libreta.</p>
+      <p class="tj__sub">Un «¿cuántas me quedan?» mal contado es <b>una sesión regalada o una plática incómoda</b>.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="paquetes">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>El paquete se descuenta solo, y el paciente lo ve.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>Con 10 paquetes activos, una sesión mal contada al mes son <b>$750</b> regalados (paquete de 4 a $3,000), y cada aclaración es tiempo que no es consulta.</p></div>
+        <p>Cada sesión se descuenta del paquete del paciente en cuanto sucede. Él ve en su cuenta cuántas le quedan, y cuando va en la última, el sistema le ofrece renovar. Los paquetes que se descuentan solos ya están en producción en la plataforma de la psicóloga.</p>
+        <div class="paquete">
+          <div class="paquete__cab"><span>Paciente · Diego M.</span><span class="ejemplo">Ejemplo</span></div>
+          <div class="paquete__hoyos" aria-hidden="true"><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i></i><i></i><i></i></div>
+          <div class="carta__datos"><span>Compró <b>2 paquetes de 4</b></span><span>Usadas <b>5 de 8</b></span><span>Próxima <b>lun 6:00 PM</b></span></div>
+          <div class="alerta">Quedan 3 sesiones · se le ofrece renovar en la última</div>
+        </div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Cuentas claras sin libreta, y pacientes que renuevan sin que tengas que tocar el tema de dinero en sesión.</p></div>
+        <a class="boton boton--wa" data-t="wa-paquetes" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20psicolog%C3%ADa.%20Vendo%20paquetes%20de%20____%20sesiones%20y%20los%20llevo%20en%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero que se descuenten solos</a>
+      </div>
+    </li>
+
+    <li class="tj" data-card="noche">
+      <div class="tj__top"><span>Nº 04</span><span>Tu agenda</span></div>
+      <p class="tj__frase">Son las 11 de la noche y sigues contestando «¿tienes espacio el jueves?».</p>
+      <p class="tj__sub">20 mensajes de agenda al día × 2 minutos = <b>casi 15 horas al mes</b> fuera de consulta.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="noche">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Tus horarios se ven y se apartan solos.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>20 mensajes al día × 2 min = 40 min diarios ≈ <b>15 horas al mes</b> de ir y venir para acomodar citas, casi siempre de noche.</p></div>
+        <p>Tu paciente abre tu enlace, ve los horarios que tú decidiste abrir, elige uno y paga. A ti te llega el aviso; lo lees mañana. Tú no contestas nada. La reserva en línea con pago ya funciona en la plataforma de la psicóloga.</p>
+        <div class="chat-v">
+          <div class="v__cab"><span>Martes · 10:47 PM</span><span class="ejemplo">Ejemplo</span></div>
+          <div class="chat-v__b x">¿Tienes espacio el jueves en la tarde?<small>antes: esperaba tu respuesta</small></div>
+          <div class="chat-v__aviso">Carla V. apartó jueves 6:00 PM y pagó<small>te llegó el aviso · tú ya estabas descansando</small></div>
+        </div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Tus noches de vuelta, y pacientes que agendan cuando quieren, no cuando tú alcanzas a contestar.</p></div>
+        <a class="boton boton--wa" data-t="wa-noche" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20psicolog%C3%ADa.%20Hoy%20mis%20pacientes%20me%20piden%20cita%20por%20WhatsApp%20y%20les%20contesto%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero mis noches de vuelta</a>
+      </div>
+    </li>
+
+    <li class="tj" data-card="recurrentes">
+      <div class="tj__top"><span>Nº 05</span><span>Cada semana</span></div>
+      <p class="tj__frase">Tu paciente viene cada martes a las 7. Lo vuelves a anotar cada semana.</p>
+      <p class="tj__sub">Citas que agendas a mano una y otra vez, y <b>el enlace de la videollamada en un chat</b>.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="recurrentes">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Su horario de siempre, apartado. Su enlace, en su recordatorio.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>15 pacientes de cada semana = <b>15 citas que agendas a mano</b> cada semana, más los «¿me pasas el link?» cinco minutos antes de empezar.</p></div>
+        <p>Las citas recurrentes se apartan solas, semana tras semana, hasta que tú o tu paciente las cambien. Si la sesión es en línea, el enlace de la videollamada llega con el recordatorio. Las citas recurrentes y la videollamada ya funcionan en la plataforma de la psicóloga.</p>
+        <div class="semana-v">
+          <div class="v__cab"><span>Tu semana</span><span class="ejemplo">Ejemplo</span></div>
+          <div class="semana-v__dias">
+            <div><b>Lun</b><i class="r">4 PM ↻</i><i>6 PM</i></div>
+            <div><b>Mar</b><i>5 PM 🎥</i><i class="r">7 PM ↻</i></div>
+            <div><b>Mié</b><i class="r">4 PM ↻</i></div>
+            <div><b>Jue</b><i>5 PM</i><i class="r">6 PM ↻</i></div>
+            <div><b>Vie</b><i>4 PM 🎥</i></div>
+            <div><b>Sáb</b></div>
+          </div>
+        </div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Una semana que ya está armada antes de empezar, y sesiones en línea que empiezan a tiempo.</p></div>
+        <a class="boton boton--wa" data-t="wa-recurrentes" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20psicolog%C3%ADa.%20Tengo%20unos%20____%20pacientes%20de%20cada%20semana%20y%20los%20agendo%20as%C3%AD%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero mi semana armada</a>
+      </div>
+    </li>
+
+    <li class="tj" data-card="seguimiento">
+      <div class="tj__top"><span>Nº 06</span><span>Continuidad</span></div>
+      <p class="tj__frase">Dejó de agendar hace 3 semanas. Nadie lo notó.</p>
+      <p class="tj__sub">No para venderle nada: <b>para que tú decidas</b> si es momento de escribirle.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="seguimiento">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Tú decides. La plataforma solo te avisa a tiempo.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>Un proceso que se interrumpe sin cierre pesa en lo clínico, y también en lo económico: un paciente de cada semana son <b>4 sesiones al mes ($3,200)</b> que dejan de estar.</p></div>
+        <p>Si un paciente que venía con regularidad deja de agendar, o termina su paquete y no renueva, aparece en una lista que solo tú ves. Qué hacer con eso es decisión clínica tuya: la plataforma no escribe por ti ni manda nada automático a tus pacientes.</p>
+        <div class="lista-v">
+          <div class="v__cab"><span>Sin sesión agendada</span><span class="ejemplo">Ejemplo</span></div>
+          <ul>
+            <li><div>Mario T.<small>venía cada jueves</small></div><em>21 días</em></li>
+            <li><div>Laura P.<small>terminó su paquete</small></div><em>15 días</em></li>
+            <li><div>Iván R.<small>reagendó para la otra semana</small></div><em class="ok">✓ agendado</em></li>
+          </ul>
+          <div class="candado">Solo tú ves esta lista</div>
+        </div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Que ningún proceso se pierda por descuido de agenda, sin que la tecnología se meta en lo que es tuyo.</p></div>
+        <a class="boton boton--wa" data-t="wa-seguimiento" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20psicolog%C3%ADa.%20Me%20interesa%20saber%20a%20tiempo%20cu%C3%A1ndo%20un%20paciente%20deja%20de%20agendar.%20Hoy%20me%20doy%20cuenta%20as%C3%AD%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero saberlo a tiempo</a>
+      </div>
+    </li>
+
+    <li class="tj" data-card="leads">
+      <div class="tj__top"><span>Nº 07</span><span>Pacientes nuevos</span></div>
+      <p class="tj__frase">30 personas te preguntaron el precio por Instagram este mes. 3 agendaron.</p>
+      <p class="tj__sub">De 3 a 5 pacientes nuevos × 4 sesiones al mes × $800: <b>+$6,400 al mes</b>.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="leads">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Que agendar la primera sesión sea fácil, y saber de dónde llegan.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>2 pacientes nuevos más al mes × 4 sesiones × $800 = <b>+$6,400 al mes</b>, con la misma gente que ya te escribe.</p></div>
+        <p>Muchos se pierden entre «¿cuánto cuesta?» y «¿qué días tienes?». Con tu enlace de reservas, la persona ve tus horarios y aparta su primera sesión en el momento en que se decidió. Y tú sabes de dónde llegan: Instagram, Google, una recomendación.</p>
+        <div class="embudo">
+          <div class="embudo__cab"><span>Instagram · este mes</span><span class="ejemplo">Ejemplo</span></div>
+          <div class="embudo__f"><span>Preguntaron el precio</span><b>30</b><i style="--w:100%"></i></div>
+          <div class="embudo__f"><span>Abrieron tu enlace de reservas</span><b>14</b><i style="--w:47%"></i></div>
+          <div class="embudo__f"><span>Eligieron un horario</span><b>6</b><i style="--w:20%"></i></div>
+          <div class="embudo__f"><span>Pagaron su primera sesión</span><b>5</b><i style="--w:17%"></i></div>
+        </div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Más primeras sesiones con la misma gente que ya te escribe, y saber qué canal sí te trae pacientes.</p></div>
+        <a class="boton boton--wa" data-t="wa-leads" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20psicolog%C3%ADa.%20Mis%20pacientes%20nuevos%20me%20llegan%20por%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero más primeras sesiones</a>
+      </div>
+    </li>
+
+    <li class="tj" data-card="centro">
+      <div class="tj__top"><span>Nº 08</span><span>Tu centro</span></div>
+      <p class="tj__frase">Tres psicólogos, dos consultorios y un Excel para saber quién usa cuál.</p>
+      <p class="tj__sub">Consultorios encimados, <b>porcentajes calculados a mano</b> y nadie sabe cuántas sesiones dio cada quien.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="centro">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Cada terapeuta con su agenda, cada consultorio sin encimarse.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>El corte de 3 terapeutas a mano toma <b>5 o 6 horas al mes</b>. Con el sistema: Lic. Ruiz dio 18 sesiones × $800 × 60% = <b>$8,640</b>, calculado solo.</p></div>
+        <p>Cada terapeuta tiene su agenda y sus pacientes; el paciente reserva con quien le corresponde y el consultorio se asigna sin choques. Cada quien ve solo a sus pacientes y sus notas. A fin de mes, el corte de cada terapeuta sale solo, con el porcentaje que tu centro acuerde.</p>
+        <div class="consultorios-v">
+          <div class="v__cab"><span>Martes · consultorios</span><span class="ejemplo">Ejemplo</span></div>
+          <div class="consultorios-v__g">
+            <span></span><i class="k">4 PM</i><i class="k">5 PM</i><i class="k">6 PM</i><i class="k">7 PM</i>
+            <span>Cons. A</span><i class="a">Luna</i><i class="a">Luna</i><i>—</i><i class="b">Ruiz</i>
+            <span>Cons. B</span><i class="b">Ruiz</i><i>—</i><i class="a">Soto</i><i class="a">Soto</i>
+            <span>En línea</span><i>—</i><i class="b">Ruiz</i><i>—</i><i>—</i>
+          </div>
+        </div>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Un centro que crece sin choques de consultorio ni discusiones de fin de mes.</p></div>
+        <a class="boton boton--wa" data-t="wa-centro" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20psicolog%C3%ADa.%20Somos%20____%20terapeutas%20y%20la%20agenda%20y%20los%20porcentajes%20los%20llevamos%20en%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero ordenar el centro</a>
+      </div>
+    </li>
+
+    <li class="tj tj--crece" data-card="talleres">
+      <div class="tj__top"><span>Nº 09</span><span>Talleres y grupos</span></div>
+      <p class="tj__frase">Tu taller se llenó por Google Forms. Una tercera parte no pagó.</p>
+      <p class="tj__sub">12 lugares × $600 = $7,200 por taller; si 4 no pagan, son <b>$2,400 que nadie cobró</b>.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="talleres">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Talleres con cupo, pago y lista de espera.</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>Un taller al mes de 12 lugares a $600 = <b>$7,200</b>. Con el lugar pagado al inscribirse, los 12 entran cobrados, y si alguien se baja, entra el siguiente de la lista.</p></div>
+        <p>Abres el taller con su cupo y su precio; la persona se inscribe y paga en el mismo paso. Si se llena, se forma la lista de espera. Y como tus pacientes y exalumnos ya están en tu plataforma, avisarles del siguiente taller es un clic.</p>
+        <div class="curso-v">
+          <div class="v__cab"><span>Taller · manejo de la ansiedad</span><span class="ejemplo">Ejemplo</span></div>
+          <div class="curso-v__f"><div><b>Sábado 10:00 AM · 3 sesiones</b><small>$600 por lugar</small></div><span class="curso-v__lleno">Lleno</span></div>
+          <div class="curso-v__lugares" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="carta__datos"><span>Pagados <b>12 de 12</b></span><span>Lista de espera <b>5</b></span><span>Cobrado <b>$7,200</b></span></div>
+        </div>
+        <ul class="servicios">
+          <li>talleres</li><li>grupos terapéuticos</li><li>pláticas para escuelas o empresas</li><li>cursos en línea</li>
+        </ul>
+        <p class="big-line">Tu experiencia puede llegar a más gente en la misma hora.</p>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Ingreso que no depende de sumar horas de consulta, cobrado antes de empezar.</p></div>
+        <a class="boton boton--wa" data-t="wa-talleres" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20psicolog%C3%ADa.%20Doy%20talleres%20o%20grupos%20y%20hoy%20los%20inscribo%20con%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero mis talleres cobrados</a>
+      </div>
+    </li>
+
+    <li class="tj tj--crece" data-card="espera">
+      <div class="tj__top"><span>Nº 10</span><span>Agenda llena</span></div>
+      <p class="tj__frase">Tu agenda está llena. Este mes le dijiste que no a 6 personas.</p>
+      <p class="tj__sub">Si 3 entraran por lista de espera: <b>3 × 4 sesiones × $800 = $9,600 al mes</b>.</p>
+      <div class="tj__pie"><span class="hoyos" aria-hidden="true"></span><button type="button" class="tj__btn" data-abrir="espera">Ver cómo se resuelve →</button></div>
+      <span class="sello" aria-hidden="true">En tu plan</span>
+      <div class="sol">
+        <h3>Un «no tengo espacio» puede ser un «te aviso en cuanto se abra».</h3>
+        <div class="cuenta"><span class="cuenta__k">La cuenta · ejemplo</span><p>6 personas a las que dijiste que no · si 3 entran cuando se libera un horario = 3 × 4 sesiones × $800 = <b>$9,600 al mes</b>.</p></div>
+        <p>Quien no encontró lugar se anota en tu lista de espera con los días que le acomodan. Cuando un horario se libera (una cancelación, un alta, un horario apartado que no se pagó), los de la lista reciben el aviso y el primero que paga se queda con él. Si trabajas en un centro, también puedes canalizarlos con un colega.</p>
+        <ol class="flujo">
+          <li class="x"><b>Se liberó</b><small>martes 8:00 PM</small></li>
+          <li><b>Aviso a 3</b><small>de tu lista de espera</small></li>
+          <li class="ok"><b>Luis G. lo tomó</b><small>y pagó</small></li>
+        </ol>
+        <div class="gana"><span class="gana__k">¿Qué ganas?</span><p>Una agenda llena que se mantiene llena, sin que tú tengas que recordar a quién le dijiste que no.</p></div>
+        <a class="boton boton--wa" data-t="wa-espera" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20psicolog%C3%ADa.%20Mi%20agenda%20est%C3%A1%20llena%20y%20a%20la%20gente%20que%20no%20cabe%20le%20digo%3A%20" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero mi lista de espera</a>
+      </div>
+    </li>
+  </ul>
+  <button type="button" class="tarjetas-mas" id="tarjetas-mas">Ver 6 problemas más</button>
+
+  <div class="conteo">
+    <p>Revisaste <b id="conteo-n">0</b> de 10.</p>
+    <a class="boton boton--terra" href="#plan" id="conteo-ir" data-t="ver-plan" hidden>Ver tu plan ↓</a>
+  </div>
+
+  <dialog class="ficha" id="ficha" aria-labelledby="ficha-frase">
+    <div class="ficha__cab">
+      <span class="ficha__tag" id="ficha-tag"></span>
+      <button type="button" class="ficha__x" id="ficha-x" aria-label="Cerrar">×</button>
+    </div>
+    <p class="ficha__frase" id="ficha-frase"></p>
+    <div class="ficha__cuerpo" id="ficha-cuerpo"></div>
+    <div class="ficha__pie">
+      <button type="button" class="boton boton--linea" id="ficha-otro">Ver otro problema</button>
+      <button type="button" class="boton boton--terra" id="ficha-plan">Ver tu plan ↓</button>
+      <button type="button" class="ficha__quitar" id="ficha-quitar">Quitar de tu plan</button>
+    </div>
+  </dialog>
+</section>
+
+<!-- 2 · LA PLATAFORMA -->
+<section class="seccion" id="app">
+  <div class="cab rv">
+    <span class="eyebrow" data-n="2">La plataforma</span>
+    <h2>Así se vería. <em>Del lado de tu paciente</em> y del tuyo.</h2>
+    <p class="intro">Tócala: es una simulación, pero funciona. Aparta un horario, sube un comprobante o concilia una transferencia.</p>
+  </div>
+
+  <div class="demo rv">
+    <div class="demo__lado">
+      <div class="vista-sw" role="tablist" aria-label="De quién es la vista">
+        <button type="button" role="tab" aria-selected="true" data-vista="paciente">Lo que ve tu paciente</button>
+        <button type="button" role="tab" aria-selected="false" data-vista="tu">Lo que ves tú</button>
+      </div>
+      <ul class="demo__lista" data-de="paciente">
+        <li><button type="button" data-pant="reservar"><b>Reservar</b><span>Ve los horarios que tú abriste, elige uno y paga. Sin escribirte.</span></button></li>
+        <li><button type="button" data-pant="sesiones"><b>Sus sesiones</b><span>Su horario de cada semana, su paquete y el enlace de la videollamada.</span></button></li>
+        <li><button type="button" data-pant="pagos"><b>Sus pagos</b><span>Tarjeta o transferencia; el comprobante se concilia con su sesión.</span></button></li>
+        <li><button type="button" data-pant="aviso"><b>Su aviso de privacidad</b><span>Lo acepta al registrarse y queda constancia de qué versión aceptó.</span></button></li>
+      </ul>
+      <ul class="demo__lista" data-de="tu" hidden>
+        <li><button type="button" data-pant="hoy"><b>Tu día</b><span>Quién viene, quién es en línea y quién ya pagó.</span></button></li>
+        <li><button type="button" data-pant="conciliar"><b>Por conciliar</b><span>Las transferencias que llegaron, ligadas a cada sesión con un toque.</span></button></li>
+        <li><button type="button" data-pant="espera"><b>Lista de espera</b><span>Quién quiere un lugar y qué días le acomodan.</span></button></li>
+        <li><button type="button" data-pant="notas"><b>Tus notas</b><span>Privadas, por paciente. Nadie más las ve.</span></button></li>
+      </ul>
+      <p class="nota">Datos de ejemplo. Lo que se muestra y cómo se llama se ajusta a tu forma de trabajar.</p>
+    </div>
+
+    <div class="cel-demo" id="cel">
+      <div class="cel-demo__marco">
+        <div class="cel-demo__barra"><span>9:41</span><i></i><span>●●● 5G</span></div>
+
+        <!-- Vista paciente -->
+        <div class="app" data-de="paciente">
+          <div class="app__cab"><span>Hola, Carla<small>Consultorio de psicología · ejemplo</small></span><b class="chip-app">3 sesiones</b></div>
+          <div class="pantallas">
+            <div class="pant activa" data-pant="reservar">
+              <span class="k">Elige tu horario · esta semana</span>
+              <div class="dias-app"><span>Lun<b>17</b></span><span>Mar<b>18</b></span><span>Mié<b>19</b></span><span class="activo">Jue<b>20</b></span><span>Vie<b>21</b></span></div>
+              <div class="horarios" id="horarios">
+                <button type="button" class="ocupado" disabled>4:00<small>ocupado</small></button>
+                <button type="button" class="ocupado" disabled>5:00<small>ocupado</small></button>
+                <button type="button" data-h="6:00 PM">6:00<small>presencial</small></button>
+                <button type="button" data-h="7:00 PM">7:00<small>en línea</small></button>
+                <button type="button" class="ocupado" disabled>8:00<small>ocupado</small></button>
+                <button type="button" data-h="8:00 PM">8:00<small>en línea</small></button>
+              </div>
+              <div class="tarj">
+                <span class="k">Tu reserva</span>
+                <b id="res-txt" style="font-size:15px">Elige un horario</b>
+                <small>Sesión de 50 minutos · $800. Al reservar aceptas la política de cancelación: menos de 24 horas cuenta como sesión.</small>
+              </div>
+              <button type="button" class="app__cta" id="res-pagar" disabled>Apartar y pagar $800</button>
+            </div>
+
+            <div class="pant" data-pant="sesiones">
+              <div class="tarj tarj--noche">
+                <span class="k">Tu próxima sesión · en línea</span>
+                <b class="grande">Martes 7:00 PM</b>
+                <small>cada martes ↻ · la videollamada se abre aquí 10 minutos antes</small>
+                <button type="button" class="app__cta app__cta--lila" id="video">Entrar a la videollamada</button>
+              </div>
+              <div class="tarj">
+                <span class="k">Tu paquete</span>
+                <div class="paq-app" aria-hidden="true"><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i></i><i></i><i></i></div>
+                <small>Usaste 5 de 8 · te quedan 3</small>
+              </div>
+              <ul class="filas">
+                <li><div><b>Martes 11 · 7:00 PM</b><small>sesión 5 · en línea</small></div><em class="ok">✓</em></li>
+                <li><div><b>Martes 4 · 7:00 PM</b><small>sesión 4 · presencial</small></div><em class="ok">✓</em></li>
+              </ul>
+            </div>
+
+            <div class="pant" data-pant="pagos">
+              <div class="tarj">
+                <span class="k">Paquete de 4 sesiones</span>
+                <b class="grande">$3,000</b>
+                <small id="pag-estado">Transferencia · CLABE y referencia CARLA-1120</small>
+              </div>
+              <button type="button" class="app__cta" id="pag-subir">Ya transferí · subir comprobante</button>
+              <span class="k">Historial</span>
+              <ul class="filas">
+                <li><div><b>Paquete de 4 · octubre</b><small>tarjeta</small></div><em class="ok">$3,000</em></li>
+                <li><div><b>Primera sesión</b><small>transferencia conciliada</small></div><em class="ok">$800</em></li>
+              </ul>
+            </div>
+
+            <div class="pant" data-pant="aviso">
+              <div class="tarj">
+                <span class="k">Aviso de privacidad</span>
+                <b style="font-size:15px">Versión vigente · aceptada</b>
+                <small>Aceptaste esta versión el 3 de octubre a las 8:12 PM. Si el consultorio la actualiza, te pedimos aceptarla de nuevo y queda registro.</small>
+              </div>
+              <ul class="filas">
+                <li><div><b>Versión 2</b><small>3 de octubre · aceptada</small></div><em class="ok">✓</em></li>
+                <li><div><b>Versión 1</b><small>1 de octubre · aceptada</small></div><em>historial</em></li>
+              </ul>
+              <p class="app__nota">La constancia de qué versión aceptó cada paciente ya funciona en la plataforma de la psicóloga.</p>
+            </div>
+          </div>
+          <nav class="app__tabs">
+            <button type="button" data-pant="reservar" class="activa"><i>🗓️</i>Reservar</button>
+            <button type="button" data-pant="sesiones"><i>🛋️</i>Sesiones</button>
+            <button type="button" data-pant="pagos"><i>💳</i>Pagos</button>
+            <button type="button" data-pant="aviso"><i>🔒</i>Privacidad</button>
+          </nav>
+        </div>
+
+        <!-- Vista terapeuta -->
+        <div class="app app--tu" data-de="tu" hidden>
+          <div class="app__cab"><span>Tu consultorio<small>jueves · ejemplo</small></span><b class="chip-app">6 sesiones</b></div>
+          <div class="pantallas">
+            <div class="pant activa" data-pant="hoy">
+              <ul class="filas">
+                <li class="hecho"><div><b>4:00 PM · Mario T.</b><small>cada jueves ↻ · pagado</small></div><em class="ok">✓</em></li>
+                <li><div><b>5:00 PM · Sofía L.</b><small>en línea · enlace enviado</small></div><em class="lila">🎥</em></li>
+                <li class="borde-esp" id="hoy-ana"><div><b>6:00 PM · Ana R.</b><small>transferencia por conciliar</small></div><em class="esp">$800</em></li>
+                <li><div><b>7:00 PM · Diego M.</b><small>paquete · sesión 6 de 8</small></div><em class="ok">✓</em></li>
+                <li class="borde-lila"><div><b>8:00 PM · libre</b><small>3 personas en lista de espera</small></div><em class="lila">↺</em></li>
+              </ul>
+              <p class="app__nota">Lo que hoy ya está cobrado: $3,200 de $4,000.</p>
+            </div>
+
+            <div class="pant" data-pant="conciliar">
+              <span class="k">Transferencias que llegaron</span>
+              <ul class="filas">
+                <li class="borde-esp" id="conc-ana"><div><b>$800 · ref. ANA-1120</b><small>sugerencia: Ana R. · hoy 6:00 PM</small></div><button type="button" class="mini-btn" id="conc-btn">Conciliar</button></li>
+                <li><div><b>$800 · sin referencia</b><small>llegó el martes 9:12 PM</small></div><em class="esp">asignar</em></li>
+                <li class="hecho"><div><b>$3,000 · ref. DIEGO-PAQ</b><small>Diego M. · paquete de 4</small></div><em class="ok">✓</em></li>
+              </ul>
+            </div>
+
+            <div class="pant" data-pant="espera">
+              <span class="k">Lista de espera</span>
+              <ul class="filas">
+                <li><div><b>Luis G.</b><small>martes o jueves después de las 7</small></div><button type="button" class="mini-btn" data-avisar>Avisarle</button></li>
+                <li><div><b>Paola S.</b><small>cualquier día en la mañana</small></div><button type="button" class="mini-btn" data-avisar>Avisarle</button></li>
+                <li><div><b>Andrés C.</b><small>solo en línea</small></div><button type="button" class="mini-btn" data-avisar>Avisarle</button></li>
+              </ul>
+              <p class="app__nota">Cuando un horario se libera, el aviso puede salir solo. Tú decides cómo.</p>
+            </div>
+
+            <div class="pant" data-pant="notas">
+              <div class="nota-priv">
+                <b>🔒 Mario T. · privado · solo tú</b>
+                Sesión 12. Las notas de cada sesión quedan con fecha y no se pueden borrar, solo aclarar.
+                <textarea id="nota-txt" aria-label="Nota de ejemplo" placeholder="Escribe una nota de ejemplo…"></textarea>
+              </div>
+              <button type="button" class="app__cta" id="nota-guardar">Guardar nota</button>
+              <p class="app__nota">Ejemplo: en esta simulación no se guarda nada. En la plataforma real, cada terapeuta ve solo las notas de sus pacientes.</p>
+            </div>
+          </div>
+          <nav class="app__tabs">
+            <button type="button" data-pant="hoy" class="activa"><i>☀️</i>Hoy</button>
+            <button type="button" data-pant="conciliar"><i>💰</i>Conciliar</button>
+            <button type="button" data-pant="espera"><i>⏳</i>Espera</button>
+            <button type="button" data-pant="notas"><i>📓</i>Notas</button>
+          </nav>
+        </div>
+        <div class="toast" id="toast" role="status"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · CASO REAL -->
+<section class="seccion" id="caso">
+  <div class="cab">
+    <span class="eyebrow" data-n="3">Caso real</span>
+    <h2>No es un prototipo. <em>Ya está en producción</em> para una psicóloga.</h2>
+    <p class="intro">Una clienta real, con pacientes reales. Así trabajaba y esto es lo que hoy tiene su plataforma.</p>
+  </div>
+  <div class="caso-psi">
+    <div class="caso-psi__antes">
+      <span class="k">Antes</span>
+      <ul>
+        <li>Agendaba por WhatsApp, muchas veces a las 11 de la noche.</li>
+        <li>Cobraba por transferencia y revisaba capturas para saber quién había pagado.</li>
+        <li>Llevaba los paquetes de sesiones en una libreta.</li>
+        <li>Inscribía sus talleres con Google Forms.</li>
+      </ul>
+    </div>
+    <div class="caso-psi__hoy">
+      <span class="k">Hoy su plataforma tiene</span>
+      <ul>
+        <li>Su propio sitio con reserva en línea.</li>
+        <li>Cobro con tarjeta o transferencia conciliada.</li>
+        <li>Paquetes de sesiones que se descuentan solos.</li>
+        <li>Citas recurrentes, videollamada y recordatorios automáticos.</li>
+        <li>Aviso de privacidad con constancia de qué versión aceptó cada paciente.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="hueco">
+    <span>Lo que nadie había mirado</span>
+    <b>El hueco fantasma: alguien aparta un horario, no paga, y la agenda se queda bloqueada.</b>
+    <p>Hasta que ella se acordaba de liberarlo, nadie más podía tomarlo. Ahora un proceso nocturno lo libera solo.</p>
+  </div>
+  <p style="margin-top:22px"><a class="boton boton--linea" href="https://yolandamiranda.mx" target="_blank" rel="noopener noreferrer" data-t="caso-consulta">Ver la plataforma real</a></p>
+  <p class="honesto">Es trabajo hecho para una clienta real. Cada consultorio trabaja distinto: lo tuyo se adapta encima de esa base, no se copia tal cual. Otros casos, en deporte y educación, en <a href="/plataformas/">la página principal</a>.</p>
+</section>
+
+<!-- 4 · CUÁNTO PODRÍA ESTAR COSTÁNDOTE -->
+<section class="seccion" id="costo">
+  <div class="cab">
+    <span class="eyebrow" data-n="4">Cuánto cuesta</span>
+    <h2>¿Cuánto podría <em>estar costándote?</em></h2>
+    <p class="intro">Selecciona lo que te pasa y calcúlalo con tus números. Toma un minuto.</p>
+  </div>
+  <div class="checks" id="checks">
+    <label><input type="checkbox" value="inasist"><span><b>Inasistencias y cancelaciones tardías</b><small>La hora ya estaba apartada.</small></span></label>
+    <label><input type="checkbox" value="cobros"><span><b>Sesiones que se quedan sin cobrar</b><small>Transferencias que nadie revisó.</small></span></label>
+    <label><input type="checkbox" value="continuidad"><span><b>Pacientes que dejan de agendar</b><small>Se van sin que nadie lo note.</small></span></label>
+    <label><input type="checkbox" value="leads"><span><b>Personas que preguntan y no agendan</b><small>Preguntan el precio y desaparecen.</small></span></label>
+    <label><input type="checkbox" value="talleres"><span><b>Lugares de taller sin cobrar</b><small>Se inscriben y no pagan.</small></span></label>
+    <label><input type="checkbox" value="espera"><span><b>Personas a las que les dices que no</b><small>No hay lista de espera.</small></span></label>
+  </div>
+  <div class="checks__pie">
+    <button type="button" class="boton boton--terra" id="diag-abrir">Calcular con mis números →</button>
+    <p class="aviso" id="checks-aviso" hidden>Selecciona al menos una.</p>
+  </div>
+
+  <dialog class="ficha diag" id="diag" aria-labelledby="diag-titulo">
+    <div class="ficha__cab">
+      <span class="ficha__tag">Diagnóstico económico</span>
+      <button type="button" class="ficha__x" id="diag-x" aria-label="Cerrar">×</button>
+    </div>
+    <div class="ficha__cuerpo">
+      <h3 id="diag-titulo">Con tus números</h3>
+      <div class="monitor__pantalla diag__total">
+        <span class="monitor__k">Ingreso no aprovechado</span>
+        <b class="monitor__num" id="diag-num">$0</b>
+        <svg class="monitor__ecg" viewBox="0 0 600 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34 H180 L196 34 L206 12 L218 54 L230 4 L242 40 L252 34 H420 L432 34 L440 22 L450 44 L458 34 H600"/></svg>
+        <span class="monitor__det">al mes, aproximadamente</span>
+      </div>
+      <p class="diag__aviso">No significa que todo sea recuperable. En el diagnóstico revisamos cuánto sí podría atacarse y por dónde conviene empezar.</p>
+      <div id="diag-filas"></div>
+    </div>
+    <div class="ficha__pie">
+      <a class="boton boton--wa" id="diag-wa" data-t="wa-diagnostico-calc" href="#" target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar diagnóstico sin costo</a>
+      <button type="button" class="boton boton--linea" id="diag-cerrar">Seguir viendo</button>
+    </div>
+  </dialog>
+</section>
+
+<!-- 5 · TU PLAN -->
+<section class="seccion" id="plan">
+  <div class="cab">
+    <span class="eyebrow" data-n="5">Tu plan</span>
+    <h2 id="plan-titulo">Marca arriba lo que te pasa y aquí aparece tu plan.</h2>
+    <p class="intro" id="plan-intro">Un solo sistema, construido alrededor de tu consultorio. Empezamos por lo que más tiempo o dinero te quita.</p>
+  </div>
+
+  <div class="receta" id="receta">
+    <div class="receta__cab">
+      <div><span class="receta__k">Plan de trabajo</span><b>Tu consultorio</b></div>
+      <span class="receta__folio" id="receta-folio">Exp. PSI-000</span>
+    </div>
+    <div class="receta__vacia" id="receta-vacia">
+      <p>Todavía no marcas ningún problema.</p>
+      <a class="boton boton--tinta" href="#problemas" data-t="volver-problemas">Ver los problemas ↑</a>
+    </div>
+    <ol class="receta__lista" id="receta-lista"></ol>
+    <div class="receta__inicio" id="receta-inicio" hidden>
+      <span>Primer paso: por dónde empezaría yo</span>
+      <b id="receta-primero"></b>
+      <p id="receta-porque"></p>
+    </div>
+  </div>
+
+  <h3 class="sub">¿Qué ganas? El software tiene que pagarse solo.</h3>
+  <ul class="ganas" id="ganas">
+    <li data-tipo="recupera"><i>$</i><b>Cobras lo que trabajas</b><span>Sesiones apartadas con pago, transferencias conciliadas y paquetes bien contados.</span></li>
+    <li data-tipo="retiene"><i>♥</i><b>Cuidas la continuidad</b><span>Sabes a tiempo cuándo alguien dejó de agendar. Lo que haces con eso lo decides tú.</span></li>
+    <li data-tipo="capta"><i>↗</i><b>Más primeras sesiones</b><span>Quien se decidió, agenda en ese momento. Y sabes de dónde llegó.</span></li>
+    <li data-tipo="libera"><i>⏱</i><b>Recuperas tus noches</b><span>Menos WhatsApp, menos capturas, menos libreta.</span></li>
+    <li data-tipo="crece"><i>＋</i><b>Creces sin sumar horas</b><span>Talleres, grupos y una lista de espera que mantiene llena tu agenda.</span></li>
+  </ul>
+  <p class="remate">No hace falta comprar todo. Primero resolvemos un proceso real y vemos si te funciona.</p>
+
+  <h3 class="sub">Si quieres crecer, así crecería.</h3>
+  <ol class="ruta">
+    <li><span class="ruta__n">1</span><b id="ruta-1">Un solo flujo</b><p id="ruta-1p">En producción, con tus pacientes reales. Medimos antes y después.</p></li>
+    <li><span class="ruta__n">2</span><b id="ruta-2">El siguiente proceso</b><p id="ruta-2p">Solo si el primero funcionó. Mismo sistema, otra parte de tu consultorio.</p></li>
+    <li><span class="ruta__n">3</span><b id="ruta-3">Tu propio sitio</b><p id="ruta-3p">Con tus horarios, tu forma de cobrar y tu aviso de privacidad. Tu nombre, no el de una app.</p></li>
+    <li class="ruta__meta"><span class="ruta__n">4</span><b>Un centro, misma tranquilidad</b><p>Otro terapeuta u otro consultorio entran al mismo sistema, cada quien con sus pacientes.</p></li>
+  </ol>
+
+  <div class="cta-plan">
+    <a class="boton boton--wa" id="plan-wa" data-t="wa-plan" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Vi%20la%20p%C3%A1gina%20de%20psicolog%C3%ADa%20y%20quiero%20revisar%20c%C3%B3mo%20trabajo." target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg><span id="plan-wa-txt">Revisemos mi consultorio</span></a>
+    <span>El mensaje se abre en tu WhatsApp con lo que marcaste, para que lo revises antes de enviarlo.</span>
+  </div>
+</section>
+
+<!-- 6 · DIAGNÓSTICO -->
+<section class="seccion" id="diagnostico">
+  <div class="cab">
+    <span class="eyebrow" data-n="6">Diagnóstico sin costo</span>
+    <h2>Primero entiendo cómo trabajas. <em>Después decidimos</em> si se construye algo.</h2>
+    <p class="intro">No es «háblame para que te venda». Es una revisión de cómo funciona hoy tu consultorio, con un entregable que te quedas.</p>
+  </div>
+  <div class="diag-grid">
+    <ol class="diag-pasos">
+      <li><span>45 min</span><b>Me cuentas cómo trabajas.</b><p>Cómo agendas, cómo cobras, tus paquetes, tus talleres, tu política de cancelación. No necesito saber nada de tus pacientes: necesito cosas como «me pagan por transferencia y lo reviso en la noche».</p></li>
+      <li><span>Después</span><b>Te entrego un documento.</b><p>Dónde se te están yendo horas, sesiones o ingresos; qué atacaría primero y por qué; y una propuesta con alcance, tiempos y costo.</p></li>
+      <li><span>Y luego</span><b>Tú decides.</b><p>Aunque decidas no construirlo conmigo, el diagnóstico es tuyo.</p></li>
+    </ol>
+    <div class="documento" aria-hidden="true">
+      <span class="documento__k">Diagnóstico · tu consultorio</span>
+      <b>Oportunidades</b>
+      <p><i class="l" style="--w:92%"></i><i class="l" style="--w:76%"></i></p>
+      <b>Prioridades</b>
+      <p><i class="n">1</i><i class="l" style="--w:70%"></i></p>
+      <p><i class="n">2</i><i class="l" style="--w:58%"></i></p>
+      <p><i class="n">3</i><i class="l" style="--w:64%"></i></p>
+      <b>Propuesta</b>
+      <p><i class="l" style="--w:84%"></i><i class="l" style="--w:46%"></i></p>
+      <span class="documento__sello">Es tuyo</span>
+    </div>
+  </div>
+  <div class="cta-plan">
+    <a class="boton boton--wa" data-t="wa-diagnostico" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Quiero%20solicitar%20el%20diagn%C3%B3stico%20sin%20costo%20para%20mi%20consultorio%20de%20psicolog%C3%ADa." target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar diagnóstico sin costo</a>
+    <span>45 minutos. Después, el documento con oportunidades, prioridades y propuesta.</span>
+  </div>
+</section>
+
+<!-- 7 · PRECIOS -->
+<section class="seccion" id="precios">
+  <div class="cab">
+    <span class="eyebrow" data-n="7">Precios</span>
+    <h2>Tu plataforma, <em>a tu forma.</em></h2>
+    <p class="intro">No es una app de citas genérica a la que te tienes que acomodar. Construimos sobre una base que ya está en producción y la ajustamos a cómo trabajas, con una mensualidad fija y sin una inversión inicial grande.</p>
+  </div>
+  <div class="pb">
+    <div class="pb__precio">
+      <span class="pb__k">Desde</span>
+      <b class="pb__monto">$2,000 <small>MXN al mes</small></b>
+      <ul class="pb__chips"><li>Contrato mínimo de 12 meses</li><li>Sin pago inicial grande</li><li>Plataforma adaptada a tu consultorio</li><li>Nuevos módulos se cotizan aparte</li></ul>
+      <p class="pb__crece">Empieza desde $2,000 MXN/mes y crece conforme tu consultorio lo necesite.</p>
+    </div>
+    <div class="pb__listas">
+      <div><span class="pb__k">Incluye</span><ul class="pb__si"><li>Configuración inicial</li><li>Adaptación del flujo acordado</li><li>Usuarios dentro del alcance</li><li>Corrección de fallas</li><li>Actualizaciones necesarias de la plataforma base</li></ul></div>
+      <div><span class="pb__k">No incluye</span><ul class="pb__no"><li>Funciones nuevas fuera del alcance</li><li>Integraciones adicionales</li><li>Servicios de terceros (como la comisión del cobro con tarjeta)</li><li>Infraestructura específica, si aplica</li></ul></div>
+      <p class="pb__nota">Si después necesitas más módulos, automatizaciones o reportes, se cotizan aparte antes de construirlos.</p>
+    </div>
+  </div>
+  <div class="pb__frases">
+    <p>No pagas por «una app de citas». <b>Pagas por una plataforma hecha para tu consultorio.</b></p>
+    <p class="pb__lema">Tu consulta no se adapta al software.<br><span>El software se adapta a tu consulta.</span></p>
+  </div>
+  <p class="nota" style="margin-top:14px">El diagnóstico de 45 minutos con su documento sigue siendo sin costo.</p>
+
+  <div class="privacidad privacidad--psi">
+    <b>Lo que tus pacientes te cuentan es de lo más sensible que existe.</b>
+    <p>Por eso la plataforma se diseña desde el principio pensando en eso:</p>
+    <ul>
+      <li>Tus notas las ves solo tú</li><li>Accesos por usuario y rol</li><li>Constancia del aviso de privacidad aceptado</li><li>Historial de cambios y respaldos</li><li>En un centro, cada terapeuta ve solo a sus pacientes</li><li>Nada de datos clínicos en mensajes de WhatsApp</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section class="seccion final" id="escribir">
+  <div class="cab">
+    <span class="eyebrow" data-n="8">Empieza aquí</span>
+    <h2>¿Qué sigues llevando en WhatsApp, <em>en libreta o en la cabeza?</em></h2>
+    <p class="intro">Puede ser algo tan simple como las reservas, los cobros, los paquetes o los talleres. Con un toque me escribes y agendamos el diagnóstico sin costo.</p>
+  </div>
+
+  <div class="final__wa">
+    <a class="boton boton--wa boton--grande" id="final-wa" data-t="wa-final" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Quiero%20el%20diagn%C3%B3stico%20de%2045%20minutos%20para%20mi%20consultorio%20de%20psicolog%C3%ADa." target="_blank" rel="noopener noreferrer"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Quiero el diagnóstico de 45 minutos</a>
+    <span>Se abre tu WhatsApp con el mensaje listo. ¿Prefieres contarme más? Usa el formulario de abajo.</span>
+  </div>
+
+  <form class="form" id="form" novalidate>
+    <div><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" autocomplete="name"></div>
+    <div><label for="f-clinica">Consultorio o centro</label><input id="f-clinica" name="clinica" autocomplete="organization"></div>
+    <fieldset class="full">
+      <legend>Hoy lo llevo en</legend>
+      <div class="chips">
+        <label><input type="radio" name="hoy" value="WhatsApp y libreta"><span>WhatsApp y libreta</span></label>
+        <label><input type="radio" name="hoy" value="Google Calendar y Excel"><span>Google Calendar y Excel</span></label>
+        <label><input type="radio" name="hoy" value="una app de citas que no me convence"><span>Una app de citas que no me convence</span></label>
+        <label><input type="radio" name="hoy" value="una mezcla de todo"><span>Una mezcla de todo</span></label>
+      </div>
+    </fieldset>
+    <div class="full"><label for="f-proceso">¿Qué quieres dejar de hacer a mano?</label><textarea id="f-proceso" name="proceso" placeholder="Por ejemplo: los pagos por transferencia los reviso cada noche con las capturas."></textarea><p class="aviso" id="f-aviso" hidden>Cuéntame aunque sea en una línea qué proceso es.</p></div>
+    <div class="full form__acciones">
+      <button class="boton boton--wa" type="submit"><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar diagnóstico</button>
+      <a class="enlace" href="mailto:bodgar@bodgar.dev?subject=Consultorio%20de%20psicolog%C3%ADa" id="f-correo">o mandarlo por correo</a>
+    </div>
+    <p class="full nota" style="margin:0">No incluyas información de tus pacientes: solo necesito entender el proceso. El mensaje se abre en tu WhatsApp con lo que marcaste, para que lo revises antes de enviarlo.</p>
+  </form>
+
+  <div class="quien">
+    <img src="/assets/bodgar.webp" width="576" height="720" alt="Bodgar Espinosa" loading="lazy">
+    <div>
+      <p><b>Soy Bodgar Espinosa</b>, ingeniero de software con más de diez años de experiencia. He trabajado en productos para Google, PetSmart, Venmo, Walmart, Domino's y banca. Hoy construyo sistemas a medida para negocios que no tendrían un equipo de ingeniería propio.</p>
+      <p><b>No tienes que explicarme tecnología. Tú me explicas cómo trabajas.</b></p>
+      <p class="fino">Trabajé en esas apps como parte de los equipos de ingeniería de Grid Dynamics, HCLTech, Globant, Evolutyz y Banco Azteca. No son mis clientes.</p>
+      <p><a class="enlace" href="/assets/Bodgar-Espinosa-CV.pdf" target="_blank" rel="noopener noreferrer">Conoce mi experiencia (CV)</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <span>© 2026 Bodgar Espinosa · Ciudad de México</span>
+  <nav>
+    <a href="mailto:bodgar@bodgar.dev">bodgar@bodgar.dev</a>
+    <a href="https://www.linkedin.com/in/bodgarespinosa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="/privacidad/">Aviso de privacidad</a>
+    <a href="/plataformas/">Todos los casos</a>
+    <a href="/plataformas/#tecnica">Para tu equipo técnico →</a>
+  </nav>
+</footer>
+
+<a class="wa-flota" id="wa-flota" data-t="wa-flotante" href="https://wa.me/525527149106?text=Hola%20Bodgar.%20Quiero%20el%20diagn%C3%B3stico%20de%2045%20minutos%20para%20mi%20consultorio%20de%20psicolog%C3%ADa." target="_blank" rel="noopener noreferrer" hidden><svg class="wa" aria-hidden="true"><use href="#i-wa"/></svg><span>Diagnóstico sin costo</span></a>
+
+<a class="manif" id="manif" href="#plan" data-t="manifiesto" hidden>
+  <span class="manif__k">Tu plan</span>
+  <span class="manif__n"><b id="manif-n">0</b> <span id="manif-txt">en tu plan</span></span>
+  <span class="manif__ir">Ver tu plan ↓</span>
+</a>
+
+<script src="/assets/t.js" defer></script>
+<script src="psicologia.js" defer></script>
+</body>
+</html>
