@@ -652,9 +652,6 @@ main{transition:opacity .7s ease 1.2s!important}
           <label class="opt"><input type="radio" name="att" id="rs-yes" value="si" checked><span>Ahí estaré</span></label>
           <label class="opt"><input type="radio" name="att" id="rs-no" value="no"><span>No podré ir</span></label>
         </div>
-        <label class="f" for="rs-guests">Número de personas
-          <select id="rs-guests"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
-        </label>
         <label class="f" for="rs-msg">Unas palabras para Majito (opcional)
           <textarea id="rs-msg" placeholder="Escribe tu deseo para Majito"></textarea>
         </label>
@@ -743,16 +740,15 @@ main{transition:opacity .7s ease 1.2s!important}
   try {
   /* Confirmación */
   var form = document.getElementById('rsvp'), sends = document.querySelectorAll('.wa-btns .wa');
-  var nameI = document.getElementById('rs-name'), guests = document.getElementById('rs-guests'), msg = document.getElementById('rs-msg');
+  var nameI = document.getElementById('rs-name'), msg = document.getElementById('rs-msg');
   function updateRsvp(){
     var yes = document.getElementById('rs-yes').checked;
     var who = nameI.value.trim() || '(sin nombre)';
     var t = yes
-      ? 'Hola, soy ' + who + '. Confirmo mi asistencia a los XV años de Majito el sábado 28 de noviembre. Personas: ' + guests.value + '.'
+      ? 'Hola, soy ' + who + '. Confirmo mi asistencia a los XV años de Majito el sábado 28 de noviembre.'
       : 'Hola, soy ' + who + '. No podré asistir a los XV años de Majito. ¡Muchas felicidades!';
     if(msg.value.trim()) t += '\nPara Majito: ' + msg.value.trim();
     for (var k = 0; k < sends.length; k++) { if (!sends[k].getAttribute('data-num')) continue; sends[k].href = 'https://wa.me/' + sends[k].getAttribute('data-num') + '?text=' + encodeURIComponent(t); }
-    guests.disabled = !yes;
   }
   form.addEventListener('input', updateRsvp); form.addEventListener('change', updateRsvp);
   form.addEventListener('submit', function(e){ e.preventDefault(); });
